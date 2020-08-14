@@ -1,39 +1,21 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LeadershipSectionSimple from "../components/leadership-section-simple"
 
-import { FaTwitter } from 'react-icons/fa'
-import { FaLinkedinIn } from 'react-icons/fa'
-import { FaChevronDown } from 'react-icons/fa'
 
 const LeadershipPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 15}}}}) {
+            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 14}}}}) {
                 edges {
                     node {
                         title
                         content
-                        acf {
-                            bottom_subtitle
-                            meta_title
-                            meta_description
-                        }
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 2000) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -45,9 +27,7 @@ const LeadershipPage = () => {
         data.allWordpressWpCustomPage.edges.map(post => (
             <Layout>
                 <SEO 
-                title={post.node.acf.meta_title} 
-                description={post.node.acf.meta_description}
-                image={post.node.featured_media.localFile.childImageSharp.sizes}
+                title={post.node.title} 
                 />
                 <ClientsBanner>
                     <ImageBackground>
@@ -70,26 +50,6 @@ const LeadershipPage = () => {
                         data-sal-easing="ease"
                         dangerouslySetInnerHTML={{ __html: post.node.content }}
                     />
-
-                    <HeroBottom
-                        data-sal="fade"
-                        data-sal-duration="1000"
-                        data-sal-delay="300"
-                        data-sal-easing="ease"
-                    >
-                        <p>{post.node.acf.bottom_subtitle}</p>
-                        <button onClick={() => scrollTo('#section_one')} aria-label="Scroll"><FaChevronDown size={32}/></button>
-                    </HeroBottom>
-
-                    <HeroSocials
-                        data-sal="fade"
-                        data-sal-duration="1000"
-                        data-sal-delay="300"
-                        data-sal-easing="ease"
-                    >
-                        <a href="https://twitter.com/OptomiServices" target="_blank" rel="noopener noreferrer" aria-label="Link"><FaTwitter size={42}/></a>
-                        <a href="https://www.linkedin.com/company/27003541/" target="_blank" rel="noopener noreferrer" aria-label="Link"><FaLinkedinIn size={42}/></a>
-                    </HeroSocials>
                 </ClientsBanner>
                 <LeadershipCustom id={"section_one"}>
                     <LeadershipSectionSimple/>
@@ -201,52 +161,6 @@ const HeroContent = styled.div`
     }
 `
 
-const HeroBottom = styled.div`
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 1;
-    p {
-        font-family: 'Freeland';
-        font-size: 50px;
-        line-height: 1.1;
-        text-align: center;
-        margin: 0;
-        margin-bottom: 120px;
-        color: #fff;
-    }
-    button {
-        color: #5ab3e8;
-        background-color: transparent;
-        border: none;
-        outline: 0;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`
-
-const HeroSocials = styled.div`
-    position: absolute;
-    right: 20px;
-    bottom: 40px;
-    width: 60px;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 0 10px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    a {
-        display: inline-block;
-        &:first-child {
-            color: #5ab3e8;
-        }
-        &:last-child {
-            color: #8c9192;
-        }
-    }
-`
 
 const LeadershipCustom = styled.div`
 

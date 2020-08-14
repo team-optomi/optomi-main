@@ -1,26 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img from "gatsby-image"
 
-const HomeParallax = () => {
+const GivingBack = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 8}}}}) {
+            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 3}}}}) {
                 edges {
                     node {
-                        title
                         content
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 1920) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -30,27 +19,17 @@ const HomeParallax = () => {
         
         data.allWordpressWpHomeSection.edges.map(post => (
             <ParallaxSection>
-                <div class={"parallax-top"}>
-                    <hr/>
-                </div>
 
                 <ImageBackground>
-                    <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
                 </ImageBackground>
 
-                <div class={"parallax-content"}>
-                    <ParallaxContent 
-                        data-sal="slide-down"
-                        data-sal-duration="1000"
-                        data-sal-delay="300"
-                        data-sal-easing="ease"
-                        dangerouslySetInnerHTML={{ __html: post.node.content }}
-                    />
-                </div>
-                    
-                <div class={"parallax-bottom"}>
-                    <hr/>
-                </div>
+                <ParallaxContent 
+                    data-sal="slide-down"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    dangerouslySetInnerHTML={{ __html: post.node.content }}
+                />
             </ParallaxSection>
         ))
     )
@@ -109,20 +88,6 @@ const ParallaxSection = styled.div`
         .parallax-content {
             padding: 100px 20px;
         }
-    }
-`
-
-const BackgroundImg = styled(Img)`
-    height: 100vh;
-    width: 100%;
-    img {
-        margin-bottom: 0;
-        left: auto !important;
-        right: -450px;
-        object-position: center right !important;
-    }
-    @media(max-width:850px) {
-        display: none;
     }
 `
 
@@ -204,4 +169,4 @@ const ParallaxContent = styled.div`
     }
 `
 
-export default HomeParallax
+export default GivingBack

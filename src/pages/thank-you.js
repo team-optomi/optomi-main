@@ -1,20 +1,20 @@
 import React from "react"
 
-import NewsLayout from "../components/news-layout"
+import BlogLayout from "../components/blog-layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 
 
 const ThankYouPage = () => (
-    <NewsLayout>
+    <BlogLayout>
       <SEO title="Thank You" />
       <MainContent>
         <h1>Thank you for your submission!</h1>
         <p>A representative has received your submission and will response shortly.</p>
         <Button to="/">Back to Homepage</Button>
       </MainContent>
-    </NewsLayout>
+    </BlogLayout>
   )
   
   const MainContent = styled.div`

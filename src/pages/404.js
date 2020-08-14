@@ -1,12 +1,12 @@
 import React from "react"
 
-import NewsLayout from "../components/news-layout"
+import BlogLayout from "../components/blog-layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 
 const NotFoundPage = () => (
-  <NewsLayout>
+  <BlogLayout>
     <SEO title="404: Not found" />
     <MainContent>
       <h1>404 Page not found</h1>
@@ -14,7 +14,7 @@ const NotFoundPage = () => (
       <p>The page you are looking for does not exist. It may have been moved, or removed altogether. Perhaps you can return back to the site’s homepage and see if you can find what you are looking for.</p>
       <Button to="/">Back to Homepage</Button>
     </MainContent>
-  </NewsLayout>
+  </BlogLayout>
 )
 
 const MainContent = styled.div`

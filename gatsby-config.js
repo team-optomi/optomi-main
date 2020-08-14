@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `OPS`,
+    title: `Optomi`,
     description: `Identifying and creating the best tech talent to help define the technology of tomorrow`,
     author: `@optomi_`,
-    siteUrl: `https://optomiservices.com/`,
+    siteUrl: `https://optomi.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,8 +26,8 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // your WordPress source
-        baseUrl: `optomiservices.wpengine.com/`,
-        protocol: `https`,
+        baseUrl: `optomi-main.theremotecreative.com/`,
+        protocol: `http`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
@@ -39,8 +39,6 @@ module.exports = {
           "**/home_section", // <== Custom post slug
           "**/team_member", // <== Custom post slug
           "**/custom_page", // <== Custom post slug
-          "**/news", // <== Custom post slug
-          "**/location", // <== Custom post slug
           "**/media",
           "**/tags",
           "**/taxonomies",

@@ -1,32 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img from "gatsby-image"
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import { FaChevronDown } from 'react-icons/fa'
-
-const HomeMiddle = () => {
+const JobPortal = () => {
 
     const data = useStaticQuery(graphql`
         query {
             allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 5}}}}) {
                 edges {
                     node {
-                        title
                         content
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 2000) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
-                        acf {
-                            banner_arrow_link
-                        }
                     }
                 }
             }
@@ -39,7 +22,6 @@ const HomeMiddle = () => {
             <MiddleSection>
 
                 <ImageBackground>
-                    <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
                 </ImageBackground>
 
                 <MiddleContent 
@@ -49,10 +31,6 @@ const HomeMiddle = () => {
                     data-sal-easing="ease"
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
                 />
-
-                <ArrowIcon>
-                    <button onClick={() => scrollTo(post.node.acf.banner_arrow_link)} aria-label="Scroll"><FaChevronDown size={42}/></button>
-                </ArrowIcon>
                     
             </MiddleSection>
         ))
@@ -66,14 +44,6 @@ const MiddleSection = styled.div`
     height: 100%;
     width: 100%;
     background-color: #000;
-`
-
-const BackgroundImg = styled(Img)`
-    height: 120vh;
-    width: 100%;
-    img {
-        margin-bottom: 0;
-    }
 `
 
 const ImageBackground = styled.div`
@@ -220,22 +190,4 @@ const MiddleContent = styled.div`
     }
 `
 
-const ArrowIcon = styled.div`
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    z-index: 10;
-    button {
-        color: #61b1e8;
-        background-color: transparent;
-        border: none;
-        outline: 0;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`
-
-export default HomeMiddle
+export default JobPortal

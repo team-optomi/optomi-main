@@ -1,22 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import ParticleBG from "../../components/particle-bg"
-import { FaChevronDown } from 'react-icons/fa'
-
-const HomeCanvas = () => {
+const MissionStatement = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 4}}}}) {
+            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 7}}}}) {
                 edges {
                     node {
                         content
-                        acf {
-                            banner_arrow_link
-                        }
                     }
                 }
             }
@@ -27,8 +20,6 @@ const HomeCanvas = () => {
         data.allWordpressWpHomeSection.edges.map(post => (
             <CanvasSection id={"canvas_section"}>
 
-                <ParticleBG/>
-
                 <CanvasContent 
                     data-sal="slide-up"
                     data-sal-duration="1000"
@@ -36,10 +27,6 @@ const HomeCanvas = () => {
                     data-sal-easing="ease"
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
                 />
-
-                <ArrowIcon>
-                    <button onClick={() => scrollTo('#home-identity-row')} aria-label="Scroll"><FaChevronDown size={42}/></button>
-                </ArrowIcon>
                     
             </CanvasSection>
         ))
@@ -100,21 +87,4 @@ const CanvasContent = styled.div`
     }
 `
 
-const ArrowIcon = styled.div`
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 20px;
-    text-align: center;
-    button {
-        color: #000;
-        background-color: transparent;
-        border: none;
-        outline: 0;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`
-
-export default HomeCanvas
+export default MissionStatement

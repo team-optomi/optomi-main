@@ -1,26 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img from "gatsby-image"
 
-const HomeBottom = () => {
+const HomeFooter = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 9}}}}) {
+            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 2}}}}) {
                 edges {
                     node {
-                        title
                         content
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 150) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -37,7 +26,6 @@ const HomeBottom = () => {
                     data-sal-delay="300"
                     data-sal-easing="ease"
                 >
-                <HeartImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
                 <BottomContent dangerouslySetInnerHTML={{ __html: post.node.content }}/>
                 </div>
             </BottomSection>
@@ -56,15 +44,6 @@ const BottomSection = styled.div`
         padding-left: 20px;
         padding-right: 20px;
         margin: 0 auto;
-    }
-`
-
-const HeartImg = styled(Img)`
-    height: 152px;
-    width: 150px;
-    margin: 0 auto;
-    img {
-        margin-bottom: 0;
     }
 `
 
@@ -100,4 +79,4 @@ const BottomContent = styled.div`
     }
 `
 
-export default HomeBottom
+export default HomeFooter

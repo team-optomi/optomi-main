@@ -1,35 +1,19 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { FaTwitter } from 'react-icons/fa'
-import { FaLinkedinIn } from 'react-icons/fa'
-
-const AwardsPage = () => {
+const DifferentiatorsPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 14}}}}) {
+            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 12}}}}) {
                 edges {
                     node {
                         title
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 1070) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
-                        acf {
-                            meta_title
-                            meta_description
-                        }
+                        content
                     }
                 }
             }
@@ -41,13 +25,10 @@ const AwardsPage = () => {
         data.allWordpressWpCustomPage.edges.map(post => (
             <Layout>
                 <SEO 
-                title={post.node.acf.meta_title} 
-                description={post.node.acf.meta_description}
-                image={post.node.featured_media.localFile.childImageSharp.sizes}
+                title={post.node.title} 
                 />
                 <ClientsBanner>
                     <ImageBackground>
-                        
                     </ImageBackground>
 
                     <HeroTitle
@@ -61,22 +42,12 @@ const AwardsPage = () => {
                     </HeroTitle>
 
                     <HeroContent 
-                        data-sal="zoom-in"
+                        data-sal="slide-up"
                         data-sal-duration="1000"
                         data-sal-delay="300"
                         data-sal-easing="ease"
-                    >
-                        <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
-                    </HeroContent>
-
-                    <HeroSocials
-                        data-sal="fade"
-                        data-sal-duration="1000"
-                        data-sal-easing="ease"
-                    >
-                        <a href="https://twitter.com/OptomiServices" target="_blank" rel="noopener noreferrer" aria-label="Link"><FaTwitter size={42}/></a>
-                        <a href="https://www.linkedin.com/company/27003541/" target="_blank" rel="noopener noreferrer" aria-label="Link"><FaLinkedinIn size={42}/></a>
-                    </HeroSocials>
+                        dangerouslySetInnerHTML={{ __html: post.node.content }}
+                    />
                 </ClientsBanner>
             </Layout>
             
@@ -87,7 +58,7 @@ const AwardsPage = () => {
 const ClientsBanner = styled.div`
     position: relative; 
     min-height: 100vh;
-    min-width: 100%;
+    min-width: 100vw;
     height: 100%;
     width: 100%;
     display: flex;
@@ -95,11 +66,6 @@ const ClientsBanner = styled.div`
     align-items: center;
     @media (max-width:600px) {
         display: block;
-    }
-`
-const BackgroundImg = styled(Img)`
-    img {
-        margin-bottom: 0;
     }
 `
 
@@ -158,41 +124,76 @@ const HeroTitle = styled.div`
 const HeroContent = styled.div`
     position: relative;
     z-index: 10;
-    max-width: 1140px;
+    min-width: 100vw;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
-    margin: 0 auto;
     margin-top: 100px;
-    @media(max-width:1200px) {
-        max-width: 990px;
+    h2 {
+        font-family: "Helvetica Thin";
+        max-width: 800px;
+        width: 100%;
+        color: #fff;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        font-size: 77px;
+        font-weight: 100;
+        line-height: .8;
+        .freeland {
+            color: #5ab3e8;
+            font-family: 'Freeland';
+            font-size: 95px;
+            padding-right: 170px;
+            @media(max-width:600px) {
+                font-size: 72px;
+            }
+            @media(max-width:500px) {
+                font-size: 55px;
+                padding: 0;
+            }
+        }
+        .blue {
+            color: #5ab3e8;
+        }
+        .uppercase {
+            text-transform: uppercase;
+            padding-left: 120px;
+        }
+        @media(max-width:600px) {
+            font-size: 42px;
+        }
+        @media(max-width:500px) {
+            font-size: 28px;
+        }
+    }
+    p {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 28px;
+        color: #fff;
+        line-height: 1.2;
+        color: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+        @media(max-width:1200px) {
+            max-width: 990px
+        }
+        @media(max-width:600px) {
+            font-size: 24px;
+        }
+        @media(max-width:500px) {
+            font-size: 18px;
+            color: #fff;
+        }
+        @media(max-width:360px) {
+            display: none;
+        }
     }
     @media(max-width:600px) {
         margin-top: 30px;
     }
 `
 
-const HeroSocials = styled.div`
-    position: absolute;
-    right: 20px;
-    bottom: 40px;
-    width: 60px;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 0 10px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    transition-delay: 1.2s;
-    a {
-        display: inline-block;
-        &:first-child {
-            color: #5ab3e8;
-        }
-        &:last-child {
-            color: #8c9192;
-        }
-    }
-`
-
-export default AwardsPage
+export default DifferentiatorsPage

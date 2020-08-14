@@ -10,8 +10,7 @@ import PostFooter from "../components/post-footer"
 const BlogPost = ({ data }) => (
     <BlogLayout>
       <SEO 
-        title={data.wordpressPost.acf.meta_title} 
-        description={data.wordpressPost.acf.meta_description}
+        title={data.wordpressPost.title} 
         image={data.wordpressPost.featured_media.localFile.childImageSharp.sizes}
         />
       <BlogContainer>
@@ -101,8 +100,6 @@ query($id: Int!) {
       }
       acf {
         custom_author
-        meta_title
-        meta_description
       }
     }
   }

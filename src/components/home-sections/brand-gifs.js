@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-const HomeSimple = () => {
+const BrandGifs = () => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -62,4 +62,4 @@ const MiddleContent = styled.div`
     }
 `
 
-export default HomeSimple
+export default BrandGifs

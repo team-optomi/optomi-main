@@ -5,33 +5,16 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import LocationsSection from "../components/locations-section"
-
-import { FaTwitter } from 'react-icons/fa'
-import { FaLinkedinIn } from 'react-icons/fa'
 
 const ContactPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 20}}}}) {
+            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 9}}}}) {
                 edges {
                     node {
                         title
                         content
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 900) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
-                        acf {
-                            meta_title
-                            meta_description
-                        }
                     }
                 }
             }
@@ -43,9 +26,7 @@ const ContactPage = () => {
         data.allWordpressWpCustomPage.edges.map(post => (
             <Layout>
                 <SEO 
-                title={post.node.acf.meta_title} 
-                description={post.node.acf.meta_description}
-                image={post.node.featured_media.localFile.childImageSharp.sizes}
+                title={post.node.title} 
                 />
                 <ClientsBanner>
                     <ImageBackground>
@@ -63,7 +44,6 @@ const ContactPage = () => {
                     </HeroTitle>
 
                     <HeroContent>
-                        <ContactImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
                         <ContactInfo
                         data-sal="zoom-in"
                         data-sal-duration="1000"
@@ -73,41 +53,7 @@ const ContactPage = () => {
                         />
                     </HeroContent>
 
-                    <HeroBottom
-                        data-sal="fade"
-                        data-sal-duration="1000"
-                        data-sal-delay="900"
-                        data-sal-easing="ease"
-                    >
-                        <h2>Locations</h2>
-                    </HeroBottom>
-
-                    <HeroSocials
-                        data-sal="fade"
-                        data-sal-duration="1000"
-                        data-sal-delay="900"
-                        data-sal-easing="ease"
-                    >
-                        <a href="https://twitter.com/OptomiServices" target="_blank" rel="noopener noreferrer" aria-label="Scroll"><FaTwitter size={42}/></a>
-                        <a href="https://www.linkedin.com/company/27003541/" target="_blank" rel="noopener noreferrer" aria-label="Scroll"><FaLinkedinIn size={42}/></a>
-                    </HeroSocials>
                 </ClientsBanner>
-                <SectionOne id={"section_one"}>
-                    <SectionOneRow>
-                        <LocationsSection/>
-                    </SectionOneRow>
-                </SectionOne>
-                <SectionTwo>
-                    <SectionTwoRow
-                        data-sal="slide-up"
-                        data-sal-duration="1000"
-                        data-sal-delay="300"
-                        data-sal-easing="ease"
-                    >
-                        <h2>Headquarters:</h2>
-                        <iframe title="Headquarters Map" src={"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6620.504788182909!2d-84.359856!3d33.934636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x27a06b6049a47d0f!2sOne%20Glenlake!5e0!3m2!1sen!2sin!4v1595793193336!5m2!1sen!2sin"} width={"100%"} height={"450"} frameborder={"0"} style={{ border: "0" }} allowfullscreen={""} aria-hidden={"false"}></iframe>
-                    </SectionTwoRow>
-                </SectionTwo>
             </Layout>
             
         ))
@@ -125,22 +71,6 @@ const ClientsBanner = styled.div`
     align-items: center;
     @media (max-width:600px) {
         display: block;
-    }
-`
-const ContactImg = styled(Img)`
-    width: 70%;
-    img {
-        margin-bottom: 0;
-    }
-    @media(max-width:1100px) {
-        width: 100%;
-        position: absolute !important;
-        left: 0;
-        bottom: 0; 
-        opacity: .5;
-    }
-    @media(max-width:600px) {
-        display: none;
     }
 `
 
@@ -305,91 +235,5 @@ const ContactInfo = styled.div`
     }
 `
 
-const HeroBottom = styled.div`
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-    text-align: center;
-    z-index: 1;
-    h2 {
-        font-family: "Helvetica Thin";
-        color: #5ab3e8;
-        font-size: 60px;
-        line-height: 1;
-        font-weight: 100;
-        text-transform: uppercase;
-        @media(max-width:470px) {
-            font-size: 24px;
-        }
-    }
-`
-
-const HeroSocials = styled.div`
-    position: absolute;
-    right: 20px;
-    bottom: 40px;
-    width: 60px;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 0 10px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    a {
-        display: inline-block;
-        &:first-child {
-            color: #5ab3e8;
-        }
-        &:last-child {
-            color: #8c9192;
-        }
-    }
-`
-
-const SectionOne = styled.div`
-    background-color: #000;
-    padding: 60px 0;
-`
-
-const SectionOneRow = styled.div`
-    max-width: 1140px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    @media(max-width:1000px) {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-`
-
-const SectionTwo = styled.div`
-    background-color: #000;
-    padding-bottom: 50px;
-`
-
-const SectionTwoRow = styled.div`
-    max-width: 1140px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    h2 {
-        font-family: "Helvetica Thin";
-        color: #5ab3e8;
-        font-size: 42px;
-        line-height: 1;
-        font-weight: 100;
-        text-align: left;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-    @media(max-width:1200px) {
-        max-width:990px;
-    }
-`
 
 export default ContactPage
