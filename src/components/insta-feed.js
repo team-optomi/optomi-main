@@ -61,6 +61,8 @@ const InstaFeed = () => (
 );
 
 const InstaFlex = styled.div`
+    position: absolute;
+    width: 600px;
     display: flex;
     flex-wrap: wrap;
     @media(max-width:700px) {

@@ -2,12 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const FooterLogo = () => {
+const FooterAwards = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "Logo-noTag.png" }) {
+      placeholderImage: file(relativePath: { eq: "footer-awards.png" }) {
         childImageSharp {
-          fixed(width: 800, height: 305) {
+          fixed(width: 550, height: 44) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -18,4 +18,4 @@ const FooterLogo = () => {
   return <Img fluid={data.placeholderImage.childImageSharp.fixed} />
 }
 
-export default FooterLogo
+export default FooterAwards
