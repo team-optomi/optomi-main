@@ -6,10 +6,13 @@ import FooterAwards from "../components/logos/footer-awards"
 import SpinningSocials from "../components/logos/spinning-socials"
 import InstaFeed from "../components/insta-feed"
 
+import FooterSocialBox from "../components/footer-socials"
+
 const Footer = () => (
     <FooterMain>
         <FooterSocials>
             <SpinningSocials/>
+            <FooterSocialBox/>
         </FooterSocials>
         <FooterLogoCol>
             <FooterLogo/>
@@ -74,7 +77,7 @@ const FooterSocials = styled.div`
     bottom: -115px;
     width: 600px;
     height: 600px;
-    background-color: #transparent;
+    background-color: transparent;
     overflow: hidden;
     .gatsby-image-wrapper {
         width: 580px;
