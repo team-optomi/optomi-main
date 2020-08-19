@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from "gatsby-image"
 
 const GivingBack = () => {
 
@@ -9,7 +10,28 @@ const GivingBack = () => {
             allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 3}}}}) {
                 edges {
                     node {
+                        title
                         content
+                        featured_media {
+                            localFile {
+                                childImageSharp {
+                                    sizes(maxWidth: 1920) {
+                                        ...GatsbyImageSharpSizes
+                                    }
+                                }
+                            }
+                        }
+                        acf {
+                            logo {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 2355) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -18,155 +40,92 @@ const GivingBack = () => {
     return(
         
         data.allWordpressWpHomeSection.edges.map(post => (
-            <ParallaxSection>
+            <MainSection>
 
                 <ImageBackground>
+                    <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
                 </ImageBackground>
 
-                <ParallaxContent 
-                    data-sal="slide-down"
-                    data-sal-duration="1000"
-                    data-sal-delay="300"
-                    data-sal-easing="ease"
-                    dangerouslySetInnerHTML={{ __html: post.node.content }}
-                />
-            </ParallaxSection>
+                <MainRow
+                data-sal="slide-down"
+                data-sal-duration="1000"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+                >
+                    <MainDiv>
+                        <MainContent 
+                            dangerouslySetInnerHTML={{ __html: post.node.content }}
+                        />
+                        <Logo sizes={post.node.acf.logo.localFile.childImageSharp.sizes} alt={"Opt to Give"} />
+                    </MainDiv>
+                    
+                </MainRow>
+                
+            </MainSection>
         ))
     )
 }
 
-const ParallaxSection = styled.div`
+const MainSection = styled.div`
     position: relative;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
-    .parallax-top {
-        background-color: #000;
-        position: absolute;
-        height: 100px;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        hr {
-            width: 80%;
-            margin: 0 auto;
-            margin-top: 79px;
-            height: 1px;
-            background-color: #888;
-            z-index: 1;
-        }
-    }
-    .parallax-content {
-        max-width: 1140px;
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin: 0 auto;
-        z-index: 1;
-    }
-    .parallax-bottom {
-        background-color: #000;
-        position: absolute;
-        height: 20px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        hr {
-            width: 80%;
-            margin: 0 auto;
-            margin-top: 9px;
-            height: 1px;
-            background-color: #888;
-            z-index: 1;
-        }
-    }
-    @media(max-width:420px) {
-        height: auto;
-        .parallax-content {
-            padding: 100px 20px;
-        }
+`
+
+const BackgroundImg = styled(Img)`
+    height: 80vh;
+    width: 100%;
+    img {
+        margin-bottom: 0;
     }
 `
 
 const ImageBackground = styled.div`
-    position: fixed;
-    height: 100vh;
+    position: absolute;
+    height: 80vh;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 0;
 `
 
-const ParallaxContent = styled.div`
-    z-index: 1;
-    max-width: 550px;
-    margin-left: 115px;
+const MainRow = styled.div`
+    max-width: 1340px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    margin: 0 auto;
+`
+
+const MainDiv = styled.div`
+    max-width: 390px;
+    margin-left: auto;
+`
+
+const MainContent = styled.div`
+    z-index: 2;
+    position: relative;
     h2 {
-        font-family: "Helvetica Thin";
-        color: #61b1e8;
-        font-size: 77px;
-        font-weight: 100;
+        font-family: "BonVivant";
+        color: #fff;
         text-align: center;
-        line-height: 26px;
-        position: relative;
-        margin-bottom: 140px;
-        .freeland {
-            font-family: 'Freeland';
-            font-style: italic;
-            font-size: 95px;
-            position: absolute;
-            top: 60px;
-            left: 80px;
-            @media(max-width:600px) {
-                font-size: 72px;
-                top: 50px;
-            }
-            @media(max-width:420px) {
-                position: relative;
-                top: auto;
-                left: auto;
-            }
-        }
-        .white {
-            font-size: 77px;
-            color: #8c9192;
-            text-transform: uppercase;
-            position: absolute;
-            top: 120px;
-            @media(max-width:600px) {
-                font-size: 42px;
-                top: 100px;
-            }
-            @media(max-width:420px) {
-                position: relative;
-                top: auto;
-                left: auto;
-            }
-        }
-        @media(max-width:600px) {
-            font-size: 42px;
-        }
-        @media(max-width:420px) {
-            line-height: 1;
-            margin-bottom: 20px;
-        }
+        font-size: 72px;
+        font-weight: 100;
+        margin-bottom: 50px;
     }
     p {
         font-family: "Helvetica Thin";
-        font-size: 36px;
-        font-weight: 100;
-        color: #8c9091;
-        line-height: 35px;
+        color: #fff;
+        font-size: 24px;
+        line-height: 1.3;
     }
-    @media(max-width:800px) {
-        margin: 0 auto;
-        p {
-            text-align: center;
-        }
-    }
+`
+
+const Logo = styled(Img)`
+    width: 300px;
+    margin: 0 auto;
 `
 
 export default GivingBack

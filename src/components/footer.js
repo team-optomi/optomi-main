@@ -69,6 +69,8 @@ const FooterMain = styled.div`
     position: relative;
     z-index: 1;
     position: relative;
+    border-top: 1px solid #333;
+    overflow: hidden;
 `
 
 const FooterSocials = styled.div`

@@ -19,12 +19,9 @@ const JobPortal = () => {
     return(
         
         data.allWordpressWpHomeSection.edges.map(post => (
-            <MiddleSection>
+            <MainSection>
 
-                <ImageBackground>
-                </ImageBackground>
-
-                <MiddleContent 
+                <MainContent 
                     data-sal="zoom-in"
                     data-sal-duration="600"
                     data-sal-delay="300"
@@ -32,160 +29,57 @@ const JobPortal = () => {
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
                 />
                     
-            </MiddleSection>
+            </MainSection>
         ))
     )
 }
 
-const MiddleSection = styled.div`
-    position: relative;
-    min-height: 120vh;
-    min-width: 100%;
-    height: 100%;
-    width: 100%;
+const MainSection = styled.div`
     background-color: #000;
-`
-
-const ImageBackground = styled.div`
-    position: absolute;
-    height: 120vh;
-    width: 100%;
-    top: 0;
-    left: 0;
+    padding-top: 80px;
+    padding-bottom: 0px;
+    position: relative;
     z-index: 1;
-    border-top: 1px solid #8c9192;
 `
 
-const MiddleContent = styled.div`
-    position: absolute;
-    height: 120vh;
+const MainContent = styled.div`
+    max-width: 1140px;
+    padding: 50px 20px;
     width: 100%;
     margin: 0 auto;
-    z-index: 2;
-    > .panel-layout {
-        height: 120vh;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        > .panel-grid {
-            width: 100%;
-            &:first-child {
-                .home-full-banner-content {
-                    max-width: 1140px;
-                    width: 100%;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    margin: 0 auto;
-                    display: flex;
-                    justify-content: space-between;
-                    > div {
-                        margin-top: 30vh;
-                        margin-bottom: 30vh;
-                    }
-                    .panel-grid-cell {
-                        &:first-child {
-                            width: 33%;
-                            h2 {
-                                font-family: "Helvetica Thin";
-                                color: #61b1e8;
-                                text-transform: uppercase;
-                                font-size: 80px;
-                                line-height: 80px;
-                                font-weight: 400;
-                                letter-spacing: 0px;
-                                @media(max-width:500px) {
-                                    font-size: 52px;
-                                }
-                            }
-                        }
-                        &:last-child {
-                            width: 66%;
-                            .p1 {
-                                font-family: "Helvetica Thin";
-                                color: #fff;
-                                font-size: 38px;
-                                line-height: 38px;
-                                padding-bottom: 10px !important;
-                                margin-bottom: 0;
-                                span.blue {
-                                    color: #61b1e8;
-                                }
-                                @media(max-width:500px) {
-                                    font-size: 22px;
-                                    line-height: 1.1;
-                                }
-                            }
-                            .p2 {
-                                font-family: "Helvetica Thin";
-                                color: #fff;
-                                letter-spacing: 1px;
-                                font-size: 20px;
-                                line-height: 25px;
-                                margin-bottom: 0;
-                                span.blue {
-                                    color: #61b1e8;
-                                }
-                                @media(max-width:500px) {
-                                    font-size: 18px;
-                                    line-height: 1.1;
-                                }
-                            }
-                            a {
-                                font-family: "Helvetica Thin";
-                                display: inline-block;
-                                color: #61b1e8;
-                                font-size: 25px;
-                                font-weight: 500;
-                                margin: 50px 0px;
-                                border-color: #61b1e8;
-                                line-height: 17px;
-                                font-weight: 500;
-                                border-style: solid;
-                                border-width: 2px;
-                                cursor: pointer;
-                                padding: 12px 35px;
-                                letter-spacing: 1px !important;
-                                background-color: transparent;
-                                text-decoration: none !important;
-                                text-transform: uppercase;
-                                transition-duration: .3s;
-                                &:hover {
-                                    color: #fff;
-                                    border-color: #fff;
-                                }
-                                @media(max-width:500px) {
-                                    font-size: 20px;
-                                }
-                            }
-                        }
-                    }
-                    @media(max-width:1200px) {
-                        max-width: 990px;
-                        .panel-grid-cell {
-                            &:last-child {
-                                padding-left: 10px;
-                            }
-                        }
-                    }
-                    @media(max-width:1050px) {
-                        max-width: 800px;
-                        display: block;
-                        .panel-grid-cell {
-                            &:first-child {
-                                margin-top: 0;
-                                margin-bottom: 0;
-                                width: 100%;
-                            }
-                            &:last-child {
-                                margin-top: 0;
-                                margin-bottom: 0;
-                                width: 100%;
-                                padding-left: 0;
-                            }
-                        }
-                    }
-                }
+    border-top: 1px solid #a6aaab;
+    h2 {
+        font-family: "BonVivant";
+        color: #fff;
+        text-align: center;
+        font-size: 72px;
+        font-weight: 100;
+        margin-bottom: 50px;
+    }
+    p {
+        &.button-section {
+            font-family: "Helvetica Thin";
+            color: #fff;
+            font-size: 32px;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            a {
+                background-color: #61b1e8;
+                padding: 15px 70px;
+                font-size: 24px;
+                color: #fff;
+                text-decoration: none;
+                text-transform: lowercase;
             }
+        }
+        &.jobs-bottom {
+            font-family: "Helvetica Thin";
+            color: #fff;
+            font-size: 32px;
+            line-height: 1.3;
+            text-align: center;
         }
     }
 `

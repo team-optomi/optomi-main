@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const CaseStudies = () => (
     <CaseStudiesMain>
-        <p>[Content Placeholder]</p>
+        <p>[Case Studies Go Here]</p>
     </CaseStudiesMain>
 )
 

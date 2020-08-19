@@ -18,64 +18,61 @@ const HomeFooter = () => {
     return(
         
         data.allWordpressWpHomeSection.edges.map(post => (
-            <BottomSection>
-                <div 
+            <MainSection>
+                <MainRow 
                     class={"bottom-row"}
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-delay="300"
                     data-sal-easing="ease"
                 >
-                <BottomContent dangerouslySetInnerHTML={{ __html: post.node.content }}/>
-                </div>
-            </BottomSection>
+                <MainContent dangerouslySetInnerHTML={{ __html: post.node.content }}/>
+                </MainRow>
+            </MainSection>
         ))
     )
 }
 
-const BottomSection = styled.div`
+const MainSection = styled.div`
     background-color: #000;
-    padding-bottom: 70px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     position: relative;
     z-index: 1;
-    .bottom-row {
-        max-width: 1140px;
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin: 0 auto;
-    }
 `
 
-const BottomContent = styled.div`
+const MainRow = styled.div`
+    max-width: 1340px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+`
+
+const MainContent = styled.div`
     text-align: center;
     h2 {
         font-family: "Helvetica Thin";
-        color: #5ab3e8;
-        font-size: 45px;
-        line-height: 1.375em;
+        font-size: 60px;
+        color: #fff;
         font-weight: 100;
-        margin-bottom: 0;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+        .bonvivant {
+            font-family: "BonVivant";
+            font-size: 80px;
+            padding: 0 10px;
+        }
     }
     p {
         font-family: "Helvetica Thin";
-        color: #9b9b9b;
-        font-size: 30px;
-        line-height: 1;
-        margin-bottom: 5px;
-    }
-    .blue {
-        font-family: "Helvetica Thin";
-        font-size: 35px;
-        color: #5ab3e8;
-        margin-bottom: 0;
-        a {
-            color: #5ab3e8;
-            text-decoration: none !important;
-        }
-        @media(max-width:420px) {
-            font-size: 28px;
-        }
+        color: #fff;
+        font-size: 24px;
+        line-height: 1.3;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 `
 

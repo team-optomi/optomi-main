@@ -66,6 +66,12 @@
   font-display: swap;
 } 
 
+@font-face {
+  font-family: "BonVivant";
+  src: url("../static/fonts/bonvivant/BonVivant.otf");
+  font-display: swap;
+} 
+
 /* Rotate animation */
 
 .rotating {

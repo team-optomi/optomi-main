@@ -18,9 +18,9 @@ const SkillFocused = () => {
     return(
         
         data.allWordpressWpHomeSection.edges.map(post => (
-            <ThreeColSection id={"optomi-provalus-section"}>
+            <MainSection>
 
-                <ThreeColContent 
+                <MainContent 
                     data-sal="slide-right"
                     data-sal-duration="1000"
                     data-sal-delay="300"
@@ -28,55 +28,44 @@ const SkillFocused = () => {
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
                 />
                     
-            </ThreeColSection>
+            </MainSection>
         ))
     )
 }
 
-const ThreeColSection = styled.div`
-    background-color: #000;
+const MainSection = styled.div`
+    background-color: #a6aaab;
     padding-top: 60px;
     padding-bottom: 80px;
     position: relative;
     z-index: 1;
-    border-top: 1px solid #8c9192;
 `
 
-const ThreeColContent = styled.div`
-    max-width: 1140px;
+const MainContent = styled.div`
+    max-width: 1340px;
     padding-right: 20px;
     padding-left: 20px;
     width: 100%;
     margin: 0 auto;
     h2 {
         font-family: "Helvetica Thin";
-        color: #fff;
-        text-align: center;
-        font-size: 52px;
-        font-weight: 300;
-        line-height: 1;
-        span {
-            font-size: 25px;
-        }
-        @media(max-width:500px) {
-            font-size: 32px;
-            line-height: 1.1;
+        font-size: 60px;
+        color: #000;
+        font-weight: 100;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        .bonvivant {
+            font-family: "BonVivant";
+            font-size: 80px;
+            padding: 0 10px;
         }
     }
     p {
         font-family: "Helvetica Thin";
-        font-size: 38px;
-        color: #fff;
-        font-weight: normal;
-        line-height: 40px;
-        text-align: center;
-        @media(max-width:500px) {
-            font-size: 28px;
-            line-height: 1.1;
-        }
-    }
-    @media(max-width:1200px) {
-        max-width: 990px;
+        color: #000;
+        font-size: 32px;
+        line-height: 1.3;
+        max-width: 760px;
     }
 `
 
