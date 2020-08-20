@@ -66,7 +66,7 @@ const MainContent = styled.div`
             text-transform: uppercase;
             letter-spacing: 5px;
             a {
-                background-color: #61b1e8;
+                background-color: #3582bd;
                 padding: 15px 70px;
                 font-size: 24px;
                 color: #fff;
