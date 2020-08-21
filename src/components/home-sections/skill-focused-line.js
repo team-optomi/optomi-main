@@ -21,7 +21,6 @@ class SkillLine extends Component {
             trigger: "#trigger",
             scrub: 1,
             end: 'top center',
-            markers: true,
             id: 'skill_line'
           }
         });
@@ -67,7 +66,7 @@ const Percent = styled.p`
 `
 
 const Line = styled.div`
-    width: 80%;
+    width: 0%;
     height: 35px;
     background-color: #000;
     position: absolute;
@@ -84,6 +83,5 @@ const Copy = styled.p`
     max-width: 80%;
     text-align: center;
 `
-
 
 export default SkillLine
