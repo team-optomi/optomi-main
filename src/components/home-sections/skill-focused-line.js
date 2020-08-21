@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import styled from 'styled-components'
 import { TweenLite, TimelineLite, CSSPlugin } from 'gsap';
 
+//without this line, CSSPlugin and AttrPlugin may get dropped by your bundler...
+const plugins = [ CSSPlugin, TweenLite ];
+
 class SkillLine extends Component {
 
     constructor(props){
