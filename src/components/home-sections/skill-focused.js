@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import SkillLine from './skill-focused-line'
+
 const SkillFocused = () => {
 
     const data = useStaticQuery(graphql`
@@ -28,6 +30,8 @@ const SkillFocused = () => {
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
                 />
                     
+                <SkillLine/>
+
             </MainSection>
         ))
     )
