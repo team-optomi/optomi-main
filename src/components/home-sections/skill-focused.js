@@ -23,7 +23,7 @@ const SkillFocused = () => {
             <MainSection>
 
                 <MainContent 
-                    data-sal="slide-right"
+                    data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-delay="300"
                     data-sal-easing="ease"
