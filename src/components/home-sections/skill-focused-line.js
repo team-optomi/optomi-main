@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from 'styled-components'
-import { TimelineLite } from 'gsap';
+import { TweenLite, TimelineLite } from 'gsap';
 
 class SkillLine extends Component {
 
