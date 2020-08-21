@@ -19,8 +19,10 @@ class SkillLine extends Component {
           paused: true,
           scrollTrigger: {
             trigger: "#trigger",
-            scrub: true,
+            scrub: 1,
+            end: 'top center',
             markers: true,
+            id: 'skill_line'
           }
         });
       }
