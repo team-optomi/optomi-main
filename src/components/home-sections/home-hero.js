@@ -68,11 +68,13 @@ const HeroBanner = styled.div`
     z-index: 1;
 `
 const BackgroundImg = styled.img`
-    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    img {
-        margin-bottom: 0;
-    }
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
 `
 
 const ImageBackground = styled.div`
