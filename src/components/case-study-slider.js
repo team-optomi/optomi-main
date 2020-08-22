@@ -25,8 +25,24 @@ class SlickSlider extends Component {
     
       return (
         <SliderContainer>
-            <div class="blue-block blue-block-1"></div>
-            <div class="blue-block blue-block-2"></div>
+            <div 
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-delay="600"
+            data-sal-easing="ease"
+            class="blue-block blue-block-1"></div>
+            <div 
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-delay="600"
+            data-sal-easing="ease"
+            class="blue-block blue-block-2"></div>
+          <div
+          data-sal="fade"
+          data-sal-duration="1000"
+          data-sal-delay="1200"
+          data-sal-easing="ease"
+          >
           <Slider {...settings}>
             {data.allWordpressWpCaseStudy.edges.map(post => (
               <CaseStudy>
@@ -38,6 +54,7 @@ class SlickSlider extends Component {
               </CaseStudy>
             ))}          
           </Slider>
+          </div>
         </SliderContainer>
       );
   }

@@ -62,25 +62,49 @@ const BrandGifs = () => {
             <MainSection>
 
                 <MiddleContent 
-                    data-sal="slide-up"
+                    data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-delay="300"
                     data-sal-easing="ease"
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
                 />
 
-                <RowOne>
-                    <BackgroundImg sizes={post.node.acf.section_one.background.localFile.childImageSharp.sizes} alt={"Skill-Set Focused Background"} />
+                <RowOne
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+                >
+                    <BackgroundImg 
+                    sizes={post.node.acf.section_one.background.localFile.childImageSharp.sizes} 
+                    alt={"Skill-Set Focused Background"} 
+                    />
                     <img src={skillGIF} alt="Skill-set focused" class="brand-gif" />
                 </RowOne>
 
-                <RowTwo>
-                    <BackgroundImg sizes={post.node.acf.section_two.background.localFile.childImageSharp.sizes} alt={"Technology Driven Background"} />
+                <RowTwo
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+                >
+                    <BackgroundImg 
+                    sizes={post.node.acf.section_two.background.localFile.childImageSharp.sizes} 
+                    alt={"Technology Driven Background"} 
+                    />
                     <img src={techGIF} alt="Technology Driven" class="brand-gif" />
                 </RowTwo>
 
-                <RowThree>
-                    <BackgroundImg sizes={post.node.acf.section_three.background.localFile.childImageSharp.sizes} alt={"Consultant Centered Background"} />
+                <RowThree
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+                >
+                    <BackgroundImg 
+                    sizes={post.node.acf.section_three.background.localFile.childImageSharp.sizes} 
+                    alt={"Consultant Centered Background"} 
+                    />
                     <img src={consultantGIF} alt="Consultant Centered" class="brand-gif" />
                 </RowThree>
                     

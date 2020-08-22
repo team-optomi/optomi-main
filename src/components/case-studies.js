@@ -4,13 +4,13 @@ import SlickSlider from './case-study-slider'
 
 const CaseStudies = () => (
     <CaseStudiesMain>
-        <MainRow
-        data-sal="slide-up"
-        data-sal-duration="1000"
-        data-sal-delay="300"
-        data-sal-easing="ease"
-        >
-            <h2>Case Studies</h2>
+        <MainRow>
+            <h2
+            data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+            >Case Studies</h2>
             <SlickSlider/>
         </MainRow>
     </CaseStudiesMain>

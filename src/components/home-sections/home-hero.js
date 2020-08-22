@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
+import heroGIF from '../../gifs/homehero.gif'
+
 const HomeHero = () => {
 
     const data = useStaticQuery(graphql`
@@ -10,11 +12,11 @@ const HomeHero = () => {
             allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 8}}}}) {
                 edges {
                     node {
-                        content
+                        title
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 2000) {
+                                    sizes(maxWidth: 800) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
@@ -30,17 +32,24 @@ const HomeHero = () => {
         data.allWordpressWpHomeSection.edges.map(post => (
             <HeroBanner>
                 <ImageBackground>
-                    <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
+                    <BackgroundImg 
+                    src={heroGIF} 
+                    alt={post.node.title} 
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"/>
                 </ImageBackground>
 
-                <div>
-                <HeroContent 
-                    data-sal="fade"
-                    data-sal-duration="2000"
-                    data-sal-easing="ease"
-                    dangerouslySetInnerHTML={{ __html: post.node.content }}
-                />
-                </div>
+                <HeroContainer>
+                    <HeroContent 
+                        data-sal="slide-up"
+                        data-sal-delay="1000"
+                        data-sal-easing="ease"
+                    >
+                        <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} />
+                    </HeroContent>
+                </HeroContainer>
     
             </HeroBanner>
         ))
@@ -58,7 +67,7 @@ const HeroBanner = styled.div`
     align-items: center;
     z-index: 1;
 `
-const BackgroundImg = styled(Img)`
+const BackgroundImg = styled.img`
     height: 100vh;
     width: 100%;
     img {
@@ -72,50 +81,27 @@ const ImageBackground = styled.div`
     width: 100%;
     top: 0;
     left: 0;
+    background-color: #aaa;
+`
+
+const HeroContainer = styled.div`
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 `
 
 const HeroContent = styled.div`
-    position: relative;
-    z-index: 10;
-    min-width: 100vw;
+    max-width: 640px;
     width: 100%;
-    transition-delay: 1.8s;
-    .home-hero {
-        > .panel-grid-cell {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            .panel-first-child {
-                width: 100%;
-                padding: 0 20px;
-                h1 {
-                    font-family: "Helvetica Thin";
-                    font-size: 48px;
-                    font-weight: 300;
-                    color: #5ab3e8;
-                    max-width: 1000px;
-                    margin: 0 auto;
-                    margin-bottom: 20px;
-                    @media(max-width:600px) {
-                        font-size: 32px;
-                    }
-                    @media(max-width:420px) {
-                        font-size: 20px;
-                    }
-                }
-                p {
-                    font-family: "Helvetica Thin";
-                    font-size: 24px;
-                    line-height: 1.2;
-                    color: #8c9192;
-                    @media(max-width:420px) {
-                        font-size: 14px;
-                        line-height: 1.2;
-                    }
-                }
-            }
-        }
-    }
+    padding: 0 20px;
+    transition-duration: 2s;
+`
+
+const HeroLogo = styled(Img)`
+    margin-bottom: 0;
 `
 
 export default HomeHero

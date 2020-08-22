@@ -22,7 +22,7 @@ const JobPortal = () => {
             <MainSection>
 
                 <MainContent 
-                    data-sal="zoom-in"
+                    data-sal="slide-up"
                     data-sal-duration="600"
                     data-sal-delay="300"
                     data-sal-easing="ease"
