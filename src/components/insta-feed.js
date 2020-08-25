@@ -65,7 +65,11 @@ const InstaFlex = styled.div`
     width: 600px;
     display: flex;
     flex-wrap: wrap;
+    @media(max-width:1550px) {
+        width: 300px;
+    }
     @media(max-width:700px) {
+        position: relative;
         max-width: 350px;
         margin: 0 auto;
         justify-content: center;
@@ -77,34 +81,10 @@ const InstaImage = styled.div`
     height: 75px;
     margin-right: 10px;
     margin-bottom: 10px;
-    @media(max-width:1200px) {
-        width: 105px;
-        height: 105px;
-    }
-    @media(max-width:980px) {
-        width: 50px;
-        height: 50px;
-    }
-    @media(max-width:700px) {
-        width: 105px;
-        height: 105px;
-    }
     .gatsby-image-wrapper {
         width: 75px !important;
         height: 75px !important;
         overflow: hidden;
-        @media(max-width:1200px) {
-            width: 105px !important;
-            height: 105px !important;
-        }
-        @media(max-width:980px) {
-            width: 50px !important;
-            height: 50px !important;
-        }
-        @media(max-width:700px) {
-            width: 105px !important;
-            height: 105px !important;
-        }
         img {
             object-fit: cover;
             margin-bottom: 0; 

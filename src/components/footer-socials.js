@@ -124,12 +124,31 @@ const SocialBox = styled.div`
     display: flex;
     width: 110px;
     flex-wrap: wrap;
+    @media(max-width:1550px) {
+        top: auto;
+        bottom: 260px;
+        left: 210px;
+    }
+    @media(max-width:1400px) {
+        bottom: 340px;
+        left: 180px;
+    }
+    @media(max-width:700px) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        justify-content: center;
+    }
 `
 
 const SocialIcon = styled.div`
     width: 45px;
     height: 45px;
     margin: 5px;
+    @media(max-width:1400px) {
+        width: 30px;
+        height: 30px;
+    }
 `
 
 const IconImage = styled(Img)`
@@ -139,6 +158,14 @@ const IconImage = styled(Img)`
         width: 45px !important;
         height: 45px !important;
         margin-bottom: 0;
+    }
+    @media(max-width:1400px) {
+        width: 30px !important;
+        height: 30px !important;
+        img {
+            width: 30px !important;
+            height: 30px !important;
+        }
     }
 `
 

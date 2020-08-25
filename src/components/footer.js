@@ -10,10 +10,7 @@ import FooterSocialBox from "../components/footer-socials"
 
 const Footer = () => (
     <FooterMain>
-        <FooterSocials>
-            <SpinningSocials/>
-            <FooterSocialBox/>
-        </FooterSocials>
+        
         <FooterLogoCol>
             <FooterLogo/>
         </FooterLogoCol>
@@ -40,7 +37,7 @@ const Footer = () => (
             </ul>
         </FooterCol>
         <FooterCol className={"col-three"}>
-            <h4>Connect with All Our Brands</h4>
+            <h4>Connect with Us</h4>
             <ul>
                 <li><a href="https://www.provalus.com/" target="_blank" rel="noopener noreferrer">Provalus website</a></li>
                 <li><a href="http://www.santeka.com/" target="_blank" rel="noopener noreferrer">Santeka website</a></li>
@@ -54,6 +51,10 @@ const Footer = () => (
             <InstaFeed/>
         </FooterCol>
       </FooterRow>
+      <FooterSocials>
+            <SpinningSocials/>
+            <FooterSocialBox/>
+        </FooterSocials>
       <FooterAwardsCol>
             <FooterAwards/>
         </FooterAwardsCol>
@@ -86,6 +87,36 @@ const FooterSocials = styled.div`
         height: 580px;
         margin-bottom: 0px;
     }
+    @media(max-width:1550px) {
+        bottom: -175px;
+        .gatsby-image-wrapper {
+            width: 500px;
+            height: 500px;
+        }
+    }
+    @media(max-width:1400px) {
+        bottom: -260px;
+        left: -150px;
+        .gatsby-image-wrapper {
+            width: 400px;
+            height: 400px;
+        }
+    }
+    @media(max-width:700px) {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 400px;
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > .gatsby-image-wrapper {
+            position: absolute !important;
+        }
+    }
 `
 
 const FooterRow = styled.div`
@@ -98,11 +129,21 @@ const FooterRow = styled.div`
     display: flex;
     position: relative;
     z-index: 2;
-    @media(max-width:1200px) {
-        max-width: 990px;
+    @media(max-width:1750px) {
+        max-width: 940px;
     }
-    @media(max-width:700px) {
+    @media(max-width:1300px) {
+        max-width: 790px;
+    }
+    @media(max-width:1150px) {
+        max-width: 740px;
+    }
+    @media(max-width:980px) {
+        max-width: 540px;
         flex-wrap: wrap;
+    }
+    @media(max-width:800px) {
+        max-width: 440px;
     }
 `
 
@@ -119,6 +160,25 @@ const FooterLogoCol = styled.div`
         @media(max-width:700px) {
             margin: 0 auto;
             margin-bottom: 15px;
+        }
+    }
+    @media(max-width:1750px) {
+        max-width: 940px;
+    }
+    @media(max-width:1300px) {
+        max-width: 790px;
+    }
+    @media(max-width:1150px) {
+        max-width: 740px;
+    }
+    @media(max-width:980px) {
+        max-width: 540px;
+    }
+    @media(max-width:800px) {
+        max-width: 440px;
+        .gatsby-image-wrapper {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 `
@@ -175,10 +235,13 @@ const FooterCol = styled.div`
             line-height: 1.5;
         }
     }
-    @media(max-width:700px) {
-        width: 100%;
-        text-align: center;
+    @media(max-width:980px) {
+        width: 50% !important;
         margin-bottom: 20px;
+    }
+    @media(max-width:700px) {
+        text-align: center;
+        width: 100% !important;
     }
 `
 
@@ -196,6 +259,30 @@ const FooterAwardsCol = styled.div`
             margin: 0 auto;
             margin-bottom: 15px;
         }
+    }
+    @media(max-width:1750px) {
+        max-width: 940px;
+    }
+    @media(max-width:1300px) {
+        max-width: 790px;
+    }
+    @media(max-width:1150px) {
+        max-width: 740px;
+    }
+    @media(max-width:980px) {
+        max-width: 540px;
+        margin-top: 50px;
+    }
+    @media(max-width:800px) {
+        .gatsby-image-wrapper {
+            max-width: 380px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    @media(max-width:700px) {
+        margin-top: 0;
     }
 `
 

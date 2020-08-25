@@ -48,6 +48,12 @@ const MainRow = styled.div`
     width: 100%;
     margin: 0 auto;
     z-index: 2;
+    @media(max-width:1500px) {
+        max-width: 1140px;
+    }
+    @media(max-width:1200px) {
+        max-width: 940px;
+    }
 `
 
 const MainContent = styled.div`
@@ -60,10 +66,12 @@ const MainContent = styled.div`
         line-height: 1.2;
         letter-spacing: 1px;
         margin-bottom: 50px;
+        transition-duration: .3s;
         .bonvivant {
             font-family: "BonVivant";
             font-size: 80px;
             padding: 0 10px;
+            transition-duration: .3s;
         }
     }
     p {
@@ -73,6 +81,18 @@ const MainContent = styled.div`
         line-height: 1.3;
         max-width: 1000px;
         margin: 0 auto;
+        transition-duration: .3s;
+    }
+    @media(max-width:1500px) {
+        h2 {
+            font-size: 42px;
+            .bonvivant {
+                font-size: 60px;
+            }
+        }
+        p {
+            font-size: 20px;
+        }
     }
 `
 
