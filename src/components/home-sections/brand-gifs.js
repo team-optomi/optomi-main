@@ -128,6 +128,7 @@ const MiddleContent = styled.div`
     width: 100%;
     margin: 0 auto;
     text-align: left; 
+    transition-duration: .3s;
     p {
         font-family: "Helvetica Thin";
         color: #a6aaab;
@@ -137,6 +138,7 @@ const MiddleContent = styled.div`
         position: relative;
         margin-bottom: 100px;
         max-width: 950px;
+        transition-duration: .3s;
         .bonvivant {
             font-family: "BonVivant";
             padding: 0 10px;
@@ -146,6 +148,21 @@ const MiddleContent = styled.div`
             position: absolute;
             top: -10px;
             right: -100px;
+        }
+    }
+    @media(max-width:1200px) {
+        max-width: 940px;
+        p {
+            font-size: 20px;
+        }
+    }
+    @media(max-width:1150px) {
+        p {
+            text-align: center;
+            .bonvivant {
+                top: 0;
+                right: calc(50% - 125px);
+            }
         }
     }
 `

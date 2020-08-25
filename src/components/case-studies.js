@@ -21,6 +21,10 @@ const CaseStudiesMain = styled.div`
     padding-bottom: 180px;
     width: 100%;
     background-color: #fff;
+    @media(max-width:840px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 `
 
 const MainRow = styled.div`
@@ -49,6 +53,21 @@ const MainRow = styled.div`
         left: -980px;
         top: 0;
         z-index: 2;
+    }
+    @media(max-width:1550px) {
+        max-width: 1140px;
+    }
+    @media(max-width:1330px) {
+        max-width: 940px;
+        h2 {
+            font-size: 42px;
+        }
+    }
+    @media(max-width:1150px) {
+        max-width: 740px;
+        h2 {
+            text-align: center;
+        }
     }
 `
 

@@ -77,6 +77,39 @@ const SliderContainer = styled.div`
         bottom: -60px;
         right: 0;
     }
+    @media(max-width:1550px) {
+      .blue-block {
+        width: 500px;
+      }
+      .blue-block-1 {
+        left: calc(65% - 250px);
+      }
+      .blue-block-2 {
+        right: -140px;
+      }
+    }
+    @media(max-width:1330px) {
+      .blue-block {
+        width: 400px;
+      }
+      .blue-block-1 {
+        left: calc(65% - 200px);
+      }
+    }
+    @media(max-width:1150px) {
+      .blue-block-1 {
+        left: auto;
+        right: 0;
+      }
+      .blue-block-2 {
+        display: none;
+      }
+    }
+    @media(max-width:940px) {
+      .blue-block-1 {
+        right: -100px;
+      }
+    }
 `
 
 const CaseStudy = styled.div`
@@ -88,6 +121,15 @@ const ImageThumb = styled.div``
 
 const CaseImg = styled(Img)`
     width: 650px;
+    @media(max-width:1330px) {
+      width: 550px;
+    }
+    @media(max-width:1150px) {
+      width: 500px;
+    }
+    @media(max-width:940px) {
+      width: 100%;
+    }
 `
 
 const Highlight = styled.h3`
@@ -105,6 +147,18 @@ const Highlight = styled.h3`
     max-height: 100px;
     overflow: hidden;
     transition-delay: .6s;
+    @media(max-width:1150px) {
+      font-size: 20px;
+      top: 0px;
+      right: 10px;
+    }
+    @media(max-width:940px) {
+      position: relative;
+      max-width: 100%;
+      padding: 20px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
 `
 
 const Excerpt = styled.div`
@@ -123,6 +177,19 @@ const Excerpt = styled.div`
         margin-bottom: 0;
         max-height: 200px;
         overflow: hidden;
+        @media(max-width:1330px) {
+          font-size: 20px;
+        }
+        @media(max-width:1150px) {
+          font-size: 20px;
+          right: 10px;
+        }
+        @media(max-width:940px) {
+          position: relative;
+          max-width: 100%;
+          padding: 0 20px;
+          top: auto;
+        }
     }
 `
 

@@ -60,6 +60,40 @@
     opacity: 1;
   }
 
+/* Media Queries */
+
+@media(max-width:1550px) {
+    .slick-slider {
+        max-width: 96%;
+    }
+}
+@media(max-width:1330px) {
+    .slick-slider {
+        max-width: 100%;
+    }
+}
+@media(max-width:1150px) {
+    .slick-list {
+        overflow: hidden;
+    }
+}
+@media(max-width:940px) {
+    .slick-next {
+        width: 50px;
+        left: -50px;
+    }
+    .slick-next:before {
+        display: none;
+    }
+}
+@media(max-width:840px) {
+    .slick-next {
+        left: -35px;
+    }
+}
+
+
+
 /*
 .slick-dots li button {
     background-color: #fff;

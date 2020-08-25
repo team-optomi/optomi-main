@@ -5,9 +5,9 @@ import Img from "gatsby-image"
 const OptomiLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "rings-only-cleaner.png" }) {
+      placeholderImage: file(relativePath: { eq: "OPS-logo.png" }) {
         childImageSharp {
-          fixed(width: 62, height: 40) {
+          fixed(width: 71, height: 35) {
             ...GatsbyImageSharpFixed
           }
         }

@@ -8,7 +8,7 @@ import SanLogo from "../components/logos/santeka-logo"
 const FixedLogos = () => (
   <LogoCol>
     <Optomi>
-      <a href="http://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link"><OptomiLogo/></a>
+      <a href="http://optomiservices.com/" target="_blank" rel="noopener noreferrer" aria-label="Link"><OptomiLogo/></a>
     </Optomi>
     <Divider style={{ marginTop: '10px', marginBottom: '10px' }}/>
     <Pro>
@@ -41,8 +41,8 @@ const Optomi = styled.div`
   width: 90px;
   margin-left: 10px;
   .gatsby-image-wrapper {
-    width: 62px;
-    height: 40px;
+    width: 71px;
+    height: 35px;
     margin: 0 auto;
     img {
       margin-bottom: 0;

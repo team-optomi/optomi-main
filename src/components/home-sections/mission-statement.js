@@ -61,13 +61,26 @@ const MainSection = styled.div`
     padding-bottom: 80px;
     position: relative;
     z-index: 1;
+    transition-duration: .3s;
+    @media(max-width:1600px) {
+        padding-top: 80px;
+    }
 `
 
 const BackgroundImg = styled(Img)`
     height: 600px;
     width: 600px;
+    transition-duration: .3s;
     img {
         margin-bottom: 0;
+    }
+    @media(max-width:1600px) {
+        height: 500px;
+        width: 500px;
+    }
+    @media(max-width:1200px) {
+        height: 450px;
+        width: 450px;
     }
 `
 
@@ -77,6 +90,19 @@ const ImageBackground = styled.div`
     width: 600px;
     top: 0;
     right: 50px;
+    transition-duration: .3s;
+    @media(max-width:1600px) {
+        height: 500px;
+        width: 500px;
+        right: 10px;
+    }
+    @media(max-width:1200px) {
+        height: 450px;
+        width: 450px;
+    }
+    @media(max-width: 1000px) {
+        display: none;
+    }
 `
 
 const FirstRow = styled.div`
@@ -101,6 +127,7 @@ const MissionContent = styled.div`
         max-width: 720px;
         line-height: 1.2;
         letter-spacing: 1px;
+        transition-duration: .3s;
         .bonvivant {
             font-family: "BonVivant";
             font-size: 80px;
@@ -113,6 +140,28 @@ const MissionContent = styled.div`
         font-size: 24px;
         line-height: 1.3;
         max-width: 700px;
+        transition-duration: .3s;
+    }
+    @media(max-width:1350px) {
+        h2 {
+            max-width: 600px;
+            font-size: 42px;
+            .bonvivant {
+                font-size: 60px;
+            }
+        }
+        p {
+            max-width: 580px;
+            font-size: 20px;
+        }
+    }
+    @media(max-width: 1000px) {
+        h2,
+        p {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 `
 

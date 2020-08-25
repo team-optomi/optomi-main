@@ -20,7 +20,7 @@ class SkillLine extends Component {
           scrollTrigger: {
             trigger: "#trigger",
             scrub: 1,
-            end: 'top center',
+            end: 'top 20%',
             id: 'skill_line'
           }
         });
@@ -51,6 +51,12 @@ const MainContainer = styled.div`
     padding-left: 20px;
     width: 100%;
     margin: 0 auto;
+    @media(max-width:1500px) {
+      max-width: 1140px;
+    }
+    @media(max-width:1200px) {
+      max-width: 940px;
+    }
 `
 
 const Percent = styled.p`
@@ -63,6 +69,9 @@ const Percent = styled.p`
     padding-left: 100px;
     position: relative;
     z-index: 1;
+    @media(max-width:800px) {
+      padding-left: 0;
+    }
 `
 
 const Line = styled.div`
@@ -82,6 +91,10 @@ const Copy = styled.p`
     letter-spacing: 3px;
     max-width: 80%;
     text-align: center;
+    line-height: 1;
+    @media(max-width:800px) {
+      max-width: 100%;
+    }
 `
 
 export default SkillLine

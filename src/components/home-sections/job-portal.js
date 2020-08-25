@@ -40,6 +40,10 @@ const MainSection = styled.div`
     padding-bottom: 0px;
     position: relative;
     z-index: 1;
+    @media(max-width:1200px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const MainContent = styled.div`
@@ -80,6 +84,25 @@ const MainContent = styled.div`
             font-size: 32px;
             line-height: 1.3;
             text-align: center;
+        }
+    }
+    @media(max-width:1200px) {
+        max-width: 900px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media(max-width:1000px) {
+        h2 {
+            font-size: 60px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        p {
+            .jobs-bottom {
+                font-size: 24px;
+            }
         }
     }
 `
