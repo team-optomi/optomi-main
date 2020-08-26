@@ -13,9 +13,9 @@ const SideMainMenu = () => (
         </MenuItem>
         <MenuItem>
             <Link
-            to="/services/"
+            to="/service-offerings/"
             >
-            Services
+            Service Offerings
             </Link>
         </MenuItem>
         <MenuItem>
