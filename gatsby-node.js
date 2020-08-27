@@ -11,9 +11,18 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const BlogPostTemplate = path.resolve("./src/templates/post.js")
+  const ServiceTemplate = path.resolve("./src/templates/service-page.js")
   const result = await graphql(`
     {
       allWordpressPost {
+        edges {
+          node {
+            slug
+            wordpress_id
+          }
+        }
+      }
+      allWordpressWpService {
         edges {
           node {
             slug
@@ -37,4 +46,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 },
             })
         })
+    const ServicePages = result.data.allWordpressWpService.edges
+        ServicePages.forEach(service => {
+            createPage({
+                path: `/service-offerings/${service.node.slug}`,
+                component: ServiceTemplate,
+                context: {
+                id: service.node.wordpress_id,
+                },
+            })
+        })
 }
+
+

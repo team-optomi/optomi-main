@@ -144,8 +144,8 @@ const LogoRight = styled.div`
   visibility: hidden;
   padding-right: 15px;
   .gatsby-image-wrapper {
-    width: 71px;
-    height: 35px;
+    width: 90px;
+    height: 34px;
     img {
       margin-bottom: 0;
     }

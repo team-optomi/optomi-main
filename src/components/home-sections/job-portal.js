@@ -23,7 +23,7 @@ const JobPortal = () => {
 
                 <MainContent 
                     data-sal="slide-up"
-                    data-sal-duration="600"
+                    data-sal-duration="1000"
                     data-sal-delay="300"
                     data-sal-easing="ease"
                     dangerouslySetInnerHTML={{ __html: post.node.content }}
@@ -70,7 +70,7 @@ const MainContent = styled.div`
             text-transform: uppercase;
             letter-spacing: 5px;
             a {
-                background-color: #3582bd;
+                background-color: #298fc2;
                 padding: 15px 70px;
                 font-size: 24px;
                 color: #fff;

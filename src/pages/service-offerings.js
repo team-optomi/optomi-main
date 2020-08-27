@@ -110,7 +110,7 @@ const ServicesPage = () => {
                             >
                                 <Link
                                 style={{textDecoration: 'none'}}
-                                to= {`/jobs/${post.node.slug}`}
+                                to= {`/service-offerings/${post.node.slug}`}
                                 >
                                     <h2>{post.node.title}</h2>
                                 </Link>

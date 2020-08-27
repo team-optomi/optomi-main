@@ -5,9 +5,9 @@ import Img from "gatsby-image"
 const HeaderLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "OPS-logo.png" }) {
+      placeholderImage: file(relativePath: { eq: "Logo-noTag.png" }) {
         childImageSharp {
-          fixed(width: 71, height: 35) {
+          fixed(width: 90, height: 34) {
             ...GatsbyImageSharpFixed
           }
         }

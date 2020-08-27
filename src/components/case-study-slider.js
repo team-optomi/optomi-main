@@ -64,7 +64,7 @@ const SliderContainer = styled.div`
     width: 100%;
     position: relative;
     .blue-block {
-        background-color: #3582bd;
+        background-color: #298fc2;
         position: absolute;
         width: 600px;
         height: 120px;
