@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
+import HeroVideo from '../../videos/home_hero.mp4'
+
 const HomeHero = () => {
 
     const data = useStaticQuery(graphql`
@@ -21,9 +23,6 @@ const HomeHero = () => {
                             }
                         }
                         acf {
-                            video_source {
-                                source_url
-                            }
                             mobile_background {
                                 localFile {
                                     childImageSharp {
@@ -53,7 +52,7 @@ const HomeHero = () => {
                     autoPlay
                     >
                     <source
-                        src={post.node.acf.video_source.source_url}
+                        src={HeroVideo}
                         type="video/mp4"
                     />
                     </video>
