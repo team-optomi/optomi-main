@@ -38,7 +38,7 @@ const DifferentiatorsPage = () => {
                         data-sal-easing="ease"
                     >
                         <h1>{post.node.title}</h1>
-                        <p>Optomi <span>Professional</span> Services</p>
+                        <p>Optomi <span>IT Staffing</span> Services</p>
                     </HeroTitle>
 
                     <HeroContent 
@@ -83,7 +83,7 @@ const HeroTitle = styled.div`
     left: 150px;
     h1 {
         font-family: "Helvetica Thin";
-        color: #5ab3e8;
+        color: #8a8d8f;
         margin-bottom: 0;
         text-transform: lowercase;
         font-size: 90px;

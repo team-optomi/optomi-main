@@ -122,7 +122,7 @@ const MissionContent = styled.div`
     h2 {
         font-family: "Helvetica Thin";
         font-size: 60px;
-        color: #a6aaab;
+        color: #8a8d8f;
         font-weight: 100;
         max-width: 720px;
         line-height: 1.2;

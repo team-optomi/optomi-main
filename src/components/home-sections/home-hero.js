@@ -3,8 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-import heroGIF from '../../gifs/homehero.gif'
-
 const HomeHero = () => {
 
     const data = useStaticQuery(graphql`
@@ -22,6 +20,20 @@ const HomeHero = () => {
                                 }
                             }
                         }
+                        acf {
+                            video_source {
+                                source_url
+                            }
+                            mobile_background {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 1912) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -32,13 +44,20 @@ const HomeHero = () => {
         data.allWordpressWpHomeSection.edges.map(post => (
             <HeroBanner>
                 <ImageBackground>
-                    <BackgroundImg 
-                    src={heroGIF} 
-                    alt={post.node.title} 
-                    data-sal="fade"
-                    data-sal-duration="1000"
-                    data-sal-delay="300"
-                    data-sal-easing="ease"/>
+                    <video
+                    className="video-player"
+                    height="100%"
+                    width="100%"
+                    loop
+                    muted
+                    autoPlay
+                    >
+                    <source
+                        src={post.node.acf.video_source.source_url}
+                        type="video/mp4"
+                    />
+                    </video>
+                    <BackgroundImg sizes={post.node.acf.mobile_background.localFile.childImageSharp.sizes} alt={"Optomi Hero Background"}/>
                 </ImageBackground>
 
                 <HeroContainer>
@@ -67,7 +86,7 @@ const HeroBanner = styled.div`
     align-items: center;
     z-index: 1;
 `
-const BackgroundImg = styled.img`
+const BackgroundImg = styled(Img)`
     position: absolute;
     top: 0px;
     left: 0px;
@@ -75,6 +94,10 @@ const BackgroundImg = styled.img`
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    display: none;
+    @media(max-width:800px) {
+        display: block;
+    }
 `
 
 const ImageBackground = styled.div`
@@ -83,7 +106,21 @@ const ImageBackground = styled.div`
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #aaa;
+    background-color: #000;
+    video {
+        position: absolute;
+        z-index: 0;
+        background-size: 100% 100%;
+        top: 0px;
+        left: 0px; /* fixed to left. Replace it by right if you want.*/
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        @media(max-width:800px) {
+            display: none;
+        }
+    }
 `
 
 const HeroContainer = styled.div`

@@ -38,7 +38,7 @@ const SkillFocused = () => {
 }
 
 const MainSection = styled.div`
-    background-color: #a6aaab;
+    background-color: #8a8d8f;
     padding-top: 60px;
     padding-bottom: 80px;
     position: relative;

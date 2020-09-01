@@ -131,7 +131,7 @@ const MiddleContent = styled.div`
     transition-duration: .3s;
     p {
         font-family: "Helvetica Thin";
-        color: #a6aaab;
+        color: #8a8d8f;
         font-size: 24px;
         line-height: 1.3;
         letter-spacing: 4px;

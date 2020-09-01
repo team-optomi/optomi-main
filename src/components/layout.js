@@ -35,13 +35,13 @@ class Layout extends Component {
                     <PageTransition>
                     <MainContent>
                         <HeaderMain>
-                            <LogoRight>
+                            <MobileLogo>
                               <Link
                                 to="/"
                                 >
                                 <HeaderLogo/>
                               </Link>
-                            </LogoRight>
+                            </MobileLogo>
                             <MenuRight>
                                 <button onClick={() => this.toggleMenu()} aria-label="Open">
                                     <p>menu</p>
@@ -139,7 +139,9 @@ const MainLayout = styled.div`
   }
 `
 
-const LogoRight = styled.div`
+const MobileLogo = styled.div`
+  opacity: 0;
+  visibility: hidden;
   padding-right: 15px;
   .gatsby-image-wrapper {
     width: 90px;
@@ -147,6 +149,10 @@ const LogoRight = styled.div`
     img {
       margin-bottom: 0;
     }
+  }
+  @media(max-width:600px) {
+    opacity: 1;
+    visibility: visible;
   }
 `
 

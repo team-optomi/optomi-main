@@ -67,25 +67,23 @@ const ServicesPage = () => {
                     </HeroBackground>
 
                     <HeroContent>
-                        <div>
-                            <HeroTitle
-                                data-sal="slide-right"
-                                data-sal-duration="1000"
-                                data-sal-delay="300"
-                                data-sal-easing="ease"
-                            >
-                                <h1>{post.node.title}</h1>
-                            </HeroTitle>
-                            <div
-                            data-sal="slide-up"
+                        <HeroTitle
+                            data-sal="slide-right"
                             data-sal-duration="1000"
-                            data-sal-delay="600"
+                            data-sal-delay="300"
                             data-sal-easing="ease"
-                            >
-                                <HeroCopy 
-                                    dangerouslySetInnerHTML={{ __html: post.node.content }}
-                                />
-                            </div>
+                        >
+                            <h1>{post.node.title}</h1>
+                        </HeroTitle>
+                        <div
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-delay="600"
+                        data-sal-easing="ease"
+                        >
+                            <HeroCopy 
+                                dangerouslySetInnerHTML={{ __html: post.node.content }}
+                            />
                         </div>
                     </HeroContent>
 
@@ -93,30 +91,32 @@ const ServicesPage = () => {
                 ))}
                 {data.allWordpressWpService.edges.map((post, i) => (
                     <ServiceBanner>
-                        <ImageBackground
-                        data-sal="slide-up"
-                        data-sal-duration="1000"
-                        data-sal-delay="300"
-                        data-sal-easing="ease"
+                        <Link
+                        style={{textDecoration: 'none'}}
+                        to= {`/service-offerings/${post.node.slug}`}
                         >
-                            <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title}/>
-                        </ImageBackground>
-                        <BannerContent className={i === 1 || i === 3 || i === 5 || i === 7 || i === 9 ? "odd" : "even"}>
-                            <div
-                            data-sal={i === 1 || i === 3 || i === 5 || i === 7 || i === 9 ? "slide-right" : "slide-left"}
+                            <ImageBackground
+                            data-sal="slide-up"
                             data-sal-duration="1000"
-                            data-sal-delay="900"
+                            data-sal-delay="300"
                             data-sal-easing="ease"
                             >
-                                <Link
-                                style={{textDecoration: 'none'}}
-                                to= {`/service-offerings/${post.node.slug}`}
+                                <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title}/>
+                            </ImageBackground>
+                            <BannerContent className={i === 1 || i === 3 || i === 5 || i === 7 || i === 9 ? "odd" : "even"}>
+                                <div
+                                data-sal={i === 1 || i === 3 || i === 5 || i === 7 || i === 9 ? "slide-right" : "slide-left"}
+                                data-sal-duration="1000"
+                                data-sal-delay="900"
+                                data-sal-easing="ease"
                                 >
-                                    <h2>{post.node.title}</h2>
-                                </Link>
-                                <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.content }}/>
-                            </div>
-                        </BannerContent>
+                                    
+                                        <h2>{post.node.title}</h2>
+                                    
+                                    <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.content }}/>
+                                </div>
+                            </BannerContent>
+                        </Link>
                     </ServiceBanner>
                 ))}
             </Layout>
@@ -166,7 +166,7 @@ const HeroContent = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
-    padding-top: 200px;
+    padding-top: 300px;
     padding-bottom: 50px;
     z-index: 2;
     > div {
@@ -237,35 +237,31 @@ const BannerContent = styled.div`
 `
 
 const HeroTitle = styled.div`
-    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 150px;
     h1 {
         font-family: "Helvetica Thin";
-        color: #a6aaab;
+        color: #8a8d8f;
         margin-bottom: 0;
-        text-transform: uppercase;
-        font-size: 80px;
-        letter-spacing: 20px;
+        text-transform: lowercase;
+        font-size: 90px;
         font-weight: 100;
         line-height: 1;
-        margin-bottom: 70px;
-    }
-    @media(max-width:1200px) {
-        h1 {
-            font-size: 60px;
-            margin-bottom: 35px;
+        @media(max-width:1200px) {
+            font-size: 82px;
+        }
+        @media(max-width:500px) {
+            font-size: 52px;
         }
     }
-    @media(max-width:1000px) {
-        h1 {
-            font-size: 42px;
-            letter-spacing: 10px;
-            text-align: center;
-        }
-    }
-    @media(max-width:500px) {
-        h1 {
-            font-size: 28px;
-        }
+    @media(max-width: 600px) {
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 20px;
+        padding-top: 100px;
+        text-align: center;
     }
 `
 
