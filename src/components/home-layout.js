@@ -40,7 +40,7 @@ class HomeLayout extends Component {
 
     componentDidMount() {
       this.tl.to(this.container, {
-          x: 100
+          top: '20px'
       });
     }
     
@@ -56,7 +56,7 @@ class HomeLayout extends Component {
         }
         return (
             <FullPage>
-                <FixedLogos ref={div => (this.container = div)}/>
+                <HomeLogo ref={div => (this.container = div)}/>
                 <MainLayout className={headerName}>
 
                     <PageTransition>
@@ -110,6 +110,16 @@ const MainContent = styled.div`
     top:0;
     left:0;
     transition-duration: .3s;
+`
+
+const HomeLogo = styled.div`
+    position: fixed;
+    top: -120px;
+    left: 5px;
+    width: 110px;
+    height: 54px;
+    background-color: #aaa;
+    z-index: 101;
 `
 
 const SidebarMenu = styled.div`
