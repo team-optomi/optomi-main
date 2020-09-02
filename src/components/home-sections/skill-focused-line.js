@@ -21,7 +21,6 @@ class SkillLine extends Component {
             trigger: "#trigger",
             scrub: 1,
             end: 'top 20%',
-            markers: true,
             id: 'skill_line'
           }
         });

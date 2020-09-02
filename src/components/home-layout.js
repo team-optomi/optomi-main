@@ -40,7 +40,7 @@ class HomeLayout extends Component {
 
     componentDidMount() {
       this.tl.to(this.container, {
-          width: '80%',
+          top: '20px',
       });
     }
     
@@ -114,9 +114,9 @@ const MainContent = styled.div`
 
 const HomeLogo = styled.div`
     position: fixed;
-    top: 20px;
+    top: -120px;
     left: 5px;
-    width: 0%;
+    width: 110px;
     height: 54px;
     background-color: #aaa;
     z-index: 101;
