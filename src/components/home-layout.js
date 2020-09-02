@@ -31,7 +31,6 @@ class HomeLayout extends Component {
             scrub: 1,
             start: 'bottom top',
             end: 'bottom top',
-            markers: true,
             id: 'hero_banner'
           }
         });
@@ -119,7 +118,6 @@ const HomeLogo = styled.div`
     left: 5px;
     width: 110px;
     padding: 10px;
-    background-color: #aaa;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
