@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import "./layout.css"
 import PageTransition from 'gatsby-plugin-page-transitions';
 
-import FixedLogos from "../components/fixed-logos"
+import HeaderLogo from "../components/header-logo"
 import HeaderLogo from "../components/header-logo"
 import SideMainMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
@@ -30,7 +30,7 @@ class HomeLayout extends Component {
           scrollTrigger: {
             trigger: "#heroBanner",
             scrub: 1,
-            start: 'center top',
+            start: 'bottom top',
             end: 'bottom top',
             markers: true,
             id: 'hero_banner'
@@ -56,7 +56,9 @@ class HomeLayout extends Component {
         }
         return (
             <FullPage>
-                <HomeLogo ref={div => (this.container = div)}/>
+                <HomeLogo ref={div => (this.container = div)}>
+                  <HeaderLogo/>
+                </HomeLogo>
                 <MainLayout className={headerName}>
 
                     <PageTransition>
@@ -117,9 +119,22 @@ const HomeLogo = styled.div`
     top: -120px;
     left: 5px;
     width: 110px;
-    height: 54px;
+    padding: 10px;
     background-color: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     z-index: 101;
+    .gatsby-image-wrapper {
+      width: 90px;
+      height: 34px;
+      img {
+        margin-bottom: 0;
+      }
+    }
+    @media(max-width:600px) {
+      display: none;
+    }
 `
 
 const SidebarMenu = styled.div`
