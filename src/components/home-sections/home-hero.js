@@ -41,7 +41,7 @@ const HomeHero = () => {
     return(
         
         data.allWordpressWpHomeSection.edges.map(post => (
-            <HeroBanner>
+            <HeroBanner id={"heroBanner"}>
                 <ImageBackground>
                     <video
                     className="video-player"

@@ -10,11 +10,37 @@ import HeaderLogo from "../components/header-logo"
 import SideMainMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== `undefined`) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.core.globals("ScrollTrigger", ScrollTrigger)
+}
+
 class HomeLayout extends Component {
 
     constructor(props) {
         super(props);
         this.state = { isOpen: false };
+        this.container = null;
+        this.trigger = null;
+        this.tl = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+            trigger: "#heroBanner",
+            scrub: 1,
+            start: 'bottom top',
+            markers: true,
+            id: 'hero_banner'
+          }
+        });
+    }
+
+    componentDidMount() {
+      this.tl.to(this.container, {
+          y: 100
+      });
     }
     
     toggleMenu() {
@@ -29,7 +55,7 @@ class HomeLayout extends Component {
         }
         return (
             <FullPage>
-                <FixedLogos/>
+                <FixedLogos style={{ transform: 'translateY(-100px)' }} ref={div => (this.container = div)}/>
                 <MainLayout className={headerName}>
 
                     <PageTransition>
