@@ -30,7 +30,8 @@ class HomeLayout extends Component {
           scrollTrigger: {
             trigger: "#heroBanner",
             scrub: 1,
-            start: 'bottom top',
+            start: 'top top',
+            end: 'bottom bottom',
             markers: true,
             id: 'hero_banner'
           }
