@@ -40,7 +40,7 @@ class HomeLayout extends Component {
 
     componentDidMount() {
       this.tl.to(this.container, {
-          y: 100
+          x: 100
       });
     }
     
@@ -56,7 +56,7 @@ class HomeLayout extends Component {
         }
         return (
             <FullPage>
-                <FixedLogos style={{ transform: 'translateY(-100px)' }} ref={div => (this.container = div)}/>
+                <FixedLogos ref={div => (this.container = div)}/>
                 <MainLayout className={headerName}>
 
                     <PageTransition>
