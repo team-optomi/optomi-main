@@ -6,7 +6,6 @@ import "./layout.css"
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import HeaderLogo from "../components/header-logo"
-import HeaderLogo from "../components/header-logo"
 import SideMainMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
 
