@@ -30,8 +30,8 @@ class HomeLayout extends Component {
           scrollTrigger: {
             trigger: "#heroBanner",
             scrub: 1,
-            start: 'top top',
-            end: 'bottom bottom',
+            start: 'center top',
+            end: 'bottom top',
             markers: true,
             id: 'hero_banner'
           }
@@ -40,7 +40,7 @@ class HomeLayout extends Component {
 
     componentDidMount() {
       this.tl.to(this.container, {
-          x: 500
+          width: '80%',
       });
     }
     
@@ -116,7 +116,7 @@ const HomeLogo = styled.div`
     position: fixed;
     top: 20px;
     left: 5px;
-    width: 110px;
+    width: 0%;
     height: 54px;
     background-color: #aaa;
     z-index: 101;
