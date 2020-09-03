@@ -24,8 +24,9 @@ class GivingBack extends Component {
             scrub: true,
             start: 'top bottom',
             end: 'top 60%',
-            id: 'mission_parallax',
+            id: 'giving_parallax',
             toggleActions: 'play reset play reset',
+            markers: true,
           }
         });
       }
