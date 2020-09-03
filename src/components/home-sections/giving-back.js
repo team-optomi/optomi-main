@@ -25,6 +25,7 @@ class GivingBack extends Component {
             start: 'top bottom',
             end: 'top 60%',
             id: 'mission_parallax',
+            toggleActions: 'play reset play reset',
           }
         });
       }
@@ -78,6 +79,7 @@ const MainSection = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+    z-index: 1;
 `
 
 const BackgroundImg = styled(Img)`

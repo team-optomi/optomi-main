@@ -25,6 +25,7 @@ class MissionStatement extends Component {
             start: 'top bottom',
             end: 'top 60%',
             id: 'mission_parallax',
+            toggleActions: 'play reset play reset',
           }
         });
       }
@@ -87,7 +88,7 @@ const ImageBackground = styled.div`
     top: 0;
     left: 0;
     z-index: -2;
-    opacity: .3;
+    opacity: 0;
 `
 
 const FirstRow = styled.div`
