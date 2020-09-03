@@ -21,7 +21,7 @@ class GivingBack extends Component {
           paused: true,
           scrollTrigger: {
             trigger: "#giving_trigger",
-            scrub: true,
+            scrub: 0.5,
             start: 'top bottom',
             end: 'top 30%',
             id: 'giving_parallax',
@@ -79,7 +79,7 @@ const MainSection = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
 `
 
 const BackgroundImg = styled(Img)`

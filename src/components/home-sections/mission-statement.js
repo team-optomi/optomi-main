@@ -21,9 +21,9 @@ class MissionStatement extends Component {
           paused: true,
           scrollTrigger: {
             trigger: "#mission_trigger",
-            scrub: true,
+            scrub: 0.5,
             start: 'top bottom',
-            end: 'top 60%',
+            end: 'top center',
             id: 'mission_parallax',
             toggleActions: 'play reset play reset',
           }
