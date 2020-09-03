@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 
 import HeroVideo from '../../videos/home_hero.mp4'
 
+
 const HomeHero = () => {
 
     const data = useStaticQuery(graphql`
@@ -42,32 +43,46 @@ const HomeHero = () => {
         
         data.allWordpressWpHomeSection.edges.map(post => (
             <HeroBanner id={"heroBanner"}>
-                <ImageBackground>
-                    <video
-                    className="video-player"
-                    height="100%"
-                    width="100%"
-                    loop
-                    muted
-                    autoPlay
-                    >
-                    <source
-                        src={HeroVideo}
-                        type="video/mp4"
-                    />
-                    </video>
-                    <BackgroundImg sizes={post.node.acf.mobile_background.localFile.childImageSharp.sizes} alt={"Optomi Hero Background"}/>
-                </ImageBackground>
 
-                <HeroContainer>
-                    <HeroContent 
-                        data-sal="slide-up"
-                        data-sal-delay="1000"
-                        data-sal-easing="ease"
-                    >
-                        <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} />
-                    </HeroContent>
-                </HeroContainer>
+                <HeroMain className={"animate-1"}>
+                    <h1 class="animate-1"><span class="freeland">part of the</span> Optomi Professional Services™ <span class="freeland">family of brands</span></h1>
+                </HeroMain>
+
+                <HeroMain className={"animate-2"}>
+
+                    <div class="animate-2">
+                        <p class="animate-2">Driving tomorrow's technology</p>
+                        <p class="animate-3">with today's optimum talent</p>
+                    </div>
+
+                </HeroMain>
+
+                <HeroMain className={"animate-4"}>
+
+                    <ImageBackground className={"animate-4"}>
+                        <video
+                        className="video-player"
+                        height="100%"
+                        width="100%"
+                        loop
+                        muted
+                        autoPlay
+                        >
+                        <source
+                            src={HeroVideo}
+                            type="video/mp4"
+                        />
+                        </video>
+                        <BackgroundImg sizes={post.node.acf.mobile_background.localFile.childImageSharp.sizes} alt={"Optomi Hero Background"} className={"animate-4"}/>
+                    </ImageBackground>
+
+                    <HeroContainer className={"animate-5"}>
+                        <HeroContent className={"animate-5"}>
+                            <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} className={"animate-5"}/>
+                        </HeroContent>
+                    </HeroContainer>
+                    
+                </HeroMain>
     
             </HeroBanner>
         ))
@@ -80,11 +95,51 @@ const HeroBanner = styled.div`
     min-width: 100%;
     height: 100%;
     width: 100%;
+    z-index: 1;
+    background-color: #000;
+`
+
+const HeroMain = styled.div`
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    z-index: 1;
+    justify-content: center;
+    h1 {
+        font-family: "Helvetica Thin";
+        font-size: 42px;
+        font-weight: 100;
+        line-height: 1.2;
+        color: #fff;
+        text-align: center;
+        max-width: 1340px;
+        width: 100%;
+        padding: 0 20px;
+        span.freeland {
+            font-family: "Freeland";
+            font-weight: 100;
+        }
+    }
+    p {
+        font-family: "Helvetica Thin";
+        font-size: 60px;
+        font-weight: 100;
+        line-height: 1.2;
+        color: #fff;
+        text-align: center;
+        max-width: 1340px;
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 0;
+    }
 `
+
 const BackgroundImg = styled(Img)`
     position: absolute;
     top: 0px;
@@ -128,7 +183,7 @@ const HeroContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 3;
 `
 
 const HeroContent = styled.div`

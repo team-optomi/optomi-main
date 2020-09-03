@@ -87,6 +87,127 @@
   }
 }
 
+/* Home hero animations */
+
+.animate-1 {
+  animation: A1 30s ease-out infinite;
+}
+
+@keyframes A1 {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  7% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-2 {
+  animation: A2 30s ease-out infinite;
+}
+
+@keyframes A2 {
+  0% {
+    opacity: 0;
+  }
+  23% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-3 {
+  animation: A3 30s ease-out infinite;
+}
+
+@keyframes A3 {
+  0% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-4 {
+  animation: A4 30s ease-out infinite;
+}
+
+@keyframes A4 {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-5 {
+  animation: A5 30s ease-out infinite;
+}
+
+@keyframes A5 {
+  0% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 0;
+  }
+  57% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Layout */
 
 .ReactModal__Overlay {
