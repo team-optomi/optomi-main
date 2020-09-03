@@ -25,7 +25,6 @@ class MissionStatement extends Component {
             start: 'top bottom',
             end: 'top 60%',
             id: 'mission_parallax',
-            markers: true,
           }
         });
       }
@@ -164,7 +163,7 @@ export default props => (
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 1920) {
+                                    sizes(maxWidth: 2800) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
