@@ -20,6 +20,7 @@ class DifLineOne extends Component {
           scrollTrigger: {
             trigger: "#row_one_trigger",
             scrub: 1,
+            start: 'top center',
             end: 'top 20%',
             id: 'dif_line_one',
             markers: true
