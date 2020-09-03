@@ -39,7 +39,7 @@ const MainSection = styled.div`
     padding-top: 80px;
     padding-bottom: 0px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     @media(max-width:1200px) {
         padding-left: 20px;
         padding-right: 20px;

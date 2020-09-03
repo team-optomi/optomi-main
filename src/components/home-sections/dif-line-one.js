@@ -21,7 +21,8 @@ class DifLineOne extends Component {
             trigger: "#row_one_trigger",
             scrub: 1,
             end: 'top 20%',
-            id: 'dif_line_one'
+            id: 'dif_line_one',
+            markers: true
           }
         });
       }
@@ -36,7 +37,7 @@ class DifLineOne extends Component {
         return (
             <MainContainer>
                 <Percent>100%</Percent>
-                <div id="trigger" ref={div => (this.trigger = div)} style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
+                <div ref={div => (this.trigger = div)} style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                         <Line ref={div => (this.container = div)}/>
                 </div>
                 <Copy>Skill-Set Focus</Copy>
@@ -77,7 +78,7 @@ const Percent = styled.p`
 const Line = styled.div`
     width: 0%;
     height: 35px;
-    background-color: #000;
+    background-color: #298fc2;
     position: absolute;
     top: 0px;
     left: 0px;

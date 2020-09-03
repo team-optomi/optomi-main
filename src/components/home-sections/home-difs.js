@@ -87,7 +87,7 @@ const MainSection = styled.div`
     padding-top: 80px;
     padding-bottom: 0px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 `
 
 const ImageBackground = styled.div`
