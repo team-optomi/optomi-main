@@ -22,7 +22,7 @@ class MissionStatement extends Component {
           scrollTrigger: {
             trigger: "#mission_trigger",
             start: 'top bottom',
-            end: 'top 80%',
+            end: 'top 60%',
             id: 'mission_parallax',
             markers: true,
           }
@@ -30,7 +30,7 @@ class MissionStatement extends Component {
       }
       componentDidMount() {
         this.tl.to(this.container, {
-            opacity: '100%',
+            opacity: '1',
         });
       }
 
@@ -86,7 +86,7 @@ const ImageBackground = styled.div`
     width: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
     opacity: .3;
 `
 
