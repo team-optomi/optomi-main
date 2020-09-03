@@ -21,6 +21,8 @@ const CaseStudiesMain = styled.div`
     padding-bottom: 180px;
     width: 100%;
     background-color: #fff;
+    position: relative;
+    z-index: 1;
     @media(max-width:840px) {
         padding-left: 30px;
         padding-right: 30px;

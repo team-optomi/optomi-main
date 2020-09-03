@@ -1,72 +1,78 @@
-import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { Component } from "react"
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-const GivingBack = () => {
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    const data = useStaticQuery(graphql`
-        query {
-            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 3}}}}) {
-                edges {
-                    node {
-                        title
-                        content
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 1920) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
-                        acf {
-                            logo {
-                                localFile {
-                                    childImageSharp {
-                                        sizes(maxWidth: 2355) {
-                                            ...GatsbyImageSharpSizes
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `)
-    return(
-        
-        data.allWordpressWpHomeSection.edges.map(post => (
-            <MainSection>
+if (typeof window !== `undefined`) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.core.globals("ScrollTrigger", ScrollTrigger)
+}
 
-                <ImageBackground>
-                    <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
-                </ImageBackground>
+class GivingBack extends Component {
 
-                <MainRow
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-                >
-                    <MainDiv>
-                        <MainContent 
-                            dangerouslySetInnerHTML={{ __html: post.node.content }}
-                        />
-                        <Logo sizes={post.node.acf.logo.localFile.childImageSharp.sizes} alt={"Opt to Give"} />
-                    </MainDiv>
+    constructor(props) {
+        super(props);
+        this.container = null;
+        this.trigger = null;
+        this.tl = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+            trigger: "#giving_trigger",
+            scrub: true,
+            start: 'top bottom',
+            end: 'top 60%',
+            id: 'mission_parallax',
+          }
+        });
+      }
+      componentDidMount() {
+        this.tl.to(this.container, {
+            opacity: '1',
+        });
+      }
+
+      render() {
+
+        const { data } = this.props; 
+
+        return(
+
+            data.allWordpressWpHomeSection.edges.map(post => (
+                <MainSection id={"giving_trigger"}>
+    
+                    <ImageBackground ref={div => (this.container = div)}>
+                        <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
+                    </ImageBackground>
+    
+                    <MainRow
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    >
+                        <MainDiv>
+                            <MainContent 
+                                dangerouslySetInnerHTML={{ __html: post.node.content }}
+                            />
+                            <Logo sizes={post.node.acf.logo.localFile.childImageSharp.sizes} alt={"Opt to Give"} />
+                        </MainDiv>
+                        
+                    </MainRow>
                     
-                </MainRow>
-                
-            </MainSection>
-        ))
-    )
+                </MainSection>
+            ))
+
+        );
+
+    }
+
 }
 
 const MainSection = styled.div`
+    background-color: #aaa;
     position: relative;
     height: 80vh;
     width: 100%;
@@ -75,20 +81,17 @@ const MainSection = styled.div`
 `
 
 const BackgroundImg = styled(Img)`
-    height: 80vh;
-    width: 100%;
-    img {
-        margin-bottom: 0;
-    }
+    height: 100vh;
 `
 
 const ImageBackground = styled.div`
-    position: absolute;
-    height: 80vh;
+    position: fixed;
+    height: 100vh;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
+    opacity: 0;
 `
 
 const MainRow = styled.div`
@@ -128,4 +131,40 @@ const Logo = styled(Img)`
     margin: 0 auto;
 `
 
-export default GivingBack
+export default props => (
+    <StaticQuery
+      query={graphql`
+        query {
+            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 3}}}}) {
+                edges {
+                    node {
+                        title
+                        content
+                        featured_media {
+                            localFile {
+                                childImageSharp {
+                                    sizes(maxWidth: 2800) {
+                                        ...GatsbyImageSharpSizes
+                                    }
+                                }
+                            }
+                        }
+                        acf {
+                            logo {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 2355) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      `}
+      render={data => <GivingBack data={data} {...props} />}
+    />
+  );
