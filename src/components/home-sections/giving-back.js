@@ -23,7 +23,7 @@ class GivingBack extends Component {
             trigger: "#giving_trigger",
             scrub: true,
             start: 'top bottom',
-            end: 'top center',
+            end: 'top 30%',
             id: 'giving_parallax',
             toggleActions: 'play reset play reset',
           }

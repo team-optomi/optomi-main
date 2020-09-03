@@ -70,7 +70,7 @@ const MainSection = styled.div`
     padding-top: 120px;
     padding-bottom: 80px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     transition-duration: .3s;
     @media(max-width:1600px) {
         padding-top: 80px;

@@ -5,9 +5,8 @@ import SEO from "../components/seo"
 
 import HomeHero from "../components/home-sections/home-hero"
 import MissionStatement from "../components/home-sections/mission-statement"
-import BrandGifs from "../components/home-sections/brand-gifs"
+import HomeDifs from "../components/home-sections/home-difs"
 import JobPortal from "../components/home-sections/job-portal"
-import SkillFocused from "../components/home-sections/skill-focused"
 import CaseStudies from "../components/case-studies"
 import GivingBack from "../components/home-sections/giving-back"
 import HomeFooter from "../components/home-sections/home-footer"
@@ -42,9 +41,8 @@ const IndexPage = () => {
         />
         <HomeHero/>
         <MissionStatement/>
-        <BrandGifs/>
+        <HomeDifs/>
         <JobPortal/>
-        <SkillFocused/>
         <CaseStudies/>
         <GivingBack/>
         <HomeFooter/>

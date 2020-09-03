@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-import HeroVideo from '../../videos/home_hero.mp4'
+import HeroVideo from '../../videos/home_hero_new.mp4'
 
 
 const HomeHero = () => {
@@ -95,7 +95,7 @@ const HeroBanner = styled.div`
     min-width: 100%;
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: #000;
     overflow: hidden;
 `

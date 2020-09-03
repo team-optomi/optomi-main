@@ -38,7 +38,7 @@ const MainSection = styled.div`
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 `
 
 const MainRow = styled.div`

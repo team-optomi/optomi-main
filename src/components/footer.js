@@ -68,8 +68,7 @@ const FooterMain = styled.div`
     background-color: #000;
     padding-top: 50px;
     position: relative;
-    z-index: 1;
-    position: relative;
+    z-index: 2;
     border-top: 1px solid #333;
     overflow: hidden;
 `
