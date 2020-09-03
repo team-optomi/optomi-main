@@ -1,62 +1,71 @@
-import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { Component } from "react"
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-const MissionStatement = () => {
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    const data = useStaticQuery(graphql`
-        query {
-            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 7}}}}) {
-                edges {
-                    node {
-                        title
-                        content
-                        featured_media {
-                            localFile {
-                                childImageSharp {
-                                    sizes(maxWidth: 1200) {
-                                        ...GatsbyImageSharpSizes
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `)
-    return(
-        
-        data.allWordpressWpHomeSection.edges.map(post => (
-            <MainSection>
+if (typeof window !== `undefined`) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.core.globals("ScrollTrigger", ScrollTrigger)
+}
 
-                <ImageBackground
-                data-sal="slide-left"
-                data-sal-duration="1000"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-                >
-                    <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
-                </ImageBackground>
+class MissionStatement extends Component {
 
-                <FirstRow>
-                    <MissionContent 
-                        data-sal="slide-up"
-                        data-sal-duration="1000"
-                        data-sal-delay="600"
-                        data-sal-easing="ease"
-                        dangerouslySetInnerHTML={{ __html: post.node.content }}
-                    />
-                </FirstRow>
-                    
-            </MainSection>
-        ))
-    )
+    constructor(props) {
+        super(props);
+        this.container = null;
+        this.trigger = null;
+        this.tl = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+            trigger: "#mission_trigger",
+            start: 'top bottom',
+            end: 'top 80%',
+            id: 'mission_parallax',
+            markers: true,
+          }
+        });
+      }
+      componentDidMount() {
+        this.tl.to(this.container, {
+            opacity: '100%',
+        });
+      }
+
+    render() {
+
+        const { data } = this.props; 
+
+        return(
+            data.allWordpressWpHomeSection.edges.map(post => (
+                <MainSection id={"mission_trigger"}>
+    
+                    <ImageBackground ref={div => (this.container = div)}>
+                        <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
+                    </ImageBackground>
+    
+                    <FirstRow>
+                        <MissionContent 
+                            data-sal="slide-up"
+                            data-sal-duration="1000"
+                            data-sal-delay="600"
+                            data-sal-easing="ease"
+                            dangerouslySetInnerHTML={{ __html: post.node.content }}
+                        />
+                    </FirstRow>
+                        
+                </MainSection>
+            ))
+        );
+
+    }
+
 }
 
 const MainSection = styled.div`
-    background-color: #000;
+    background-color: #aaa;
     padding-top: 120px;
     padding-bottom: 80px;
     position: relative;
@@ -68,41 +77,17 @@ const MainSection = styled.div`
 `
 
 const BackgroundImg = styled(Img)`
-    height: 600px;
-    width: 600px;
-    transition-duration: .3s;
-    img {
-        margin-bottom: 0;
-    }
-    @media(max-width:1600px) {
-        height: 500px;
-        width: 500px;
-    }
-    @media(max-width:1200px) {
-        height: 450px;
-        width: 450px;
-    }
+    height: 100vh;
 `
 
 const ImageBackground = styled.div`
-    position: absolute;
-    height: 600px;
-    width: 600px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
     top: 0;
-    right: 50px;
-    transition-duration: .3s;
-    @media(max-width:1600px) {
-        height: 500px;
-        width: 500px;
-        right: 10px;
-    }
-    @media(max-width:1200px) {
-        height: 450px;
-        width: 450px;
-    }
-    @media(max-width: 1000px) {
-        display: none;
-    }
+    left: 0;
+    z-index: -1;
+    opacity: .3;
 `
 
 const FirstRow = styled.div`
@@ -165,4 +150,30 @@ const MissionContent = styled.div`
     }
 `
 
-export default MissionStatement
+
+export default props => (
+    <StaticQuery
+      query={graphql`
+        query {
+            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 7}}}}) {
+                edges {
+                    node {
+                        title
+                        content
+                        featured_media {
+                            localFile {
+                                childImageSharp {
+                                    sizes(maxWidth: 1920) {
+                                        ...GatsbyImageSharpSizes
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      `}
+      render={data => <MissionStatement data={data} {...props} />}
+    />
+  );
