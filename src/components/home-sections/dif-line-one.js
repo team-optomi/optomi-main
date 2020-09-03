@@ -37,11 +37,11 @@ class DifLineOne extends Component {
 
         return (
             <MainContainer>
-                <Percent>100%</Percent>
+                <Copy>Skill-Set Focused</Copy>
                 <div ref={div => (this.trigger = div)} style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                         <Line ref={div => (this.container = div)}/>
                 </div>
-                <Copy>Skill-Set Focus</Copy>
+                <Percent>100%</Percent>
             </MainContainer>
         );
     }
@@ -67,8 +67,9 @@ const Percent = styled.p`
     line-height: 1;
     letter-spacing: 5px;
     color: #fff;
-    margin-bottom: -25px;
-    padding-left: 100px;
+    text-align: right;
+    margin-top: -25px;
+    padding-right: 100px;
     position: relative;
     z-index: 1;
     @media(max-width:800px) {
@@ -82,7 +83,7 @@ const Line = styled.div`
     background-color: #298fc2;
     position: absolute;
     top: 0px;
-    left: 0px;
+    right: 0px;
 `
 
 const Copy = styled.p`
@@ -91,8 +92,8 @@ const Copy = styled.p`
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 3px;
-    max-width: 80%;
-    text-align: center;
+    max-width: 100%;
+    text-align: right;
     line-height: 1;
     @media(max-width:800px) {
       max-width: 100%;
