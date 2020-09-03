@@ -21,6 +21,7 @@ class MissionStatement extends Component {
           paused: true,
           scrollTrigger: {
             trigger: "#mission_trigger",
+            scrub: true,
             start: 'top bottom',
             end: 'top 60%',
             id: 'mission_parallax',
