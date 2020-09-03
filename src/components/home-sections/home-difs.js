@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Img from "gatsby-image"
 
 import DifLineOne from './dif-line-one'
+import DifLineTwo from './dif-line-two'
+import DifLineThree from './dif-line-three'
 
 const HomeDifs = () => {
 
@@ -63,7 +65,7 @@ const HomeDifs = () => {
                 data-sal-easing="ease"
                 id={"row_two_trigger"}
                 >
-                    <p>[Row two content]</p>
+                    <DifLineTwo/>
                 </RowTwo>
 
                 <RowThree
@@ -73,7 +75,7 @@ const HomeDifs = () => {
                 data-sal-easing="ease"
                 id={"row_three_trigger"}
                 >
-                    <p>[Row three content]</p>
+                    <DifLineThree/>
                 </RowThree>
                     
             </MainSection>

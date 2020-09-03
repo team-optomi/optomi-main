@@ -9,7 +9,7 @@ if (typeof window !== `undefined`) {
   gsap.core.globals("ScrollTrigger", ScrollTrigger)
 }
 
-class DifLineOne extends Component {
+class DifLineThree extends Component {
 
     constructor(props) {
         super(props);
@@ -18,11 +18,11 @@ class DifLineOne extends Component {
         this.tl = gsap.timeline({
           paused: true,
           scrollTrigger: {
-            trigger: "#row_one_trigger",
+            trigger: "#row_three_trigger",
             scrub: 1,
             start: 'top center',
             end: 'top 20%',
-            id: 'dif_line_one',
+            id: 'dif_line_three',
           }
         });
       }
@@ -36,7 +36,7 @@ class DifLineOne extends Component {
 
         return (
             <MainContainer>
-                <Copy>Skill-Set Focused</Copy>
+                <Copy>Consultant Centered</Copy>
                 <div ref={div => (this.trigger = div)} style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                         <Line ref={div => (this.container = div)}/>
                 </div>
@@ -99,4 +99,4 @@ const Copy = styled.p`
     }
 `
 
-export default DifLineOne
+export default DifLineThree
