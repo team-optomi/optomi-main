@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
+import DifLineOne from './dif-line-one'
+
 const HomeDifs = () => {
 
     const data = useStaticQuery(graphql`
@@ -49,8 +51,9 @@ const HomeDifs = () => {
                 data-sal-duration="1000"
                 data-sal-delay="300"
                 data-sal-easing="ease"
+                id={"row_one_trigger"}
                 >
-                    <p>[Row one content]</p>
+                    <DifLineOne/>
                 </RowOne>
 
                 <RowTwo
@@ -58,6 +61,7 @@ const HomeDifs = () => {
                 data-sal-duration="1000"
                 data-sal-delay="300"
                 data-sal-easing="ease"
+                id={"row_two_trigger"}
                 >
                     <p>[Row two content]</p>
                 </RowTwo>
@@ -67,6 +71,7 @@ const HomeDifs = () => {
                 data-sal-duration="1000"
                 data-sal-delay="300"
                 data-sal-easing="ease"
+                id={"row_three_trigger"}
                 >
                     <p>[Row three content]</p>
                 </RowThree>
