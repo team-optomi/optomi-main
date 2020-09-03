@@ -23,10 +23,9 @@ class GivingBack extends Component {
             trigger: "#giving_trigger",
             scrub: true,
             start: 'top bottom',
-            end: 'top 60%',
+            end: 'top center',
             id: 'giving_parallax',
             toggleActions: 'play reset play reset',
-            markers: true,
           }
         });
       }
@@ -74,7 +73,7 @@ class GivingBack extends Component {
 }
 
 const MainSection = styled.div`
-    background-color: #aaa;
+    background-color: #000;
     position: relative;
     height: 80vh;
     width: 100%;
