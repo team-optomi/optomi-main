@@ -34,7 +34,7 @@ const JobPortal = () => {
                     <h2
                     data-sal="slide-right"
                     data-sal-duration="1000"
-                    data-sal-delay=""
+                    data-sal-delay="300"
                     data-sal-easing="ease"
                     >{post.node.title}</h2>
                     <MainCopy 

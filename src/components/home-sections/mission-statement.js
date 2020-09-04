@@ -48,12 +48,19 @@ class MissionStatement extends Component {
                     </ImageBackground>
     
                     <FirstRow>
+                        <MissionTitle
+                        data-sal="slide-right"
+                        data-sal-duration="1000"
+                        data-sal-delay="600"
+                        data-sal-easing="ease"
+                        dangerouslySetInnerHTML={{ __html: post.node.content }}
+                        />
                         <MissionContent 
                             data-sal="slide-up"
                             data-sal-duration="1000"
                             data-sal-delay="600"
                             data-sal-easing="ease"
-                            dangerouslySetInnerHTML={{ __html: post.node.content }}
+                            dangerouslySetInnerHTML={{ __html: post.node.acf.main_copy }}
                         />
                     </FirstRow>
                         
@@ -103,7 +110,7 @@ const FirstRow = styled.div`
     }
 `
 
-const MissionContent = styled.div`
+const MissionTitle = styled.div`
     text-align: left;
     h2 {
         font-family: "Helvetica Thin";
@@ -120,6 +127,26 @@ const MissionContent = styled.div`
             padding: 0 10px;
         }
     }
+    @media(max-width:1350px) {
+        h2 {
+            max-width: 600px;
+            font-size: 42px;
+            .bonvivant {
+                font-size: 60px;
+            }
+        }
+    }
+    @media(max-width: 1000px) {
+        h2 {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+`
+
+const MissionContent = styled.div`
+    text-align: left;
     p {
         font-family: "Helvetica Thin";
         color: #fff;
@@ -129,20 +156,12 @@ const MissionContent = styled.div`
         transition-duration: .3s;
     }
     @media(max-width:1350px) {
-        h2 {
-            max-width: 600px;
-            font-size: 42px;
-            .bonvivant {
-                font-size: 60px;
-            }
-        }
         p {
             max-width: 580px;
             font-size: 20px;
         }
     }
     @media(max-width: 1000px) {
-        h2,
         p {
             text-align: center;
             margin-left: auto;
@@ -169,6 +188,9 @@ export default props => (
                                     }
                                 }
                             }
+                        }
+                        acf {
+                            main_copy
                         }
                     }
                 }
