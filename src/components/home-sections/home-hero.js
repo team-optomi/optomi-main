@@ -45,43 +45,43 @@ const HomeHero = () => {
             <HeroBanner id={"heroBanner"}>
 
                 <HeroMain className={"animate-1"}>
-                    <h1 class="animate-1"><span class="freeland">part of the</span> Optomi Professional Services™ <span class="freeland">family of brands</span></h1>
+
+                <ImageBackground className={"animate-1"}>
+                    <video
+                    className="video-player"
+                    height="100%"
+                    width="100%"
+                    loop
+                    muted
+                    autoPlay
+                    >
+                    <source
+                        src={HeroVideo}
+                        type="video/mp4"
+                    />
+                    </video>
+                    <BackgroundImg sizes={post.node.acf.mobile_background.localFile.childImageSharp.sizes} alt={"Optomi Hero Background"} className={"animate-1"}/>
+                </ImageBackground>
+
+                <HeroContainer className={"animate-2"}>
+                    <HeroContent className={"animate-2"}>
+                        <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} className={"animate-5"}/>
+                    </HeroContent>
+                </HeroContainer>
+
                 </HeroMain>
 
-                <HeroMain className={"animate-2"}>
-
-                    <div class="animate-2">
-                        <p class="animate-2">Driving tomorrow's technology</p>
-                        <p class="animate-3">with today's optimum talent</p>
-                    </div>
-
+                <HeroMain className={"animate-3"}>
+                    <h1 class="animate-3"><span class="freeland">part of the</span> Optomi Professional Services™ <span class="freeland">family of brands</span></h1>
                 </HeroMain>
 
                 <HeroMain className={"animate-4"}>
 
-                    <ImageBackground className={"animate-4"}>
-                        <video
-                        className="video-player"
-                        height="100%"
-                        width="100%"
-                        loop
-                        muted
-                        autoPlay
-                        >
-                        <source
-                            src={HeroVideo}
-                            type="video/mp4"
-                        />
-                        </video>
-                        <BackgroundImg sizes={post.node.acf.mobile_background.localFile.childImageSharp.sizes} alt={"Optomi Hero Background"} className={"animate-4"}/>
-                    </ImageBackground>
+                    <div class="animate-4">
+                        <p class="animate-4">Driving tomorrow's technology</p>
+                        <p class="animate-5">with today's optimum talent</p>
+                    </div>
 
-                    <HeroContainer className={"animate-5"}>
-                        <HeroContent className={"animate-5"}>
-                            <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} className={"animate-5"}/>
-                        </HeroContent>
-                    </HeroContainer>
-                    
                 </HeroMain>
     
             </HeroBanner>

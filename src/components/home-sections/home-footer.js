@@ -23,18 +23,18 @@ const HomeFooter = () => {
         data.allWordpressWpHomeSection.edges.map(post => (
             <MainSection>
                 <MainRow>
-                <MainTitle 
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-                dangerouslySetInnerHTML={{ __html: post.node.content }}/>
-                <MainContent 
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-                dangerouslySetInnerHTML={{ __html: post.node.acf.main_copy }}/>
+                    <MainTitle 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    dangerouslySetInnerHTML={{ __html: post.node.content }}/>
+                    <MainContent 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    dangerouslySetInnerHTML={{ __html: post.node.acf.main_copy }}/>
                 </MainRow>
             </MainSection>
         ))

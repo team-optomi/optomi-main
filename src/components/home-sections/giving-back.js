@@ -73,7 +73,7 @@ class GivingBack extends Component {
 }
 
 const MainSection = styled.div`
-    background-color: #000;
+    background-color: #aaa;
     position: relative;
     height: 80vh;
     width: 100%;
