@@ -72,7 +72,7 @@ const HomeHero = () => {
                 </HeroMain>
 
                 <HeroMain className={"animate-3"}>
-                    <h1 class="animate-3"><span class="freeland">part of the</span> Optomi Professional Services™ <span class="freeland">family of brands</span></h1>
+                    <h1 class="animate-3"><span class="freeland">part of the</span> Optomi Professional Services<sup>™</sup> <span class="freeland">family of brands</span></h1>
                 </HeroMain>
 
                 <HeroMain className={"animate-4"}>

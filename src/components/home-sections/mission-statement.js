@@ -118,7 +118,7 @@ const MissionTitle = styled.div`
         color: #8a8d8f;
         font-weight: 100;
         max-width: 720px;
-        line-height: 1.2;
+        line-height: 1;
         letter-spacing: 1px;
         transition-duration: .3s;
         .bonvivant {
