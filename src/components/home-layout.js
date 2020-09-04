@@ -163,7 +163,7 @@ const SidebarMenu = styled.div`
 `
 
 const HeaderMain = styled.div`
-  position: absolute;
+  position: fixed;
   margin: 0px auto;
   max-width: 100%;
   width: 100%;

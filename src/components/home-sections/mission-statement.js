@@ -58,7 +58,7 @@ class MissionStatement extends Component {
                         <MissionContent 
                             data-sal="slide-up"
                             data-sal-duration="1000"
-                            data-sal-delay="600"
+                            data-sal-delay="900"
                             data-sal-easing="ease"
                             dangerouslySetInnerHTML={{ __html: post.node.acf.main_copy }}
                         />
