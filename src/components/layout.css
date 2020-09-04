@@ -90,7 +90,7 @@
 /* Home hero animations */
 
 .animate-1 {
-  animation: A1 20s ease-out infinite;
+  animation: A1 18s ease-out infinite;
 }
 
 @keyframes A1 {
@@ -115,7 +115,7 @@
 }
 
 .animate-2 {
-  animation: A2 20s ease-out infinite;
+  animation: A2 18s ease-out infinite;
 }
 
 @keyframes A2 {
@@ -140,7 +140,7 @@
 }
 
 .animate-3 {
-  animation: A3 20s ease-out infinite;
+  animation: A3 18s ease-out infinite;
 }
 
 @keyframes A3 {
@@ -165,7 +165,7 @@
 }
 
 .animate-4 {
-  animation: A4 20s ease-out infinite;
+  animation: A4 18s ease-out infinite;
 }
 
 @keyframes A4 {
@@ -187,7 +187,7 @@
 }
 
 .animate-5 {
-  animation: A5 20s ease-out infinite;
+  animation: A5 18s ease-out infinite;
 }
 
 @keyframes A5 {

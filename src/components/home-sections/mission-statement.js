@@ -23,7 +23,7 @@ class MissionStatement extends Component {
             trigger: "#mission_trigger",
             scrub: 0.5,
             start: 'top bottom',
-            end: 'top center',
+            end: 'top 30%',
             id: 'mission_parallax',
             toggleActions: 'play reset play reset',
           }
