@@ -65,7 +65,7 @@ const HomeHero = () => {
 
                 <HeroContainer className={"animate-2"}>
                     <HeroContent className={"animate-2"}>
-                        <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} className={"animate-5"}/>
+                        <HeroLogo sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={"Optomi Logo"} className={"animate-2"}/>
                     </HeroContent>
                 </HeroContainer>
 
