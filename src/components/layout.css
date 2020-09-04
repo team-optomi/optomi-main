@@ -90,7 +90,7 @@
 /* Home hero animations */
 
 .animate-1 {
-  animation: A1 25s ease-out infinite;
+  animation: A1 20s ease-out infinite;
 }
 
 @keyframes A1 {
@@ -103,10 +103,10 @@
   6% {
     opacity: 1;
   }
-  30% {
+  40% {
     opacity: 1;
   }
-  33% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -115,7 +115,7 @@
 }
 
 .animate-2 {
-  animation: A2 25s ease-out infinite;
+  animation: A2 20s ease-out infinite;
 }
 
 @keyframes A2 {
@@ -125,13 +125,13 @@
   6% {
     opacity: 0;
   }
-  9% {
+  12% {
     opacity: 1;
   }
-  30% {
+  40% {
     opacity: 1;
   }
-  33% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -140,23 +140,23 @@
 }
 
 .animate-3 {
-  animation: A3 25s ease-out infinite;
+  animation: A3 20s ease-out infinite;
 }
 
 @keyframes A3 {
   0% {
     opacity: 0;
   }
-  36% {
+  50% {
     opacity: 0;
   }
-  39% {
+  60% {
     opacity: 1;
   }
-  63% {
+  65% {
     opacity: 1;
   }
-  66% {
+  70% {
     opacity: 0;
   }
   100% {
@@ -165,20 +165,20 @@
 }
 
 .animate-4 {
-  animation: A4 25s ease-out infinite;
+  animation: A4 20s ease-out infinite;
 }
 
 @keyframes A4 {
   0% {
     opacity: 0;
   }
-  69% {
+  70% {
     opacity: 0;
   }
-  72% {
+  80% {
     opacity: 1;
   }
-  97% {
+  95% {
     opacity: 1;
   }
   100% {
@@ -187,20 +187,20 @@
 }
 
 .animate-5 {
-  animation: A5 25s ease-out infinite;
+  animation: A5 20s ease-out infinite;
 }
 
 @keyframes A5 {
   0% {
     opacity: 0;
   }
-  72% {
+  80% {
     opacity: 0;
   }
-  75% {
+  90% {
     opacity: 1;
   }
-  97% {
+  95% {
     opacity: 1;
   }
   100% {

@@ -82,7 +82,7 @@ const Line = styled.div`
     background-color: #298fc2;
     position: absolute;
     top: 0px;
-    right: 0px;
+    left: 20%;
 `
 
 const Copy = styled.p`
