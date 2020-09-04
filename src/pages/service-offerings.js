@@ -6,6 +6,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import SkillFocused from "../components/skill-focused.js"
+
 
 const ServicesPage = () => {
 
@@ -89,6 +91,9 @@ const ServicesPage = () => {
 
                 </HeroBanner>
                 ))}
+
+                <SkillFocused/>
+
                 {data.allWordpressWpService.edges.map((post, i) => (
                     <ServiceBanner>
                         <Link
