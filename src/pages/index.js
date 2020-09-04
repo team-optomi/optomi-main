@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import HomeHero from "../components/home-sections/home-hero"
 import MissionStatement from "../components/home-sections/mission-statement"
 import HomeDifs from "../components/home-sections/home-difs"
+import Explore from "../components/home-sections/explore"
 import JobPortal from "../components/home-sections/job-portal"
 import CaseStudies from "../components/case-studies"
 import GivingBack from "../components/home-sections/giving-back"
@@ -42,6 +43,7 @@ const IndexPage = () => {
         <HomeHero/>
         <MissionStatement/>
         <HomeDifs/>
+        <Explore/>
         <JobPortal/>
         <CaseStudies/>
         <GivingBack/>
