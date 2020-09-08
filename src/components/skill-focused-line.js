@@ -4,6 +4,11 @@ import styled from 'styled-components'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+if (typeof window !== `undefined`) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.core.globals("ScrollTrigger", ScrollTrigger)
+}
+
 class SkillLine extends Component {
 
     constructor(props) {
