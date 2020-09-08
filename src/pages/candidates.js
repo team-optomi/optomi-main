@@ -17,7 +17,7 @@ const CandidatesPage = () => {
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 1920) {
+                                    sizes(maxWidth: 2800) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
