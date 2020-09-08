@@ -16,12 +16,12 @@ const SkillLineV2 = () => {
         let tl = gsap.timeline({
             paused: true,
             scrollTrigger: {
-            trigger: '.trigger',
-            scrub: 1,
-            end: 'top 20%',
-            id: 'skill_line',
-            markers: true,
-            },
+                trigger: '.trigger',
+                scrub: 1,
+                start: 'top 90%',
+                end: 'top 20%',
+                id: 'skill_line',
+                },
             })
             tl.to('.line', { width: '80%' })
     
