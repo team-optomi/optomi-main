@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import SkillLine from './skill-focused-line'
+import SkillLine from './skill-focused-line-v2'
 
 const SkillFocused = () => {
 
