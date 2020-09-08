@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-import DifLineOne from './dif-line-one'
-import DifLineTwo from './dif-line-two'
-import DifLineThree from './dif-line-three'
+import DifLineOne from './dif-line-one-v2'
+import DifLineTwo from './dif-line-two-v2'
+import DifLineThree from './dif-line-three-v2'
 
 const HomeDifs = () => {
 
