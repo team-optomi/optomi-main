@@ -12,6 +12,47 @@
     display: none !important;
 }
 
+
+.slick-prev {
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    right: 40px;
+    left: auto;
+    top: auto;
+    bottom: -80px;
+    z-index: 3;
+    transition-duration: .3s;
+}
+
+.slick-prev:hover {
+    z-index: 3;
+    opacity: .75;
+    background-color: transparent;
+}
+
+.slick-prev:before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 1px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.slick-prev:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 6px;
+    height: 40px;
+    width: 40px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: rotate(135deg);
+}
+
 .slick-next {
     width: 200px;
     height: 80px;
@@ -76,13 +117,30 @@
     .slick-list {
         overflow: hidden;
     }
+    .slick-prev {
+        right: 0;
+        bottom: -120px;
+    }
+    .slick-prev:before {
+        background-color: #000;
+    }
+    .slick-prev:after {
+        border-color: #000;
+    }
 }
 @media(max-width:940px) {
     .slick-next {
         width: 50px;
         left: -50px;
     }
-    .slick-next:before {
+    .slick-prev {
+        width: 50px;
+        right: -50px;
+        top: 50%;
+        bottom: auto;
+    }
+    .slick-next:before,
+    .slick-prev:before {
         display: none;
     }
 }
