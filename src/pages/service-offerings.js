@@ -27,6 +27,11 @@ const ServicesPage = () => {
                                 }
                             }
                         }
+                        acf {
+                            second_paragraph
+                            meta_title
+                            meta_description
+                        }
                     }
                 }
             }
@@ -57,7 +62,9 @@ const ServicesPage = () => {
             <Layout>
                 {data.allWordpressWpCustomPage.edges.map(post => (
                 <SEO 
-                title={post.node.title} 
+                title={post.node.acf.meta_title} 
+                description={post.node.acf.meta_description}
+                image={post.node.featured_media.localFile.childImageSharp.sizes}
                 />
                 ))}
 
@@ -93,6 +100,21 @@ const ServicesPage = () => {
                 ))}
 
                 <SkillFocused/>
+
+                {data.allWordpressWpCustomPage.edges.map(post => (
+                <SecondParagraph>
+                    <div
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-delay="600"
+                    data-sal-easing="ease"
+                    >
+                        <HeroCopy 
+                            dangerouslySetInnerHTML={{ __html: post.node.acf.second_paragraph }}
+                        />
+                    </div>
+                </SecondParagraph>
+                ))}
 
                 {data.allWordpressWpService.edges.map((post, i) => (
                     <ServiceBanner>
@@ -241,6 +263,48 @@ const BannerContent = styled.div`
     }
 `
 
+const SecondParagraph = styled.div`
+    background-color: #000;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    > div {
+        max-width: 1340px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+        transition-duration: .3s;
+        @media(max-width:1500px) {
+            max-width: 1140px;
+        }
+        @media(max-width:1200px) {
+            max-width: 940px;
+        }
+    }
+    &.even {
+        text-align: right;
+        p {
+            margin-left: auto;
+        }
+    }
+    @media(max-width:1000px) {
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @media(max-width:800px) {
+        text-align: center;
+        &.even {
+            text-align: center;
+        }
+        p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+`
+
+
 const HeroTitle = styled.div`
     position: absolute;
     top: 100px;
@@ -278,10 +342,11 @@ const HeroCopy = styled.div`
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 20px;
+        font-size: 32px;
         color: #fff;
         line-height: 1.2;
         transition-duration: .3s;
+        text-align: center;
         &.bonvivant {
             font-family: "BonVivant";
             color: #fff;
@@ -290,6 +355,9 @@ const HeroCopy = styled.div`
             font-weight: 100;
             margin-top: 20px;
             padding-right: 120px;
+        }
+        br {
+            display: none;
         }
     }
     @media(max-width:1200px) {
