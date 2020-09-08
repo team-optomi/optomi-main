@@ -44,7 +44,7 @@ function ParticleBG() {
                 }
             },
             size: {
-                value: 4,
+                value: 3,
                 random: true,
                 anim: {
                     enable: false,
@@ -57,10 +57,11 @@ function ParticleBG() {
                 enable: true,
                 color: '#666',
                 opacity: 0.4,
+                distance: 100,
             },
             move: {
                 enable: true,
-                speed: 1,
+                speed: 3,
                 direction: "none",
                 random: false,
                 straight: false,
