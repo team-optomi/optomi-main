@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ParticleBG from "../components/particle-bg"
 
 const DifferentiatorsPage = () => {
 
@@ -85,8 +86,9 @@ const DifferentiatorsPage = () => {
                 image={post.node.featured_media.localFile.childImageSharp.sizes}
                 />
                 <HeroBanner>
-                    <ImageBackground>
-                    </ImageBackground>
+                    <CanvasBackground>
+                        <ParticleBG/>
+                    </CanvasBackground>
 
                     <HeroTitle
                         data-sal="slide-right"
@@ -204,6 +206,15 @@ const HeroBanner = styled.div`
     @media (max-width:600px) {
         display: block;
     }
+`
+
+const CanvasBackground = styled.div`
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 `
 
 const ImageBackground = styled.div`

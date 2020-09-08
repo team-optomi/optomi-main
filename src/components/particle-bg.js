@@ -9,14 +9,14 @@ function ParticleBG() {
         params={{ 
           particles: { 
             number: { 
-              value: 50, 
+              value: 20, 
               density: { 
                 enable: true, 
                 value_area: 400, 
               } 
             }, 
             color: {
-                value: "#61b1e8",
+                value: "#666",
             },
             shape: {
                 type: "circle",
@@ -44,7 +44,7 @@ function ParticleBG() {
                 }
             },
             size: {
-                value: 7,
+                value: 4,
                 random: true,
                 anim: {
                     enable: false,
@@ -55,14 +55,12 @@ function ParticleBG() {
             },
             line_linked: {
                 enable: true,
-                distance: 150,
-                color: "#6bb2e3",
+                color: '#666',
                 opacity: 0.4,
-                width: 2
             },
             move: {
                 enable: true,
-                speed: 6,
+                speed: 1,
                 direction: "none",
                 random: false,
                 straight: false,
@@ -78,10 +76,6 @@ function ParticleBG() {
           interactivity: {
             detect_on: "canvas",
             events: {
-                onhover: {
-                    enable: true,
-                    mode: "grab"
-                },
                 onclick: {
                     enable: true,
                     mode: "push"
@@ -89,12 +83,6 @@ function ParticleBG() {
                 resize: true
             },
             modes: {
-                grab: {
-                    distance: 140,
-                    line_linked: {
-                        opacity: 1
-                    }
-                },
                 bubble: {
                     distance: 400,
                     size: 40,
