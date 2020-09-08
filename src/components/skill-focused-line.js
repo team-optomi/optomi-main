@@ -26,8 +26,6 @@ class SkillLine extends Component {
         });
       }
       componentDidMount() {
-        gsap.registerPlugin(ScrollTrigger)
-        gsap.core.globals("ScrollTrigger", ScrollTrigger)
         this.tl.to(this.container, {
             width: '80%',
         });
