@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -14,6 +15,60 @@ const DifferentiatorsPage = () => {
                     node {
                         title
                         content
+                        featured_media {
+                            localFile {
+                                childImageSharp {
+                                    sizes(maxWidth: 1920) {
+                                        ...GatsbyImageSharpSizes
+                                    }
+                                }
+                            }
+                        }
+                        acf {
+                            main_header
+                            tagline
+                            section_one {
+                                background_image {
+                                    localFile {
+                                        childImageSharp {
+                                            sizes(maxWidth: 2800) {
+                                                ...GatsbyImageSharpSizes
+                                            }
+                                        }
+                                    }
+                                }
+                                header
+                                main_content
+                            }
+                            section_two {
+                                background_image {
+                                    localFile {
+                                        childImageSharp {
+                                            sizes(maxWidth: 2800) {
+                                                ...GatsbyImageSharpSizes
+                                            }
+                                        }
+                                    }
+                                }
+                                header
+                                main_content
+                            }
+                            section_three {
+                                background_image {
+                                    localFile {
+                                        childImageSharp {
+                                            sizes(maxWidth: 2800) {
+                                                ...GatsbyImageSharpSizes
+                                            }
+                                        }
+                                    }
+                                }
+                                header
+                                main_content
+                            }
+                            meta_title
+                            meta_description
+                        }
                     }
                 }
             }
@@ -25,9 +80,11 @@ const DifferentiatorsPage = () => {
         data.allWordpressWpCustomPage.edges.map(post => (
             <Layout>
                 <SEO 
-                title={post.node.title} 
+                title={post.node.acf.meta_title} 
+                description={post.node.acf.meta_description}
+                image={post.node.featured_media.localFile.childImageSharp.sizes}
                 />
-                <ClientsBanner>
+                <HeroBanner>
                     <ImageBackground>
                     </ImageBackground>
 
@@ -41,21 +98,101 @@ const DifferentiatorsPage = () => {
                         <p>Optomi <span>IT Staffing</span> Services</p>
                     </HeroTitle>
 
-                    <HeroContent 
+                    <HeroMain>
+                        <h2
+                        data-sal="fade"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        >{post.node.acf.main_header}</h2>
+                        <HeroContent 
+                            data-sal="fade"
+                            data-sal-duration="1000"
+                            data-sal-easing="ease"
+                            dangerouslySetInnerHTML={{ __html: post.node.content }}
+                        />
+                        <h3
+                        data-sal="fade"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        >{post.node.acf.tagline}</h3>
+                    </HeroMain>
+
+                </HeroBanner>
+
+                <DifBanner>
+                    <ImageBackground
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    >
+                        <BackgroundImg sizes={post.node.acf.section_one.background_image.localFile.childImageSharp.sizes} alt={post.node.acf.section_one.header}/>
+                    </ImageBackground>
+                    <BannerContent className="text-right">
+                        <div
+                        data-sal="slide-left"
+                        data-sal-duration="1000"
+                        data-sal-delay="900"
+                        data-sal-easing="ease"
+                        >
+                            <h2>{post.node.acf.section_one.header}</h2>
+                            <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_one.main_content }}/>
+                        </div>
+                    </BannerContent>
+                </DifBanner>
+
+                <DifBanner>
+                    <ImageBackground
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    >
+                        <BackgroundImg sizes={post.node.acf.section_two.background_image.localFile.childImageSharp.sizes} alt={post.node.acf.section_two.header}/>
+                    </ImageBackground>
+                    <BannerContent className="text-center">
+                        <div
                         data-sal="slide-up"
                         data-sal-duration="1000"
-                        data-sal-delay="300"
+                        data-sal-delay="900"
                         data-sal-easing="ease"
-                        dangerouslySetInnerHTML={{ __html: post.node.content }}
-                    />
-                </ClientsBanner>
+                        >
+                            <h2>{post.node.acf.section_two.header}</h2>
+                            <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_two.main_content }}/>
+                        </div>
+                    </BannerContent>
+                </DifBanner>
+
+                <DifBanner>
+                    <ImageBackground
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    >
+                        <BackgroundImg sizes={post.node.acf.section_three.background_image.localFile.childImageSharp.sizes} alt={post.node.acf.section_three.header}/>
+                    </ImageBackground>
+                    <BannerContent>
+                        <div
+                        data-sal="slide-right"
+                        data-sal-duration="1000"
+                        data-sal-delay="900"
+                        data-sal-easing="ease"
+                        >
+                            <h2>{post.node.acf.section_three.header}</h2>
+                            <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_three.main_content }}/>
+                        </div>
+                    </BannerContent>
+                </DifBanner>
+
+
             </Layout>
             
         ))
     )
 }
 
-const ClientsBanner = styled.div`
+const HeroBanner = styled.div`
     position: relative; 
     min-height: 100vh;
     min-width: 100vw;
@@ -70,11 +207,15 @@ const ClientsBanner = styled.div`
 `
 
 const ImageBackground = styled.div`
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
+    position: relative;
+    z-index: 1;
+    @media(max-width:1000px) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
 `
 
 const HeroTitle = styled.div`
@@ -121,78 +262,153 @@ const HeroTitle = styled.div`
     }
 `
 
-const HeroContent = styled.div`
-    position: relative;
-    z-index: 10;
-    min-width: 100vw;
+const HeroMain = styled.div`
+    max-width: 1340px;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
-    text-align: center;
-    margin-top: 100px;
-    h2 {
+    margin: 0 auto;
+    h2 {transition-delay: 1.5s;
         font-family: "Helvetica Thin";
-        max-width: 800px;
-        width: 100%;
-        color: #fff;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        font-size: 77px;
+        color: #8a8d8f;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-size: 90px;
         font-weight: 100;
-        line-height: .8;
-        .freeland {
-            color: #5ab3e8;
-            font-family: 'Freeland';
-            font-size: 95px;
-            padding-right: 170px;
-            @media(max-width:600px) {
-                font-size: 72px;
-            }
-            @media(max-width:500px) {
-                font-size: 55px;
-                padding: 0;
-            }
-        }
-        .blue {
-            color: #5ab3e8;
-        }
-        .uppercase {
-            text-transform: uppercase;
-            padding-left: 120px;
-        }
-        @media(max-width:600px) {
-            font-size: 42px;
-        }
-        @media(max-width:500px) {
-            font-size: 28px;
-        }
+        line-height: 1;
+        margin-bottom: 60px;
+        transition-delay: 2s;
     }
+    h3 {
+        font-family: "Helvetica Thin";
+        color: #8a8d8f;
+        margin-bottom: 0;
+        font-size: 36px;
+        font-weight: 100;
+        line-height: 1;
+        transition-delay: 4s;
+    }
+`
+
+const HeroContent = styled.div`
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 650px;
+    margin-left: auto;
+    transition-delay: 3s;
     p {
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 28px;
+        font-size: 24px;
+        color: #8a8d8f;
+        line-height: 1.2;
+        margin-bottom: 60px;
+    }
+`
+
+
+const DifBanner = styled.div`
+    position: relative; 
+    width: 100%;
+    h2 {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 80px;
         color: #fff;
         line-height: 1.2;
-        color: #fff;
-        max-width: 1200px;
-        margin: 0 auto;
-        @media(max-width:1200px) {
-            max-width: 990px
-        }
-        @media(max-width:600px) {
-            font-size: 24px;
-        }
-        @media(max-width:500px) {
-            font-size: 18px;
-            color: #fff;
-        }
-        @media(max-width:360px) {
-            display: none;
+        font-weight: 100;
+    }
+    @media(max-width:1200px) {
+        h2 {
+            font-size: 60px;
         }
     }
-    @media(max-width:600px) {
-        margin-top: 30px;
+    @media(max-width:500px) {
+        h2 {
+            font-size: 32px;
+        }
+    }
+`
+
+const BackgroundImg = styled(Img)`
+    @media(max-width:1000px) {
+        height: 100%;
+    }
+`
+
+const BannerContent = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    > div {
+        max-width: 1340px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+        transition-duration: .3s;
+        @media(max-width:1500px) {
+            max-width: 1140px;
+        }
+        @media(max-width:1200px) {
+            max-width: 940px;
+        }
+    }
+    &.text-right {
+        text-align: right;
+        p {
+            margin-left: auto;
+        }
+    }
+    &.text-center {
+        text-align: center;
+        p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    @media(max-width:1000px) {
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @media(max-width:800px) {
+        text-align: center;
+        &.text-right {
+            text-align: center;
+        }
+        p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+`
+
+
+const BannerCopy = styled.div`
+    p {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 20px;
+        color: #fff;
+        line-height: 1.6;
+        max-width: 900px;
+    }
+    @media(max-width:1200px) {
+        p {
+            font-size: 18px;
+        }
     }
 `
 
