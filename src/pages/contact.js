@@ -52,7 +52,7 @@ const ContactPage = () => {
                         data-sal-easing="ease"
                     >
                         <h1>{post.node.title}</h1>
-                        <p>Optomi <span>Professional</span> Services</p>
+                        <p>Optomi <span>IT Staffing</span> Services</p>
                     </HeroTitle>
 
                 </ContactBanner>
