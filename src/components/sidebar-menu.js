@@ -59,6 +59,13 @@ const SideMainMenu = () => (
         </MenuItem>
         <MenuItem>
             <Link
+            to="/locations/"
+            >
+            Locations
+            </Link>
+        </MenuItem>
+        <MenuItem>
+            <Link
             to="/contact/"
             >
             Contact

@@ -83,6 +83,7 @@ const ServicesPage = () => {
                             data-sal-easing="ease"
                         >
                             <h1>{post.node.title}</h1>
+                            <p>Optomi <span>Technology</span> Talent</p>
                         </HeroTitle>
                         <div
                         data-sal="slide-up"
@@ -304,7 +305,6 @@ const SecondParagraph = styled.div`
     }
 `
 
-
 const HeroTitle = styled.div`
     position: absolute;
     top: 100px;
@@ -322,6 +322,21 @@ const HeroTitle = styled.div`
         }
         @media(max-width:500px) {
             font-size: 52px;
+        }
+    }
+    p {
+        font-family: "Helvetica Thin";
+        letter-spacing: 2px;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        font-size: 20px;
+        color: rgb(140,145,146);
+        span {
+            color: #5ab3e8;
+        }
+        @media(max-width:500px) {
+            font-size: 18px;
         }
     }
     @media(max-width: 600px) {

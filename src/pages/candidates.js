@@ -70,7 +70,7 @@ const CandidatesPage = () => {
                         data-sal-easing="ease"
                     >
                         <h1>{post.node.title}</h1>
-                        <p>Optomi <span>IT Staffing</span> Services</p>
+                        <p>Optomi <span>Technology</span> Talent</p>
                     </HeroTitle>
 
                     <HeroMain>
