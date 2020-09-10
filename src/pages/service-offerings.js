@@ -75,16 +75,17 @@ const ServicesPage = () => {
                         <HeroImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title}/>
                     </HeroBackground>
 
+                    <HeroTitle
+                        data-sal="slide-right"
+                        data-sal-duration="1000"
+                        data-sal-delay="300"
+                        data-sal-easing="ease"
+                    >
+                        <h1>{post.node.title}</h1>
+                        <p>Optomi <span>Technology</span> Talent</p>
+                    </HeroTitle>
+
                     <HeroContent>
-                        <HeroTitle
-                            data-sal="slide-right"
-                            data-sal-duration="1000"
-                            data-sal-delay="300"
-                            data-sal-easing="ease"
-                        >
-                            <h1>{post.node.title}</h1>
-                            <p>Optomi <span>Technology</span> Talent</p>
-                        </HeroTitle>
                         <div
                         data-sal="slide-up"
                         data-sal-duration="1000"
@@ -309,6 +310,7 @@ const HeroTitle = styled.div`
     position: absolute;
     top: 100px;
     left: 150px;
+    z-index: 2;
     h1 {
         font-family: "Helvetica Thin";
         color: #8a8d8f;

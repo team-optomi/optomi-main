@@ -46,7 +46,11 @@ const SideMainMenu = () => (
             <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Join our Team</a>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Leadership</a>
+            <Link
+            to="/about-us/"
+            >
+            About Us
+            </Link>
         </MenuItem>
         <MenuItem>
             <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Giving Back</a>

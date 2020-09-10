@@ -20,7 +20,7 @@ class LeadershipSectionSimple extends Component {
         const { data } = this.props; 
 
         return(
-            <LeadershipFull>
+            <LeadershipFull id={"leader_section"} >
                 <LeadershipMenu>
                     {data.allWordpressWpTeamMember.edges.map((post, i) => (
                         <LeadershipLink>
