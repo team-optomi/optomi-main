@@ -42,6 +42,7 @@ module.exports = {
           "**/case_study", // <== Custom post slug
           "**/service", // <== Custom post slug
           "**/location", // <== Custom post slug
+          "**/core_value", // <== Custom post slug
           "**/media",
           "**/tags",
           "**/taxonomies",

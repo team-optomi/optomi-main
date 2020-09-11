@@ -53,6 +53,13 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
+            <Link
+            to="/core-values/"
+            >
+            Core Values
+            </Link>
+        </MenuItem>
+        <MenuItem>
             <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Giving Back</a>
         </MenuItem>
         <MenuItem>
