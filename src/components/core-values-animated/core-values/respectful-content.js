@@ -5,7 +5,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import { FaChevronDown } from 'react-icons/fa'
 
-class GenuineContent extends Component {
+class RespectfulContent extends Component {
 
     constructor(props) {
         super(props);
@@ -14,7 +14,7 @@ class GenuineContent extends Component {
     
     toggleValue() {
         this.setState({ isOpen: !this.state.isOpen });
-        scrollTo('#g_scroll');
+        scrollTo('#r_scroll');
     }
 
     render() {
@@ -28,14 +28,14 @@ class GenuineContent extends Component {
             data.allWordpressWpCoreValue.edges.map(post => (
                 <ValueContainer>
 
-                    <ValueToggle id={"g_scroll"} className="g-toggle" onClick={() => this.toggleValue()} ><h3>{post.node.title}</h3><FaChevronDown size={24} className={valueName}/></ValueToggle>
-                        <Line className="g-line"/>
+                    <ValueToggle id={"r_scroll"} className="r-toggle" onClick={() => this.toggleValue()} ><h3>{post.node.title}</h3><FaChevronDown size={24} className={valueName}/></ValueToggle>
+                        <Line className="r-line"/>
                             <ValueContent className={valueName}>
                                 <ValueCopy dangerouslySetInnerHTML={{ __html: post.node.content }}/>
                                 <h4><span class="bonvivant">notable moment</span><span class="helvetica"> - {post.node.title}</span></h4>
                                 <ValueQuote dangerouslySetInnerHTML={{ __html: post.node.acf.quote }}/>
                             </ValueContent>
-                        <Line className="g-line"/>
+                        <Line className="r-line"/>
                 </ValueContainer>
             ))
         );
@@ -56,13 +56,13 @@ const Line = styled.div`
     height: 1px;
     background-color: #333;
     position: absolute;
-    left: 0;
+    right: 0;
 `
 
 const ValueToggle = styled.div`
     opacity: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
     h3 {
@@ -192,7 +192,7 @@ export default props => (
     <StaticQuery
       query={graphql`
         query {
-            allWordpressWpCoreValue(filter: {categories: {elemMatch: {wordpress_id: {eq: 32}}}}) {
+            allWordpressWpCoreValue(filter: {categories: {elemMatch: {wordpress_id: {eq: 27}}}}) {
                 edges {
                     node {
                         title
@@ -205,6 +205,6 @@ export default props => (
             }
         }
       `}
-      render={data => <GenuineContent data={data} {...props} />}
+      render={data => <RespectfulContent data={data} {...props} />}
     />
   );

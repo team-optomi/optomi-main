@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-import GenuineContent from "./core-values/genuine-content"
+import ConnectedContent from "./core-values/connected-content"
 
-const Genuine = () => {
+const Connected = () => {
 
     useEffect(() => {
     
@@ -18,20 +18,20 @@ const Genuine = () => {
         let tl = gsap.timeline({
             paused: true,
             scrollTrigger: {
-                trigger: '#g_trigger',
+                trigger: '#c_trigger',
                 start: 'top 70%',
                 end: 'top 60%',
-                id: 'genuine_line',
+                id: 'connected_line',
                 },
             })
-            tl.to('.g-line', { width: '60%', duration: 1, ease: "power2.out" })
-            tl.to('.g-toggle', {opacity: '1', duration: 1, ease: "power2" })
+            tl.to('.c-line', { width: '60%', duration: 1, ease: "power2.out" })
+            tl.to('.c-toggle', {opacity: '1', duration: 1, ease: "power2" })
     
       }, []);
 
     return(
-        <MainContainer id={"g_trigger"}>
-            <GenuineContent />
+        <MainContainer id={"c_trigger"}>
+            <ConnectedContent />
         </MainContainer>
     );
 
@@ -42,4 +42,4 @@ const MainContainer = styled.div`
 `
 
 
-export default Genuine
+export default Connected

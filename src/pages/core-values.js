@@ -7,6 +7,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Genuine from "../components/core-values-animated/genuine"
+import Passionate from "../components/core-values-animated/passionate"
+import Connected from "../components/core-values-animated/connected"
+import Innovative from "../components/core-values-animated/innovative"
+import Dedicated from "../components/core-values-animated/dedicated"
+import Respectful from "../components/core-values-animated/respectful"
 
 const ValuePage = () => {
 
@@ -85,6 +90,11 @@ const ValuePage = () => {
                     >we are...</h2>
 
                     <Genuine/>
+                    <Passionate/>
+                    <Connected/>
+                    <Innovative/>
+                    <Dedicated/>
+                    <Respectful/>
 
                 </ValueSection>
 
