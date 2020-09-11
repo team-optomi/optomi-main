@@ -6,6 +6,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import CoreParticles from "../components/core-particles"
+
 import Genuine from "../components/core-values-animated/genuine"
 import Passionate from "../components/core-values-animated/passionate"
 import Connected from "../components/core-values-animated/connected"
@@ -51,6 +53,7 @@ const ValuePage = () => {
                 description={post.node.acf.meta_description}
                 image={post.node.featured_media.localFile.childImageSharp.sizes}
                 />
+                <CoreParticles/>
                 <HeroBanner>
                     <ImageBackground>
                         <HeroImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
@@ -202,8 +205,10 @@ const HeroMain = styled.div`
 `
 
 const ValueSection = styled.div`
-    background-color: #000;
+    background-color: transparent;
     padding-top: 80px;
+    position: relative;
+    z-index: 2;
     h2 {
         font-family: "BonVivant";
         color: #fff;
