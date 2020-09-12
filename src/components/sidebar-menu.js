@@ -43,7 +43,7 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Join our Team</a>
+            <a href="https://optomi.com/jobseekers/" target="_blank" rel="noopener noreferrer" aria-label="Link">Join our Team</a>
         </MenuItem>
         <MenuItem>
             <Link
@@ -60,13 +60,13 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Giving Back</a>
+            <a href="https://optomi.com/giving" target="_blank" rel="noopener noreferrer" aria-label="Link">Giving Back</a>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Press</a>
+            <a href="https://optomi.com/press/" target="_blank" rel="noopener noreferrer" aria-label="Link">Press</a>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer" aria-label="Link">Blog</a>
+            <a href="https://optomi.com/blog/" target="_blank" rel="noopener noreferrer" aria-label="Link">Blog</a>
         </MenuItem>
         <MenuItem>
             <Link
