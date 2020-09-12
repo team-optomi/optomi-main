@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import "./layout.css"
 import PageTransition from 'gatsby-plugin-page-transitions';
 
+import StickyLogo from "../components/sticky-logo"
 import HeaderLogo from "../components/header-logo"
 import SideMainMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
@@ -54,9 +55,7 @@ class HomeLayout extends Component {
         }
         return (
             <FullPage>
-                <HomeLogo ref={div => (this.container = div)}>
-                  <HeaderLogo/>
-                </HomeLogo>
+                <StickyLogo/>
                 <MainLayout className={headerName}>
 
                     <PageTransition>
@@ -110,28 +109,6 @@ const MainContent = styled.div`
     top:0;
     left:0;
     transition-duration: .3s;
-`
-
-const HomeLogo = styled.div`
-    position: fixed;
-    top: -120px;
-    left: 5px;
-    width: 110px;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    z-index: 101;
-    .gatsby-image-wrapper {
-      width: 90px;
-      height: 34px;
-      img {
-        margin-bottom: 0;
-      }
-    }
-    @media(max-width:600px) {
-      display: none;
-    }
 `
 
 const SidebarMenu = styled.div`
