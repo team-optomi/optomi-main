@@ -99,6 +99,36 @@ const MainContent = styled.div`
         text-decoration: none;
         text-transform: lowercase;
     }
+    @media(max-width:1500px) {
+        h1 {
+            font-size: 60px;
+        }
+        h2 {
+            font-size: 46px;
+        }
+    }
+    @media(max-width:1200px) {
+        h1 {
+            font-size: 46px;
+        }
+        h2 {
+            font-size: 32px;
+        }
+        a {
+            font-size: 20px;
+        }
+    }
+    @media(max-width:600px) {
+        h1 {
+            font-size: 32px;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        a {
+            font-size: 18px;
+        }
+    }
 `
 
 const MainCopy = styled.div`
@@ -109,6 +139,21 @@ const MainCopy = styled.div`
         font-size: 32px;
         margin-bottom: 20px;
         line-height: 1.2;
+    }
+    @media(max-width:1500px) {
+        p {
+            font-size: 28px;
+        }
+    }
+    @media(max-width:1200px) {
+        p {
+            font-size: 24px;
+        }
+    }
+    @media(max-width:600px) {
+        p {
+            font-size: 20px;
+        }
     }
 `
 

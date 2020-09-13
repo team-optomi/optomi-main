@@ -215,6 +215,12 @@ const HeroContent = styled.div`
     @media(max-width:1200px) {
         padding-bottom: 20px;
     }
+    @media(max-width:850px) {
+        padding-top: 100px;
+    }
+    @media(max-width:500px) {
+        padding-top: 30px;
+    }
 `
 
 const BannerContent = styled.div`
@@ -322,7 +328,7 @@ const HeroTitle = styled.div`
         @media(max-width:1200px) {
             font-size: 82px;
         }
-        @media(max-width:500px) {
+        @media(max-width:850px) {
             font-size: 52px;
         }
     }
@@ -337,11 +343,11 @@ const HeroTitle = styled.div`
         span {
             color: #5ab3e8;
         }
-        @media(max-width:500px) {
+        @media(max-width:850px) {
             font-size: 18px;
         }
     }
-    @media(max-width: 600px) {
+    @media(max-width: 850px) {
         position: relative;
         top: auto;
         left: auto;
@@ -411,7 +417,7 @@ const ServiceBanner = styled.div`
         line-height: 1.2;
         font-weight: 100;
     }
-    @media(max-width:1200px) {
+    @media(max-width:1500px) {
         h2 {
             font-size: 60px;
         }

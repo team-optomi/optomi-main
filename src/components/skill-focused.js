@@ -94,6 +94,11 @@ const MainContent = styled.div`
             margin-right: auto;
         }
     }
+    @media(max-width:800px) {
+        p {
+            font-size: 20px;
+        }
+    }
 `
 
 
