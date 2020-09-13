@@ -164,7 +164,7 @@ const ImageBackground = styled.div`
     left: 0;
     background-color: #000;
     video {
-        position: absolute;
+        /*position: absolute;
         z-index: 0;
         background-size: 100% 100%;
         top: 0px;
@@ -172,7 +172,19 @@ const ImageBackground = styled.div`
         min-width: 100%;
         min-height: 100%;
         width: auto;
-        height: auto;
+        height: auto; */
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        @media screen and (max-aspect-ratio: 1920/1080) {
+            height: 100%;
+        }
+        @media screen and (min-aspect-ratio: 1920/1080) {
+            width: 100%;
+        }
         @media(max-width:800px) {
             display: none;
         }
