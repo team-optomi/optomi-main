@@ -158,6 +158,9 @@ const HeroBanner = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    @media (max-width:800px) {
+        align-items: flex-start;
+    }
     @media (max-width:600px) {
         display: block;
     }
@@ -195,7 +198,7 @@ const HeroTitle = styled.div`
         @media(max-width:1200px) {
             font-size: 82px;
         }
-        @media(max-width:500px) {
+        @media(max-width:800px) {
             font-size: 52px;
         }
     }
@@ -210,11 +213,11 @@ const HeroTitle = styled.div`
         span {
             color: #5ab3e8;
         }
-        @media(max-width:500px) {
+        @media(max-width:800px) {
             font-size: 18px;
         }
     }
-    @media(max-width: 600px) {
+    @media(max-width: 800px) {
         position: relative;
         top: auto;
         left: auto;
@@ -229,6 +232,7 @@ const HeroMain = styled.div`
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 100px;
     position: relative;
     text-align: center;
     .bonvivant {
@@ -266,20 +270,51 @@ const HeroMain = styled.div`
         transition-duration: 1s;
         transition-delay: 2s;
     }
+    @media(max-width:1500px) {
+        .bonvivant {
+            font-size: 72px;
+        }
+        .header {
+            font-size: 46px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+    @media(max-width:1200px) {
+        .bonvivant {
+            font-size: 60px;
+        }
+        .header {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+    }
+    @media(max-width:500px) {
+        .bonvivant {
+            font-size: 42px;
+        }
+        .header {
+            font-size: 28px;
+        }
+        h3 {
+            font-size: 14px;
+        }
+    }
 `
 
 const SectionTwo = styled.div`
     position: relative;
     width: 100%;
     background-color: #000;
-    padding: 80px 0;
+    padding: 80px 20px;
 `
 
 const ParagraphOne = styled.div`
     max-width: 1140px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0 auto;
     margin-bottom: 0px;
     text-align: left;
@@ -300,8 +335,6 @@ const ParagraphOne = styled.div`
 const ButtonSection = styled.div`
     max-width: 1340px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0 auto;
     border-bottom: 1px solid #8a8d8f;
     h2 {
@@ -337,13 +370,38 @@ const ButtonSection = styled.div`
             text-decoration: none;
             padding: 0 60px;
         }
+        @media(max-width: 1500px) {
+            a {
+                font-size: 24px;
+            }
+        }
+        @media(max-width: 1200px) {
+            a {
+                font-size: 20px;
+                padding: 0 40px;
+                letter-spacing: 8px;
+            }
+        }
+        @media(max-width: 870px) {
+            a {
+                padding: 0 20px;
+            }
+        }
+        @media(max-width:750px) {
+            flex-wrap: wrap;
+            a {
+                padding: 20px;
+                width: 100%;
+                text-align: center;
+            }
+        }
     }
 `
 
 const SectionThree = styled.div`
     position: relative;
     background-color: #000;
-    padding: 80px 0;
+    padding: 80px 20px;
     h2 {
         max-width: 1140px;
         width: 100%;
@@ -356,6 +414,9 @@ const SectionThree = styled.div`
         font-weight: 100;
         line-height: 1.2;
         letter-spacing: 10px;
+        @media(max-width:800px) {
+           font-size: 42px;
+        }
     }
 `
 
@@ -391,6 +452,11 @@ const CaseStudyRow = styled.div`
         }
         &:after {
             border-color: #fff;
+        }
+    }
+    @media(max-width:940px) {
+        h3 {
+            color: #818686;
         }
     }
 `
