@@ -197,12 +197,15 @@ const DifferentiatorsPage = () => {
 const HeroBanner = styled.div`
     position: relative; 
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
     height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    @media (max-width:770px) {
+        align-items: flex-start;
+    }
     @media (max-width:600px) {
         display: block;
     }
@@ -244,8 +247,11 @@ const HeroTitle = styled.div`
         @media(max-width:1200px) {
             font-size: 82px;
         }
-        @media(max-width:500px) {
+        @media(max-width:770px) {
             font-size: 52px;
+        }
+        @media(max-width:360px) {
+            font-size: 36px;
         }
     }
     p {
@@ -259,17 +265,18 @@ const HeroTitle = styled.div`
         span {
             color: #5ab3e8;
         }
-        @media(max-width:500px) {
+        @media(max-width:770px) {
             font-size: 18px;
         }
     }
-    @media(max-width: 600px) {
+    @media(max-width: 770px) {
         position: relative;
         top: auto;
         left: auto;
         padding: 20px;
         padding-top: 100px;
         text-align: center;
+        width: 100%;
     }
 `
 
@@ -279,12 +286,16 @@ const HeroMain = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
-    h2 {transition-delay: 1.5s;
+    margin-top: 100px;
+    position: relative;
+    z-index: 2;
+    h2 {
+        transition-delay: 1.5s;
         font-family: "Helvetica Thin";
         color: #8a8d8f;
         margin-bottom: 0;
         text-transform: uppercase;
-        font-size: 90px;
+        font-size: 72px;
         font-weight: 100;
         line-height: 1;
         margin-bottom: 60px;
@@ -298,6 +309,36 @@ const HeroMain = styled.div`
         font-weight: 100;
         line-height: 1;
         transition-delay: 4s;
+    }
+    @media(max-width:1500px) {
+        max-width: 1140px;
+        h2 {
+            font-size: 60px;
+        }
+    }
+    @media(max-width:1200px) {
+        max-width: 940px;
+    }
+    @media(max-width:1000px) {
+        text-align: center;
+    }
+    @media(max-width: 770px) {
+        margin-top: 0;
+        h2 {
+            font-size: 42px;
+        }
+    }
+    @media(max-width: 500px) {
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 28px;
+        }
     }
 `
 
@@ -317,6 +358,9 @@ const HeroContent = styled.div`
         line-height: 1.2;
         margin-bottom: 60px;
     }
+    @media(max-width:1000px) {
+        margin-right: auto;
+    }
 `
 
 
@@ -327,14 +371,19 @@ const DifBanner = styled.div`
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 80px;
+        font-size: 72px;
         color: #fff;
         line-height: 1.2;
         font-weight: 100;
     }
-    @media(max-width:1200px) {
+    @media(max-width:1500px) {
         h2 {
             font-size: 60px;
+        }
+    }
+    @media(max-width:770px) {
+        h2 {
+            font-size: 42px;
         }
     }
     @media(max-width:500px) {
