@@ -163,18 +163,13 @@ const ImageBackground = styled.div`
     top: 0;
     left: 0;
     background-color: #000;
-    video {
-        /*position: absolute;
-        z-index: 0;
-        background-size: 100% 100%;
-        top: 0px;
-        left: 0px; /* fixed to left. Replace it by right if you want.*/
+    video {   
+        display: block;
+        position: absolute;
         min-width: 100%;
         min-height: 100%;
         width: auto;
-        height: auto; */
-        display: block;
-        position: absolute;
+        height: auto;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
