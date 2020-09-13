@@ -49,6 +49,9 @@ const ValueContainer = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
+    @media(max-width:1200px) {
+        max-width: 940px;
+    }
 `
 
 const Line = styled.div`
@@ -86,6 +89,18 @@ const ValueToggle = styled.div`
     &:hover {
         cursor: pointer;
     }
+    @media(max-width:1200px) {
+        h3 {
+            font-size: 42px;
+        }
+    }
+    @media(max-width:600px) {
+        h3 {
+            font-size: 28px;
+            letter-spacing: 7px;
+            margin-right: 10px;
+        }
+    }
 `
 
 const ValueCopy = styled.div`
@@ -102,6 +117,9 @@ const ValueCopy = styled.div`
         margin-bottom: 35px;
         max-width: 1000px;
         padding-left: 40px;
+        @media(max-width:1200px) {
+            font-size: 20px;
+        }
     }
 `
 
@@ -113,6 +131,7 @@ const ValueQuote = styled.div`
     opacity: 0;
     position: relative;
     padding-right: 30px;
+    padding-left: 30px;
     p {
         font-family: "Helvetica Thin";
         width: 100%;
@@ -126,7 +145,7 @@ const ValueQuote = styled.div`
         content: '"';
         position: absolute;
         top: 0;
-        left: -60px;
+        left: -20px;
         font-family: "BonVivant";
         color: #8a8d8f;
         font-size: 120px;
@@ -141,6 +160,12 @@ const ValueQuote = styled.div`
         color: #8a8d8f;
         font-size: 120px;
         font-weight: 100;
+    }
+    @media(max-width:1200px) {
+        max-width: 700px;
+        p {
+            font-size: 20px;
+        }
     }
 `
 
