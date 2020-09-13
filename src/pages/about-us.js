@@ -156,7 +156,7 @@ const HeroTitle = styled.div`
         @media(max-width:1200px) {
             font-size: 82px;
         }
-        @media(max-width:500px) {
+        @media(max-width:600px) {
             font-size: 52px;
         }
     }
@@ -171,7 +171,7 @@ const HeroTitle = styled.div`
         span {
             color: #5ab3e8;
         }
-        @media(max-width:500px) {
+        @media(max-width:600px) {
             font-size: 18px;
         }
     }
@@ -206,6 +206,21 @@ const HeroMain = styled.div`
         max-width: 1000px;
         transition-delay: 3s;
     }
+    @media(max-width:1500px) {
+        max-width: 1140px;
+    }
+    @media(max-width:1200px) {
+        max-width: 940px;
+    }
+    @media(max-width:800px) {
+        h3 {
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+    }
+    @media(max-width:600px) {
+        margin-top: 0;
+    }
 `
 
 const HeroContent = styled.div`
@@ -222,6 +237,11 @@ const HeroContent = styled.div`
         line-height: 1.2;
         margin-bottom: 35px;
         max-width: 1150px;
+    }
+    @media(max-width:800px) {
+        p {
+            font-size: 20px;
+        }
     }
 `
 
@@ -249,6 +269,12 @@ const ButtonSection = styled.div`
             cursor: pointer;
         }
     }
+    @media(max-width:800px) {
+        button {
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+    }
 `
 
 const ButtonLink = styled(Link)`
@@ -262,6 +288,10 @@ const ButtonLink = styled(Link)`
     letter-spacing: 5px;
     text-decoration: none;
     margin-bottom: 10px;
+    @media(max-width:800px) {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
 `
 
 const AwardSection = styled.div`
