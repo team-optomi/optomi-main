@@ -148,6 +148,9 @@
     .slick-next {
         left: -35px;
     }
+    .slick-prev {
+        right: -35px;
+    }
 }
 
 

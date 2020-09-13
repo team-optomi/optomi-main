@@ -59,6 +59,9 @@ const MainContent = styled.div`
         font-size: 72px;
         font-weight: 100;
         margin-bottom: 50px;
+        @media(max-width:1020px) {
+            font-size: 60px;
+        }
     }
     p {
         &.button-section {
@@ -76,6 +79,13 @@ const MainContent = styled.div`
                 color: #fff;
                 text-decoration: none;
                 text-transform: lowercase;
+                @media(max-width:500px) {
+                    font-size: 18px;
+                    padding: 15px 35px;
+                }
+            }
+            @media(max-width:500px) {
+                font-size: 24px;
             }
         }
         &.jobs-bottom {
@@ -84,6 +94,9 @@ const MainContent = styled.div`
             font-size: 32px;
             line-height: 1.3;
             text-align: center;
+            @media(max-width:500px) {
+                font-size: 24px;
+            }
         }
     }
     @media(max-width:1200px) {

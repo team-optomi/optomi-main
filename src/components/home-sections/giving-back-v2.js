@@ -128,6 +128,9 @@ const MainRow = styled.div`
 const MainDiv = styled.div`
     max-width: 390px;
     margin-left: auto;
+    @media(max-width:500px) {
+        margin-right: auto;
+    }
 `
 
 const MainContent = styled.div`
@@ -140,18 +143,27 @@ const MainContent = styled.div`
         font-size: 72px;
         font-weight: 100;
         margin-bottom: 50px;
+        @media(max-width:1020px) {
+            font-size: 60px;
+        }
     }
     p {
         font-family: "Helvetica Thin";
         color: #fff;
         font-size: 24px;
         line-height: 1.3;
+        @media(max-width:1020px) {
+            font-size: 20px;
+        }
     }
 `
 
 const Logo = styled(Img)`
     width: 300px;
     margin: 0 auto;
+    @media(max-width: 350px) {
+        width: 100%;
+    }
 `
 
 export default GivingBackV2

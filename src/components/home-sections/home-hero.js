@@ -127,6 +127,12 @@ const HeroMain = styled.div`
             font-family: "Freeland";
             font-weight: 100;
         }
+        @media(max-width: 1200px) {
+            font-size: 32px;
+        }
+        @media(max-width: 600px) {
+            font-size: 20px;
+        }
     }
     p {
         font-family: "Helvetica Thin";
@@ -139,6 +145,15 @@ const HeroMain = styled.div`
         width: 100%;
         padding: 0 20px;
         margin-bottom: 0;
+        @media(max-width: 1200px) {
+            font-size: 42px;
+        }
+        @media(max-width: 600px) {
+            font-size: 28px;
+        }
+        @media(max-width: 400px) {
+            font-size: 20px;
+        }
     }
 `
 
@@ -200,6 +215,9 @@ const HeroContent = styled.div`
     width: 100%;
     padding: 0 20px;
     transition-duration: 2s;
+    @media(max-width: 1200px) {
+        max-width: 340px;
+    }
 `
 
 const HeroLogo = styled(Img)`

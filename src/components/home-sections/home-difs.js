@@ -98,6 +98,10 @@ const ImageBackground = styled.div`
     height: 595px;
     left: 0;
     bottom: 0;
+    transition-duration: .3s;
+    @media(max-width:1199px) {
+        opacity: .3;
+    }
 `
 
 const BackgroundImg = styled(Img)`
@@ -145,6 +149,18 @@ const MiddleContent = styled.div`
             .bonvivant {
                 top: 0;
                 right: calc(50% - 125px);
+            }
+        }
+    }
+    @media(max-width:1150px) {
+        max-width: 740px;
+        p {
+            .bonvivant {
+                position: relative;
+                text-align: center;
+                top: auto;
+                right: auto;
+                line-height: .5;
             }
         }
     }

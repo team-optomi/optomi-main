@@ -64,8 +64,12 @@ const Percent = styled.p`
     padding-right: 100px;
     position: relative;
     z-index: 1;
-    @media(max-width:800px) {
-      padding-left: 0;
+    @media(max-width:1050px) {
+      padding-right: 0;
+      text-align: center;
+    }
+    @media(max-width:500px) {
+      font-size: 32px;
     }
 `
 
@@ -76,6 +80,9 @@ const Line = styled.div`
     position: absolute;
     top: 0px;
     left: 20%;
+    @media(max-width:1050px) {
+      left: 10%;
+    }
 `
 
 const Copy = styled.p`
@@ -87,8 +94,12 @@ const Copy = styled.p`
     max-width: 100%;
     text-align: right;
     line-height: 1;
-    @media(max-width:800px) {
-      max-width: 100%;
+    @media(max-width:1050px) {
+      text-align: center;
+    }
+    @media(max-width:500px) {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 `
 

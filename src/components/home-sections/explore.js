@@ -103,14 +103,24 @@ const MainContent = styled.div`
         margin-left: -50px;
         text-transform: lowercase;
     }
+    @media(max-width:1500px) {
+        max-width: 1100px;
+    }
     @media(max-width:1200px) {
         max-width: 900px;
         padding-left: 0;
         padding-right: 0;
     }
-    @media(max-width:1000px) {
+    @media(max-width:1020px) {
         h2 {
             font-size: 60px;
+            margin-left: 0;
+        }
+    }
+    @media(max-width:770px) {
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
         }
     }
 `
@@ -122,6 +132,15 @@ const MainCopy = styled.div`
         font-size: 24px;
         line-height: 1.3;
         text-align: center;
+        @media(max-width:1020px) {
+            padding-left: 50px;
+        }
+        @media(max-width:770px) {
+            padding-left: 0;
+        }
+        @media(max-width:500px) {
+            font-size: 20px;
+        }
     }
 `
 
@@ -130,6 +149,9 @@ const ButtonSection = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media(max-width:770px) {
+        flex-wrap: wrap;
+    }
 `
 
 const ButtonLink = styled(Link)`
@@ -141,6 +163,12 @@ const ButtonLink = styled(Link)`
     text-transform: uppercase;
     text-decoration: none;
     padding: 20px 40px;
+    @media(max-width:890px) {
+        padding: 20px;
+    }
+    @media(max-width:770px) {
+        width: 100%;
+    }
 `
 
 export default JobPortal
