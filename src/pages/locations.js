@@ -92,7 +92,7 @@ const HeroTitle = styled.div`
         @media(max-width:1200px) {
             font-size: 82px;
         }
-        @media(max-width:500px) {
+        @media(max-width:600px) {
             font-size: 52px;
         }
     }
@@ -107,7 +107,7 @@ const HeroTitle = styled.div`
         span {
             color: #5ab3e8;
         }
-        @media(max-width:500px) {
+        @media(max-width:600px) {
             font-size: 18px;
         }
     }

@@ -74,49 +74,20 @@ class LocationsSection extends Component {
     }
   }
 
-const LocationsMain = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  > div {
-      width: 100%;
-      position: relative;
-      &:first-child {
-        h3, p {
-          color: #000;
-        }
-      }
-      &:nth-child(2) {
-        button {
-          margin-left: auto;
-        }
-      }
-      &:nth-child(3) {
-        button {
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-      &:nth-child(5) {
-        h3, p {
-          color: #000;
-        }
-        button {
-          margin-left: auto;
-        }
-      }
-      &:nth-child(7) {
-        button {
-          margin-left: auto;
-        }
-      }
-  }
-`
-
 const LocBackground = styled.div`
     position: relative;
+    @media(max-width:1199px) {
+      position: absolute;
+      height: 50vh;
+      width: 100%;
+    }
 `
 
 const LocImg = styled(Img)`
+  @media(max-width:1199px) {
+    height: 50vh;
+    width: 100%;
+  }
 `
 
 const Location = styled.div`
@@ -127,7 +98,7 @@ const Location = styled.div`
   height: 100%;
   width: 100%;
   > div {
-    max-width: 1340px;
+    max-width: 1540px;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -163,6 +134,133 @@ const Location = styled.div`
       &:hover {
         cursor: pointer;
       }
+  }
+  @media(max-width:1500px) {
+    button {
+      margin-top: 50px;
+      h3 {
+        font-size: 40px;
+      }
+    }
+  }
+  @media(max-width:1199px) {
+    height: 50vh;
+    width: 100%;
+    button {
+      h3 {
+        font-size: 32px;
+      }
+    }
+  }
+`
+
+
+const LocationsMain = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+      width: 100%;
+      position: relative;
+      &:first-child {
+        h3, p {
+          color: #000;
+        }
+      }
+      &:nth-child(1) {
+        ${Location} {
+          > div {
+            max-width: 60%;
+            @media(max-width:1199px) {
+              max-width: 90%;
+            }
+          }
+        }
+        @media(max-width:768px) {
+          button {
+            max-width: 220px;
+          }
+          ${LocImg} {
+            img {
+              object-position: 25% 50% !important;
+            }
+          }
+        }
+      } 
+      &:nth-child(2) {
+        ${Location} {
+          > div {
+            max-width: 75%;
+            @media(max-width:1199px) {
+              max-width: 100%;
+            }
+          }
+        }
+        button {
+          margin-left: auto;
+        }
+        @media(max-width:768px) {
+          button {
+            max-width: 250px;
+          }
+        }
+        @media(max-width:500px) {
+          ${LocImg} {
+            img {
+              object-position: 80% 50% !important;
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+        button {
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 100px;
+        }
+      }
+      &:nth-child(4) {
+        ${Location} {
+          > div {
+            max-width: 70%;
+          }
+        }
+      }
+      &:nth-child(5) {
+        h3, p {
+          color: #000;
+        }
+        button {
+          margin-left: auto;
+          @media(max-width:1199px) {
+            padding-left: 100px;
+          }
+        }
+        @media(max-width:1199px) {
+          ${LocImg} {
+            img {
+              object-position: center right !important;
+            }
+          }
+        }
+      }
+      &:nth-child(6) {
+        ${Location} {
+          > div {
+            max-width: 80%;
+          }
+        }
+      }
+      &:nth-child(7) {
+        button {
+          margin-left: auto;
+        }
+      }
+  }
+  @media(max-width:1199px) {
+    > div {
+      height: 50vh;
+      width: 100%;
+    }
   }
 `
 
