@@ -146,6 +146,18 @@
     width: 50px;
 }
 
+@media(max-width:600px) {
+    .testimonial-slider .slick-slider {
+        padding: 0 30px;
+    }
+    .testimonial-slider .slick-prev {
+        left: -10px;
+    }
+    .testimonial-slider .slick-next {
+        right: -10px;
+    }
+}
+
 /* Media Queries */
 
 @media(max-width:1550px) {

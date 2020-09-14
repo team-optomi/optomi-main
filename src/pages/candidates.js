@@ -298,6 +298,7 @@ const HeroMain = styled.div`
         }
     }
     @media(max-width:500px) {
+        padding-top: 35px;
         .bonvivant {
             font-size: 42px;
         }
@@ -446,6 +447,13 @@ const SectionThree = styled.div`
         letter-spacing: 10px;
         @media(max-width:800px) {
             42px;
+        }
+    }
+    @media(max-width:600px) {
+        h2 {
+            font-size: 32px;
+            text-align: center;
+            letter-spacing: 5px;
         }
     }
 `

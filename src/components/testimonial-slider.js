@@ -59,17 +59,43 @@ const Testimonial = styled.div`
     outline: 0 !important;
     position: relative;
     display: flex !important;
+    @media(max-width:800px) {
+      flex-wrap: wrap;
+    }
 `
 
 const Quote = styled.div`
     width: 70%;
-    padding-right: 100px;
+    padding-left: 20px;
+    padding-right: 80px;
     p {
       font-family: "Helvetica Thin";
       font-size: 28px;
       line-height: 1.3;
       color: #fff;
-      text-align: left !important;
+      text-align: left;
+      margin-bottom: 0;
+      position: relative;
+      &:before {
+        content: '"';
+        font-family: "BonVivant";
+        position: absolute;
+        color: #8a8d8f;
+        font-size: 120px;
+        font-weight: 100;
+        top: -60px;
+        left: -47px;
+      }
+    }
+    @media(max-width:800px) {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    @media(max-width:600px) {
+      padding-right: 0;
+      p {
+        font-size: 20px;
+      }
     }
 `
 
@@ -90,6 +116,9 @@ const Meta = styled.div`
       font-size: 16px;
       letter-spacing: 1px;
       margin-bottom: 0;
+    }
+    @media(max-width:800px) {
+      width: 100%;
     }
 `
 
