@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import TestimonialSlider from "../components/testimonial-slider"
 
 const CandidatesPage = () => {
 
@@ -145,7 +146,7 @@ const CandidatesPage = () => {
                     data-sal-delay="300"
                     data-sal-easing="ease"
                     >Testimonials</h2>
-                    <p>[placeholder]</p>
+                    <TestimonialSlider/>
                 </SectionThree>
 
             </Layout>
@@ -446,17 +447,6 @@ const SectionThree = styled.div`
         @media(max-width:800px) {
             42px;
         }
-    }
-    p {
-        font-family: "Helvetica Thin";
-        color: #fff;
-        font-size: 32px;
-        font-weight: 100;
-        letter-spacing: 10px;
-        line-height: 1.3;
-        text-decoration: none;
-        padding: 100px 0;
-        text-align: center;
     }
 `
 
