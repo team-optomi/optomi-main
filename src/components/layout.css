@@ -103,10 +103,10 @@
   6% {
     opacity: 1;
   }
-  40% {
+  26% {
     opacity: 1;
   }
-  50% {
+  36% {
     opacity: 0;
   }
   100% {
@@ -128,10 +128,10 @@
   12% {
     opacity: 1;
   }
-  40% {
+  26% {
     opacity: 1;
   }
-  50% {
+  36% {
     opacity: 0;
   }
   100% {
@@ -147,16 +147,16 @@
   0% {
     opacity: 0;
   }
-  50% {
+  36% {
     opacity: 0;
   }
-  60% {
+  46% {
     opacity: 1;
   }
-  65% {
+  56% {
     opacity: 1;
   }
-  70% {
+  66% {
     opacity: 0;
   }
   100% {
@@ -169,6 +169,28 @@
 }
 
 @keyframes A4 {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  76% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-5 {
+  animation: A5 18s ease-out infinite;
+}
+
+@keyframes A5 {
   0% {
     opacity: 0;
   }
@@ -186,11 +208,11 @@
   }
 }
 
-.animate-5 {
-  animation: A5 18s ease-out infinite;
+.animate-6 {
+  animation: A6 18s ease-out infinite;
 }
 
-@keyframes A5 {
+@keyframes A6 {
   0% {
     opacity: 0;
   }

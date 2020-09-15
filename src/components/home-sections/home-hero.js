@@ -77,9 +77,26 @@ const HomeHero = () => {
 
                 <HeroMain className={"animate-4"}>
 
-                    <div class="animate-4">
-                        <p class="animate-4">Driving tomorrow's technology</p>
-                        <p class="animate-5">with today's optimum talent</p>
+                <ImageBackground className={"animate-4"}>
+                    <video
+                    className="video-player"
+                    height="100%"
+                    width="100%"
+                    loop
+                    muted
+                    autoPlay
+                    >
+                    <source
+                        src={HeroVideo}
+                        type="video/mp4"
+                    />
+                    </video>
+                    <BackgroundImg sizes={post.node.acf.mobile_background.localFile.childImageSharp.sizes} alt={"Optomi Hero Background"} className={"animate-4"}/>
+                </ImageBackground>
+
+                    <div class="animate-5">
+                        <p class="animate-5">Driving tomorrow's technology</p>
+                        <p class="animate-6">with today's optimum talent</p>
                     </div>
 
                 </HeroMain>
@@ -154,6 +171,10 @@ const HeroMain = styled.div`
         @media(max-width: 400px) {
             font-size: 20px;
         }
+    }
+    sup {
+        top: -1.2em;
+        font-size: 40%;
     }
 `
 

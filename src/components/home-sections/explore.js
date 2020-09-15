@@ -91,7 +91,7 @@ const MainSection = styled.div`
 
 const MainContent = styled.div`
     max-width: 1340px;
-    padding: 120px 20px;
+    padding: 60px 20px;
     width: 100%;
     margin: 0 auto;
     h2 {
@@ -156,7 +156,7 @@ const ButtonSection = styled.div`
 
 const ButtonLink = styled(Link)`
     font-family: "Helvetica Thin";
-    color: #fff;
+    color: #298fc2;
     font-size: 18px;
     line-height: 1.3;
     text-align: center;

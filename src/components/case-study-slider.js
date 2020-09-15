@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 import Slider from "react-slick"
@@ -45,13 +45,17 @@ class SlickSlider extends Component {
           >
           <Slider {...settings}>
             {data.allWordpressWpCaseStudy.edges.map(post => (
-              <CaseStudy>
+              <Link
+                to="/case-studies/"
+              >
+                <CaseStudy>
                 <ImageThumb>
                     <CaseImg sizes={post.node.acf.thumbnail.localFile.childImageSharp.sizes} alt={post.node.title} />
                 </ImageThumb>
                 <Highlight dangerouslySetInnerHTML={{ __html: post.node.acf.highlight_content }} className={"sliderFade"}/>
                 <Excerpt dangerouslySetInnerHTML={{ __html: post.node.acf.excerpt_content }} className={"sliderFade"}/>
               </CaseStudy>
+              </Link>
             ))}          
           </Slider>
           </div>

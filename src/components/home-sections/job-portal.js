@@ -36,7 +36,7 @@ const JobPortal = () => {
 
 const MainSection = styled.div`
     background-color: #000;
-    padding-top: 80px;
+    padding-top: 0px;
     padding-bottom: 0px;
     position: relative;
     z-index: 3;
@@ -51,7 +51,6 @@ const MainContent = styled.div`
     padding: 50px 20px;
     width: 100%;
     margin: 0 auto;
-    border-top: 1px solid #a6aaab;
     h2 {
         font-family: "BonVivant";
         color: #fff;

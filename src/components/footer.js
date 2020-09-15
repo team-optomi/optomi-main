@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import FooterLogo from "../components/logos/footer-logo"
@@ -33,7 +34,7 @@ const Footer = () => (
                 <li><a href="https://www.linkedin.com/company-beta/16182234/" target="_blank" rel="noopener noreferrer">Provalus on LinkedIn</a></li>
                 <li><a href="https://www.linkedin.com/company/santekahealthcaretalent" target="_blank" rel="noopener noreferrer">Santeka on LinkedIn</a></li>
                 <li><a href="#" target="_blank" rel="noopener noreferrer">Locations</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">Contacts</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
             </ul>
         </FooterCol>
         <FooterCol className={"col-three"}>
@@ -57,6 +58,18 @@ const Footer = () => (
         </FooterSocials>
       <FooterAwardsCol>
             <FooterAwards/>
+            <div class={"bottom-links"}>
+            <Link
+            to="/privacy-policy/"
+            >
+            Privacy Policy
+            </Link>
+            <Link
+            to="/terms/"
+            >
+            Terms
+            </Link>
+            </div>
         </FooterAwardsCol>
         <FooterBottom>
             <p>© <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer">OPTOMI.</a> | All rights reserved.</p>
@@ -250,6 +263,23 @@ const FooterAwardsCol = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .bottom-links {
+        a {
+            font-family: "Helvetica Thin";
+            font-size: 14px;
+            margin-bottom: 0px;
+            line-height: 1;
+            text-decoration: none;
+            color: #a6aaab;
+            margin-left: 20px;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
     .gatsby-image-wrapper {
         width: 380px;
         height: 30px;
@@ -273,6 +303,7 @@ const FooterAwardsCol = styled.div`
         margin-top: 50px;
     }
     @media(max-width:800px) {
+        justify-content: center;
         .gatsby-image-wrapper {
             max-width: 380px;
             width: 100%;

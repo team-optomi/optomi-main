@@ -118,23 +118,25 @@ const MiddleContent = styled.div`
     transition-duration: .3s;
     p {
         font-family: "Helvetica Thin";
-        color: #8a8d8f;
+        color: #fff;
         font-size: 24px;
         line-height: 1.3;
-        letter-spacing: 4px;
+        max-width: 700px;
+        text-align: center;
         position: relative;
+        margin: 0 auto;
         margin-bottom: 100px;
-        max-width: 950px;
+        max-width: 450px;
         transition-duration: .3s;
         .bonvivant {
             font-family: "BonVivant";
             padding: 0 10px;
             letter-spacing: initial;
-            text-align: right;
+            text-align: center;
             font-size: 72px;
-            position: absolute;
-            top: -10px;
-            right: -100px;
+            position: relative;
+            line-height: .5;
+            color: #298fc2;
         }
     }
     @media(max-width:1200px) {
@@ -144,25 +146,7 @@ const MiddleContent = styled.div`
         }
     }
     @media(max-width:1150px) {
-        p {
-            text-align: center;
-            .bonvivant {
-                top: 0;
-                right: calc(50% - 125px);
-            }
-        }
-    }
-    @media(max-width:1150px) {
         max-width: 740px;
-        p {
-            .bonvivant {
-                position: relative;
-                text-align: center;
-                top: auto;
-                right: auto;
-                line-height: .5;
-            }
-        }
     }
 `
 

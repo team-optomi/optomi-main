@@ -119,7 +119,7 @@ const SidebarMenu = styled.div`
     right: -270px;
     background-color: #1b1b1b;
     transition-duration: .3s;
-    z-index: 2;
+    z-index: 10;
     button {
       position: absolute;
       top: 29px;

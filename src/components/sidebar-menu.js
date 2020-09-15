@@ -26,7 +26,11 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/jobs/#/jobs" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Portal</a>
+            <Link
+            to="/about-us/"
+            >
+            About Us
+            </Link>
         </MenuItem>
         <MenuItem>
             <Link
@@ -36,6 +40,9 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
+            <a href="https://optomi.com/jobs/#/jobs" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Portal</a>
+        </MenuItem>
+        <MenuItem>
             <Link
             to="/clients/"
             >
@@ -43,14 +50,14 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
-            <a href="https://optomi.com/jobseekers/" target="_blank" rel="noopener noreferrer" aria-label="Link">Join our Team</a>
+            <Link
+            to="/case-studies/"
+            >
+            Case Studies
+            </Link>
         </MenuItem>
         <MenuItem>
-            <Link
-            to="/about-us/"
-            >
-            About Us
-            </Link>
+            <a href="https://optomi.com/jobseekers/" target="_blank" rel="noopener noreferrer" aria-label="Link">Join our Team</a>
         </MenuItem>
         <MenuItem>
             <Link
