@@ -238,14 +238,14 @@ const HeroTitle = styled.div`
     left: 150px;
     h1 {
         font-family: "Helvetica Thin";
-        color: #8a8d8f;
+        color: #5ab3e8;
         margin-bottom: 0;
         text-transform: lowercase;
-        font-size: 90px;
+        font-size: 72px;
         font-weight: 100;
         line-height: 1;
         @media(max-width:1200px) {
-            font-size: 82px;
+            font-size: 62px;
         }
         @media(max-width:770px) {
             font-size: 52px;

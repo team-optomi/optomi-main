@@ -21,7 +21,7 @@ const AboutPage = () => {
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 1920) {
+                                    sizes(maxWidth: 2800) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
@@ -30,6 +30,7 @@ const AboutPage = () => {
                         acf {
                             meta_title
                             meta_description
+                            hero_content
                             awards_image {
                                 localFile {
                                     childImageSharp {
@@ -56,9 +57,9 @@ const AboutPage = () => {
                 image={post.node.featured_media.localFile.childImageSharp.sizes}
                 />
                 <HeroBanner>
-                    <CanvasBackground>
-                        <ParticleBG/>
-                    </CanvasBackground>
+                    <ImageBackground>
+                        <HeroImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
+                    </ImageBackground>
 
                     <HeroTitle
                         data-sal="slide-right"
@@ -72,10 +73,27 @@ const AboutPage = () => {
 
                     <HeroMain>
                         <HeroContent 
-                            data-sal="fade"
-                            data-sal-duration="1000"
-                            data-sal-easing="ease"
-                            dangerouslySetInnerHTML={{ __html: post.node.content }}
+                        data-sal="fade"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        dangerouslySetInnerHTML={{ __html: post.node.acf.hero_content }}
+                        />
+                    </HeroMain>
+
+                </HeroBanner>
+
+                <SectionTwo>
+
+                    <CanvasBackground>
+                        <ParticleBG/>
+                    </CanvasBackground>
+
+                    <SectionTwoRow>
+                        <SectionContent 
+                        data-sal="fade"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        dangerouslySetInnerHTML={{ __html: post.node.content }}
                         />
                         <h3
                         data-sal="fade"
@@ -89,20 +107,16 @@ const AboutPage = () => {
                         >
                             <button onClick={() => scrollTo('#leader_section')} aria-label="Scroll">Leadership</button>
                             <ButtonLink
-                            to="/"
+                            to="/founders"
                             >
                             Founders
                             </ButtonLink>
-                            <ButtonLink
-                            to="/giving-back/"
-                            >
-                            Giving Back
-                            </ButtonLink>
+                            <a href="https://optomi.com/giving">Giving Back</a>
                             <button onClick={() => scrollTo('#award_section')} aria-label="Scroll">Awards</button>
                         </ButtonSection>
-                    </HeroMain>
+                    </SectionTwoRow>
 
-                </HeroBanner>
+                </SectionTwo>
 
                 <LeadershipSectionSimple />
 
@@ -121,25 +135,35 @@ const AboutPage = () => {
 const HeroBanner = styled.div`
     position: relative; 
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
     height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 2;
     @media (max-width:600px) {
         display: block;
     }
 `
-
-const CanvasBackground = styled.div`
+const ImageBackground = styled.div`
+    background-color: #000;
     position: absolute;
-    z-index: 1;
+    height: 100vh;
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
 `
+
+const HeroImg = styled(Img)`
+    height: 100vh;
+    width: 100%;
+    img {
+        margin-bottom: 0;
+    }
+`
+
 
 const HeroTitle = styled.div`
     position: absolute;
@@ -147,14 +171,14 @@ const HeroTitle = styled.div`
     left: 150px;
     h1 {
         font-family: "Helvetica Thin";
-        color: #8a8d8f;
+        color: #5ab3e8;
         margin-bottom: 0;
         text-transform: lowercase;
-        font-size: 90px;
+        font-size: 72px;
         font-weight: 100;
         line-height: 1;
         @media(max-width:1200px) {
-            font-size: 82px;
+            font-size: 62px;
         }
         @media(max-width:600px) {
             font-size: 52px;
@@ -186,12 +210,12 @@ const HeroTitle = styled.div`
 `
 
 const HeroMain = styled.div`
-    max-width: 1340px;
+    max-width: 1540px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
     margin: 0 auto;
-    margin-top: 250px;
+    margin-bottom: 50px;
     position: relative;
     z-index: 2;
     h3 {
@@ -207,10 +231,10 @@ const HeroMain = styled.div`
         transition-delay: 3s;
     }
     @media(max-width:1500px) {
-        max-width: 1140px;
+        max-width: 1340px;
     }
     @media(max-width:1200px) {
-        max-width: 940px;
+        max-width: 1140px;
     }
     @media(max-width:800px) {
         h3 {
@@ -218,16 +242,106 @@ const HeroMain = styled.div`
             letter-spacing: 3px;
         }
     }
-    @media(max-width:600px) {
+    @media(max-width:700px) {
         margin-top: 0;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
+
 
 const HeroContent = styled.div`
     position: relative;
     z-index: 10;
     width: 100%;
+    max-width: 900px;
+    margin-left: auto;
     transition-delay: 2s;
+    p {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 24px;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 35px;
+        max-width: 1150px;
+        span.bonvivant {
+            font-family: "BonVivant";
+            color: #fff;
+            text-align: center;
+            font-size: 46px;
+            line-height: 1.5;
+            font-weight: 100;
+            margin-bottom: 10px;
+            transition-duration: 2s;
+            transition-delay: 1s;
+        }
+    }
+    @media(max-width:1160px) {
+        text-align: center;
+        max-width: 700px;
+        margin-right: auto;
+    }
+    @media(max-width:800px) {
+        p {
+            font-size: 20px;
+            span.bonvivant {
+                font-size: 32px;
+            }
+        }
+    }
+`
+
+const SectionTwo = styled.div`
+    background-color: #000;
+`
+
+const SectionTwoRow = styled.div`
+    max-width: 1540px;
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 120px;
+    margin: 0 auto;
+    margin-top: 120px;
+    position: relative;
+    z-index: 2;
+    h3 {
+        font-family: "Helvetica Thin";
+        color: #8a8d8f;
+        margin-bottom: 0;
+        font-size: 32px;
+        font-weight: 100;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        max-width: 1000px;
+        transition-delay: .3s;
+    }
+    @media(max-width:1500px) {
+        max-width: 1340px;
+    }
+    @media(max-width:1200px) {
+        max-width: 1140px;
+    }
+    @media(max-width:800px) {
+        h3 {
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+    }
+    @media(max-width:700px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+`
+
+
+const SectionContent = styled.div`
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    transition-delay: .3s;
     p {
         font-family: "Helvetica Thin";
         width: 100%;
@@ -236,7 +350,6 @@ const HeroContent = styled.div`
         color: #8a8d8f;
         line-height: 1.2;
         margin-bottom: 35px;
-        max-width: 1150px;
     }
     @media(max-width:800px) {
         p {
@@ -245,19 +358,29 @@ const HeroContent = styled.div`
     }
 `
 
+const CanvasBackground = styled.div`
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+`
+
 const ButtonSection = styled.div`
     display: flex;
-    flex-direction: column;
-    transition-delay: 4s;
+    justify-content: space-between;
+    transition-delay: .3s;
     padding-top: 35px;
-    padding-bottom: 80px;
-    button {
+    padding-bottom: 120px;
+    button,
+    a {
         background: transparent;
         border: none;
         text-align: left;
         font-family: "Helvetica Thin";
-        color: #8a8d8f;
-        margin-bottom: 10px;
+        color: #5ab3e8;
+        margin-bottom: 15px;
         font-size: 32px;
         font-weight: 100;
         line-height: 1.3;
@@ -265,21 +388,26 @@ const ButtonSection = styled.div`
         letter-spacing: 5px;
         padding: 0;
         outline: 0;
+        text-decoration: none;
         &:hover {
             cursor: pointer;
         }
     }
-    @media(max-width:800px) {
-        button {
+    @media(max-width:1200px) {
+        button,
+        a {
             font-size: 24px;
             letter-spacing: 3px;
         }
+    }
+    @media(max-width:960px) {
+        flex-direction: column
     }
 `
 
 const ButtonLink = styled(Link)`
     font-family: "Helvetica Thin";
-    color: #8a8d8f;
+    color: #5ab3e8;
     margin-bottom: 0;
     font-size: 32px;
     font-weight: 100;
@@ -287,8 +415,8 @@ const ButtonLink = styled(Link)`
     text-transform: uppercase;
     letter-spacing: 5px;
     text-decoration: none;
-    margin-bottom: 10px;
-    @media(max-width:800px) {
+    margin-bottom: 15px;
+    @media(max-width:1200px) {
         font-size: 24px;
         letter-spacing: 3px;
     }
@@ -298,12 +426,18 @@ const AwardSection = styled.div`
     background-color: #000;
     padding-top: 200px;
     padding-bottom: 200px;
+    position: relative;
+    z-index: 2;
     > div {
-        max-width: 1340px;
+        max-width: 1540px;
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 120px;
+        padding-right: 120px;
         margin: 0 auto;
+        @media(max-width:700px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 `
 

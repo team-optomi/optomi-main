@@ -123,7 +123,7 @@ const HeaderMain = styled.div`
   justify-content: flex-end;
   align-items: center;
   z-index: 100;
-  @media(max-width:600px) {
+  @media(max-width:768px) {
     background-color: #000;
     justify-content: space-between;
   }
@@ -151,7 +151,7 @@ const MobileLogo = styled.div`
       margin-bottom: 0;
     }
   }
-  @media(max-width:600px) {
+  @media(max-width:768px) {
     opacity: 1;
     visibility: visible;
   }
