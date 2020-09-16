@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
@@ -108,24 +108,24 @@ const ClientsPage = () => {
                         data-sal-easing="ease"
                         >{post.node.acf.section_two.buttons_title}</h2>
                         <div class="button-row">
-                            <a 
+                            <Link 
                             data-sal="slide-up"
                             data-sal-duration="1000"
                             data-sal-delay="300"
                             data-sal-easing="ease"
-                            href={post.node.acf.section_two.button_one_link}>{post.node.acf.section_two.button_one_text}</a>
-                            <a 
+                            to={post.node.acf.section_two.button_one_link}>{post.node.acf.section_two.button_one_text}</Link>
+                            <Link 
                             data-sal="slide-up"
                             data-sal-duration="1000"
                             data-sal-delay="600"
                             data-sal-easing="ease"
-                            href={post.node.acf.section_two.button_two_link}>{post.node.acf.section_two.button_two_text}</a>
-                            <a 
+                            to={post.node.acf.section_two.button_two_link}>{post.node.acf.section_two.button_two_text}</Link>
+                            <Link 
                             data-sal="slide-up"
                             data-sal-duration="1000"
                             data-sal-delay="900"
                             data-sal-easing="ease"
-                            href={post.node.acf.section_two.button_three_link}>{post.node.acf.section_two.button_three_text}</a>
+                            to={post.node.acf.section_two.button_three_link}>{post.node.acf.section_two.button_three_text}</Link>
                         </div>
                     </ButtonSection>
 
@@ -338,7 +338,7 @@ const ButtonSection = styled.div`
     margin: 0 auto;
     border-bottom: 1px solid #8a8d8f;
     h2 {
-        max-width: 1100px;
+        max-width: 1140px;
         width: 100%;
         font-family: "Helvetica Thin";
         color: #fff;
@@ -361,7 +361,7 @@ const ButtonSection = styled.div`
         align-items: center;
         a {
             font-family: "Helvetica Thin";
-            color: #8a8d8f;
+            color: #5ab3e8;
             font-size: 32px;
             font-weight: 100;
             letter-spacing: 10px;

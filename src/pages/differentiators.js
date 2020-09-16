@@ -2,10 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ParticleBG from "../components/particle-bg"
+import { FaChevronDown } from 'react-icons/fa'
 
 const DifferentiatorsPage = () => {
 
@@ -119,9 +121,17 @@ const DifferentiatorsPage = () => {
                         >{post.node.acf.tagline}</h3>
                     </HeroMain>
 
+                    <HeroBottom
+                        data-sal="slide-down"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                    >
+                        <button onClick={() => scrollTo('#section_one')} aria-label="Scroll"><FaChevronDown size={32}/></button>
+                    </HeroBottom>
+
                 </HeroBanner>
 
-                <DifBanner>
+                <DifBanner id={"section_one"}>
                     <ImageBackground
                     data-sal="fade"
                     data-sal-duration="1000"
@@ -159,7 +169,7 @@ const DifferentiatorsPage = () => {
                         data-sal-delay="900"
                         data-sal-easing="ease"
                         >
-                            <h2>{post.node.acf.section_two.header}</h2>
+                            <h2 style={{marginTop: '150px'}}>{post.node.acf.section_two.header}</h2>
                             <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_two.main_content }}/>
                         </div>
                     </BannerContent>
@@ -291,10 +301,9 @@ const HeroMain = styled.div`
     z-index: 2;
     h2 {
         transition-delay: 1.5s;
-        font-family: "Helvetica Thin";
+        font-family: "BonVivant";
         color: #8a8d8f;
         margin-bottom: 0;
-        text-transform: uppercase;
         font-size: 72px;
         font-weight: 100;
         line-height: 1;
@@ -303,7 +312,7 @@ const HeroMain = styled.div`
     }
     h3 {
         font-family: "Helvetica Thin";
-        color: #8a8d8f;
+        color: #5ab3e8;
         margin-bottom: 0;
         font-size: 36px;
         font-weight: 100;
@@ -360,6 +369,30 @@ const HeroContent = styled.div`
     }
     @media(max-width:1000px) {
         margin-right: auto;
+    }
+`
+
+const HeroBottom = styled.div`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    transition-delay: 5s;
+    p {
+        font-family: "Helvetica Thin";
+        text-align: center;
+        margin: 0;
+        color: rgb(140, 145, 146);
+    }
+    button {
+        color: #5ab3e8;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        &:hover {
+            cursor: pointer;
+        }
     }
 `
 

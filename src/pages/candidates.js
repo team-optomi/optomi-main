@@ -368,6 +368,7 @@ const ButtonSection = styled.div`
         font-size: 90px;
         font-weight: 100;
         margin-bottom: 80px;
+        overflow: visible;
     }
     .button-row {
         width: 100%;
@@ -380,7 +381,7 @@ const ButtonSection = styled.div`
         align-items: center;
         a {
             font-family: "Helvetica Thin";
-            color: #8a8d8f;
+            color: #5ab3e8;
             font-size: 32px;
             font-weight: 100;
             letter-spacing: 10px;

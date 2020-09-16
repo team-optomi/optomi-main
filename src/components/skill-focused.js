@@ -53,21 +53,21 @@ const MainContent = styled.div`
     margin: 0 auto;
     h2 {
         font-family: "Helvetica Thin";
-        font-size: 60px;
+        font-size: 42px;
         color: #000;
         font-weight: 100;
         line-height: 1.2;
         letter-spacing: 1px;
         .bonvivant {
             font-family: "BonVivant";
-            font-size: 80px;
+            font-size: 60px;
             padding: 0 10px;
         }
     }
     p {
         font-family: "Helvetica Thin";
         color: #000;
-        font-size: 32px;
+        font-size: 24px;
         line-height: 1.3;
         max-width: 760px;
     }

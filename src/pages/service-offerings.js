@@ -311,7 +311,7 @@ const BannerContent = styled.div`
 const SecondParagraph = styled.div`
     background-color: #000;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
     > div {
         max-width: 1340px;
         width: 100%;
@@ -370,7 +370,9 @@ const SecondCopy = styled.div`
             font-size: 60px;
             font-weight: 100;
             margin-top: 20px;
+            margin-bottom: 60px;
             padding-right: 120px;
+            overflow: visible;
         }
         br {
             display: none;
