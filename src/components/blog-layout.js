@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import "./layout.css"
 import PageTransition from 'gatsby-plugin-page-transitions';
 
-import LogoLarge from "../components/logos/logo-large"
+import HeaderLogo from "../components/header-logo"
 import SideMainMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
 
@@ -36,7 +36,7 @@ class BlogLayout extends Component {
                             <Link
                                 to="/"
                                 >
-                              <LogoLarge/>
+                              <HeaderLogo/>
                             </Link>
                             <MenuRight>
                                 <button onClick={() => this.toggleMenu()} aria-label="Open">
@@ -117,6 +117,7 @@ const HeaderMain = styled.div`
   margin: 0px auto;
   max-width: 100%;
   width: 100%;
+  height: 100px;
   padding: 5px 40px;
   display: flex;
   background-color: #000;
@@ -124,8 +125,8 @@ const HeaderMain = styled.div`
   align-items: center;
   z-index: 100;
   .gatsby-image-wrapper {
-    width: 183px;
-    height: 90px;
+    width: 90px;
+    height: 34px;
     img {
       margin-bottom: 0;
     }

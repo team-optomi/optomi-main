@@ -7,24 +7,25 @@ import styled from 'styled-components'
 
 import PostFooter from "../components/post-footer"
 
-const BlogPost = ({ data }) => (
+const CaseStudyPost = ({ data }) => (
     <BlogLayout>
       <SEO 
-        title={data.wordpressPost.title} 
-        image={data.wordpressPost.featured_media.localFile.childImageSharp.sizes}
+        title={data.wordpressWpCaseStudy.acf.meta_title} 
+        description={data.wordpressWpCaseStudy.acf.meta_description}
+        image={data.wordpressWpCaseStudy.featured_media.localFile.childImageSharp.sizes}
         />
       <BlogContainer>
           <article>
-            <FeaturedImg sizes={data.wordpressPost.featured_media.localFile.childImageSharp.sizes} alt={data.wordpressPost.title} />
-            <h1><span>{data.wordpressPost.date}</span>{data.wordpressPost.title}</h1>
+            <FeaturedImg sizes={data.wordpressWpCaseStudy.featured_media.localFile.childImageSharp.sizes} alt={data.wordpressWpCaseStudy.title} />
+            <h1><span>{data.wordpressWpCaseStudy.date}</span>{data.wordpressWpCaseStudy.title}</h1>
             <p class={"blog-meta"}><span>Posted in </span>
-            {data.wordpressPost.categories.map(category => (
+            {data.wordpressWpCaseStudy.categories.map(category => (
                   <span>
                       {category.name}
                   </span>
               ))}
-              <span> by </span>{data.wordpressPost.acf.custom_author}</p>
-            <div dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }} />
+              <span> by </span>{data.wordpressWpCaseStudy.acf.custom_author}</p>
+            <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.content }} />
           </article>
           <PostFooter/>
       </BlogContainer>
@@ -78,11 +79,11 @@ const FeaturedImg = styled(Img)`
     margin-bottom: 25px;
 `
 
-export default BlogPost
+export default CaseStudyPost
 
 export const query = graphql`
 query($id: Int!) {
-  wordpressPost(wordpress_id: { eq: $id }) {
+  wordpressWpCaseStudy(wordpress_id: { eq: $id }) {
       title
       content
       date(formatString: "DD MMM")
@@ -100,6 +101,8 @@ query($id: Int!) {
       }
       acf {
         custom_author
+        meta_title
+        meta_description
       }
     }
   }

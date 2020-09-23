@@ -5,11 +5,17 @@ import styled from 'styled-components'
 import BlogLayout from "../components/blog-layout"
 import SEO from "../components/seo"
 
-const BlogPage = ({ data }) => (
+const CaseStudiesPage = ({ data }) => (
     <BlogLayout>
-      <SEO title="Blog"/>
+      {data.allWordpressWpCustomPage.edges.map(post => (
+      <SEO 
+      title={post.node.acf.meta_title} 
+      description={post.node.acf.meta_description}
+      image={post.node.featured_media.localFile.childImageSharp.sizes}
+      />
+      ))}
       <BlogGrid>
-        {data.allWordpressPost.edges.map(post => (
+        {data.allWordpressWpCaseStudy.edges.map(post => (
           <article>
               <BackgroundImg>
                 <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title}  />
@@ -25,7 +31,7 @@ const BlogPage = ({ data }) => (
               <Link to={`/${post.node.slug}`} style={{ textDecoration: "none" }}>
                 <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
               </Link>
-              <div class={"excerpt"} dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+              <div class={"excerpt"} dangerouslySetInnerHTML={{ __html: post.node.acf.excerpt_content }} />
               <p class={"meta"}>
                 {post.node.date} | by {post.node.acf.custom_author}
               </p>
@@ -172,15 +178,14 @@ const BlogPage = ({ data }) => (
   `
 
   
-  export default BlogPage
+  export default CaseStudiesPage
   
   export const query = graphql`
     query {
-      allWordpressPost {
+      allWordpressWpCaseStudy {
         edges {
           node {
             title
-            excerpt
             slug
             categories {
                 name
@@ -197,6 +202,26 @@ const BlogPage = ({ data }) => (
             }
             acf {
               custom_author
+              excerpt_content
+            }
+          }
+        }
+      }
+      allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 36}}}}) {
+        edges {
+          node {
+            featured_media {
+              localFile {
+                  childImageSharp {
+                      sizes(maxWidth: 2000) {
+                          ...GatsbyImageSharpSizes
+                      }
+                  }
+              }
+            }
+            acf {
+              meta_title
+              meta_description
             }
           }
         }

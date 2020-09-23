@@ -10,11 +10,11 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const BlogPostTemplate = path.resolve("./src/templates/post.js")
+  const CaseStudyTemplate = path.resolve("./src/templates/case-study.js")
   const ServiceTemplate = path.resolve("./src/templates/service-page.js")
   const result = await graphql(`
     {
-      allWordpressPost {
+      allWordpressWpCaseStudy {
         edges {
           node {
             slug
@@ -36,11 +36,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-    const BlogPosts = result.data.allWordpressPost.edges
-        BlogPosts.forEach(post => {
+    const CaseStudies = result.data.allWordpressWpCaseStudy.edges
+        CaseStudies.forEach(post => {
           createPage({
                 path: post.node.slug,
-                component: BlogPostTemplate,
+                component: CaseStudyTemplate,
                 context: {
                 id: post.node.wordpress_id,
                 },
