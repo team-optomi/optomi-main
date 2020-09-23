@@ -291,7 +291,7 @@ const HeroTitle = styled.div`
 `
 
 const HeroMain = styled.div`
-    max-width: 1340px;
+    max-width: 1240px;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -314,6 +314,7 @@ const HeroMain = styled.div`
         font-family: "Helvetica Thin";
         color: #5ab3e8;
         margin-bottom: 0;
+        padding-left: 100px;
         font-size: 36px;
         font-weight: 100;
         line-height: 1;
@@ -330,6 +331,9 @@ const HeroMain = styled.div`
     }
     @media(max-width:1000px) {
         text-align: center;
+        h3 {
+            padding-left: 0;
+        }
     }
     @media(max-width: 770px) {
         margin-top: 0;

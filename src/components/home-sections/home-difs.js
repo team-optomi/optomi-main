@@ -119,20 +119,19 @@ const MiddleContent = styled.div`
     p {
         font-family: "Helvetica Thin";
         color: #fff;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 1.3;
         max-width: 700px;
-        text-align: center;
+        text-align: left;
         position: relative;
         margin: 0 auto;
-        margin-bottom: 100px;
-        max-width: 450px;
+        max-width: 1340px;
         transition-duration: .3s;
         .bonvivant {
             font-family: "BonVivant";
             padding: 0 10px;
+            padding-left: 100px;
             letter-spacing: initial;
-            text-align: center;
             font-size: 72px;
             position: relative;
             line-height: .5;
@@ -143,6 +142,10 @@ const MiddleContent = styled.div`
         max-width: 940px;
         p {
             font-size: 20px;
+            text-align: center;
+            .bonvivant {
+                padding-left: 10px;
+            }
         }
     }
     @media(max-width:1150px) {

@@ -20,7 +20,7 @@ const SkillFocused = () => {
     return(
         
         data.allWordpressWpHomeSection.edges.map(post => (
-            <MainSection>
+            <MainSection id={"skill_section"}>
 
                 <MainContent 
                     data-sal="fade"
@@ -58,6 +58,7 @@ const MainContent = styled.div`
         font-weight: 100;
         line-height: 1.2;
         letter-spacing: 1px;
+        margin-bottom: 10px;
         .bonvivant {
             font-family: "BonVivant";
             font-size: 60px;

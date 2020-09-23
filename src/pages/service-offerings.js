@@ -2,11 +2,13 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import SkillFocused from "../components/skill-focused.js"
+import { FaChevronDown } from 'react-icons/fa'
 
 
 const ServicesPage = () => {
@@ -97,6 +99,14 @@ const ServicesPage = () => {
                             />
                         </div>
                     </HeroContent>
+
+                    <HeroBottom
+                        data-sal="slide-down"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                    >
+                        <button onClick={() => scrollTo('#skill_section')} aria-label="Scroll"><FaChevronDown size={32}/></button>
+                    </HeroBottom>
 
                 </HeroBanner>
                 ))}
@@ -260,6 +270,30 @@ const HeroCopy = styled.div`
     }
 `
 
+const HeroBottom = styled.div`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    transition-delay: 1.5s;
+    p {
+        font-family: "Helvetica Thin";
+        text-align: center;
+        margin: 0;
+        color: rgb(140, 145, 146);
+    }
+    button {
+        color: #5ab3e8;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+`
+
 const BannerContent = styled.div`
     position: absolute;
     width: 100%;
@@ -369,8 +403,8 @@ const SecondCopy = styled.div`
             text-align: center;
             font-size: 60px;
             font-weight: 100;
-            margin-top: 20px;
-            margin-bottom: 60px;
+            margin-top: 10px;
+            margin-bottom: 35px;
             padding-right: 120px;
             overflow: visible;
         }
