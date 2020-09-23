@@ -90,7 +90,7 @@
 /* Home hero animations */
 
 .animate-1 {
-  animation: A1 18s ease-out infinite;
+  animation: A1 12s ease-out infinite;
 }
 
 @keyframes A1 {
@@ -103,11 +103,8 @@
   6% {
     opacity: 1;
   }
-  26% {
+  99% {
     opacity: 1;
-  }
-  36% {
-    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -115,23 +112,23 @@
 }
 
 .animate-2 {
-  animation: A2 18s ease-out infinite;
+  animation: A2 12s ease-out infinite;
 }
 
 @keyframes A2 {
   0% {
     opacity: 0;
   }
-  6% {
+  10% {
     opacity: 0;
   }
-  12% {
+  20% {
     opacity: 1;
   }
-  26% {
+  40% {
     opacity: 1;
   }
-  36% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -140,23 +137,23 @@
 }
 
 .animate-3 {
-  animation: A3 18s ease-out infinite;
+  animation: A3 12s ease-out infinite;
 }
 
 @keyframes A3 {
   0% {
     opacity: 0;
   }
-  36% {
+  22% {
     opacity: 0;
   }
-  46% {
+  32% {
     opacity: 1;
   }
-  56% {
+  40% {
     opacity: 1;
   }
-  66% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -165,7 +162,7 @@
 }
 
 .animate-4 {
-  animation: A4 18s ease-out infinite;
+  animation: A4 12s ease-out infinite;
 }
 
 @keyframes A4 {
@@ -187,20 +184,20 @@
 }
 
 .animate-5 {
-  animation: A5 18s ease-out infinite;
+  animation: A5 12s ease-out infinite;
 }
 
 @keyframes A5 {
   0% {
     opacity: 0;
   }
-  70% {
+  60% {
     opacity: 0;
   }
-  80% {
+  70% {
     opacity: 1;
   }
-  95% {
+  90% {
     opacity: 1;
   }
   100% {
@@ -209,20 +206,20 @@
 }
 
 .animate-6 {
-  animation: A6 18s ease-out infinite;
+  animation: A6 12s ease-out infinite;
 }
 
 @keyframes A6 {
   0% {
     opacity: 0;
   }
-  80% {
+  72% {
     opacity: 0;
   }
-  90% {
+  82% {
     opacity: 1;
   }
-  95% {
+  90% {
     opacity: 1;
   }
   100% {
