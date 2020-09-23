@@ -112,19 +112,13 @@ const AboutPage = () => {
                             Founders
                             </ButtonLink>
                             <a href="https://optomi.com/giving">Giving Back</a>
-                            <button onClick={() => scrollTo('#award_section')} aria-label="Scroll">Awards</button>
+                            <a href="https://optomi.com/awards">Awards</a>
                         </ButtonSection>
                     </SectionTwoRow>
 
                 </SectionTwo>
 
                 <LeadershipSectionSimple />
-
-                <AwardSection  id={"award_section"} >
-                    <div>
-                        <AwardImg sizes={post.node.acf.awards_image.localFile.childImageSharp.sizes} alt={post.node.title}/>
-                    </div>
-                </AwardSection>
 
             </Layout>
             
@@ -420,29 +414,6 @@ const ButtonLink = styled(Link)`
         font-size: 24px;
         letter-spacing: 3px;
     }
-`
-
-const AwardSection = styled.div`
-    background-color: #000;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    position: relative;
-    z-index: 2;
-    > div {
-        max-width: 1540px;
-        width: 100%;
-        padding-left: 120px;
-        padding-right: 120px;
-        margin: 0 auto;
-        @media(max-width:700px) {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    }
-`
-
-const AwardImg = styled(Img)`
-
 `
 
 export default AboutPage

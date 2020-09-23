@@ -28,7 +28,10 @@ class GenuineContent extends Component {
             data.allWordpressWpCoreValue.edges.map(post => (
                 <ValueContainer>
 
-                    <ValueToggle id={"g_scroll"} className="g-toggle" onClick={() => this.toggleValue()} ><h3>{post.node.title}</h3><FaChevronDown size={24} className={valueName}/></ValueToggle>
+                    <ValueToggle id={"g_scroll"} className="g-toggle" onClick={() => this.toggleValue()} >
+                        <h3>{post.node.title}</h3>
+                        <FaChevronDown size={24} className={valueName}/>
+                    </ValueToggle>
                         <Line className="g-line"/>
                             <ValueContent className={valueName}>
                                 <ValueCopy dangerouslySetInnerHTML={{ __html: post.node.content }}/>
