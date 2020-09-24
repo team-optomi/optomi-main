@@ -14,6 +14,18 @@ const DifLineThreeV2 = () => {
         }
 
         let tl = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+              trigger: "#row_three_trigger",
+              start: 'top 70%',
+              end: 'top 20%',
+              id: 'dif_line_two',
+              toggleActions: "play reverse play reverse",
+              },
+          })
+          tl.to('.copy-three', { opacity: '1', duration: 1 })
+
+        let tlOne = gsap.timeline({
             paused: true,
             scrollTrigger: {
                 trigger: "#row_three_trigger",
@@ -23,7 +35,7 @@ const DifLineThreeV2 = () => {
                 toggleActions: "play reverse play reverse",
                 },
             })
-            tl.to('.dif-line-three', { width: '80%', duration: 1, ease: 'Power4.easeOut' })
+            tlOne.to('.dif-line-three', { width: '80%', duration: 2, delay: 1, ease: 'Power4.easeOut' })
 
         let tlTwo = gsap.timeline({
           paused: true,
@@ -35,13 +47,13 @@ const DifLineThreeV2 = () => {
               toggleActions: "play reverse play reverse",
               },
           })
-          tlTwo.to('.percent-three', { opacity: '1', duration: 1 })
+          tlTwo.to('.percent-three', { opacity: '1', duration: 1, delay: 1 })
     
       }, []);
 
       return (
         <MainContainer>
-            <Copy>Consultant Centered</Copy>
+            <Copy className="copy-three">Consultant Centered</Copy>
             <div style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                     <Line className="dif-line-three" />
             </div>
@@ -107,6 +119,7 @@ const Copy = styled.p`
     max-width: 100%;
     text-align: right;
     line-height: 1;
+    opacity: 0;
     @media(max-width:1050px) {
       text-align: center;
     }
