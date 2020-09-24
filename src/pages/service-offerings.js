@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 import scrollTo from 'gatsby-plugin-smoothscroll'
+
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,6 +15,28 @@ import { FaChevronDown } from 'react-icons/fa'
 
 
 const ServicesPage = () => {
+
+    useEffect(() => {
+    
+        if (typeof window !== `undefined`) {
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.core.globals('ScrollTrigger', ScrollTrigger)
+        }
+
+        let tl = gsap.timeline({
+            paused: true,
+            scrollTrigger: {
+                trigger: '#line_trigger',
+                start: '30% 70%',
+                end: '30% 60%',
+                id: 'arrow_line',
+                },
+            })
+            tl.to('.line-one', {width: '70%', duration: 2 })
+            tl.to('.line-two', { height: '70px', duration: 1 })
+            tl.to('.arrow', {opacity: '1', duration: 1 })
+    
+    }, []);
 
     const data = useStaticQuery(graphql`
         query {
@@ -114,7 +139,7 @@ const ServicesPage = () => {
                 <SkillFocused/>
 
                 {data.allWordpressWpCustomPage.edges.map(post => (
-                <SecondParagraph>
+                <SecondParagraph id="line_trigger">
                     <div
                     data-sal="slide-up"
                     data-sal-duration="1000"
@@ -125,11 +150,16 @@ const ServicesPage = () => {
                             dangerouslySetInnerHTML={{ __html: post.node.acf.second_paragraph }}
                         />
                     </div>
+                    <AnimationSection>
+                        <div class="line-one"></div>
+                        <div class="line-two"></div>
+                        <div class="arrow"></div>
+                    </AnimationSection>
                 </SecondParagraph>
                 ))}
 
                 {data.allWordpressWpService.edges.map((post, i) => (
-                    <ServiceBanner>
+                    <ServiceBanner className={"snap"}>
                         <Link
                         style={{textDecoration: 'none'}}
                         to= {`/service-offerings/${post.node.slug}`}
@@ -431,6 +461,42 @@ const SecondCopy = styled.div`
                 padding-right: 0;
             }
         }
+    }
+`
+
+const AnimationSection = styled.div`
+    position: relative;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    height: 200px;
+    .line-one {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background-color: #333;
+    }
+    .line-two {
+        position: absolute;
+        top: 5px;
+        left: 70%;
+        height: 0px;
+        width: 1px;
+        background-color: #333;
+    }
+    .arrow {
+        position: absolute;
+        top: 40px;
+        left: calc(70% - 19px);
+        height: 39px;
+        width: 39px;
+        border-right: 1px solid #333;
+        border-bottom: 1px solid #333;
+        transform: rotate(45deg);
+        opacity: 0;
     }
 `
 
