@@ -24,6 +24,7 @@ const DifLineOneV2 = () => {
                 },
             })
             tl.to('.dif-line-one', { width: '80%' })
+            tl.to('.percent-one', { opacity: '1' })
     
       }, []);
 
@@ -33,7 +34,7 @@ const DifLineOneV2 = () => {
             <div style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                     <Line className="dif-line-one" />
             </div>
-            <Percent>100%</Percent>
+            <Percent className="percent-one">100%</Percent>
         </MainContainer>
     );
 
@@ -64,6 +65,7 @@ const Percent = styled.p`
     padding-right: 100px;
     position: relative;
     z-index: 1;
+    opacity: 0;
     @media(max-width:1050px) {
       padding-right: 0;
       text-align: center;

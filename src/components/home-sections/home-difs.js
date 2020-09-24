@@ -132,10 +132,15 @@ const MiddleContent = styled.div`
             padding: 0 10px;
             padding-left: 100px;
             letter-spacing: initial;
-            font-size: 72px;
+            font-size: 82px;
             position: relative;
             line-height: .5;
             color: #298fc2;
+        }
+        .dots {
+            font-family: Times New Roman;
+            color: #298fc2;
+            font-size: 56px;
         }
     }
     @media(max-width:1200px) {

@@ -17,13 +17,25 @@ const DifLineThreeV2 = () => {
             paused: true,
             scrollTrigger: {
                 trigger: "#row_three_trigger",
-                scrub: 1,
-                start: 'top center',
+                start: 'top 70%',
                 end: 'top 20%',
                 id: 'dif_line_two',
+                toggleActions: "play reverse play reverse",
                 },
             })
-            tl.to('.dif-line-three', { width: '80%' })
+            tl.to('.dif-line-three', { width: '80%', duration: 1, ease: 'Power4.easeOut' })
+
+        let tlTwo = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+              trigger: "#row_three_trigger",
+              start: 'top 70%',
+              end: 'top 20%',
+              id: 'percent_line_two',
+              toggleActions: "play reverse play reverse",
+              },
+          })
+          tlTwo.to('.percent-three', { opacity: '1', duration: 1 })
     
       }, []);
 
@@ -33,7 +45,7 @@ const DifLineThreeV2 = () => {
             <div style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                     <Line className="dif-line-three" />
             </div>
-            <Percent>100%</Percent>
+            <Percent className="percent-three">100%</Percent>
         </MainContainer>
     );
 
@@ -64,6 +76,7 @@ const Percent = styled.p`
     padding-right: 100px;
     position: relative;
     z-index: 1;
+    opacity: 0;
     @media(max-width:1050px) {
       padding-right: 0;
       text-align: center;

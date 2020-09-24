@@ -127,7 +127,7 @@ const HeroMain = styled.div`
     z-index: 1;
     h1 {
         font-family: "Helvetica Thin";
-        font-size: 42px;
+        font-size: 32px;
         font-weight: 100;
         line-height: 1.2;
         color: #fff;
@@ -140,7 +140,7 @@ const HeroMain = styled.div`
             font-weight: 100;
         }
         @media(max-width: 1200px) {
-            font-size: 32px;
+            font-size: 28px;
         }
         @media(max-width: 600px) {
             font-size: 20px;

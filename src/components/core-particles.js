@@ -16,7 +16,7 @@ function CoreParticles() {
               } 
             }, 
             color: {
-                value: "#333",
+                value: "#444",
             },
             shape: {
                 type: "circle",

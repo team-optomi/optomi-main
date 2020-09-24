@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ParticleBG from "../components/particle-bg"
 
 import SkillFocused from "../components/skill-focused.js"
 import { FaChevronDown } from 'react-icons/fa'
@@ -100,6 +101,7 @@ const ServicesPage = () => {
 
                     <HeroBackground>
                         <HeroImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title}/>
+                        <ParticleBG/>
                     </HeroBackground>
 
                     <HeroTitle
