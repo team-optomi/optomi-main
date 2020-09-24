@@ -8,6 +8,8 @@ import SEO from "../components/seo"
 
 import CoreParticles from "../components/core-particles"
 
+import CircleAnimation from "../components/circle-animation"
+
 import Genuine from "../components/core-values-animated/genuine"
 import Passionate from "../components/core-values-animated/passionate"
 import Connected from "../components/core-values-animated/connected"
@@ -79,6 +81,7 @@ const ValuePage = () => {
                 </HeroBanner>
 
                 <ValueSection>
+                    <CircleAnimation/>
                     <ValueContent
                     data-sal="slide-up"
                     data-sal-duration="1000"
