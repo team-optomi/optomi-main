@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ParticleBG from "../components/particle-bg"
 import LeadershipSectionSimple from "../components/leadership-section-simple"
+import { FaChevronDown } from 'react-icons/fa'
 
 const AboutPage = () => {
 
@@ -80,9 +81,17 @@ const AboutPage = () => {
                         />
                     </HeroMain>
 
+                    <HeroBottom
+                        data-sal="slide-down"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                    >
+                        <button onClick={() => scrollTo('#about_two')} aria-label="Scroll"><FaChevronDown size={32}/></button>
+                    </HeroBottom>
+
                 </HeroBanner>
 
-                <SectionTwo>
+                <SectionTwo id="about_two">
 
                     <CanvasBackground>
                         <ParticleBG/>
@@ -287,6 +296,30 @@ const HeroContent = styled.div`
     }
 `
 
+const HeroBottom = styled.div`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    transition-delay: 1.5s;
+    p {
+        font-family: "Helvetica Thin";
+        text-align: center;
+        margin: 0;
+        color: rgb(140, 145, 146);
+    }
+    button {
+        color: #5ab3e8;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+`
+
 const SectionTwo = styled.div`
     background-color: #000;
 `
@@ -297,7 +330,7 @@ const SectionTwoRow = styled.div`
     padding-left: 120px;
     padding-right: 120px;
     margin: 0 auto;
-    margin-top: 120px;
+    padding-top: 120px;
     position: relative;
     z-index: 2;
     h3 {

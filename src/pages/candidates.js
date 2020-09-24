@@ -2,10 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TestimonialSlider from "../components/testimonial-slider"
+import { FaChevronDown } from 'react-icons/fa'
 
 const CandidatesPage = () => {
 
@@ -89,10 +91,18 @@ const CandidatesPage = () => {
                         data-sal-easing="ease"
                         >{post.node.acf.hero.tagline}</h3>
                     </HeroMain>
+
+                    <HeroBottom
+                        data-sal="slide-down"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                    >
+                        <button onClick={() => scrollTo('#candidates_two')} aria-label="Scroll"><FaChevronDown size={32}/></button>
+                    </HeroBottom>
                     
                 </HeroBanner>
 
-                <SectionTwo>
+                <SectionTwo id="candidates_two">
 
                     <ParagraphOne 
                     data-sal="slide-up"
@@ -307,6 +317,30 @@ const HeroMain = styled.div`
         }
         h3 {
             font-size: 14px;
+        }
+    }
+`
+
+const HeroBottom = styled.div`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    transition-delay: 1.5s;
+    p {
+        font-family: "Helvetica Thin";
+        text-align: center;
+        margin: 0;
+        color: rgb(140, 145, 146);
+    }
+    button {
+        color: #5ab3e8;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        &:hover {
+            cursor: pointer;
         }
     }
 `
