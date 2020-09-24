@@ -24,6 +24,7 @@ const Genuine = () => {
                 id: 'genuine_line',
                 },
             })
+            tl.to('.g-rotate', {transform: 'rotate(15deg)', opacity: '1', duration: 1, ease: "power2" })
             tl.to('.g-line', { width: '60%', duration: 1, ease: "power2.out" })
             tl.to('.g-toggle', {opacity: '1', duration: 1, ease: "power2" })
     
@@ -39,6 +40,7 @@ const Genuine = () => {
 
 const MainContainer = styled.div`
     margin-bottom: 200px;
+    position: relative;
 `
 
 
