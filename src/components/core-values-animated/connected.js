@@ -24,6 +24,7 @@ const Connected = () => {
                 id: 'connected_line',
                 },
             })
+            tl.to('.c-rotate', {rotation: 1200, left: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.c-line', { width: '60%', duration: 1, ease: "power2.out" })
             tl.to('.c-toggle', {opacity: '1', duration: 1, ease: "power2" })
     
@@ -39,6 +40,7 @@ const Connected = () => {
 
 const MainContainer = styled.div`
     margin-bottom: 200px;
+    position: relative;
 `
 
 

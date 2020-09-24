@@ -24,6 +24,7 @@ const Respectful = () => {
                 id: 'respectful_line',
                 },
             })
+            tl.to('.r-rotate', {rotation: 1000, right: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.r-line', { width: '60%', duration: 1, ease: "power2.out" })
             tl.to('.r-toggle', {opacity: '1', duration: 1, ease: "power2" })
     
@@ -39,6 +40,7 @@ const Respectful = () => {
 
 const MainContainer = styled.div`
     margin-bottom: 200px;
+    position: relative;
 `
 
 

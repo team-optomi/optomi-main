@@ -24,7 +24,7 @@ const Genuine = () => {
                 id: 'genuine_line',
                 },
             })
-            tl.to('.g-rotate', {transform: 'rotate(15deg)', opacity: '1', duration: 1, ease: "power2" })
+            tl.to('.g-rotate', {rotation: 1080, left: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.g-line', { width: '60%', duration: 1, ease: "power2.out" })
             tl.to('.g-toggle', {opacity: '1', duration: 1, ease: "power2" })
     

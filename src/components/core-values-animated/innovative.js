@@ -24,6 +24,7 @@ const Innovative = () => {
                 id: 'innovative_line',
                 },
             })
+            tl.to('.i-rotate', {rotation: 1020, right: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.i-line', { width: '60%', duration: 1, ease: "power2.out" })
             tl.to('.i-toggle', {opacity: '1', duration: 1, ease: "power2" })
     
@@ -39,6 +40,7 @@ const Innovative = () => {
 
 const MainContainer = styled.div`
     margin-bottom: 200px;
+    position: relative;
 `
 
 

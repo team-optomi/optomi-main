@@ -64,10 +64,10 @@ const ValueContainer = styled.div`
 `
 
 const SvgBox = styled.div`
-    position: absolute;
-    left: 20px;
-    top: -50px;
     svg {
+        position: absolute;
+        left: calc(50% - 37px);
+        top: -50px;
         max-width: 75px;
         opacity: 0;
         transform: rotate(-120deg);
