@@ -116,7 +116,7 @@ const AboutPage = () => {
                         >
                             <button onClick={() => scrollTo('#leader_section')} aria-label="Scroll">Leadership</button>
                             <ButtonLink
-                            to="/founders"
+                            to="/founders/"
                             >
                             Founders
                             </ButtonLink>
