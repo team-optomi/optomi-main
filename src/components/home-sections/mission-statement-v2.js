@@ -88,8 +88,8 @@ const MissionStatementV2 = () => {
 
 const MainSection = styled.div`
     background-color: #aaa;
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 160px;
+    padding-bottom: 120px;
     position: relative;
     z-index: 2;
     transition-duration: .3s;

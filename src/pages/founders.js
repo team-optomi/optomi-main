@@ -150,6 +150,7 @@ const ImageBackground = styled.div`
 const HeroImg = styled(Img)`
     height: 100vh;
     width: 100%;
+    max-height: 700px;
     img {
         margin-bottom: 0;
     }

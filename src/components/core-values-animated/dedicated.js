@@ -26,7 +26,17 @@ const Dedicated = () => {
             })
             tl.to('.d-rotate', {rotation: 1080, left: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.d-line', { width: '60%', duration: 1, ease: "power2.out" })
-            tl.to('.d-toggle', {opacity: '1', duration: 1, ease: "power2" })
+
+        let tlTwo = gsap.timeline({
+            paused: true,
+            scrollTrigger: {
+                trigger: '#d_trigger',
+                start: 'top 70%',
+                end: 'top 60%',
+                id: 'dedicated_line',
+                },
+            })
+            tlTwo.to('.d-toggle', {opacity: '1', duration: 1, delay: 1, ease: "power2" })
     
       }, []);
 

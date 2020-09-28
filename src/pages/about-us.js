@@ -121,7 +121,7 @@ const AboutPage = () => {
                             Founders
                             </ButtonLink>
                             <a href="https://optomi.com/giving">Giving Back</a>
-                            <a href="https://optomi.com/awards">Awards</a>
+                            <a href="https://optomi.com/press/awards">Awards</a>
                         </ButtonSection>
                     </SectionTwoRow>
 

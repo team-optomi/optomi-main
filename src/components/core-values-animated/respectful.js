@@ -26,7 +26,17 @@ const Respectful = () => {
             })
             tl.to('.r-rotate', {rotation: 1000, right: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.r-line', { width: '60%', duration: 1, ease: "power2.out" })
-            tl.to('.r-toggle', {opacity: '1', duration: 1, ease: "power2" })
+
+        let tlTwo = gsap.timeline({
+            paused: true,
+            scrollTrigger: {
+                trigger: '#r_trigger',
+                start: 'top 70%',
+                end: 'top 60%',
+                id: 'respectful_line',
+                },
+            })
+            tlTwo.to('.r-toggle', {opacity: '1', duration: 1, delay: 1, ease: "power2" })
     
       }, []);
 

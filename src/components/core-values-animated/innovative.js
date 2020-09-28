@@ -26,7 +26,17 @@ const Innovative = () => {
             })
             tl.to('.i-rotate', {rotation: 1020, right: '20px', opacity: '1', duration: 2, ease: 'power4.out' })
             tl.to('.i-line', { width: '60%', duration: 1, ease: "power2.out" })
-            tl.to('.i-toggle', {opacity: '1', duration: 1, ease: "power2" })
+
+        let tlTwo = gsap.timeline({
+            paused: true,
+            scrollTrigger: {
+                trigger: '#i_trigger',
+                start: 'top 70%',
+                end: 'top 60%',
+                id: 'innovative_line',
+                },
+            })
+            tlTwo.to('.i-toggle', {opacity: '1', duration: 1, delay: 1, ease: "power2" })
     
       }, []);
 

@@ -157,6 +157,12 @@ const ServicesPage = () => {
                         <div class="line-two"></div>
                         <div class="arrow"></div>
                     </AnimationSection>
+                    <p 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-delay="900"
+                    data-sal-easing="ease"
+                    class="bonvivant">We specialize in…</p>
                 </SecondParagraph>
                 ))}
 
@@ -392,16 +398,36 @@ const SecondParagraph = styled.div`
             max-width: 940px;
         }
     }
+    p.bonvivant {
+        font-family: "BonVivant";
+        color: #fff;
+        text-align: center;
+        font-size: 60px;
+        line-height: 2.5;
+        font-weight: 100;
+        margin-top: 00px;
+        margin-bottom: 0px;
+        padding-right: 120px;
+        overflow: visible;
+    }
     &.even {
         text-align: right;
         p {
             margin-left: auto;
         }
     }
+    @media(max-width:1200px) {
+        p.bonvivant {
+            font-size: 42px;
+        }
+    }
     @media(max-width:1000px) {
         position: relative;
         padding-top: 100px;
         padding-bottom: 100px;
+        p.bonvivant {
+            padding-right: 0;
+        }
     }
     @media(max-width:800px) {
         text-align: center;
@@ -429,17 +455,6 @@ const SecondCopy = styled.div`
         line-height: 1.2;
         transition-duration: .3s;
         text-align: center;
-        &.bonvivant {
-            font-family: "BonVivant";
-            color: #fff;
-            text-align: center;
-            font-size: 60px;
-            font-weight: 100;
-            margin-top: 10px;
-            margin-bottom: 35px;
-            padding-right: 120px;
-            overflow: visible;
-        }
         br {
             display: none;
         }
@@ -447,9 +462,6 @@ const SecondCopy = styled.div`
     @media(max-width:1200px) {
         p {
             font-size: 18px;
-            &.bonvivant {
-                font-size: 42px;
-            }
         }
     }
     @media(max-width:1000px) {
@@ -458,9 +470,6 @@ const SecondCopy = styled.div`
         p {
             br {
                 display: none;
-            }
-            &.bonvivant {
-                padding-right: 0;
             }
         }
     }
@@ -472,7 +481,7 @@ const AnimationSection = styled.div`
     width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    height: 200px;
+    height: 0px;
     .line-one {
         position: absolute;
         top: 5px;
