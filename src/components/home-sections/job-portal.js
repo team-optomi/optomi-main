@@ -47,8 +47,8 @@ const MainSection = styled.div`
 `
 
 const MainContent = styled.div`
-    max-width: 1140px;
-    padding: 50px 20px;
+    max-width: 1340px;
+    padding: 50px 120px;
     width: 100%;
     margin: 0 auto;
     h2 {
@@ -78,6 +78,8 @@ const MainContent = styled.div`
                 color: #fff;
                 text-decoration: none;
                 text-transform: lowercase;
+                display: inline-block;
+                margin-top: 10px;
                 @media(max-width:500px) {
                     font-size: 18px;
                     padding: 15px 35px;
@@ -99,9 +101,7 @@ const MainContent = styled.div`
         }
     }
     @media(max-width:1200px) {
-        max-width: 900px;
-        padding-left: 0;
-        padding-right: 0;
+        max-width: 1100px;
     }
     @media(max-width:1000px) {
         h2 {
@@ -116,6 +116,10 @@ const MainContent = styled.div`
                 font-size: 24px;
             }
         }
+    }
+    @media(max-width:700px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
 

@@ -18,7 +18,7 @@ const SkillLineV2 = () => {
           scrollTrigger: {
               trigger: ".trigger",
               start: 'top 80%',
-              end: 'top 5%',
+              end: 'center 10%',
               id: 'skill_line',
               toggleActions: "play reverse play reverse",
               },
@@ -30,7 +30,7 @@ const SkillLineV2 = () => {
             scrollTrigger: {
                 trigger: ".trigger",
                 start: 'top 80%',
-                end: 'top 5%',
+                end: 'center 10%',
                 id: 'skill_line',
                 toggleActions: "play reverse play reverse",
                 },
@@ -42,7 +42,7 @@ const SkillLineV2 = () => {
           scrollTrigger: {
               trigger: ".trigger",
               start: 'top 80%',
-              end: 'top 5%',
+              end: 'center 10%',
               id: 'skill_line',
               toggleActions: "play reverse play reverse",
               },

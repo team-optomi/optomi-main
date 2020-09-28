@@ -119,6 +119,9 @@ const SliderContainer = styled.div`
 const CaseStudy = styled.div`
     outline: 0 !important;
     position: relative;
+    a {
+      text-decoration: none;
+    }
 `
 
 const ImageThumb = styled.div``

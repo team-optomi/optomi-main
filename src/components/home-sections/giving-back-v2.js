@@ -118,11 +118,15 @@ const ImageBackground = styled.div`
 `
 
 const MainRow = styled.div`
-    max-width: 1340px;
-    padding-right: 20px;
-    padding-left: 20px;
+    max-width: 1540px;
+    padding-right: 120px;
+    padding-left: 120px;
     width: 100%;
     margin: 0 auto;
+    @media(max-width:700px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const MainDiv = styled.div`

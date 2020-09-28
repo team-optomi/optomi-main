@@ -90,8 +90,8 @@ const MainSection = styled.div`
 
 
 const MainContent = styled.div`
-    max-width: 1340px;
-    padding: 60px 20px;
+    max-width: 1540px;
+    padding: 60px 120px;
     width: 100%;
     margin: 0 auto;
     h2 {
@@ -104,12 +104,10 @@ const MainContent = styled.div`
         text-transform: lowercase;
     }
     @media(max-width:1500px) {
-        max-width: 1100px;
+        max-width: 1300px;
     }
     @media(max-width:1200px) {
-        max-width: 900px;
-        padding-left: 0;
-        padding-right: 0;
+        max-width: 1100px;
     }
     @media(max-width:1020px) {
         h2 {
@@ -123,6 +121,10 @@ const MainContent = styled.div`
             margin-bottom: 30px;
         }
     }
+    @media(max-width:700px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 `
 
 const MainCopy = styled.div`

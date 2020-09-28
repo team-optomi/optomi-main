@@ -105,9 +105,9 @@ const BackgroundImg = styled(Img)`
 `
 
 const MiddleContent = styled.div`
-    max-width: 1140px;
-    padding-right: 20px;
-    padding-left: 20px;
+    max-width: 1340px;
+    padding-right: 120px;
+    padding-left: 120px;
     width: 100%;
     margin: 0 auto;
     text-align: left; 
@@ -140,7 +140,7 @@ const MiddleContent = styled.div`
         }
     }
     @media(max-width:1200px) {
-        max-width: 940px;
+        max-width: 1140px;
         p {
             font-size: 20px;
             text-align: center;
@@ -150,7 +150,11 @@ const MiddleContent = styled.div`
         }
     }
     @media(max-width:1150px) {
-        max-width: 740px;
+        max-width: 940px;
+    }
+    @media(max-width:700px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
 
