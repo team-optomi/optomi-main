@@ -14,26 +14,50 @@ const SkillLineV2 = () => {
         }
 
         let tl = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+              trigger: ".trigger",
+              start: 'top 80%',
+              end: 'top 5%',
+              id: 'skill_line',
+              toggleActions: "play reverse play reverse",
+              },
+          })
+          tl.to('.skills-copy', { opacity: '1', duration: 1 })
+
+        let tlOne = gsap.timeline({
             paused: true,
             scrollTrigger: {
-                trigger: '.trigger',
-                scrub: 1,
-                start: 'top 90%',
-                end: 'top 20%',
+                trigger: ".trigger",
+                start: 'top 80%',
+                end: 'top 5%',
                 id: 'skill_line',
+                toggleActions: "play reverse play reverse",
                 },
             })
-            tl.to('.line', { width: '80%' })
+            tlOne.to('.skills-line', { width: '80%', duration: 2, delay: 1, ease: 'Power4.easeOut' })
+
+        let tlTwo = gsap.timeline({
+          paused: true,
+          scrollTrigger: {
+              trigger: ".trigger",
+              start: 'top 80%',
+              end: 'top 5%',
+              id: 'skill_line',
+              toggleActions: "play reverse play reverse",
+              },
+          })
+          tlTwo.to('.skills-percent', { opacity: '1', duration: 1, delay: 1 })
     
       }, []);
 
     return(
         <MainContainer>
-            <Percent>100%</Percent>
+            <Percent className="skills-percent">100%</Percent>
             <div id="trigger" className="trigger" style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
-                    <Line className="line"/>
+                    <Line className="skills-line"/>
             </div>
-            <Copy>Skill-Set Focus</Copy>
+            <Copy className="skills-copy">Skill-Set Focus</Copy>
         </MainContainer>
     );
 }
@@ -63,6 +87,7 @@ const Percent = styled.p`
     padding-left: 100px;
     position: relative;
     z-index: 1;
+    opacity: 0;
     @media(max-width:800px) {
       padding-left: 0;
     }
@@ -86,6 +111,7 @@ const Copy = styled.p`
     max-width: 80%;
     text-align: center;
     line-height: 1;
+    opacity: 0;
     @media(max-width:800px) {
       max-width: 100%;
     }

@@ -20,7 +20,7 @@ const HomeHero = () => {
                             localFile {
                                 childImageSharp {
                                     sizes(maxWidth: 800) {
-                                        ...GatsbyImageSharpSizes
+                                        ...GatsbyImageSharpSizes_noBase64
                                     }
                                 }
                             }

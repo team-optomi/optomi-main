@@ -17,9 +17,9 @@ const DifLineThreeV2 = () => {
           paused: true,
           scrollTrigger: {
               trigger: "#row_three_trigger",
-              start: 'top 70%',
-              end: 'top 20%',
-              id: 'dif_line_two',
+              start: 'top 80%',
+              end: 'top 5%',
+              id: 'dif_line_three',
               toggleActions: "play reverse play reverse",
               },
           })
@@ -29,9 +29,9 @@ const DifLineThreeV2 = () => {
             paused: true,
             scrollTrigger: {
                 trigger: "#row_three_trigger",
-                start: 'top 70%',
-                end: 'top 20%',
-                id: 'dif_line_two',
+                start: 'top 80%',
+                end: 'top 5%',
+                id: 'dif_line_three',
                 toggleActions: "play reverse play reverse",
                 },
             })
@@ -41,9 +41,9 @@ const DifLineThreeV2 = () => {
           paused: true,
           scrollTrigger: {
               trigger: "#row_three_trigger",
-              start: 'top 70%',
-              end: 'top 20%',
-              id: 'percent_line_two',
+              start: 'top 80%',
+              end: 'top 5%',
+              id: 'percent_line_three',
               toggleActions: "play reverse play reverse",
               },
           })

@@ -14,34 +14,46 @@ const DifLineTwoV2 = () => {
         }
 
         let tl = gsap.timeline({
-        paused: true,
-        scrollTrigger: {
-            trigger: "#row_two_trigger",
-            scrub: 1,
-            start: 'top center',
-            end: 'top 20%',
-            id: 'dif_line_two',
-            },
-        })
-        tl.to('.dif-line-two', { width: '80%' })
+          paused: true,
+          scrollTrigger: {
+              trigger: "#row_two_trigger",
+              start: 'top 80%',
+              end: 'top 5%',
+              id: 'dif_line_two',
+              toggleActions: "play reverse play reverse",
+              },
+          })
+          tl.to('.copy-two', { opacity: '1', duration: 1 })
+
+        let tlOne = gsap.timeline({
+            paused: true,
+            scrollTrigger: {
+                trigger: "#row_two_trigger",
+                start: 'top 80%',
+                end: 'top 5%',
+                id: 'dif_line_two',
+                toggleActions: "play reverse play reverse",
+                },
+            })
+            tlOne.to('.dif-line-two', { width: '80%', duration: 2, delay: 1, ease: 'Power4.easeOut' })
 
         let tlTwo = gsap.timeline({
           paused: true,
           scrollTrigger: {
               trigger: "#row_two_trigger",
-              scrub: 1,
-              start: 'top center',
-              end: 'top 20%',
+              start: 'top 80%',
+              end: 'top 5%',
               id: 'percent_line_two',
+              toggleActions: "play reverse play reverse",
               },
           })
-          tlTwo.to('.percent-two', { opacity: '1' })
+          tlTwo.to('.percent-two', { opacity: '1', duration: 1, delay: 1 })
     
       }, []);
 
       return (
         <MainContainer>
-            <Copy>Technology Driven</Copy>
+            <Copy className="copy-two">Technology Driven</Copy>
             <div style={{ background: 'transparent', height: '35px', width: '100%', position: 'relative', marginBottom: '10px' }}>
                     <Line className="dif-line-two" />
             </div>
@@ -107,6 +119,7 @@ const Copy = styled.p`
     max-width: 100%;
     text-align: right;
     line-height: 1;
+    opacity: 0;
     @media(max-width:1050px) {
       text-align: center;
     }
