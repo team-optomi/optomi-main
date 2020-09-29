@@ -349,7 +349,11 @@ const SectionTwo = styled.div`
     position: relative;
     width: 100%;
     background-color: #000;
-    padding: 80px 20px;
+    padding: 80px 120px;
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const ParagraphOne = styled.div`
@@ -467,7 +471,7 @@ const ButtonSection = styled.div`
 const SectionThree = styled.div`
     position: relative;
     background-color: #000;
-    padding: 80px 20px;
+    padding: 80px 120px;
     h2 {
         max-width: 1140px;
         width: 100%;
@@ -483,6 +487,10 @@ const SectionThree = styled.div`
         @media(max-width:800px) {
             42px;
         }
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
     @media(max-width:600px) {
         h2 {

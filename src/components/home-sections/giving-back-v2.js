@@ -123,7 +123,7 @@ const MainRow = styled.div`
     padding-left: 120px;
     width: 100%;
     margin: 0 auto;
-    @media(max-width:700px) {
+    @media(max-width:768px) {
         padding-left: 20px;
         padding-right: 20px;
     }

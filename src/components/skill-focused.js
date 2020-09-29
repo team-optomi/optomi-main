@@ -46,9 +46,9 @@ const MainSection = styled.div`
 `
 
 const MainContent = styled.div`
-    max-width: 1340px;
-    padding-right: 20px;
-    padding-left: 20px;
+    max-width: 1540px;
+    padding-right: 120px;
+    padding-left: 120px;
     width: 100%;
     margin: 0 auto;
     h2 {
@@ -73,10 +73,10 @@ const MainContent = styled.div`
         max-width: 760px;
     }
     @media(max-width:1500px) {
-        max-width: 1140px;
+        max-width: 1340px;
     }
     @media(max-width:1200px) {
-        max-width: 940px;
+        max-width: 1140px;
         h2 {
             font-size: 42px;
             .bonvivant {
@@ -99,6 +99,10 @@ const MainContent = styled.div`
         p {
             font-size: 20px;
         }
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
 

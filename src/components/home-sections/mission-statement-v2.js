@@ -122,7 +122,7 @@ const FirstRow = styled.div`
     @media(max-width:1200px) {
         max-width: 990px;
     }
-    @media(max-width:700px) {
+    @media(max-width:768px) {
         padding-left: 20px;
         padding-right: 20px;
     }

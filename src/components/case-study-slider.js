@@ -81,6 +81,9 @@ const SliderContainer = styled.div`
         bottom: -60px;
         right: 0;
     }
+    a {
+      text-decoration: none;
+    }
     @media(max-width:1550px) {
       .blue-block {
         width: 500px;
@@ -119,9 +122,6 @@ const SliderContainer = styled.div`
 const CaseStudy = styled.div`
     outline: 0 !important;
     position: relative;
-    a {
-      text-decoration: none;
-    }
 `
 
 const ImageThumb = styled.div``

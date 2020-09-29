@@ -64,16 +64,20 @@ const SkillLineV2 = () => {
 
 
 const MainContainer = styled.div`
-    max-width: 1340px;
-    padding-right: 20px;
-    padding-left: 20px;
+    max-width: 1540px;
+    padding-right: 120px;
+    padding-left: 120px;
     width: 100%;
     margin: 0 auto;
     @media(max-width:1500px) {
-      max-width: 1140px;
+      max-width: 1340px;
     }
     @media(max-width:1200px) {
-      max-width: 940px;
+      max-width: 1140px;
+    }
+    @media(max-width:768px) {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 `
 

@@ -256,7 +256,7 @@ const HeroContent = styled.div`
         @media(max-width:1200px) {
             max-width: 1140px;
         }
-        @media(max-width:700px) {
+        @media(max-width:768px) {
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -344,17 +344,21 @@ const BannerContent = styled.div`
     left: 0;
     z-index: 2;
     > div {
-        max-width: 1340px;
+        max-width: 1540px;
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 120px;
+        padding-right: 120px;
         margin: 0 auto;
         transition-duration: .3s;
         @media(max-width:1500px) {
-            max-width: 1140px;
+            max-width: 1340px;
         }
         @media(max-width:1200px) {
-            max-width: 940px;
+            max-width: 1140px;
+        }
+        @media(max-width:700px) {
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
     &.even {
@@ -509,6 +513,9 @@ const AnimationSection = styled.div`
         transform: rotate(45deg);
         opacity: 0;
     }
+    @media(max-width:768px) {
+        display: none;
+    }
 `
 
 const HeroTitle = styled.div`
@@ -553,6 +560,7 @@ const HeroTitle = styled.div`
         padding: 20px;
         padding-top: 100px;
         text-align: center;
+        width: 100%;
     }
 `
 

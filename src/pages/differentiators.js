@@ -291,10 +291,10 @@ const HeroTitle = styled.div`
 `
 
 const HeroMain = styled.div`
-    max-width: 1240px;
+    max-width: 1440px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
     margin: 0 auto;
     margin-top: 100px;
     position: relative;
@@ -321,13 +321,13 @@ const HeroMain = styled.div`
         transition-delay: 4s;
     }
     @media(max-width:1500px) {
-        max-width: 1140px;
+        max-width: 1340px;
         h2 {
             font-size: 60px;
         }
     }
     @media(max-width:1200px) {
-        max-width: 940px;
+        max-width: 1140px;
     }
     @media(max-width:1000px) {
         text-align: center;
@@ -340,6 +340,10 @@ const HeroMain = styled.div`
         h2 {
             font-size: 42px;
         }
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
     @media(max-width: 500px) {
         h2 {
@@ -448,17 +452,21 @@ const BannerContent = styled.div`
     left: 0;
     z-index: 2;
     > div {
-        max-width: 1340px;
+        max-width: 1540px;
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 120px;
+        padding-right: 120px;
         margin: 0 auto;
         transition-duration: .3s;
         @media(max-width:1500px) {
-            max-width: 1140px;
+            max-width: 1340px;
         }
         @media(max-width:1200px) {
-            max-width: 940px;
+            max-width: 1140px;
+        }
+        @media(max-width:768px) {
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
     &.text-right {
