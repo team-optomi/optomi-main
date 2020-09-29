@@ -212,6 +212,10 @@ const HeroMain = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const HeroName = styled.div`
@@ -281,6 +285,10 @@ const SectionTwoRow = styled.div`
     padding-left: 120px;
     padding-right: 120px;
     margin: 0 auto;
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const SectionContent = styled.div`

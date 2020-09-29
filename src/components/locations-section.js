@@ -152,6 +152,13 @@ const Location = styled.div`
       }
     }
   }
+  @media(max-width:420px) {
+    button {
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
 `
 
 
