@@ -357,7 +357,7 @@ const SectionTwoRow = styled.div`
             letter-spacing: 3px;
         }
     }
-    @media(max-width:700px) {
+    @media(max-width:768px) {
         padding-left: 20px;
         padding-right: 20px;
     }

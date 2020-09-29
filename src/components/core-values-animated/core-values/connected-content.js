@@ -50,11 +50,18 @@ class ConnectedContent extends Component {
 }
 
 const ValueContainer = styled.div`
-    max-width: 1140px;
+    max-width: 1340px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
     margin: 0 auto;
+    @media(max-width:1200px) {
+        max-width: 1140px;
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const SvgBox = styled.div`
@@ -68,6 +75,9 @@ const SvgBox = styled.div`
         path {
             fill: #333;
         }
+    }
+    @media(max-width:768px) {
+        display: none;
     }
 `
 
@@ -208,6 +218,21 @@ const ValueContent = styled.div`
         h4 {
             opacity: 1;
         }
+        @media(max-width:600px) {
+            height: 1200px;
+            p,
+            div {
+                padding-left: 0;
+                padding-right: 0;
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        @media(max-width:400px) {
+            height: 1700px;
+        }
     }
     h4 {
         color: #8a8d8f;
@@ -219,6 +244,9 @@ const ValueContent = styled.div`
             font-family: "BonVivant";
             font-size: 72px;
             font-weight: 100;
+            @media(max-width:500px) {
+                font-size: 36px;
+            }
         }
         span.helvetica {
             font-family: "Helvetica Thin";

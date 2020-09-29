@@ -199,10 +199,10 @@ const HeroTitle = styled.div`
 `
 
 const HeroMain = styled.div`
-    max-width: 1140px;
+    max-width: 1340px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
     position: relative;
     text-align: center;
     .bonvivant {
@@ -216,7 +216,7 @@ const HeroMain = styled.div`
         transition-delay: 1s;
     }
     @media(max-width:1200px) {
-        max-width: 940px;
+        max-width: 1140px;
         .bonvivant {
             font-size: 72px;
         }
@@ -228,6 +228,10 @@ const HeroMain = styled.div`
             margin-top: 100px;
             margin-bottom: 0;
         }
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
 
@@ -277,10 +281,10 @@ const ValueSection = styled.div`
 `
 
 const ValueContent = styled.div`
-    max-width: 1140px;
+    max-width: 1340px;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
     position: relative;
     text-align: center;
     margin: 0 auto;
@@ -294,7 +298,11 @@ const ValueContent = styled.div`
         margin-bottom: 0;
     }
     @media(max-width:1200px) {
-        max-width: 940px;
+        max-width: 1140px;
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
     @media(max-width:600px) {
         p {
