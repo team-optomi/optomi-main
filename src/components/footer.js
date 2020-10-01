@@ -58,7 +58,9 @@ const Footer = () => (
         </FooterSocials>
       <FooterAwardsCol>
             <FooterAwards/>
-            <div class={"bottom-links"}>
+        </FooterAwardsCol>
+        <FooterBottom>
+            <p>© <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer">OPTOMI, LLC</a> | All rights reserved. 
             <Link
             to="/privacy-policy/"
             >
@@ -69,10 +71,7 @@ const Footer = () => (
             >
             Terms
             </Link>
-            </div>
-        </FooterAwardsCol>
-        <FooterBottom>
-            <p>© <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer">OPTOMI.</a> | All rights reserved.</p>
+            </p>
         </FooterBottom>
     </FooterMain>
 )
@@ -329,9 +328,15 @@ const FooterBottom = styled.div`
         color: #818181;
         margin-bottom: 0;
         a {
+            color: #818181;
+            text-decoration: none;
+            padding-left: 3px;
+        }
+        a:first-child {
             color: #5ab3e8;
             font-weight: 600;
             text-decoration: none !important;
+            padding-left: 0;
         }
     }
 `

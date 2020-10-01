@@ -151,7 +151,7 @@ const ButtonSection = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media(max-width:770px) {
+    @media(max-width:1000px) {
         flex-wrap: wrap;
     }
 `
@@ -159,16 +159,14 @@ const ButtonSection = styled.div`
 const ButtonLink = styled(Link)`
     font-family: "Helvetica Thin";
     color: #298fc2;
-    font-size: 18px;
+    font-size: 24px;
+    letter-spacing: 5px;
     line-height: 1.3;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     padding: 20px 40px;
-    @media(max-width:890px) {
-        padding: 20px;
-    }
-    @media(max-width:770px) {
+    @media(max-width:1000px) {
         width: 100%;
     }
 `

@@ -142,6 +142,7 @@ const CircleContainer = styled.div`
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    margin-top: 30px;
     margin-bottom: 20px;
     svg {
         max-width: 70px;

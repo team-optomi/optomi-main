@@ -10,6 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ParticleBG from "../components/particle-bg"
+import ServiceOfferingButtons from "../components/service-offering-buttons"
 
 import SkillFocused from "../components/skill-focused.js"
 import { FaChevronDown } from 'react-icons/fa'
@@ -125,6 +126,14 @@ const ServicesPage = () => {
                                 dangerouslySetInnerHTML={{ __html: post.node.content }}
                             />
                         </div>
+                        <div
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-delay="900"
+                        data-sal-easing="ease"
+                        >
+                            <ServiceOfferingButtons/>
+                        </div>
                     </HeroContent>
 
                     <HeroBottom
@@ -167,7 +176,7 @@ const ServicesPage = () => {
                 ))}
 
                 {data.allWordpressWpService.edges.map((post, i) => (
-                    <ServiceBanner className={"snap"}>
+                    <ServiceBanner className={"snap"} id={post.node.slug}>
                         <Link
                         style={{textDecoration: 'none'}}
                         to= {`/service-offerings/${post.node.slug}`}

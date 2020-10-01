@@ -91,13 +91,14 @@ const ValuePage = () => {
                 </HeroBanner>
 
                 <ValueSection id="core_two">
-                    <CircleAnimation/>
+                    
                     <ValueContent
                     data-sal="slide-up"
                     data-sal-duration="1000"
                     data-sal-delay="300"
                     data-sal-easing="ease"
                     dangerouslySetInnerHTML={{ __html: post.node.content }} />
+                    <CircleAnimation/>
                     <h2
                     data-sal="slide-up"
                     data-sal-duration="1000"
@@ -271,6 +272,7 @@ const ValueSection = styled.div`
         text-align: center;
         font-size: 90px;
         font-weight: 100;
+        margin-top: -40px;
         margin-bottom: 150px;
         transition-duration: 1s;
         transition-delay: 1s;
