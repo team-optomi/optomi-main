@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,7 +19,7 @@ const LocationPage = () => {
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 900) {
+                                    sizes(maxWidth: 2000) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
@@ -45,6 +46,10 @@ const LocationPage = () => {
                 />
                 <ContactBanner>
 
+                    <Background>
+                        <HeroImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
+                    </Background>
+
                     <HeroTitle
                         data-sal="slide-right"
                         data-sal-duration="1000"
@@ -67,7 +72,7 @@ const LocationPage = () => {
 
 const ContactBanner = styled.div`
     position: relative; 
-    min-height: 300px;
+    min-height: 400px;
     min-width: 100%;
     height: 100%;
     width: 100%;
@@ -75,6 +80,20 @@ const ContactBanner = styled.div`
     @media (max-width:600px) {
         display: block;
     }
+`
+
+const Background = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+`
+
+const HeroImg = styled(Img)`
+    height: 100%;
+    width: 100%;
+    opacity: .5;
 `
 
 const HeroTitle = styled.div`
