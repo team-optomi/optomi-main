@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Img from "gatsby-image"
 import scrollTo from 'gatsby-plugin-smoothscroll'
 
-import HeroVideo from '../../videos/home_hero_new.mp4'
+import HeroVideo from '../../videos/HomePage_010101.mp4'
 import { FaChevronDown } from 'react-icons/fa'
 
 
