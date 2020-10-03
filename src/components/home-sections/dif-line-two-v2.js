@@ -93,6 +93,7 @@ const Percent = styled.p`
     position: relative;
     z-index: 1;
     opacity: 0;
+    text-shadow: 3px 3px 5px #d7be69;
     @media(max-width:1050px) {
       padding-right: 0;
       text-align: center;

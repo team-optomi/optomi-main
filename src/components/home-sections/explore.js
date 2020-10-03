@@ -169,6 +169,12 @@ const ButtonLink = styled(Link)`
     @media(max-width:1000px) {
         width: 100%;
     }
+    &:nth-child(2) {
+        max-width: 350px;
+    }
+    &:nth-child(3) {
+        max-width: 375px;
+    }
 `
 
 export default JobPortal

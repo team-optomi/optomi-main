@@ -86,7 +86,7 @@ const Percent = styled.p`
     font-size: 60px;
     line-height: 1;
     letter-spacing: 5px;
-    color: #fff;
+    color: #d7be69 !important;
     text-align: right;
     margin-top: -25px;
     padding-right: 100px;
