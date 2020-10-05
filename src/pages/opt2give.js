@@ -95,6 +95,9 @@ const HeroBanner = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
+    @media(max-width:1000px) {
+        justify-content: center;
+    }
 `
 
 const ImageBackground = styled.div`
@@ -118,14 +121,26 @@ const HeroImg = styled(Img)`
 
 const HeroMain = styled.div`
     position: relative;
+    padding-left: 120px;
     padding-right: 120px;
     text-align: right;
+    @media(max-width:1000px) {
+        margin-top: 100px;
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `
 
 const FirstLogo = styled(Img)`
     max-width: 390px;
     margin-left: auto;
     margin-bottom: -50px;
+    @media(max-width:1000px) {
+        margin-right: auto;
+        margin-bottom: 0;
+    }
 `
 
 const Tagline = styled.div`
@@ -143,6 +158,19 @@ const Tagline = styled.div`
         font-size: 18px;
         line-height: 1.3;
     }
+    @media(max-width:1000px) {
+        text-align: center;
+        h1 {
+            font-size: 46px;
+
+        }
+    }
+    @media(max-width:530px) {
+        h1 {
+            font-size: 28px;
+
+        }
+    }
 `
 
 const SecondLogo = styled(Img)`
@@ -150,6 +178,9 @@ const SecondLogo = styled(Img)`
     width: 100%;
     margin-left: auto;
     margin-bottom: 20px;
+    @media(max-width:1000px) {
+        margin-right: auto;
+    }
 `
 
 const Content = styled.div`
@@ -177,6 +208,16 @@ const Content = styled.div`
             a {
                 color: #fff;
                 text-decoration: none;
+            }
+        }
+    }
+    @media(max-width:1000px) {
+        text-align: center;
+    }
+    @media(max-width:530px) {
+        p {
+            br {
+                display: none;
             }
         }
     }

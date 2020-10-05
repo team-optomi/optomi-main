@@ -143,6 +143,9 @@ const HeroTitle = styled.div`
         text-align: center;
         width: 100%;
     }
+    @media(max-width: 768px) {
+        display: none;
+    }
 `
 
 

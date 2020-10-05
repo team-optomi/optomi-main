@@ -104,6 +104,7 @@ const HeroMain = styled.div`
     padding-left: 120px;
     padding-right: 120px;
     text-align: left;
+    margin-bottom: 35px;
     @media(max-width:768px) {
         padding-left: 20px;
         padding-right: 20px;
