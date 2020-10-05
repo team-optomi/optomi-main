@@ -6,11 +6,11 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Opt2GivePage = () => {
+const Opt2GiveDayPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 41}}}}) {
+            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 42}}}}) {
                 edges {
                     node {
                         title
@@ -18,7 +18,7 @@ const Opt2GivePage = () => {
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 2800) {
+                                    sizes(maxWidth: 2048) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
@@ -27,27 +27,15 @@ const Opt2GivePage = () => {
                         acf {
                             meta_title
                             meta_description
-                            first_logo {
+                            top_logo {
                                 localFile {
                                     childImageSharp {
-                                        sizes(maxWidth: 800) {
+                                        sizes(maxWidth: 810) {
                                             ...GatsbyImageSharpSizes
                                         }
                                     }
                                 }
                             }
-                            first_logo_link
-                            tagline
-                            second_logo {
-                                localFile {
-                                    childImageSharp {
-                                        sizes(maxWidth: 946) {
-                                            ...GatsbyImageSharpSizes
-                                        }
-                                    }
-                                }
-                            }
-                            second_logo_link
                         }
                     }
                 }
@@ -70,13 +58,7 @@ const Opt2GivePage = () => {
                     </ImageBackground>
 
                     <HeroMain>
-                        <a href={post.node.acf.first_logo_link}>
-                            <FirstLogo sizes={post.node.acf.first_logo.localFile.childImageSharp.sizes} alt="Opt2Give Logo" />
-                        </a>
-                        <Tagline dangerouslySetInnerHTML={{ __html: post.node.acf.tagline }} />
-                        <a href={post.node.acf.second_logo_link}>
-                            <SecondLogo sizes={post.node.acf.second_logo.localFile.childImageSharp.sizes} alt="Opt2Give Logo" />
-                        </a>
+                        <TopLogo sizes={post.node.acf.top_logo.localFile.childImageSharp.sizes} alt="Opt2GiveDay Logo" />
                         <Content dangerouslySetInnerHTML={{ __html: post.node.content }} />
                     </HeroMain>
                 </HeroBanner>
@@ -94,7 +76,7 @@ const HeroBanner = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 `
 
 const ImageBackground = styled.div`
@@ -118,68 +100,53 @@ const HeroImg = styled(Img)`
 
 const HeroMain = styled.div`
     position: relative;
+    padding-left: 120px;
     padding-right: 120px;
-    text-align: right;
-`
-
-const FirstLogo = styled(Img)`
-    max-width: 390px;
-    margin-left: auto;
-    margin-bottom: -50px;
-`
-
-const Tagline = styled.div`
-    h1 {
-        font-family: "BonVivant";
-        color: #fff;
-        font-size: 72px;
-        font-weight: 100;
-        line-height: 2.1;
-        margin-bottom: 0;
-    }
-    p {
-        font-family: "Helvetica Thin";
-        color: #bbb;
-        font-size: 18px;
-        line-height: 1.3;
+    text-align: center;
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 100px;
     }
 `
 
-const SecondLogo = styled(Img)`
-    max-width: 800px;
-    width: 100%;
+const TopLogo = styled(Img)`
+    max-width: 810px;
     margin-left: auto;
-    margin-bottom: 20px;
+    margin-right: auto;
+    margin-bottom: 50px;
 `
 
 const Content = styled.div`
     p {
         font-family: "Helvetica Thin";
         color: #bbb;
-        font-size: 18px;
+        font-size: 24px;
         line-height: 1.3;
         a {
             color: #bbb;
             text-decoration: none;
         }
         &.large-print {
-            font-size: 26px;
-            color: #fff;
-            a {
-                color: #fff;
-                text-decoration: none;
-            }
-        }
-        &.giant-print {
             font-size: 30px;
             color: #fff;
-            text-transform: uppercase;
             a {
                 color: #fff;
                 text-decoration: none;
             }
         }
     }
+    @media(max-width:420px) {
+        p {
+            font-size: 20px;
+            br {
+                display: none;
+            }
+            &.large-print {
+                font-size: 24px;
+            }
+        }
+    }
 `
 
-export default Opt2GivePage
+export default Opt2GiveDayPage
