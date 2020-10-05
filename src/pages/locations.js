@@ -60,6 +60,15 @@ const LocationPage = () => {
                         <p>Optomi <span>Technology</span> Talent</p>
                     </HeroTitle>
 
+                    <HeroContent>
+                        <HeroCopy 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-delay="600"
+                        data-sal-easing="ease"
+                        dangerouslySetInnerHTML={{ __html: post.node.content }}/>
+                    </HeroContent>
+
                 </ContactBanner>
 
                 <LocationsSection/>
@@ -77,6 +86,8 @@ const ContactBanner = styled.div`
     height: 100%;
     width: 100%;
     background-color: #000;
+    display: flex;
+    align-items: flex-end;
     @media (max-width:600px) {
         display: block;
     }
@@ -137,6 +148,39 @@ const HeroTitle = styled.div`
         padding: 20px;
         padding-top: 100px;
         text-align: center;
+    }
+`
+
+const HeroContent = styled.div`
+    position: relative;
+    max-width: 1340px;
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 120px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+`
+
+const HeroCopy = styled.div`
+    text-align: right;
+    max-width: 650px;
+    margin-left: auto;
+    p {
+        font-family: "Helvetica Thin";
+        color: #fff;
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    @media(max-width:768px) {
+        text-align: center;
+        margin-right: auto;
+        p {
+            font-size: 20px;
+        }
     }
 `
 
