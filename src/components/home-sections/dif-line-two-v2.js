@@ -86,14 +86,14 @@ const Percent = styled.p`
     font-size: 60px;
     line-height: 1;
     letter-spacing: 5px;
-    color: #fff;
+    color: #d7be69 !important;
+    text-shadow: 3px 3px 5px #d7be69;
     text-align: right;
     margin-top: -25px;
     padding-right: 100px;
     position: relative;
     z-index: 1;
     opacity: 0;
-    text-shadow: 3px 3px 5px #d7be69;
     @media(max-width:1050px) {
       padding-right: 0;
       text-align: center;
