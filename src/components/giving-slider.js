@@ -92,6 +92,10 @@ const SlideContent = styled.div`
   padding-left: 120px;
   padding-right: 120px;
   text-align: center;
+  @media(max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `
 
 const SlideLogo = styled(Img)`
@@ -102,20 +106,29 @@ const SlideLogo = styled(Img)`
 `
 
 const SlideCopy = styled.div`
+  max-width: 660px;
+  width: 100%;
+  margin: 0 auto;
   p {
     font-family: "Helvetica Thin";
     color: #fff;
     font-size: 24px;
     line-height: 1.3;
     text-align: center;
+    @media(max-width:768px) {
+      font-size: 20px;
+    }
   }
 `
 
 const SlideLink = styled(Link)`
+  font-family: "Helvetica Thin";  
   background-color: #298fc2;
   color: #fff;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 10px 35px;
   border-radius: 35px;
   display: inline-block;
