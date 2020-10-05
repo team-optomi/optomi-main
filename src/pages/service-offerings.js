@@ -251,7 +251,7 @@ const HeroContent = styled.div`
     align-items: center;
     padding-top: 0px;
     padding-bottom: 50px;
-    margin-top: 100px;
+    margin-top: 150px;
     z-index: 2;
     > div {
         max-width: 1540px;

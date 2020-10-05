@@ -146,6 +146,33 @@
     width: 50px;
 }
 
+/* Giving Slider */
+
+.giving-slider .slick-slider {
+    max-width: 100%;
+}
+
+.giving-slider .slick-dots {
+    display: block !important;
+    z-index: 1000;
+    position: absolute;
+    bottom: 25px;
+}
+
+.giving-slider .slick-dots li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: .4;
+    transition-duration: .3s;
+}
+
+.giving-slider .slick-dots li.slick-active {
+    opacity: 1;
+}
+
+
 @media(max-width:600px) {
     .testimonial-slider .slick-slider {
         padding: 0 30px;

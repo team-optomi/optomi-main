@@ -44,6 +44,7 @@ module.exports = {
           "**/location", // <== Custom post slug
           "**/core_value", // <== Custom post slug
           "**/testimonial", // <== Custom post slug
+          "**/giving_slides", // <== Custom post slug
           "**/media",
           "**/tags",
           "**/taxonomies",
