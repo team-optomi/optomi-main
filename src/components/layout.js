@@ -126,6 +126,9 @@ const HeaderMain = styled.div`
   @media(max-width:768px) {
     background-color: #000;
     justify-content: space-between;
+    right: auto;
+    max-width: 100%;
+    width: 100%;
   }
 `
 
@@ -139,6 +142,9 @@ const MainLayout = styled.div`
     }
     ${HeaderMain} {
       right: 270px;
+      @media(max-width:768px) {
+        right: auto;
+      }
     }
   }
 `

@@ -374,6 +374,14 @@ const LeadershipSlide = styled.div`
             }
         }
     }
+    &:nth-child(7) {
+        ${BackgroundImgBW},
+        ${BackgroundImg} {
+            img {
+                object-position: right top !important;
+            }
+        }
+    }
     @media(max-width:700px) {
         position: relative;
         top: auto;
@@ -402,11 +410,6 @@ const LeadershipSlide = styled.div`
         &:hover {
             .slide-overlay {
                 top: 0;
-            }
-        }
-        &:nth-child(7) {
-            img {
-                object-position: right top !important;
             }
         }
     }
