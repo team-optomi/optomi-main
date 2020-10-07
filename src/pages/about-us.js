@@ -120,7 +120,11 @@ const AboutPage = () => {
                             >
                             Founders
                             </ButtonLink>
-                            <a href="https://optomi.com/giving">Giving Back</a>
+                            <ButtonLink
+                            to="/giving/"
+                            >
+                            Giving Back
+                            </ButtonLink>
                             <a href="https://optomi.com/press/awards">Awards</a>
                         </ButtonSection>
                     </SectionTwoRow>
