@@ -116,13 +116,13 @@ const SidebarMenu = styled.div`
 const HeaderMain = styled.div`
   position: fixed;
   margin: 0px auto;
-  max-width: 100%;
-  width: 100%;
+  right: 0;
   padding: 1.45rem 1.0875rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 100;
+  transition-duration: .3s;
   @media(max-width:768px) {
     background-color: #000;
     justify-content: space-between;
@@ -136,6 +136,9 @@ const MainLayout = styled.div`
     }
     ${SidebarMenu} {
       right: 0;
+    }
+    ${HeaderMain} {
+      right: 270px;
     }
   }
 `

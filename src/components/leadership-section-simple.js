@@ -23,7 +23,7 @@ class LeadershipSectionSimple extends Component {
             this.setState({ activeSlide: 0});
         }
         if(cat_id === 2) {
-            this.setState({ activeSlide: 5});
+            this.setState({ activeSlide: 6});
         }
     }
 
