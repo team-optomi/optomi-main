@@ -382,6 +382,14 @@ const LeadershipSlide = styled.div`
             }
         }
     }
+    &:nth-child(10) {
+        ${BackgroundImgBW},
+        ${BackgroundImg} {
+            img {
+                object-position: 70% 50% !important;
+            }
+        }
+    }
     @media(max-width:700px) {
         position: relative;
         top: auto;

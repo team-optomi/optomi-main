@@ -27,7 +27,7 @@ const CaseStudyPost = ({ data }) => (
               data-sal-delay="600"
               data-sal-easing="ease"
           >
-              <h1>{data.wordpressWpCaseStudy.title} Case Study</h1>
+              <h1>{data.wordpressWpCaseStudy.title}</h1>
               <p>Optomi <span>Technology</span> Talent</p>
           </HeroTitle>
 
@@ -52,30 +52,55 @@ const CaseStudyPost = ({ data }) => (
 
         </HeroBanner>
 
-        <ContentSection id="study_two">
+        <ContentSection
+        id="study_two">
           <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.content }} />
         </ContentSection>
 
-        <SectionMain>
+        <SectionMain
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        >
           <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.acf.section_one }} />
         </SectionMain>
 
-        <SectionMain>
+        <SectionMain
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        >
           <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.acf.section_two }} />
         </SectionMain>
 
-        <SectionMain>
+        <SectionMain
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        >
           <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.acf.section_three }} />
         </SectionMain>
 
-        <SectionMain>
+        <SectionMain
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        >
           <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.acf.section_four }} />
         </SectionMain>
 
-        <SectionTestimonial>
+        <SectionTestimonial
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        >
           <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCaseStudy.acf.section_five }} />
         </SectionTestimonial>
-
           
       </BlogContainer>
     </Layout>
@@ -93,7 +118,7 @@ const HeroBanner = styled.div`
     align-items: flex-end;
     justify-content: flex-end;
     z-index: 2;
-    @media (max-width:600px) {
+    @media (max-width:1000px) {
         display: block;
     }
 `
@@ -130,26 +155,37 @@ const HeroTitle = styled.div`
         @media(max-width:1200px) {
             font-size: 62px;
         }
-        @media(max-width:600px) {
+        @media(max-width:1000px) {
             font-size: 52px;
+        }
+        @media(max-width:768px) {
+          font-size: 42px;
+        }
+        @media(max-width:420px) {
+          font-size: 32px;
         }
     }
     p {
         font-family: "Helvetica Thin";
         letter-spacing: 2px;
         width: 100%;
-        text-align: center;
+        text-align: left;
         z-index: 1;
         font-size: 20px;
         color: rgb(140,145,146);
+        padding-left: 40px;
         span {
             color: #5ab3e8;
         }
+        @media(max-width:1000px) {
+          text-align: center;
+        }
         @media(max-width:600px) {
             font-size: 18px;
+            padding-left: 0;
         }
     }
-    @media(max-width: 600px) {
+    @media(max-width: 1000px) {
         position: relative;
         top: auto;
         left: auto;
@@ -209,6 +245,12 @@ const SkillSets = styled.p`
     color: #fff;
     line-height: 1.2;
     text-align: center;
+    @media(max-width: 1000px) {
+      font-size: 28px;
+    }
+    @media(max-width: 420px) {
+      font-size: 20px;
+    }
 `
 
 const HeroBottom = styled.div`
@@ -248,6 +290,42 @@ const ContentSection = styled.div`
       font-size: 24px;
       color: #fff;
       line-height: 1.2;
+      &.bonvivant {
+        font-family: "BonVivant";
+        color: #fff;
+        font-size: 72px;
+        line-height: 1.5;
+        font-weight: 100;
+        margin-bottom: 10px;
+        text-transform: lowercase;
+      }
+    }
+    h2 {
+      font-family: "Helvetica Thin";
+      font-size: 80px;
+      font-weight: 100;
+      color: #5ab3e8;
+      line-height: 1.2;
+    }
+    @media(max-width:1000px) {
+      p {
+        font-size: 20px;
+        &.bonvivant {
+          font-size: 46px;
+        }
+      }
+      h2 {
+        font-size: 60px;
+      }
+    }
+    @media(max-width:768px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media(max-width:420px) {
+      h2 {
+        font-size: 40px;
+      }
     }
 `
 
@@ -327,6 +405,43 @@ const SectionMain = styled.div`
         text-transform: uppercase;
       }
     }
+    .inline {
+      display: inline-block;
+    }
+    .narrow {
+      max-width: 250px;
+    }
+    .medium {
+      max-width: 600px;
+    }
+    @media(max-width:1000px) {
+      p {
+        font-size: 20px;
+        &.large-number {
+          font-size: 80px;
+        }
+        &.large-letters {
+          font-size: 80px;
+        }
+      }
+    }
+    @media(max-width:768px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media(max-width:420px) {
+      p {
+        &.large-number {
+          font-size: 60px;
+        }
+        &.large-letters {
+          font-size: 60px;
+        }
+      }
+      h3 {
+        font-size: 28px;
+      }
+    }
 `
 
 const SectionTestimonial = styled.div`
@@ -374,6 +489,23 @@ const SectionTestimonial = styled.div`
         text-transform: lowercase;
       }
     }
+    @media(max-width:1000px) {
+      p {
+        font-size: 20px;
+      }
+    }
+    @media(max-width:768px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media(max-width:420px) {
+      h2 {
+        font-size: 42px;
+        &.bonvivant {
+          font-size: 46px;
+        }
+      }
+    }
 `
 
 const BlogContainer = styled.div`
@@ -408,9 +540,6 @@ query($id: Int!) {
       title
       content
       date(formatString: "DD MMM")
-      categories {
-        name
-      }
       featured_media {
         localFile {
             childImageSharp {
@@ -422,6 +551,7 @@ query($id: Int!) {
       }
       acf {
         custom_author
+        custom_category
         meta_title
         meta_description
         content_alignment

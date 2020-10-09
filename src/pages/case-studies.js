@@ -22,11 +22,7 @@ const CaseStudiesPage = ({ data }) => (
               </BackgroundImg>
             <PostContent>
                 <div class={"categories"}>
-                {post.node.categories.map(category => (
-                    <p>
-                        {category.name}
-                    </p>
-                ))}
+                  <p>{post.node.acf.custom_category}</p>
                 </div>
               <Link to={`/${post.node.slug}`} style={{ textDecoration: "none" }}>
                 <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
@@ -182,14 +178,11 @@ const CaseStudiesPage = ({ data }) => (
   
   export const query = graphql`
     query {
-      allWordpressWpCaseStudy {
+      allWordpressWpCaseStudy(sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
             slug
-            categories {
-                name
-              }
             date(formatString: "MMMM DD, YYYY")
             featured_media {
               localFile {
@@ -202,6 +195,7 @@ const CaseStudiesPage = ({ data }) => (
             }
             acf {
               custom_author
+              custom_category
               excerpt_content
             }
           }
