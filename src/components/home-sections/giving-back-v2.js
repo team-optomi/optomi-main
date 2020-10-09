@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 
 import gsap from "gsap"
@@ -67,9 +67,14 @@ const GivingBackV2 = () => {
         data.allWordpressWpHomeSection.edges.map(post => (
             <MainSection id={"giving_trigger"}>
 
+                
                 <ImageBackground className="gb-parallax">
                     <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
                 </ImageBackground>
+
+                <Link
+                    to="/giving/"
+                >
 
                 <MainRow
                 data-sal="slide-up"
@@ -85,6 +90,7 @@ const GivingBackV2 = () => {
                     </MainDiv>
                     
                 </MainRow>
+                </Link>
                 
             </MainSection>
         ))
@@ -101,6 +107,10 @@ const MainSection = styled.div`
     display: flex;
     align-items: center;
     z-index: 2;
+    a {
+        text-decoration: none;
+        width: 100%;
+    }
 `
 
 const BackgroundImg = styled(Img)`

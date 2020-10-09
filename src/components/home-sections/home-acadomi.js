@@ -62,11 +62,12 @@ const Acadomi = () => {
     return(
         data.allWordpressWpHomeSection.edges.map(post => (
         <MainSection>
+            <a href={post.node.acf.button_link}>
 
             <Background>
                 <BackgroundImg sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} />
             </Background>
-
+            
             <MainRow>
                 <TopTitle
                 data-sal="slide"
@@ -97,6 +98,7 @@ const Acadomi = () => {
                 <Tagline sizes={post.node.acf.tagline.localFile.childImageSharp.sizes} alt="Acadomi Tagline" />
                 </div>
             </MainRow>
+            </a>
 
         </MainSection>
 
@@ -111,6 +113,9 @@ const MainSection = styled.div`
     padding-bottom: 50px;
     position: relative;
     z-index: 3;
+    a {
+        text-decoration: none;
+    }
 `
 
 const Background = styled.div`
