@@ -17,13 +17,17 @@ const IndexPage = () => {
 
   const data = useStaticQuery(graphql`
         query {
-            allWordpressWpHomeSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 8}}}}) {
+            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 46}}}}) {
                 edges {
                     node {
+                        acf {
+                            meta_title
+                            meta_description
+                        }
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 1912) {
+                                    sizes(maxWidth: 2000) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }
@@ -35,10 +39,11 @@ const IndexPage = () => {
         }
     `)
     return(
-      data.allWordpressWpHomeSection.edges.map(post => (
+      data.allWordpressWpCustomPage.edges.map(post => (
       <HomeLayout>
         <SEO 
-        title="Optomi IT Staffing Services, providing IT Consultants and Technology Services" 
+        title={post.node.acf.meta_title} 
+        description={post.node.acf.meta_description}
         image={post.node.featured_media.localFile.childImageSharp.sizes}
         />
         <HomeHero/>

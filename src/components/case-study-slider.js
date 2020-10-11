@@ -172,7 +172,7 @@ const Excerpt = styled.div`
     transition-delay: .9s;
     p {
         font-family: "Helvetica Thin";
-        font-size: 24px;
+        font-size: 20px;
         color: #818686;
         font-weight: 100;
         line-height: 1.2;
@@ -185,10 +185,10 @@ const Excerpt = styled.div`
         max-height: 200px;
         overflow: hidden;
         @media(max-width:1330px) {
-          font-size: 20px;
+          font-size: 18px;
         }
         @media(max-width:1150px) {
-          font-size: 20px;
+          font-size: 18px;
           right: 10px;
         }
         @media(max-width:940px) {

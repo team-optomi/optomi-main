@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import Img from "gatsby-image"

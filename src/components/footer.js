@@ -32,8 +32,16 @@ const Footer = () => (
                 <li><a href="https://optomiservices.com/news/" target="_blank" rel="noopener noreferrer">OPS Press</a></li>
                 <li><a href="http://www.linkedin.com/company/optomi?trk=tabs_biz_home" target="_blank" rel="noopener noreferrer">Optomi on LinkedIn</a></li>
                 <li><a href="https://www.linkedin.com/company-beta/16182234/" target="_blank" rel="noopener noreferrer">Provalus on LinkedIn</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">Locations</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                <li><Link
+                to="/locations/"
+                >
+                Locations
+                </Link></li>
+                <li><Link
+                to="/contact/"
+                >
+                Contact
+                </Link></li>
             </ul>
         </FooterCol>
         <FooterCol className={"col-three"}>

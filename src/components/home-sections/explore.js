@@ -168,6 +168,7 @@ const ButtonLink = styled(Link)`
     padding: 20px 40px;
     @media(max-width:1000px) {
         width: 100%;
+        padding: 20px 0px;
     }
     &:nth-child(2) {
         max-width: 350px;
