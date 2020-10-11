@@ -75,16 +75,16 @@ const FoundersPage = () => {
                         data-sal-duration="1000"
                         data-sal-easing="ease"
                         >
-                            <h2>Christen Black</h2>
-                            <h3>CMO</h3>
+                            <h2>Radka Winwood</h2>
+                            <h3>CSO</h3>
                         </HeroName>
                         <HeroName
                         data-sal="slide-up"
                         data-sal-duration="1000"
                         data-sal-easing="ease"
                         >
-                            <h2>Radka Winwood</h2>
-                            <h3>CSO</h3>
+                            <h2>Christen Black</h2>
+                            <h3>CMO</h3>
                         </HeroName>
                         <HeroName
                         data-sal="slide-up"
