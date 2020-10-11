@@ -314,6 +314,9 @@ const FooterAwardsCol = styled.div`
             width: 100%;
             margin-left: auto;
             margin-right: auto;
+            img {
+                object-fit: contain !important;
+            }
         }
     }
     @media(max-width:700px) {
