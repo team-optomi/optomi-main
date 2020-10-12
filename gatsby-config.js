@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify`,
     {
       resolve: 'gatsby-plugin-page-transitions',
       options: {
@@ -66,14 +67,14 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: "UA-132662270-1",
+        trackingId: "UA-XXXXXXXXX-X",
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `optomi-professional-services`,
-        short_name: `ops`,
+        name: `optomi`,
+        short_name: `optomi`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#61b1e8`,
