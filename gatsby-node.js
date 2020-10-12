@@ -9,6 +9,9 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createRedirect } = actions
+  createRedirect({ fromPath: '/press', toPath: 'https://press.optomi.com', isPermanent: true })
+  createRedirect({ fromPath: '/services', toPath: '/service-offerings', isPermanent: true })
   const { createPage } = actions
   const BlogPostTemplate = path.resolve("./src/templates/post.js")
   const CaseStudyTemplate = path.resolve("./src/templates/case-study.js")
