@@ -17,7 +17,10 @@ const BlogPost = ({ data }) => (
       <BlogContainer>
           <article>
             <FeaturedImg sizes={data.wordpressPost.featured_media.localFile.childImageSharp.sizes} alt={data.wordpressPost.title} />
-            <h1><span>{data.wordpressPost.date}</span>{data.wordpressPost.title}</h1>
+            <TitleSection>
+              <p>{data.wordpressPost.date}</p>
+              <h1 dangerouslySetInnerHTML={{ __html: data.wordpressPost.title }}/>
+            </TitleSection>
             <p class={"blog-meta"}><span>Posted in </span>
                   <span>
                       {data.wordpressPost.acf.custom_category}
@@ -75,6 +78,21 @@ const BlogContainer = styled.div`
 
 const FeaturedImg = styled(Img)`
     margin-bottom: 25px;
+`
+
+const TitleSection = styled.div`
+  display: flex;
+  p {
+    font-family: "Raleway SemiBold" !important;
+    font-size: 24px !important;
+    line-height: 1.38 !important;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 0 !important;
+    color: #bebebe !important;
+    padding-right: 5px !important;
+    text-transform: uppercase;
+  }
 `
 
 export default BlogPost

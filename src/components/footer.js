@@ -28,7 +28,7 @@ const Footer = () => (
         <FooterCol className={"col-two"}>
             <h4>More Info</h4>
             <ul>
-                <li><a href="https://optomi.com/press/" target="_blank" rel="noopener noreferrer">Optomi Press</a></li>
+                <li><a href="https://press.optomi.com/" target="_blank" rel="noopener noreferrer">Optomi Press</a></li>
                 <li><a href="https://optomiservices.com/news/" target="_blank" rel="noopener noreferrer">OPS Press</a></li>
                 <li><a href="http://www.linkedin.com/company/optomi?trk=tabs_biz_home" target="_blank" rel="noopener noreferrer">Optomi on LinkedIn</a></li>
                 <li><a href="https://www.linkedin.com/company-beta/16182234/" target="_blank" rel="noopener noreferrer">Provalus on LinkedIn</a></li>
@@ -49,7 +49,7 @@ const Footer = () => (
             <ul>
                 <li><a href="https://www.provalus.com/" target="_blank" rel="noopener noreferrer">Provalus website</a></li>
                 <li style={{ marginBottom: '20px' }}><a href="https://optomiservices.com/" target="_blank" rel="noopener noreferrer">Optomi Professional Services website</a></li>
-                <li><a href="https://www.optomi.com/opportunities/" target="_blank" rel="noopener noreferrer">Internal Careers</a></li>
+                <li><a href="https://opportunities.optomi.com/" target="_blank" rel="noopener noreferrer">Internal Careers</a></li>
                 <li><a href="https://theacadomi.com" target="_blank" rel="noopener noreferrer">Entry-Level Opportunities</a></li>
             </ul>
         </FooterCol>

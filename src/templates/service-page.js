@@ -37,7 +37,7 @@ const ServicePage = ({ data }) => (
                 data-sal-easing="ease"
                 >
                     <h2>Explore job opportunities with us</h2>
-                    <a href="https://optomi.com/jobs/#/jobs" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Portal</a>
+                    <a href="https://jobs.optomi.com/jobs/#/jobs" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Portal</a>
                 </div>
             </MainContent>
         </MainContainer>

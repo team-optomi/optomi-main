@@ -130,10 +130,6 @@ const HeaderMain = styled.div`
     img {
       margin-bottom: 0;
     }
-    @media(max-width:600px) {
-      width: 71px;
-      height: 35px;
-    }
   }
   @media(max-width:600px) {
     padding: 1.45rem 1.0875rem;

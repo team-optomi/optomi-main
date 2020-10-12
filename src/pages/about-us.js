@@ -125,7 +125,7 @@ const AboutPage = () => {
                             >
                             Giving Back
                             </ButtonLink>
-                            <a href="https://optomi.com/press/awards">Awards</a>
+                            <a href="https://press.optomi.com/awards">Awards</a>
                         </ButtonSection>
                     </SectionTwoRow>
 
