@@ -15,8 +15,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   createRedirect({ fromPath: '/giving-back/*', toPath: 'https://giving-back.optomi.com', isPermanent: true })
   createRedirect({ fromPath: '/consultant-community-blog/*', toPath: 'https://consultant-community-blog.optomi.com', isPermanent: true })
   createRedirect({ fromPath: '/optomi-opportunities/*', toPath: 'http://optomi-opportunities.optomi.com', isPermanent: true })
+  createRedirect({ fromPath: '/jobs/*', toPath: 'https://jobs.optomi.com/jobs/#/jobs', isPermanent: true, force: true })
   createRedirect({ fromPath: '/services', toPath: '/service-offerings', isPermanent: true })
-  createRedirect({ fromPath: '/jobs/#/jobs', toPath: 'https://jobs.optomi.com/jobs/#/jobs', isPermanent: true })
   const { createPage } = actions
   const BlogPostTemplate = path.resolve("./src/templates/post.js")
   const CaseStudyTemplate = path.resolve("./src/templates/case-study.js")
