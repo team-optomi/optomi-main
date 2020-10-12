@@ -1,0 +1,3 @@
+#redirects for WordPress subdomains
+
+/press              https://press.optomi.com/
