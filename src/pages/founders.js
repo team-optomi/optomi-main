@@ -21,7 +21,7 @@ const FoundersPage = () => {
                         featured_media {
                             localFile {
                                 childImageSharp {
-                                    sizes(maxWidth: 2800) {
+                                    sizes(maxWidth: 1978) {
                                         ...GatsbyImageSharpSizes
                                     }
                                 }

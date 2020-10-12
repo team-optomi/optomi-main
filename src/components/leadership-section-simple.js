@@ -93,7 +93,7 @@ const LeadershipCategory = styled.div`
         border: none;
         outline: 0;
         padding: 30px;
-        color: #fff;
+        color: #298fc2;
         position: relative;
         &:hover {
             cursor: pointer;

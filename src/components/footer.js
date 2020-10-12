@@ -31,7 +31,7 @@ const Footer = () => (
                 <li><a href="https://press.optomi.com/" target="_blank" rel="noopener noreferrer">Optomi Press</a></li>
                 <li><a href="https://optomiservices.com/news/" target="_blank" rel="noopener noreferrer">OPS Press</a></li>
                 <li><a href="http://www.linkedin.com/company/optomi?trk=tabs_biz_home" target="_blank" rel="noopener noreferrer">Optomi on LinkedIn</a></li>
-                <li><a href="https://www.linkedin.com/company-beta/16182234/" target="_blank" rel="noopener noreferrer">Provalus on LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/company/16182234/admin/" target="_blank" rel="noopener noreferrer">Provalus on LinkedIn</a></li>
                 <li><Link
                 to="/locations/"
                 >
