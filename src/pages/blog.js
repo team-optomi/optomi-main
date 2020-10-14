@@ -26,7 +26,7 @@ const BlogPage = ({ data }) => (
                         {post.node.acf.custom_category}
                     </p>
                 </div>
-              <Link to={`/${post.node.slug}`} style={{ textDecoration: "none" }}>
+              <Link to={`/blog/${post.node.slug}`} style={{ textDecoration: "none" }}>
                 <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
               </Link>
               <div class={"excerpt"} dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />

@@ -19,6 +19,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   createRedirect({ fromPath: '/jobs/*', toPath: 'https://jobs.optomi.com/jobs/#/jobs', isPermanent: true, force: true })
   createRedirect({ fromPath: '/jobs/#/jobs', toPath: 'https://jobs.optomi.com/jobs/#/jobs', isPermanent: true, force: true })
   createRedirect({ fromPath: '/services', toPath: '/service-offerings', isPermanent: true })
+  createRedirect({ fromPath: '/jobseekers', toPath: 'https://jobs.optomi.com/jobs/#/jobs', isPermanent: true })
+  createRedirect({ fromPath: '/current-consultants', toPath: 'https://consultant-community-blog.optomi.com', isPermanent: true })
+  createRedirect({ fromPath: '/videointerviewing', toPath: '/', isPermanent: true })
+  createRedirect({ fromPath: '/index.php', toPath: '/', isPermanent: true })
+  createRedirect({ fromPath: '/opt2give.php', toPath: '/opt2give', isPermanent: true })
+  createRedirect({ fromPath: '/opt2giveday.php', toPath: '/opt2giveday', isPermanent: true })
+  createRedirect({ fromPath: '/opt2givewithu.php', toPath: '/opt2givewithu', isPermanent: true })
+  createRedirect({ fromPath: '/privacy', toPath: '/privacy-policy', isPermanent: true })
+  createRedirect({ fromPath: '/about.php', toPath: '/about-us', isPermanent: true })
+  createRedirect({ fromPath: '/awards', toPath: 'https://press.optomi.com/awards', isPermanent: true })
+  createRedirect({ fromPath: '/awards.php', toPath: 'https://press.optomi.com/awards', isPermanent: true })
   const { createPage } = actions
   const BlogPostTemplate = path.resolve("./src/templates/post.js")
   const CaseStudyTemplate = path.resolve("./src/templates/case-study.js")
@@ -58,7 +69,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const BlogPosts = result.data.allWordpressPost.edges
       BlogPosts.forEach(post => {
         createPage({
-              path: post.node.slug,
+              path: `/blog/${post.node.slug}`,
               component: BlogPostTemplate,
               context: {
               id: post.node.wordpress_id,
