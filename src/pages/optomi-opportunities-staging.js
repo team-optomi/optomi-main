@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import OOLayout from "../components/optomi-opportunities/oo-layout"
+import OOSectionOne from "../components/optomi-opportunities/oo-section-one"
+import OOSectionTwo from "../components/optomi-opportunities/oo-section-two"
 import SEO from "../components/seo"
 
 const OptomiOpportunitiesPage = () => {
@@ -45,6 +47,8 @@ const OptomiOpportunitiesPage = () => {
                 <SliderPlaceholder>
                     <p>Slider Placeholder</p>
                 </SliderPlaceholder>
+                <OOSectionOne/>
+                <OOSectionTwo/>
             </OOLayout>
         ))
     )

@@ -6,7 +6,6 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ParticleBG from "../components/particle-bg"
 import LeadershipSectionSimple from "../components/leadership-section-simple"
 import { FaChevronDown } from 'react-icons/fa'
 
@@ -93,10 +92,6 @@ const AboutPage = () => {
 
                 <SectionTwo id="about_two">
 
-                    <CanvasBackground>
-                        <ParticleBG/>
-                    </CanvasBackground>
-
                     <SectionTwoRow>
                         <SectionContent 
                         data-sal="fade"
@@ -130,6 +125,23 @@ const AboutPage = () => {
                     </SectionTwoRow>
 
                 </SectionTwo>
+
+                <SectionThree>
+                    <hr
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    />
+                    <SectionThreeRow
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >
+                        <p class="large-para">Optomi Professional Services employs a team of innovative thinkers, industry disruptors, and refreshingly enterprising strategists influencing a more purpose-driven world.</p>
+                        <p class="bonvivant">get to know us</p>
+                        <button onClick={() => scrollTo('#leader_section')} aria-label="Scroll"><FaChevronDown size={32}/></button>
+                    </SectionThreeRow>
+                </SectionThree>
 
                 <LeadershipSectionSimple />
 
@@ -348,6 +360,9 @@ const SectionTwoRow = styled.div`
         letter-spacing: 5px;
         max-width: 1000px;
         transition-delay: .3s;
+        @media(max-width: 960px) {
+            text-align: center;
+        }
     }
     @media(max-width:1500px) {
         max-width: 1340px;
@@ -389,15 +404,6 @@ const SectionContent = styled.div`
     }
 `
 
-const CanvasBackground = styled.div`
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-`
-
 const ButtonSection = styled.div`
     display: flex;
     justify-content: space-between;
@@ -432,7 +438,8 @@ const ButtonSection = styled.div`
         }
     }
     @media(max-width:960px) {
-        flex-direction: column
+        flex-direction: column;
+        align-items: center;
     }
 `
 
@@ -450,6 +457,71 @@ const ButtonLink = styled(Link)`
     @media(max-width:1200px) {
         font-size: 24px;
         letter-spacing: 3px;
+    }
+`
+
+const SectionThree = styled.div`
+    padding-bottom: 50px;
+    hr {
+        max-width: 800px;
+        width: 50%;
+        height: 1px;
+        background-color: #8a8d8f;
+        margin: 0 auto;
+    }
+`
+
+const SectionThreeRow = styled.div`
+    max-width: 1540px;
+    width: 100%;
+    padding-top: 100px;
+    padding-left: 120px;
+    padding-right: 120px;
+    margin: 0 auto;
+    text-align: center;
+    .large-para {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 32px;
+        color: rgb(90, 179, 232);
+        line-height: 1.2;
+        max-width: 1200px;
+        margin: 0px auto;
+        margin-bottom: 100px;
+        @media(max-width:768px) {
+            font-size: 24px;
+        }
+        @media(max-width:420px) {
+            font-size: 20px;
+        }
+    }
+    .bonvivant {
+        font-family: "BonVivant";
+        color: #fff;
+        text-align: center;
+        font-size: 46px;
+        line-height: 1.5;
+        font-weight: 100;
+    }
+    button {
+        color: #5ab3e8;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    @media(max-width:1500px) {
+        max-width: 1340px;
+    }
+    @media(max-width:1200px) {
+        max-width: 1140px;
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 `
 
