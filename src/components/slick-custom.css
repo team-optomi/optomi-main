@@ -1,0 +1,392 @@
+/* cleaning up the slick slider */
+
+.slick-slider {
+    max-width: 82%;
+}
+
+.slick-list {
+    overflow: visible;
+}
+
+.slick-dots {
+    display: none !important;
+}
+
+
+.slick-prev {
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    right: 40px;
+    left: auto;
+    top: auto;
+    bottom: -80px;
+    z-index: 3;
+    transition-duration: .3s;
+}
+
+.slick-prev:hover {
+    z-index: 3;
+    opacity: .75;
+    background-color: transparent;
+}
+
+.slick-prev:before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 1px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.slick-prev:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 6px;
+    height: 40px;
+    width: 40px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: rotate(135deg);
+}
+
+.slick-next {
+    width: 200px;
+    height: 80px;
+    background-color: transparent;
+    left: -100px;
+    z-index: 3;
+    transition-duration: .3s;
+}
+
+.slick-next:hover {
+    z-index: 3;
+    opacity: .75;
+    background-color: transparent;
+}
+
+.slick-next:before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 1px;
+    width: 200px;
+    background-color: #000;
+}
+
+.slick-next:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 6px;
+    height: 40px;
+    width: 40px;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    transform: rotate(-45deg);
+}
+
+/* Slider animations */
+
+  .sliderFade {
+      opacity: 0;
+  }
+  
+  .slick-active .sliderFade {
+    transition-duration: 1s;
+    opacity: 1;
+  }
+
+
+
+/* Testimonial Slider */
+
+.testimonial-slider .slick-slider {
+    max-width: 100%;
+    padding: 0 100px;
+}
+
+.testimonial-slider .slick-list {
+    overflow: hidden;
+}
+
+.testimonial-slider .slick-next:before,
+.testimonial-slider .slick-prev:before {
+    display: none;
+}
+
+.testimonial-slider .slick-next:after,
+.testimonial-slider .slick-prev:after {
+    border-color: #fff;
+}
+
+.testimonial-slider .slick-prev:after {
+    transform: rotate(-45deg)
+}
+
+.testimonial-slider .slick-prev {
+    top: 50%;
+    left: 20px;
+    right: auto;
+    width: 50px;
+}
+
+.testimonial-slider .slick-next:after {
+    transform: rotate(135deg)
+}
+
+.testimonial-slider .slick-next {
+    top: 50%;
+    right: 20px;
+    left: auto;
+    width: 50px;
+}
+
+/* Giving Slider */
+
+.giving-slider .slick-slider {
+    max-width: 100%;
+}
+
+.giving-slider .slick-dots {
+    display: block !important;
+    z-index: 1000;
+    position: absolute;
+    bottom: 25px;
+}
+
+.giving-slider .slick-dots li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: .4;
+    transition-duration: .3s;
+}
+
+.giving-slider .slick-dots li.slick-active {
+    opacity: 1;
+}
+
+/* Optomi Opportunties Slider */
+
+.oo-slider .slick-slider {
+    max-width: 100%;
+}
+
+.oo-slider .slick-dots {
+    display: block !important;
+    z-index: 1000;
+    position: absolute;
+    bottom: 25px;
+}
+
+.oo-slider .slick-dots li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: .4;
+    transition-duration: .3s;
+}
+
+.oo-slider .slick-dots li.slick-active {
+    opacity: 1;
+}
+
+.oo-slider .slick-next:before,
+.oo-slider .slick-prev:before {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.oo-slider .slick-next:after,
+.oo-slider .slick-prev:after {
+    border-color: #fff;
+}
+
+.oo-slider .slick-prev:after {
+    transform: rotate(-45deg);
+    top: 56px;
+    right: 13px;
+    height: 18px;
+    width: 18px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+.oo-slider .slick-prev {
+    top: 50%;
+    left: 20px;
+    right: auto;
+    width: 50px;
+}
+
+.oo-slider .slick-next:after {
+    transform: rotate(135deg);
+    top: 56px;
+    left: 13px;
+    height: 18px;
+    width: 18px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+.oo-slider .slick-next {
+    top: 50%;
+    right: 20px;
+    left: auto;
+    width: 50px;
+}
+
+@media(max-width:768px) {
+    .oo-slider .slick-prev {
+        left: -10px;
+    }
+    .oo-slider .slick-next {
+        right: -10px;
+    }
+}
+
+/* Optomi Opportunities Testimonial Slider */
+
+.oo-testimonial-slider .slick-prev {
+    top: auto;
+    bottom: -180px;
+    left: calc(50% - 55px);
+}
+
+.oo-testimonial-slider .slick-prev:before {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    top: 10px;
+    right: 0;
+    left: auto;
+    border-radius: 50%;
+}
+
+.oo-testimonial-slider .slick-prev:after {
+    height: 10px;
+    width: 10px;
+    right: 8px;
+}
+
+.oo-testimonial-slider .slick-next {
+    top: auto;
+    bottom: -180px;
+    right: calc(50% - 55px);
+}
+
+.oo-testimonial-slider .slick-next:before {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    top: 10px;
+    right: auto;
+    left: 0;
+    border-radius: 50%;
+}
+
+.oo-testimonial-slider .slick-next:after {
+    height: 10px;
+    width: 10px;
+    left: 8px;
+}
+
+
+@media(max-width:600px) {
+    .testimonial-slider .slick-slider {
+        padding: 0 30px;
+    }
+    .testimonial-slider .slick-prev {
+        left: -10px;
+    }
+    .testimonial-slider .slick-next {
+        right: -10px;
+    }
+}
+
+/* Media Queries */
+
+@media(max-width:1550px) {
+    .slick-slider {
+        max-width: 96%;
+    }
+}
+@media(max-width:1330px) {
+    .slick-slider {
+        max-width: 100%;
+    }
+}
+@media(max-width:1150px) {
+    .slick-list {
+        overflow: hidden;
+    }
+    .slick-prev {
+        right: 0;
+        bottom: -120px;
+    }
+    .slick-prev:before {
+        background-color: #000;
+    }
+    .slick-prev:after {
+        border-color: #000;
+    }
+}
+@media(max-width:940px) {
+    .slick-next {
+        width: 50px;
+        left: -50px;
+    }
+    .slick-prev {
+        width: 50px;
+        right: -50px;
+        top: 50%;
+        bottom: auto;
+    }
+    .slick-next:before,
+    .slick-prev:before {
+        display: none;
+    }
+}
+@media(max-width:840px) {
+    .slick-next {
+        left: -35px;
+    }
+    .slick-prev {
+        right: -35px;
+    }
+}
+
+
+
+/*
+.slick-dots li button {
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+}
+
+.slick-dots li button:before {
+    display: none;
+}
+
+.slick-dots li button:hover {
+    background-color: #999;
+}
+
+.slick-dots .slick-active button {
+    background-color: #333;
+} */
