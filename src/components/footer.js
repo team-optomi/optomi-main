@@ -5,7 +5,7 @@ import styled from "styled-components"
 import FooterLogo from "../components/logos/footer-logo"
 import FooterAwards from "../components/logos/footer-awards"
 import SpinningSocials from "../components/logos/spinning-socials"
-import InstaFeed from "../components/insta-feed"
+//import InstaFeed from "../components/insta-feed"
 
 import FooterSocialBox from "../components/footer-socials"
 
@@ -59,7 +59,7 @@ const Footer = () => (
         </FooterCol>
         <FooterCol className={"col-four"}>
             <h4>Experience OPS</h4>
-            <InstaFeed/>
+            {/* <InstaFeed/> */}
         </FooterCol>
       </FooterRow>
       <FooterSocials>
