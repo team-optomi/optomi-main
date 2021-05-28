@@ -6,9 +6,10 @@ import SEO from "../components/seo"
 import HomeHero from "../components/home-sections/home-hero"
 import MissionStatement from "../components/home-sections/mission-statement-v2"
 import HomeDifs from "../components/home-sections/home-difs"
+import OurValues from "../components/home-sections/home-our-values"
 import Explore from "../components/home-sections/explore"
 import JobPortal from "../components/home-sections/job-portal"
-import Acadomi from "../components/home-sections/home-acadomi"
+// import Acadomi from "../components/home-sections/home-acadomi"
 import CaseStudies from "../components/case-studies"
 import GivingBack from "../components/home-sections/giving-back-v2"
 import HomeFooter from "../components/home-sections/home-footer"
@@ -49,9 +50,10 @@ const IndexPage = () => {
         <HomeHero/>
         <MissionStatement/>
         <HomeDifs/>
-        <Explore/>
+        <OurValues/>
         <JobPortal/>
-        <Acadomi/>
+        <Explore/>
+        {/* <Acadomi/> */}
         <CaseStudies/>
         <GivingBack/>
         <HomeFooter/>

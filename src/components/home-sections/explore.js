@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
+import Img from "gatsby-image"
 
 const JobPortal = () => {
 
@@ -12,10 +13,40 @@ const JobPortal = () => {
                         title
                         content
                         acf {
+                            e_button_one_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 500) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
                             button_one_text
                             button_one_link
+                            e_button_two_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 500) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
                             button_two_text
                             button_two_link
+                            e_button_three_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 500) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
                             button_three_text
                             button_three_link
                         }
@@ -50,7 +81,9 @@ const JobPortal = () => {
                         data-sal-delay="300"
                         data-sal-easing="ease"
                         to={post.node.acf.button_one_link}
-                        >{post.node.acf.button_one_text}
+                        >
+                            <Img sizes={post.node.acf.e_button_one_icon.localFile.childImageSharp.sizes} alt={post.node.acf.e_button_one_icon.title} />
+                            {post.node.acf.button_one_text}
                         </ButtonLink>
                         <ButtonLink
                         data-sal="slide-up"
@@ -58,7 +91,9 @@ const JobPortal = () => {
                         data-sal-delay="600"
                         data-sal-easing="ease"
                         to={post.node.acf.button_two_link}
-                        >{post.node.acf.button_two_text}
+                        >
+                            <Img sizes={post.node.acf.e_button_two_icon.localFile.childImageSharp.sizes} alt={post.node.acf.e_button_two_icon.title} />
+                            {post.node.acf.button_two_text}
                         </ButtonLink>
                         <ButtonLink
                         data-sal="slide-up"
@@ -66,7 +101,9 @@ const JobPortal = () => {
                         data-sal-delay="900"
                         data-sal-easing="ease"
                         to={post.node.acf.button_three_link}
-                        >{post.node.acf.button_three_text}
+                        >
+                            <Img sizes={post.node.acf.e_button_three_icon.localFile.childImageSharp.sizes} alt={post.node.acf.e_button_three_icon.title} />
+                            {post.node.acf.button_three_text}
                         </ButtonLink>
                     </ButtonSection>
                 </MainContent>
@@ -99,8 +136,8 @@ const MainContent = styled.div`
         color: #a6aaab;
         font-size: 72px;
         font-weight: 100;
-        margin-bottom: 0;
-        margin-left: -50px;
+        max-width: 750px;
+        margin: 0 auto;
         text-transform: lowercase;
     }
     @media(max-width:1500px) {
@@ -128,12 +165,14 @@ const MainContent = styled.div`
 `
 
 const MainCopy = styled.div`
+    max-width: 650px;
+    margin: 0 auto;
     p {
         font-family: "Helvetica Thin";
         color: #fff;
         font-size: 24px;
         line-height: 1.3;
-        text-align: center;
+        text-align: left;
         @media(max-width:1020px) {
             padding-left: 50px;
         }
@@ -158,7 +197,7 @@ const ButtonSection = styled.div`
 
 const ButtonLink = styled(Link)`
     font-family: "Helvetica Thin";
-    color: #298fc2;
+    color: #a6aaab;
     font-size: 24px;
     letter-spacing: 5px;
     line-height: 1.3;
@@ -166,6 +205,17 @@ const ButtonLink = styled(Link)`
     text-transform: uppercase;
     text-decoration: none;
     padding: 20px 40px;
+    .gatsby-image-wrapper {
+        max-width: 200px;
+        max-height: 120px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        img {
+            max-width: 200px;
+            max-height: 120px;
+            object-fit: contain !important;
+        }
+    }
     @media(max-width:1000px) {
         width: 100%;
         padding: 20px 0px;
