@@ -5,17 +5,31 @@ import Img from "gatsby-image"
 const FooterAwards = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "footer-awards.png" }) {
-        childImageSharp {
-          fixed(width: 550, height: 44) {
-            ...GatsbyImageSharpFixed
+      footerContent: allWordpressWpFooterSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 82}}}}) {
+        edges {
+          node {
+            acf {
+              awards_image {
+                localFile {
+                  childImageSharp {
+                    fixed(width: 550, height: 44) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fixed} />
+  return(
+    data.footerContent.edges.map(content => (
+      <Img fluid={content.node.acf.awards_image.localFile.childImageSharp.fixed} />
+    ))
+  ) 
 }
 
 export default FooterAwards

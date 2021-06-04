@@ -1,6 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import Image from 'gatsby-image'
 
 import FooterLogo from "../components/logos/footer-logo"
 import FooterAwards from "../components/logos/footer-awards"
@@ -9,58 +10,157 @@ import SpinningSocials from "../components/logos/spinning-socials"
 
 import FooterSocialBox from "../components/footer-socials"
 
-const Footer = () => (
+const Footer = () => {
+
+    const data = useStaticQuery(graphql`
+        query {
+            footerSectionOne: allWordpressWpFooterSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 81}}}}) {
+                edges {
+                    node {
+                        content
+                    }
+                }
+            }
+            footerSectionTwo: allWordpressWpFooterSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 80}}}}) {
+                edges {
+                    node {
+                        content
+                    }
+                }
+            }
+            footerSectionThree: allWordpressWpFooterSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 79}}}}) {
+                edges {
+                    node {
+                        content
+                    }
+                }
+            }
+            footerInstaImages: allWordpressWpFooterSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 78}}}}) {
+                edges {
+                    node {
+                        content
+                        acf {
+                            image_one {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 300) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            image_two {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 300) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            image_three {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 300) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            image_four {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 300) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            image_five {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 300) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            image_six {
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 300) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            footerCopyright: allWordpressWpFooterSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 77}}}}) {
+                edges {
+                    node {
+                        content
+                    }
+                }
+            }
+        }
+    `)
+
+    return(
     <FooterMain>
         
         <FooterLogoCol>
             <FooterLogo/>
         </FooterLogoCol>
       <FooterRow>
-        <FooterCol className={"col-one"}>
-            <h4>Headquarters</h4>
-            <p>One Glenlake Parkway<br/>
-                Suite 1250<br/>
-                Atlanta, Ga 30328<br/>
-                www.optomi.com<br/>
-                678-250-0820</p>
-            <p><a href="https://www.google.com/maps/place/Optomi,+LLC/@33.9353923,-84.3601096,15z/data=!4m5!3m4!1s0x0:0xcb3655f2edd8d589!8m2!3d33.9353923!4d-84.3601096" target="_blank" rel="noopener noreferrer" aria-label="Link">MAP</a></p>
-        </FooterCol>
-        <FooterCol className={"col-two"}>
-            <h4>More Info</h4>
-            <ul>
-                <li><Link
-                to="/press/"
-                >
-                Optomi Press
-                </Link></li>
-                <li><a href="https://optomiservices.com/news/" target="_blank" rel="noopener noreferrer">OPS Press</a></li>
-                <li><a href="http://www.linkedin.com/company/optomi?trk=tabs_biz_home" target="_blank" rel="noopener noreferrer">Optomi on LinkedIn</a></li>
-                <li><a href="https://www.linkedin.com/company/16182234/admin/" target="_blank" rel="noopener noreferrer">Provalus on LinkedIn</a></li>
-                <li><Link
-                to="/locations/"
-                >
-                Locations
-                </Link></li>
-                <li><Link
-                to="/contact/"
-                >
-                Contact
-                </Link></li>
-            </ul>
-        </FooterCol>
-        <FooterCol className={"col-three"}>
-            <h4>Connect with Us</h4>
-            <ul>
-                <li><a href="https://www.provalus.com/" target="_blank" rel="noopener noreferrer">Provalus website</a></li>
-                <li style={{ marginBottom: '20px' }}><a href="https://optomiservices.com/" target="_blank" rel="noopener noreferrer">Optomi Professional Services website</a></li>
-                <li><a href="https://opportunities.optomi.com/" target="_blank" rel="noopener noreferrer">Internal Careers</a></li>
-                <li><a href="https://theacadomi.com" target="_blank" rel="noopener noreferrer">Entry-Level Opportunities</a></li>
-            </ul>
-        </FooterCol>
+        {data.footerSectionOne.edges.map(sectionOne => (
+        <FooterCol className={"col-one"} dangerouslySetInnerHTML={{ __html: sectionOne.node.content }}/>
+        ))}
+        {data.footerSectionTwo.edges.map(sectionTwo => (
+        <FooterCol className={"col-two"} dangerouslySetInnerHTML={{ __html: sectionTwo.node.content }}/>
+        ))}
+        {data.footerSectionThree.edges.map(sectionThree => (
+        <FooterCol className={"col-three"} dangerouslySetInnerHTML={{ __html: sectionThree.node.content }}/>
+        ))}
+        {data.footerInstaImages.edges.map(instaImage => (
         <FooterCol className={"col-four"}>
-            <h4>Experience OPS</h4>
-            {/* <InstaFeed/> */}
+            <div dangerouslySetInnerHTML={{ __html: instaImage.node.content }}/>
+            <InstaFlex>
+                <InstaImage>
+                    <a href="https://www.instagram.com/optomi_/" target="_blank" rel="noopener noreferrer">
+                    <Image sizes={instaImage.node.acf.image_one.localFile.childImageSharp.sizes}/>
+                    </a>
+                </InstaImage>
+                <InstaImage>
+                    <a href="https://www.instagram.com/optomi_/" target="_blank" rel="noopener noreferrer">
+                    <Image sizes={instaImage.node.acf.image_two.localFile.childImageSharp.sizes}/>
+                    </a>
+                </InstaImage>
+                <InstaImage>
+                    <a href="https://www.instagram.com/optomi_/" target="_blank" rel="noopener noreferrer">
+                    <Image sizes={instaImage.node.acf.image_three.localFile.childImageSharp.sizes}/>
+                    </a>
+                </InstaImage>
+                <InstaImage>
+                    <a href="https://www.instagram.com/optomi_/" target="_blank" rel="noopener noreferrer">
+                    <Image sizes={instaImage.node.acf.image_four.localFile.childImageSharp.sizes}/>
+                    </a>
+                </InstaImage>
+                <InstaImage>
+                    <a href="https://www.instagram.com/optomi_/" target="_blank" rel="noopener noreferrer">
+                    <Image sizes={instaImage.node.acf.image_five.localFile.childImageSharp.sizes}/>
+                    </a>
+                </InstaImage>
+                <InstaImage>
+                    <a href="https://www.instagram.com/optomi_/" target="_blank" rel="noopener noreferrer">
+                    <Image sizes={instaImage.node.acf.image_six.localFile.childImageSharp.sizes}/>
+                    </a>
+                </InstaImage>
+            </InstaFlex>
         </FooterCol>
+        ))}
       </FooterRow>
       <FooterSocials>
             <SpinningSocials/>
@@ -69,22 +169,13 @@ const Footer = () => (
       <FooterAwardsCol>
             <FooterAwards/>
         </FooterAwardsCol>
-        <FooterBottom>
-            <p>© <a href="https://optomi.com/" target="_blank" rel="noopener noreferrer">OPTOMI, LLC</a> | All rights reserved. 
-            <Link
-            to="/privacy-policy/"
-            >
-            Privacy Policy
-            </Link>
-            <Link
-            to="/terms/"
-            >
-            Terms
-            </Link>
-            </p>
-        </FooterBottom>
+        {data.footerCopyright.edges.map(copyright => (
+        <FooterBottom dangerouslySetInnerHTML={{ __html: copyright.node.content }} />
+        ))}
     </FooterMain>
-)
+    )
+    
+}
 
 const FooterMain = styled.div`
     background-color: #000;
@@ -350,6 +441,38 @@ const FooterBottom = styled.div`
             font-weight: 600;
             text-decoration: none !important;
             padding-left: 0;
+        }
+    }
+`
+
+const InstaFlex = styled.div`
+    position: absolute;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    @media(max-width:1550px) {
+        width: 300px;
+    }
+    @media(max-width:700px) {
+        position: relative;
+        max-width: 350px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+`
+
+const InstaImage = styled.div`
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    .gatsby-image-wrapper {
+        width: 75px !important;
+        height: 75px !important;
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            margin-bottom: 0; 
         }
     }
 `
