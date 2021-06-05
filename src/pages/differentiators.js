@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 import scrollTo from 'gatsby-plugin-smoothscroll'
@@ -30,45 +30,39 @@ const DifferentiatorsPage = () => {
                         acf {
                             main_header
                             tagline
-                            section_one {
-                                background_image {
-                                    localFile {
-                                        childImageSharp {
-                                            sizes(maxWidth: 2800) {
-                                                ...GatsbyImageSharpSizes
-                                            }
+                            d_column_one_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 400) {
+                                            ...GatsbyImageSharpSizes
                                         }
                                     }
                                 }
-                                header
-                                main_content
                             }
-                            section_two {
-                                background_image {
-                                    localFile {
-                                        childImageSharp {
-                                            sizes(maxWidth: 2800) {
-                                                ...GatsbyImageSharpSizes
-                                            }
+                            d_column_one_content
+                            d_column_two_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 400) {
+                                            ...GatsbyImageSharpSizes
                                         }
                                     }
                                 }
-                                header
-                                main_content
                             }
-                            section_three {
-                                background_image {
-                                    localFile {
-                                        childImageSharp {
-                                            sizes(maxWidth: 2800) {
-                                                ...GatsbyImageSharpSizes
-                                            }
+                            d_column_two_content
+                            d_column_three_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 400) {
+                                            ...GatsbyImageSharpSizes
                                         }
                                     }
                                 }
-                                header
-                                main_content
                             }
+                            d_column_three_content
                             meta_title
                             meta_description
                         }
@@ -126,76 +120,31 @@ const DifferentiatorsPage = () => {
                         data-sal-duration="1000"
                         data-sal-easing="ease"
                     >
-                        <button onClick={() => scrollTo('#section_one')} aria-label="Scroll"><FaChevronDown size={32}/></button>
+                        <button onClick={() => scrollTo('#d_section_one')} aria-label="Scroll"><FaChevronDown size={32}/></button>
                     </HeroBottom>
 
                 </HeroBanner>
 
-                <DifBanner id={"section_one"}>
-                    <ImageBackground
-                    data-sal="fade"
-                    data-sal-duration="1000"
-                    data-sal-delay="300"
-                    data-sal-easing="ease"
-                    >
-                        <BackgroundImg sizes={post.node.acf.section_one.background_image.localFile.childImageSharp.sizes} alt={post.node.acf.section_one.header}/>
-                    </ImageBackground>
-                    <BannerContent className="text-right">
-                        <div
-                        data-sal="slide-left"
-                        data-sal-duration="1000"
-                        data-sal-delay="900"
-                        data-sal-easing="ease"
-                        >
-                            <h2>{post.node.acf.section_one.header}</h2>
-                            <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_one.main_content }}/>
-                        </div>
-                    </BannerContent>
-                </DifBanner>
-
-                <DifBanner>
-                    <ImageBackground
-                    data-sal="fade"
-                    data-sal-duration="1000"
-                    data-sal-delay="300"
-                    data-sal-easing="ease"
-                    >
-                        <BackgroundImg sizes={post.node.acf.section_two.background_image.localFile.childImageSharp.sizes} alt={post.node.acf.section_two.header}/>
-                    </ImageBackground>
-                    <BannerContent className="text-center">
-                        <div
-                        data-sal="slide-up"
-                        data-sal-duration="1000"
-                        data-sal-delay="900"
-                        data-sal-easing="ease"
-                        >
-                            <h2 style={{marginTop: '150px'}}>{post.node.acf.section_two.header}</h2>
-                            <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_two.main_content }}/>
-                        </div>
-                    </BannerContent>
-                </DifBanner>
-
-                <DifBanner>
-                    <ImageBackground
-                    data-sal="fade"
-                    data-sal-duration="1000"
-                    data-sal-delay="300"
-                    data-sal-easing="ease"
-                    >
-                        <BackgroundImg sizes={post.node.acf.section_three.background_image.localFile.childImageSharp.sizes} alt={post.node.acf.section_three.header}/>
-                    </ImageBackground>
-                    <BannerContent>
-                        <div
-                        data-sal="slide-right"
-                        data-sal-duration="1000"
-                        data-sal-delay="900"
-                        data-sal-easing="ease"
-                        >
-                            <h2>{post.node.acf.section_three.header}</h2>
-                            <BannerCopy dangerouslySetInnerHTML={{ __html: post.node.acf.section_three.main_content }}/>
-                        </div>
-                    </BannerContent>
-                </DifBanner>
+                <FlexRow id="d_section_one">
+                    <ThirdCol>
+                        <Link to="/differentiators/skill_set_focused/">
+                            <Img sizes={post.node.acf.d_column_one_icon.localFile.childImageSharp.sizes} alt={post.node.acf.d_column_one_icon.title}/>
+                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.d_column_one_content }}/>
+                        </Link>
+                    </ThirdCol>
+                    <ThirdCol>
+                        <Link to="/differentiators/consultant_centered/">
+                            <Img sizes={post.node.acf.d_column_two_icon.localFile.childImageSharp.sizes} alt={post.node.acf.d_column_two_icon.title}/>
+                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.d_column_two_content }}/>
+                        </Link>
+                    </ThirdCol>
+                    <ThirdCol>
+                        <Link to="/differentiators/technology_driven/">
+                            <Img sizes={post.node.acf.d_column_three_icon.localFile.childImageSharp.sizes} alt={post.node.acf.d_column_three_icon.title}/>
+                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.d_column_three_content }}/>
+                        </Link>
+                    </ThirdCol>
+                </FlexRow>
 
 
             </Layout>
@@ -228,18 +177,6 @@ const CanvasBackground = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-`
-
-const ImageBackground = styled.div`
-    position: relative;
-    z-index: 1;
-    @media(max-width:1000px) {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
 `
 
 const HeroTitle = styled.div`
@@ -404,116 +341,81 @@ const HeroBottom = styled.div`
     }
 `
 
-
-const DifBanner = styled.div`
-    position: relative; 
+const FlexRow = styled.section`
+    max-width: 1540px;
     width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 120px;
+    padding-right: 120px;
+    margin: 0px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media(max-width:1500px) {
+        max-width: 1340px;
+    }
+    @media(max-width:1200px) {
+        max-width: 1140px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @media(max-width:768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media(max-width:767px) {
+        flex-wrap: wrap;
+    }
+`
+
+const ThirdCol = styled.div`
+    width: 30%;
+    padding: 0 20px;
+    text-align: center;
+    a {
+        text-decoration: none;
+    }
     h2 {
         font-family: "Helvetica Thin";
-        width: 100%;
-        z-index: 1;
-        font-size: 72px;
-        color: #fff;
-        line-height: 1.2;
+        color: #5ab3e8;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 38px;
         font-weight: 100;
+        line-height: 1.2;
     }
-    @media(max-width:1500px) {
-        h2 {
-            font-size: 60px;
-        }
-    }
-    @media(max-width:770px) {
-        h2 {
-            font-size: 42px;
-        }
-    }
-    @media(max-width:500px) {
-        h2 {
-            font-size: 32px;
-        }
-    }
-`
-
-const BackgroundImg = styled(Img)`
-    @media(max-width:1000px) {
-        height: 100%;
-    }
-`
-
-const BannerContent = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    > div {
-        max-width: 1540px;
-        width: 100%;
-        padding-left: 120px;
-        padding-right: 120px;
-        margin: 0 auto;
-        transition-duration: .3s;
-        @media(max-width:1500px) {
-            max-width: 1340px;
-        }
-        @media(max-width:1200px) {
-            max-width: 1140px;
-        }
-        @media(max-width:768px) {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    }
-    &.text-right {
-        text-align: right;
-        p {
-            margin-left: auto;
-        }
-    }
-    &.text-center {
-        text-align: center;
-        p {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    @media(max-width:1000px) {
-        position: relative;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    @media(max-width:800px) {
-        text-align: center;
-        &.text-right {
-            text-align: center;
-        }
-        p {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-`
-
-
-const BannerCopy = styled.div`
     p {
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 20px;
-        color: #fff;
-        line-height: 1.6;
-        max-width: 900px;
+        font-size: 18px;
+        color: #8a8d8f;
+        line-height: 1.2;
+    }
+    .gatsby-image-wrapper {
+        height: 200px;
+        width: 220px;
+        margin: 0 auto !important;
+    }
+    img {
+        max-width: 220px;
+        max-height: 200px;
+        object-fit: contain !important;
+    }
+    &:last-child {
+        .gatsby-image-wrapper {
+            width: 320px;
+        }
+        img {
+            max-width: 320px;
+        }
     }
     @media(max-width:1200px) {
-        p {
-            font-size: 18px;
-        }
+        width: 50%;
+    }
+    @media(max-width:767px) {
+        width: 100%;
     }
 `
 
