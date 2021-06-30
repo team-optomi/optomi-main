@@ -64,7 +64,7 @@ const MainSection = styled.div`
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     width: 100%;
     z-index: 3;
     a {

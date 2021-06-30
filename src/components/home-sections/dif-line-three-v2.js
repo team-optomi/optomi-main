@@ -16,38 +16,38 @@ const DifLineThreeV2 = () => {
         let tl = gsap.timeline({
           paused: true,
           scrollTrigger: {
-              trigger: "#row_three_trigger",
+              trigger: "#row_one_trigger",
               start: 'top 80%',
               end: 'center 10%',
               id: 'dif_line_three',
               toggleActions: "play reverse play reverse",
               },
           })
-          tl.to('.copy-three', { opacity: '1', duration: 1 })
+          tl.to('.copy-three', { opacity: '1', duration: 1 }, 3)
 
         let tlOne = gsap.timeline({
             paused: true,
             scrollTrigger: {
-                trigger: "#row_three_trigger",
+                trigger: "#row_one_trigger",
                 start: 'top 80%',
                 end: 'center 10%',
                 id: 'dif_line_three',
                 toggleActions: "play reverse play reverse",
                 },
             })
-            tlOne.to('.dif-line-three', { width: '80%', duration: 2, delay: 1, ease: 'Power4.easeOut' })
+            tlOne.to('.dif-line-three', { width: '100%', duration: 2, ease: 'Power4.easeOut' }, 3.5)
 
         let tlTwo = gsap.timeline({
           paused: true,
           scrollTrigger: {
-              trigger: "#row_three_trigger",
+              trigger: "#row_one_trigger",
               start: 'top 80%',
               end: 'center 10%',
               id: 'percent_line_three',
               toggleActions: "play reverse play reverse",
               },
           })
-          tlTwo.to('.percent-three', { opacity: '1', duration: 1, delay: 1 })
+          tlTwo.to('.percent-three', { opacity: '1', duration: 1 }, 4)
     
       }, []);
 
@@ -65,8 +65,8 @@ const DifLineThreeV2 = () => {
 
 const MainContainer = styled.div`
     max-width: 1540px;
-    padding-right: 120px;
-    padding-left: 120px;
+    padding-right: 20px;
+    padding-left: 20px;
     width: 100%;
     margin: 0 auto;
     @media(max-width:1500px) {
@@ -74,6 +74,12 @@ const MainContainer = styled.div`
     }
     @media(max-width:1200px) {
       max-width: 1140px;
+    }
+    @media(max-width:1050px) {
+      max-width: 840px;
+    }
+    @media(max-width:850px) {
+      max-width: 540px;
     }
     @media(max-width:768px) {
       padding-left: 20px;
@@ -90,7 +96,7 @@ const Percent = styled.p`
     text-shadow: 3px 3px 5px #d7be69;
     text-align: right;
     margin-top: -25px;
-    padding-right: 100px;
+    padding-right: 20px;
     position: relative;
     z-index: 1;
     opacity: 0;
@@ -109,10 +115,7 @@ const Line = styled.div`
     background-color: #298fc2;
     position: absolute;
     top: 0px;
-    left: 20%;
-    @media(max-width:1050px) {
-      left: 10%;
-    }
+    left: 0;
 `
 
 const Copy = styled.p`
@@ -122,7 +125,7 @@ const Copy = styled.p`
     text-transform: uppercase;
     letter-spacing: 3px;
     max-width: 100%;
-    text-align: right;
+    text-align: center;
     line-height: 1;
     opacity: 0;
     @media(max-width:1050px) {
