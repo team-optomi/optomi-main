@@ -6,11 +6,11 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Opt2GiveV2 = () => {
+const Opt2GiveWithUV2 = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 87}}}}) {
+            allWordpressWpCustomPage(filter: {categories: {elemMatch: {wordpress_id: {eq: 89}}}}) {
                 edges {
                     node {
                         title
@@ -27,7 +27,7 @@ const Opt2GiveV2 = () => {
                         acf {
                             meta_title
                             meta_description
-                            otg_vtwo_top_logo {
+                            opt_with_vtwo_top_logo {
                                 localFile {
                                     childImageSharp {
                                         sizes(maxWidth: 800) {
@@ -36,7 +36,7 @@ const Opt2GiveV2 = () => {
                                     }
                                 }
                             }
-                            otg_vtwo_page_background {
+                            opt_with_vtwo_page_background {
                                 localFile {
                                     childImageSharp {
                                         sizes(maxWidth: 1707) {
@@ -45,7 +45,7 @@ const Opt2GiveV2 = () => {
                                     }
                                 }
                             }
-                            otg_vtwo_main_image {
+                            opt_with_vtwo_main_image {
                                 localFile {
                                     childImageSharp {
                                         sizes(maxWidth: 1707) {
@@ -54,7 +54,7 @@ const Opt2GiveV2 = () => {
                                     }
                                 }
                             }
-                            otg_vtwo_button_link
+                            opt_with_vtwo_button_link
                         }
                     }
                 }
@@ -73,14 +73,14 @@ const Opt2GiveV2 = () => {
                 />
 
                 <PageBackground>
-                    <Img sizes={post.node.acf.otg_vtwo_page_background.localFile.childImageSharp.sizes} alt="Digital Grid Background" />
+                    <Img sizes={post.node.acf.opt_with_vtwo_page_background.localFile.childImageSharp.sizes} alt="Digital Grid Background" />
                 </PageBackground>
 
                 <MainSection>
-                    <Img sizes={post.node.acf.otg_vtwo_top_logo.localFile.childImageSharp.sizes} alt="Opt2Give Logo" className={"opt2give-logo"} />
+                    <Img sizes={post.node.acf.opt_with_vtwo_top_logo.localFile.childImageSharp.sizes} alt="Opt2Give withU Logo" className={"opt2give-logo"} />
                     <div dangerouslySetInnerHTML={{ __html: post.node.content }}/>
-                    <Img sizes={post.node.acf.otg_vtwo_main_image.localFile.childImageSharp.sizes} alt="Opt2Give Main" className={"opt2give-main"} />
-                    <Link to={post.node.acf.otg_vtwo_button_link} className={"button"}>See all the ways we give back here</Link>
+                    <Img sizes={post.node.acf.opt_with_vtwo_main_image.localFile.childImageSharp.sizes} alt="Opt2Give withU Main" className={"opt2give-main"} />
+                    <Link to={post.node.acf.opt_with_vtwo_button_link} className={"button"}>Give Back With Us</Link>
                 </MainSection>
 
             </Layout>
@@ -106,9 +106,12 @@ const PageBackground = styled.div`
 const MainSection = styled.section`
     padding-top: 100px;
     .opt2give-logo {
-        max-width: 500px;
+        max-width: 700px;
         margin: 0px auto;
         margin-bottom: 20px;
+    }
+    .opt2give-main {
+        max-height: 500px;
     }
     div {
         position: relative;
@@ -120,7 +123,7 @@ const MainSection = styled.section`
         font-size: 20px;
         line-height: 1.3;
         text-align: center;
-        @media(max-width:800px) {
+        @media(max-width:840px) {
             padding: 0 20px;
             br {
                 display: none;
@@ -142,9 +145,9 @@ const MainSection = styled.section`
         position: relative;
         z-index: 1;
         display: block;
-        max-width: 250px;
+        max-width: 180px;
         width: 100%;
     }
 `
 
-export default Opt2GiveV2
+export default Opt2GiveWithUV2
