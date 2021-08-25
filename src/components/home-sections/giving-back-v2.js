@@ -102,7 +102,8 @@ const GivingBackV2 = () => {
 const MainSection = styled.div`
     background-color: #aaa;
     position: relative;
-    height: 80vh;
+    height: auto;
+    padding: 20px 0;
     width: 100%;
     display: flex;
     align-items: center;
