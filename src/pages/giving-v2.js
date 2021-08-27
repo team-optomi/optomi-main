@@ -161,32 +161,34 @@ const GivingPageV2 = () => {
                 </TopBar>
 
                 <HeroSection>
-                    <div 
-                    data-sal="fade"
-                    data-sal-duration="1000"
-                    data-sal-easing="ease"
-                    class="hero-background">
-                        <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt="Giving Back Hero Background" />
-                    </div>
+                    <a href="https://thetgbfoundation.org/" target="_blank" rel="noopener noreferrer">
+                        <div 
+                        data-sal="fade"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="hero-background">
+                            <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt="Giving Back Hero Background" />
+                        </div>
 
-                    <div class="hero-content">
-                        <div class="hero-flex">
-                        <div 
-                        data-sal="slide-right"
-                        data-sal-duration="1000"
-                        data-sal-easing="ease"
-                        class="hero-left">
-                            <Img sizes={post.node.acf.gvtwo_hero_logo.localFile.childImageSharp.sizes} alt="TGB Foundation Logo" />
+                        <div class="hero-content">
+                            <div class="hero-flex">
+                            <div 
+                            data-sal="slide-right"
+                            data-sal-duration="1000"
+                            data-sal-easing="ease"
+                            class="hero-left">
+                                <Img sizes={post.node.acf.gvtwo_hero_logo.localFile.childImageSharp.sizes} alt="TGB Foundation Logo" />
+                            </div>
+                            <div 
+                            data-sal="slide-left"
+                            data-sal-duration="1000"
+                            data-sal-easing="ease"
+                            class="hero-right">
+                                <div dangerouslySetInnerHTML={{ __html: post.node.acf.gvtwo_hero_content }}/>
+                            </div>
+                            </div>
                         </div>
-                        <div 
-                        data-sal="slide-left"
-                        data-sal-duration="1000"
-                        data-sal-easing="ease"
-                        class="hero-right">
-                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.gvtwo_hero_content }}/>
-                        </div>
-                        </div>
-                    </div>
+                    </a>
                 </HeroSection>
                 <MainSection>
                     <div class="half-col-image">
@@ -308,7 +310,7 @@ const HeroSection = styled.section`
       width: 100%;
       height: 100vh;
       background-color: #000;
-      opacity: .8;
+      opacity: .85;
       z-index: 2;
     }
     .gatsby-image-wrapper {

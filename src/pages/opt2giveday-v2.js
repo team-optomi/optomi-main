@@ -81,6 +81,7 @@ const Opt2GiveDayV2 = () => {
                                     }
                                 }
                             }
+                            opt_day_vtwo_bottom_link
                         }
                     }
                 }
@@ -114,6 +115,7 @@ const Opt2GiveDayV2 = () => {
                             ))}          
                         </Slider>
                     </div>
+                    <Link to={post.node.acf.opt_day_vtwo_bottom_link} className={"button"}>Learn More</Link>
                 </MainSection>
 
             </Layout>
