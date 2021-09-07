@@ -54,6 +54,7 @@ module.exports = {
           "**/press_award", // <== Custom post slug
           "**/founder", // <== Custom post slug
           "**/footer_section", // <== Custom post slug
+          "**/join_section", // <== Custom post slug
           "**/media",
           "**/tags",
           "**/taxonomies",

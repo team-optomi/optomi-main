@@ -42,6 +42,7 @@ const CaseStudiesPage = ({ data }) => (
   const BlogGrid = styled.div`
     display: flex;
     flex-wrap: wrap;
+    background-color: #000;
     article {
         width: 33.33%;
         height: 50vh;
