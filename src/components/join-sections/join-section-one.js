@@ -193,7 +193,7 @@ const HeroMain = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 300px;
-    padding-bottom: 100px;
+    padding-bottom: 130px;
     position: relative;
     text-align: center;
     display: flex;
