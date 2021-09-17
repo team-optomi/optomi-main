@@ -49,6 +49,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const PressCategoryArchive = path.resolve("./src/templates/press-category-archive.js")
   const PressMonthArchive = path.resolve("./src/templates/press-month-archive.js")
   const PressReleaseTemplate = path.resolve("./src/templates/press-post.js")
+  const JoinPostTemplate = path.resolve("./src/templates/join-post.js")
   const result = await graphql(`
     {
       allWordpressPost {
@@ -123,6 +124,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               published_date
               published_slug
             }
+          }
+        }
+      }
+      allWordpressWpJoinPost {
+        edges {
+          node {
+            slug
+            wordpress_id
           }
         }
       }
@@ -304,6 +313,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 },
             })
         })
+
+    const JoinPosts = result.data.allWordpressWpJoinPost.edges
+      JoinPosts.forEach(joinPost => {
+          createPage({
+              path: `/join-our-team/blog/${joinPost.node.slug}`,
+              component: JoinPostTemplate,
+              context: {
+              id: joinPost.node.wordpress_id,
+              },
+          })
+      })
 }
 
 

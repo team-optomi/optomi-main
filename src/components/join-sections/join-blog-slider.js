@@ -65,7 +65,7 @@ const JoinBlogSlider = () => {
                             <Img fluid={post.node.featured_media.localFile.childImageSharp.fluid} alt={post.node.featured_media.title} />
                         </div>
                         <div class="slide-overlay">
-                            <Link to={`/join-blog/${post.node.slug}`} style={{ textDecoration: "none" }}>
+                            <Link to={`/join-our-team/blog/${post.node.slug}`} style={{ textDecoration: "none" }}>
                                 <div>
                                   <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
                                   <p>{post.node.date}</p>
@@ -77,7 +77,7 @@ const JoinBlogSlider = () => {
                 </Slider>
             </SliderContainer>
 
-            <p class="bottom-button"><Link to={"/join-blog/"}>Blog</Link></p>
+            <p class="bottom-button"><Link to={"/join-our-team/blog/"}>Blog</Link></p>
                 
         </MainSection>
     )
