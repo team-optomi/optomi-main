@@ -58,6 +58,7 @@ module.exports = {
           "**/join_testimonial", // <== Custom post slug
           "**/join_post", // <== Custom post slug
           "**/join_benefit", // <== Custom post slug
+          "**/space_image", // <== Custom post slug
           "**/media",
           "**/tags",
           "**/taxonomies",
