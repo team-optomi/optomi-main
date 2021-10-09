@@ -101,6 +101,9 @@ const MainContent = styled.div`
     .flex-row {
         display: flex;
         flex-wrap: wrap;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
         .col-five {
             width: 20%;
             padding: 0 10px;
@@ -141,6 +144,50 @@ const MainContent = styled.div`
                 .tooltip {
                     opacity: 1;
                 }
+            }
+        }
+    }
+    @media(max-width:1200px) {
+        .flex-row {
+            align-items: center;
+            justify-content: center;
+            .col-five {
+                width: 25%;
+                .tooltip {
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width: 900px) {
+        h2 {
+            font-size: 28px;
+            span {
+              font-size: 72px;
+            }
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+    @media(max-width:767px) {
+        .flex-row {
+            .col-five {
+                width: 33.33%;
+            }
+        }
+    }
+    @media(max-width:600px) {
+        h2 {
+            span {
+              font-size: 44px;
+            }
+        }
+        .flex-row {
+            .col-five {
+                width: 50%;
             }
         }
     }

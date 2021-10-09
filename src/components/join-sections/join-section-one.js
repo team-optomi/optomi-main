@@ -246,6 +246,30 @@ const HeroMain = styled.div`
         border-radius: 10px;
         text-decoration: none;
     }
+    @media(max-width:960px) {
+        flex-wrap: wrap;
+        .col-left {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        .col-right {
+            width: 100%;
+        }
+    }
+    @media(max-width:800px) {
+        padding-top: 50px;
+    }
+    @media(max-width:500px) {
+        h2 {
+            font-size: 32px;
+        }
+        .col-left {
+            padding: 0;
+        }
+        .col-right {
+            padding: 0;
+        }
+    }
 `
 
 export default JoinSectionOne

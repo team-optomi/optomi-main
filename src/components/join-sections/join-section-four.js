@@ -308,6 +308,147 @@ const MainContent = styled.div`
             text-decoration: none;
         }
     }
+    @media(max-width:1240px) {
+        .values-box {
+            max-width: 700px;
+            height: 400px;
+            margin: 0 auto;
+            .value-one {
+                max-width: 471px;
+            }
+            .value-two {
+                max-width: 500px;
+                right: -11px;
+                top: -98px;
+            }
+            .value-three {
+                max-width: 500px;
+                top: -12px;
+            }
+            .value-four {
+                max-width: 500px;
+                right: -120px;
+                top: -19px;
+            }
+            .value-five {
+                max-width: 500px;
+                top: 87px;
+                right: -68px;
+            }
+            .value-six {
+                max-width: 314px;
+                top: 117px;
+            }
+            .value-seven {
+                max-width: 550px;
+                top: 159px;
+                left: 184px;
+            }
+            .value-eight {
+                max-width: 500px;
+                top: 241px;
+            }
+        }
+    }
+    @media(max-width:900px) {
+        .values-box {
+            max-width: 600px;
+            height: 350px;
+            .value-one {
+                max-width: 371px;
+                left: -42px;
+            }
+            .value-two {
+                max-width: 400px;
+                right: 74px;
+                top: -99px;
+            }
+            .value-three {
+                max-width: 400px;
+                left: -81px;
+            }
+            .value-four {
+                max-width: 400px;
+                right: -15px;
+                top: -27px;
+            }
+            .value-five {
+                max-width: 400px;
+                top: 63px;
+                right: 26px;
+            }
+            .value-six {
+                max-width: 250px;
+                top: 85px;
+                left: -38px;
+            }
+            .value-seven {
+                max-width: 450px;
+                top: 119px;
+                left: 108px;
+            }
+            .value-eight {
+                max-width: 400px;
+                top: 195px;
+                left: 48px;
+            }
+        }
+    }
+    @media(max-width:767px) {
+        h2 {
+            font-size: 32px;
+        }
+        .values-box {
+            max-width: 600px;
+            height: auto;
+            margin-top: -100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .gatsby-image-wrapper {
+                position: relative !important;
+            }
+            .value-one {
+                left: auto;
+                top: auto;
+            }
+            .value-two {
+                right: auto;
+                top: auto;
+            }
+            .value-three {
+                max-width: 400px;
+                left: auto;
+                top: auto;
+            }
+            .value-four {
+                max-width: 400px;
+                right: auto;
+                top: auto;
+            }
+            .value-five {
+                max-width: 400px;
+                top: auto;
+                right: auto;
+            }
+            .value-six {
+                max-width: 250px;
+                top: auto;
+                left: auto;
+            }
+            .value-seven {
+                max-width: 450px;
+                top: auto;
+                left: auto;
+            }
+            .value-eight {
+                max-width: 400px;
+                top: auto;
+                left: auto;
+            }
+        }
+    }
 `
 
 export default JoinSectionFour

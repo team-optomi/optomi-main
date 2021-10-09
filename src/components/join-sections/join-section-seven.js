@@ -187,6 +187,46 @@ const MainContent = styled.div`
             text-align: center;
         }
     }
+    @media(max-width:1160px) {
+        .flex-row {
+            flex-wrap: wrap;
+            .col-six {
+                width: 33.33%;
+            }
+        }
+    }
+    @media(max-width:900px) {
+        h2 {
+          font-size: 28px;
+          span {
+            font-size: 72px;
+            left: -12px;
+          }
+        }
+        p {
+            font-size: 20px;
+        }
+      }
+    @media(max-width:767px) {
+        .flex-row {
+            .col-six {
+                width: 50%;
+            }
+        }
+    }
+    @media(max-width:400px) {
+        .flex-row {
+            .col-six {
+                width: 100%;
+            }
+        }
+        h2 {
+            span {
+              font-size: 44px;
+              left: 0px;
+            }
+          }
+    }
 `
 
 export default JoinSectionSeven

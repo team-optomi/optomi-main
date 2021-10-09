@@ -84,6 +84,15 @@ const MainSection = styled.section`
         top: 20px;
       }
     }
+  @media(max-width:900px) {
+    h2 {
+      font-size: 28px;
+      span {
+        font-size: 72px;
+        left: -12px;
+      }
+    }
+  }
 `
 
 const TestimonialSlide = styled.div`
@@ -111,6 +120,14 @@ const TestimonialSlide = styled.div`
         color: #5ab3e8;
         font-size: 56px;
         line-height: 0;
+      }
+    }
+    @media(max-width:900px) {
+      p {
+        font-size: 24px;
+        span {
+          40px;
+        }
       }
     }
 `
@@ -188,9 +205,18 @@ const SliderContainer = styled.div`
         }
       }
     }
+  @media(max-width: 1200px) {
+    .slick-prev {
+      left: 20px;
+    }
+    .slick-next {
+      right: 20px !important;
+    }
+  }
   @media(max-width:767px) {
     height: 300px;
     .slick-slide {
+      padding: 0 30px;
       &.slick-active {
         ${TestimonialSlide} {
           .work-image-overlay {

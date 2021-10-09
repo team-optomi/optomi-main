@@ -67,6 +67,9 @@ const JoinSectionTwo = () => {
                     {/* <div class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/> */}
                     <div 
                     class="circle-main"
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
                     >
                         <Img sizes={post.node.acf.join_two_percent_image.localFile.childImageSharp.sizes} alt={post.node.acf.join_two_percent_image.title} />
                         {/* <div class="slice-one">
@@ -148,6 +151,13 @@ const HeroImg = styled(Img)`
     }
 `
 
-const MainContent = styled.div``
+const MainContent = styled.div`
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+    @media(max-width: 767px) {
+        width: 100%;
+    }
+`
 
 export default JoinSectionTwo
