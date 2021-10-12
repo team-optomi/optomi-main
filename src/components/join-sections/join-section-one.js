@@ -81,8 +81,8 @@ const JoinSectionOne = () => {
                         data-sal-duration="1000"
                         data-sal-easing="ease"
                         >
-                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_one_left_column_copy }}/>
                             <Img sizes={post.node.acf.join_one_left_column_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_one_left_column_icon.title} />
+                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_one_left_column_copy }}/>
                             <Link to={post.node.acf.join_one_left_column_link}>{post.node.acf.join_one_left_column_button}</Link>
                         </div>
                         <div 
@@ -91,8 +91,8 @@ const JoinSectionOne = () => {
                         data-sal-duration="1000"
                         data-sal-easing="ease"
                         >
-                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_one_right_column_copy }}/>
                             <Img sizes={post.node.acf.join_one_right_column_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_one_right_column_icon.title} />
+                            <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_one_right_column_copy }}/>
                             <Link to={post.node.acf.join_one_right_column_link}>{post.node.acf.join_one_right_column_button}</Link>
                         </div>
                     </HeroMain>
@@ -239,10 +239,11 @@ const HeroMain = styled.div`
     }
     a {
         display: inline-block;
+        font-size: 14px;
         background-color: #00385c;
         color: #fff;
         border: 2px solid #fff;
-        padding: 10px 35px;
+        padding: 8px 20px;
         border-radius: 10px;
         text-decoration: none;
     }

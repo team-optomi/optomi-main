@@ -101,7 +101,7 @@ const MainContent = styled.div`
     .flex-row {
         display: flex;
         flex-wrap: wrap;
-        max-width: 1200px;
+        max-width: 1000px;
         width: 100%;
         margin: 0 auto;
         .col-five {
@@ -114,7 +114,7 @@ const MainContent = styled.div`
                 left: 0;
                 width: 100%;
                 height: auto;
-                padding: 20px;
+                padding: 10px;
                 background-color: #8e9191;
                 border-radius: 10px;
                 opacity: 0;
@@ -122,7 +122,7 @@ const MainContent = styled.div`
                 p {
                     font-family: 'Helvetica Thin';
                     font-weight: 300;
-                    font-size: 18px;
+                    font-size: 16px;
                     color: #fff;
                     line-height: 1.2;
                     text-align: center;
@@ -165,7 +165,7 @@ const MainContent = styled.div`
         h2 {
             font-size: 28px;
             span {
-              font-size: 72px;
+              font-size: 72px !important;
             }
         }
         p {
@@ -182,7 +182,7 @@ const MainContent = styled.div`
     @media(max-width:600px) {
         h2 {
             span {
-              font-size: 44px;
+              font-size: 44px !important;
             }
         }
         .flex-row {

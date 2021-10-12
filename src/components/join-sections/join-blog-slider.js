@@ -119,10 +119,11 @@ const MainSection = styled.section`
       line-height: 1.3;
       a {
           display: inline-block;
+          font-size: 14px;
           background-color: #00385c;
           color: #fff;
           border: 2px solid #fff;
-          padding: 10px 35px;
+          padding: 8px 20px;
           border-radius: 10px;
           text-decoration: none;
       }

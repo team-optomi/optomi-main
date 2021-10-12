@@ -153,7 +153,7 @@ const HeroImg = styled(Img)`
 
 const MainContent = styled.div`
     max-width: 1000px;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     @media(max-width: 767px) {
         width: 100%;
