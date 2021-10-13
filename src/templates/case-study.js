@@ -414,6 +414,35 @@ const SectionMain = styled.div`
     .medium {
       max-width: 600px;
     }
+    .practice-areas {
+      display: flex;
+      flex-wrap: wrap;
+      p {
+        width: calc(20% - 10px);
+        margin: 5px;
+        padding: 10px;
+        border: 2px solid #003557;
+        text-align: center;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9),
+        &:nth-child(10) {
+          border-color: #878a8c;
+        }
+        &:nth-child(11),
+        &:nth-child(12),
+        &:nth-child(13),
+        &:nth-child(14),
+        &:nth-child(15) {
+          border-color: #734c28;
+        }
+      }
+    }
     @media(max-width:1000px) {
       p {
         font-size: 20px;
@@ -429,6 +458,14 @@ const SectionMain = styled.div`
       padding-left: 20px;
       padding-right: 20px;
     }
+    @media(max-width:767px) {
+      .practice-areas {
+        justify-content: center;
+        p {
+          width: calc(33.33% - 10px);
+        }
+      }
+    }
     @media(max-width:420px) {
       p {
         &.large-number {
@@ -440,6 +477,12 @@ const SectionMain = styled.div`
       }
       h3 {
         font-size: 28px;
+      }
+      .practice-areas {
+        justify-content: center;
+        p {
+          width: calc(50% - 10px);
+        }
       }
     }
 `
@@ -462,6 +505,15 @@ const SectionTestimonial = styled.div`
       line-height: 1.2;
       &.small {
         font-size: 14px;
+      }
+      &.bonvivant {
+        font-family: "BonVivant";
+        color: #fff;
+        font-size: 72px;
+        line-height: 1.5;
+        font-weight: 100;
+        margin-bottom: 10px;
+        text-transform: lowercase;
       }
     }
     h2 {
