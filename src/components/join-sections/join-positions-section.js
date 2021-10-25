@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from "gatsby-image"
 
 const JoinPositionsSection = () => {
 
@@ -10,6 +11,52 @@ const JoinPositionsSection = () => {
                 edges {
                     node {
                         content
+                        acf {
+                            jp_col_one_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 200) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            jp_col_one_copy
+                            jp_col_two_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 200) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            jp_col_two_copy
+                            jp_col_three_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 200) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            jp_col_three_copy
+                            jp_col_four_icon {
+                                title
+                                localFile {
+                                    childImageSharp {
+                                        sizes(maxWidth: 200) {
+                                            ...GatsbyImageSharpSizes
+                                        }
+                                    }
+                                }
+                            }
+                            jp_col_four_copy
+                        }
                     }
                 }
             }
@@ -21,7 +68,24 @@ const JoinPositionsSection = () => {
         data.allWordpressWpJoinSection.edges.map(post => (
             <MainSection>
 
-                <div class="section-row" dangerouslySetInnerHTML={{ __html: post.node.content}} />
+                <div class="section-row">
+                    <div class="position-col">
+                        <Img sizes={post.node.acf.jp_col_one_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_one_icon.title} />
+                        <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_one_copy }}/>
+                    </div>
+                    <div class="position-col">
+                        <Img sizes={post.node.acf.jp_col_two_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_two_icon.title} />
+                        <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_two_copy }}/>
+                    </div>
+                    <div class="position-col">
+                        <Img sizes={post.node.acf.jp_col_three_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_three_icon.title} />
+                        <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_three_copy }}/>
+                    </div>
+                    <div class="position-col">
+                        <Img sizes={post.node.acf.jp_col_four_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_four_icon.title} />
+                        <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_four_copy }}/>
+                    </div>
+                </div>
                     
             </MainSection>
         ))
@@ -30,9 +94,9 @@ const JoinPositionsSection = () => {
 }
 
 const MainSection = styled.section`
-    background-color: #003354;
-    padding: 100px 20px;
-    margin-bottom: 50px;
+    background-color: #000;
+    padding: 20px;
+    margin-bottom: 0px;
     .section-row {
         max-width: 1500px;
         width: 100%;
@@ -42,7 +106,7 @@ const MainSection = styled.section`
         align-items: flex-start;
         .position-col {
             width: 25%;
-            min-height: 300px;
+            min-height: 340px;
             text-align: center;
             padding: 10px 50px;
             border-right: 2px solid #fff;
@@ -61,6 +125,11 @@ const MainSection = styled.section`
                 color: rgb(255,255,255);
                 line-height: 1.3;
                 margin-bottom: 0;
+            }
+            .gatsby-image-wrapper {
+                max-width: 80px;
+                margin: 0 auto;
+                margin-bottom: 10px;
             }
         }
     }

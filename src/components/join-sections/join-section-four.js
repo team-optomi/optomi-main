@@ -145,7 +145,7 @@ const JoinSectionFour = () => {
 
 const MainSection = styled.section`
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 `
 
 const ImageBackground = styled.div`
@@ -179,7 +179,6 @@ const MainContent = styled.div`
         z-index: 1;
     }
     .top-content {
-        text-align: center;
         padding: 50px 0;
         max-width: 1120px;
         margin: 0 auto;
@@ -194,6 +193,7 @@ const MainContent = styled.div`
         color: rgb(255, 255, 255);
         line-height: 1.3;
         margin-bottom: 20px;
+        text-align: center;
     }
     p {
         font-family: "Helvetica Thin";
@@ -202,16 +202,24 @@ const MainContent = styled.div`
         font-size: 24px;
         color: rgb(255, 255, 255);
         line-height: 1.3;
-        margin-bottom: 0;
+        margin-bottom: 20px;
         strong {
             font-weight: 600;
         }
-        span {
+        span.fancy {
             font-family: BonVivant;
             font-weight: 100;
             font-size: 32px;
             bottom: 3px;
             position: relative;
+        }
+        span.fancy-large {
+            font-family: BonVivant;
+            font-weight: 100;
+            font-size: 44px;
+            bottom: 3px;
+            position: relative;
+            margin-left: 50px;
         }
         &.match-one {
             font-family: "Helvetica Thin";
@@ -309,7 +317,7 @@ const MainContent = styled.div`
             text-decoration: none;
         }
     }
-    @media(max-width:1240px) {
+    @media(max-width:1800px) {
         .values-box {
             max-width: 700px;
             height: 400px;

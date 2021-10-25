@@ -10,6 +10,7 @@ const JoinSectionTwo = () => {
             allWordpressWpJoinSection(filter: {categories: {elemMatch: {wordpress_id: {eq: 92}}}}) {
                 edges {
                     node {
+                        content
                         featured_media {
                             title
                             localFile {
@@ -31,6 +32,7 @@ const JoinSectionTwo = () => {
                                     }
                                 }
                             }
+                            join_two_side_copy
                             join_two_slice_one_percent
                             join_two_slice_one_copy
                             join_two_slice_two_percent
@@ -64,7 +66,7 @@ const JoinSectionTwo = () => {
                 </ImageBackground>
 
                 <MainContent>
-                    {/* <div class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/> */}
+                    <div class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/>
                     <div 
                     class="circle-main"
                     data-sal="fade"
@@ -121,6 +123,9 @@ const JoinSectionTwo = () => {
                             <p class="description">{post.node.acf.join_two_slice_eight_copy}</p>
                         </div> */}
                     </div>
+                    <div class="side-copy">
+                        <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_two_side_copy }}/>
+                    </div>
                 </MainContent>
                     
             </MainSection>
@@ -152,12 +157,74 @@ const HeroImg = styled(Img)`
 `
 
 const MainContent = styled.div`
-    max-width: 1000px;
-    width: 70%;
+    max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
-    @media(max-width: 767px) {
+    margin-bottom: 50px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .top-content {
         width: 100%;
+        position: relative;
+        z-index: 3;
+        text-align: center;
     }
+    .circle-main {
+        width: 60%;
+        padding: 30px;
+    }
+    .side-copy {
+        width: 40%;
+        padding: 30px;
+        position: relative;
+        z-index: 3;
+    }
+    h2 {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 44px;
+        font-weight: 100;
+        color: rgb(255, 255, 255);
+        line-height: 1.3;
+        margin-bottom: 5px;
+    }
+    p {
+        font-family: "Helvetica Thin";
+        width: 100%;
+        z-index: 1;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        line-height: 1.3;
+        .fancy {
+            font-family: BonVivant;
+            font-weight: 100;
+            font-size: 32px;
+            line-height: 0;
+            bottom: 3px;
+            position: relative;
+        }
+        .fancy-large {
+            font-family: BonVivant;
+            font-weight: 100;
+            font-size: 44px;
+            bottom: 3px;
+            position: relative;
+            margin-left: 50px;
+        }
+    }
+    @media(max-width: 1000px) {
+        .circle-main {
+            width: 100%;
+            
+        }
+        .side-copy {
+            width: 1000%;
+        }
+    }
+
 `
 
 export default JoinSectionTwo

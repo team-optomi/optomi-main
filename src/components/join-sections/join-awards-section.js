@@ -127,8 +127,8 @@ const JoinAwardsSection = () => {
 }
 
 const MainSection = styled.section`
-    background-color: #003354;
-    padding: 100px 20px;
+    background-color: #000;
+    padding: 20px;
     margin-bottom: 50px;
     .section-row {
         max-width: 1000px;
@@ -151,7 +151,7 @@ const MainSection = styled.section`
             width: 100%;
             p {
                 font-family: "Helvetica Thin";
-                font-size: 12px;
+                font-size: 14px;
                 color: rgb(255,255,255);
                 line-height: 1.3;
                 margin-bottom: 0;
