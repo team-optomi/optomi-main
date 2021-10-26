@@ -219,7 +219,6 @@ const MainContent = styled.div`
             font-size: 44px;
             bottom: 3px;
             position: relative;
-            margin-left: 50px;
         }
         &.match-one {
             font-family: "Helvetica Thin";

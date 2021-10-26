@@ -14,6 +14,7 @@ import JoinBlogSlider from "../components/join-sections/join-blog-slider"
 import JoinSectionSeven from "../components/join-sections/join-section-seven"
 import JoinAwardsSection from "../components/join-sections/join-awards-section"
 import JoinSectionEight from "../components/join-sections/join-section-eight"
+import JoinDirectionsSection from "../components/join-sections/join-directions-section"
 
 const JoinPage = () => {
 
@@ -60,6 +61,7 @@ const JoinPage = () => {
                 <JoinSectionSeven/>
                 <JoinAwardsSection/>
                 <JoinSectionEight/>
+                <JoinDirectionsSection/>
                 
             </Layout>
         ))
