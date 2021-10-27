@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-const JoinDirectionsSection = () => {
+const JoinDirectionsSectionV2 = () => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -27,7 +27,7 @@ const JoinDirectionsSection = () => {
             </div>
             <h2>How Close Are <span>We?</span></h2>
             <div class="form-section">
-                <form action="https://maps.google.com/maps" method="get" target="iframe_a">
+                <form action="https://maps.google.com/maps" method="get" target="_blank">
                     <div class="flex-row">
                     <p>Your Location:</p>
                     <input class="start-address" type="text" name="saddr" />
@@ -89,12 +89,11 @@ const MainSection = styled.section`
     }
     .form-section {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         max-width: 1040px;
         width: 100%;
         margin: 0 auto;
         padding: 20px;
-        z-index: 2;
         .flex-row {
             display: flex;
             justify-content: center;
@@ -156,7 +155,7 @@ const MainSection = styled.section`
         }
     }
     .bottom-button {
-        position: regular;
+        position: relative;
         max-width: 1240px;
         width: 100%;
         padding: 20px;
@@ -180,4 +179,4 @@ const MainSection = styled.section`
     }
 `
 
-export default JoinDirectionsSection
+export default JoinDirectionsSectionV2
