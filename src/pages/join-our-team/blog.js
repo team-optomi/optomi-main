@@ -151,7 +151,13 @@ const JoinBlogPage = ({ data }) => (
     }
     @media(max-width:500px) {
       article {
-        height: 80vh;
+        height: 60vh;
+        .work-image-bg {
+          height: 60vh;
+        }
+        .slide-overlay {
+          height: 60vh;
+        }
       }
     }
   `

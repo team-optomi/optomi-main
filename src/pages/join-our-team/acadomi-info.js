@@ -17,26 +17,42 @@ const AcadomiInfoPage = ({ data }) => (
             />
             <SectionOne>
                 <Img className={"section-background"} sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.featured_media.title}/>
-                <div class="section-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="section-content">
                     <Img className={"section-icon"} sizes={post.node.acf.ai_section_one_icon.localFile.childImageSharp.sizes} alt={post.node.acf.ai_section_one_icon.title}/>
                     <div dangerouslySetInnerHTML={{ __html: post.node.acf.ai_section_one_copy }} />
                 </div>
             </SectionOne>
             <SectionTwo>
                 <Img className={"section-background"} sizes={post.node.acf.ai_section_two_background.localFile.childImageSharp.sizes} alt={post.node.acf.ai_section_two_background.title}/>
-                <div class="section-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="section-content">
                     <div dangerouslySetInnerHTML={{ __html: post.node.acf.ai_section_two_copy }} />
                 </div>
             </SectionTwo>
             <SectionThree>
                 <Img className={"section-background"} sizes={post.node.acf.ai_section_three_background.localFile.childImageSharp.sizes} alt={post.node.acf.ai_section_three_background.title}/>
-                <div class="section-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="section-content">
                     <div dangerouslySetInnerHTML={{ __html: post.node.acf.ai_section_three_copy }} />
                 </div>
             </SectionThree>
             <SectionFour>
                 <Img className={"section-background"} sizes={post.node.acf.ai_section_four_background.localFile.childImageSharp.sizes} alt={post.node.acf.ai_section_four_background.title}/>
-                <div class="section-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="section-content">
                     <div dangerouslySetInnerHTML={{ __html: post.node.acf.ai_section_four_copy }} />
                 </div>
             </SectionFour>
@@ -330,6 +346,7 @@ const SectionFour = styled.section`
             letter-spacing: 1px;
             border: 2px solid #fff;
             border-radius: 10px;
+            margin: 20px auto;
         }
     }
     @media(max-width:900px) {
