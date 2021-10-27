@@ -25,8 +25,16 @@ const JoinDirectionsSectionV2 = () => {
             <div class="bg-image">
                 <Img sizes={data.wordpressWpMedia.localFile.childImageSharp.sizes} alt={data.wordpressWpMedia.title} />
             </div>
-            <h2>How Close Are <span>We?</span></h2>
-            <div class="form-section">
+            <h2
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            >How Close Are <span>We?</span></h2>
+            <div 
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            class="form-section">
                 <form action="https://maps.google.com/maps" method="get" target="_blank">
                     <div class="flex-row">
                     <p>Your Location:</p>
@@ -47,7 +55,11 @@ const JoinDirectionsSectionV2 = () => {
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.2229943209504!2d-84.36229828483178!3d33.93539228063788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f574e9d3b50bf3%3A0xcb3655f2edd8d589!2sOptomi%2C%20LLC!5e0!3m2!1sen!2smx!4v1635269235066!5m2!1sen!2smx" name="iframe_a" height="400px" width="100%" title="Iframe Directions" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <div class="bottom-button">
+            <div 
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            class="bottom-button">
                 <a href="https://www.linkedin.com/jobs/search/?f_C=2684081&geoId=92000000" target="_blank">Job Opportunities</a>
             </div>
         </MainSection>
@@ -175,6 +187,24 @@ const MainSection = styled.section`
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+    }
+    @media(max-width:767px) {
+        h2 {
+            font-size: 28px;
+            span {
+                font-size: 44px;
+                top: 0;
+            }
+        }
+        .form-section {
+            .flex-row {
+                flex-wrap: wrap;
+                input.start-address {
+                    margin: 20px 0;
+                    margin-left: 0;
+                }
+            }
         }
     }
 `

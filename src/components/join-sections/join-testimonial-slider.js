@@ -42,9 +42,17 @@ const JoinTestimonialSlider = () => {
         
         <MainSection>
 
-            <h2>WHAT PEOPLE ARE SAYING ABOUT <span>Optomi</span></h2>
+            <h2
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            >WHAT PEOPLE ARE SAYING ABOUT <span>Optomi</span></h2>
 
-            <SliderContainer className={"our-work-slider"}>
+            <SliderContainer 
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            className={"our-work-slider"}>
                 <Slider {...settings}>
                     {data.allWordpressWpJoinTestimonial.edges.map(testimonial => (
                     <TestimonialSlide>

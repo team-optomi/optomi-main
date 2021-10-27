@@ -55,9 +55,17 @@ const JoinBlogSlider = () => {
         
         <MainSection>
 
-            <h2>OUR TEAM'S <span>Stories</span></h2>
+            <h2
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            >OUR TEAM'S <span>Stories</span></h2>
 
-            <SliderContainer className={"our-work-slider"}>
+            <SliderContainer 
+            data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+            className={"our-work-slider"}>
                 <Slider {...settings}>
                     {data.allWordpressWpJoinPost.edges.map(post => (
                     <JoinBlogSlide>

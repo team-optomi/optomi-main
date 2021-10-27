@@ -91,29 +91,57 @@ const JoinSectionSeven = () => {
             <MainSection>
 
                 <MainContent>
-                    <div class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/>
+                    <div 
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/>
                     <div class="flex-row">
-                        <div class="col-six">
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-six">
                             <Img sizes={post.node.acf.join_seven_column_one_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_seven_column_one_icon.title} />
                             <h3>{post.node.acf.join_seven_column_one_title}</h3>
                         </div>
-                        <div class="col-six">
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-six">
                             <Img sizes={post.node.acf.join_seven_column_two_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_seven_column_two_icon.title} />
                             <h3>{post.node.acf.join_seven_column_two_title}</h3>
                         </div>
-                        <div class="col-six">
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-six">
                             <Img sizes={post.node.acf.join_seven_column_three_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_seven_column_three_icon.title} />
                             <h3>{post.node.acf.join_seven_column_three_title}</h3>
                         </div>
-                        <div class="col-six">
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-six">
                             <Img sizes={post.node.acf.join_seven_column_four_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_seven_column_four_icon.title} />
                             <h3>{post.node.acf.join_seven_column_four_title}</h3>
                         </div>
-                        <div class="col-six">
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-six">
                             <Img sizes={post.node.acf.join_seven_column_five_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_seven_column_five_icon.title} />
                             <h3>{post.node.acf.join_seven_column_five_title}</h3>
                         </div>
-                        <div class="col-six">
+                        <div 
+                        data-sal="slide-up"
+                        data-sal-duration="1000"
+                        data-sal-easing="ease"
+                        class="col-six">
                             <Img sizes={post.node.acf.join_seven_column_six_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_seven_column_six_icon.title} />
                             <h3>{post.node.acf.join_seven_column_six_title}</h3>
                         </div>
@@ -211,15 +239,13 @@ const MainContent = styled.div`
         .flex-row {
             .col-six {
                 width: 50%;
+                h3 {
+                    font-size: 18px;
+                }
             }
         }
     }
     @media(max-width:400px) {
-        .flex-row {
-            .col-six {
-                width: 100%;
-            }
-        }
         h2 {
             span {
               font-size: 44px;

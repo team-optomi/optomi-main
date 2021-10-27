@@ -33,13 +33,21 @@ const JoinSectionEight = () => {
         <MainSection>
 
             <MainContent>
-                <div class="top-content">
+                <div 
+                data-sal="fade"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+                class="top-content">
                     <h2><span>Benefits</span></h2>
                     <p>OF WORKING AT OPTOMI INCLUDE:</p>
                 </div>
                 <div class="flex-row">
                     {data.allWordpressWpJoinBenefit.edges.map(post => (
-                    <div class="col-five">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="col-five">
                         <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.featured_media.title} />
                         <div class="tooltip" dangerouslySetInnerHTML={{ __html: post.node.content }} />
                     </div>

@@ -121,10 +121,30 @@ const JoinSectionFour = () => {
                 </ImageBackground>
 
                 <MainContent>
-                    <div class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/>
-                    <p class="match-one">Are you a good match?</p>
-                    <p class="match-two">we are...</p>
-                    <div class="values-box">
+                    <div 
+                    class="top-content" 
+                    dangerouslySetInnerHTML={{ __html: post.node.content }}
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    />
+                    <p 
+                    class="match-one"
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >Are you a good match?</p>
+                    <p 
+                    class="match-two"
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >we are...</p>
+                    <div 
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="values-box">
                         <Img className={"value-one"} sizes={post.node.acf.join_four_dedicated.localFile.childImageSharp.sizes} alt={post.node.acf.join_four_dedicated.title} />
                         <Img className={"value-two"} sizes={post.node.acf.join_four_innovative.localFile.childImageSharp.sizes} alt={post.node.acf.join_four_innovative.title} />
                         <Img className={"value-three"} sizes={post.node.acf.join_four_genuine.localFile.childImageSharp.sizes} alt={post.node.acf.join_four_genuine.title} />
@@ -134,7 +154,11 @@ const JoinSectionFour = () => {
                         <Img className={"value-seven"} sizes={post.node.acf.join_four_respectful.localFile.childImageSharp.sizes} alt={post.node.acf.join_four_respectful.title} />
                         <Img className={"value-eight"} sizes={post.node.acf.join_four_passionate.localFile.childImageSharp.sizes} alt={post.node.acf.join_four_passionate.title} />
                     </div>
-                    <p class="bottom-link"><Link to={post.node.acf.join_four_bottom_link}>{post.node.acf.join_four_bottom_button}</Link></p>
+                    <p 
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="bottom-link"><Link to={post.node.acf.join_four_bottom_link}>{post.node.acf.join_four_bottom_button}</Link></p>
                 </MainContent>
                     
             </MainSection>

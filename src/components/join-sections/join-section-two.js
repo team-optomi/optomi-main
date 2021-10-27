@@ -66,7 +66,13 @@ const JoinSectionTwo = () => {
                 </ImageBackground>
 
                 <MainContent>
-                    <div class="top-content" dangerouslySetInnerHTML={{ __html: post.node.content }}/>
+                    <div 
+                    class="top-content" 
+                    dangerouslySetInnerHTML={{ __html: post.node.content }}
+                    data-sal="fade"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    />
                     <div 
                     class="circle-main"
                     data-sal="fade"
@@ -123,7 +129,11 @@ const JoinSectionTwo = () => {
                             <p class="description">{post.node.acf.join_two_slice_eight_copy}</p>
                         </div> */}
                     </div>
-                    <div class="side-copy">
+                    <div class="side-copy"
+                    data-sal="slide-left"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    >
                         <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_two_side_copy }}/>
                     </div>
                 </MainContent>
@@ -222,6 +232,14 @@ const MainContent = styled.div`
         }
         .side-copy {
             width: 1000%;
+        }
+    }
+    @media(max-width:767px) {
+        .top-content {
+            padding: 0 20px;
+            h2 {
+                font-size: 32px;
+            }
         }
     }
 

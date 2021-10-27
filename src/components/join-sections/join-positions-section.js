@@ -69,19 +69,35 @@ const JoinPositionsSection = () => {
             <MainSection>
 
                 <div class="section-row">
-                    <div class="position-col">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="position-col">
                         <Img sizes={post.node.acf.jp_col_one_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_one_icon.title} />
                         <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_one_copy }}/>
                     </div>
-                    <div class="position-col">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="position-col">
                         <Img sizes={post.node.acf.jp_col_two_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_two_icon.title} />
                         <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_two_copy }}/>
                     </div>
-                    <div class="position-col">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="position-col">
                         <Img sizes={post.node.acf.jp_col_three_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_three_icon.title} />
                         <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_three_copy }}/>
                     </div>
-                    <div class="position-col">
+                    <div 
+                    data-sal="slide-up"
+                    data-sal-duration="1000"
+                    data-sal-easing="ease"
+                    class="position-col">
                         <Img sizes={post.node.acf.jp_col_four_icon.localFile.childImageSharp.sizes} alt={post.node.acf.jp_col_four_icon.title} />
                         <div dangerouslySetInnerHTML={{ __html: post.node.acf.jp_col_four_copy }}/>
                     </div>
