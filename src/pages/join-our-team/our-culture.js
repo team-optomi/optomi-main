@@ -667,6 +667,7 @@ const SectionFour = styled.section`
       z-index: 1;
       text-align: center;
       color: rgb(41, 143, 194);
+      margin-bottom: 0px;
     }
     p {
       font-family: "Helvetica Thin";
@@ -676,7 +677,7 @@ const SectionFour = styled.section`
       max-width: 735px;
       margin: 0 auto;
       margin-left: 475px;
-      margin-top: -50px;
+      margin-bottom: 20px;
       position: relative;
       z-index: 2;  
     }
