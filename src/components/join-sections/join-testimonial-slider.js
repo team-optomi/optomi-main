@@ -79,8 +79,8 @@ const MainSection = styled.section`
       letter-spacing: 2px;
       font-weight: 100;
       color: rgb(255,255,255);
-      line-height: 1.3;
-      margin-bottom: 50px;
+      line-height: 1.8;
+      margin-bottom: 20px;
       padding: 0 20px;
       text-align: center;
       span {
@@ -109,24 +109,26 @@ const TestimonialSlide = styled.div`
     outline: 0;
     .gatsby-image-wrapper {
       height: 100%;
-      max-width: 700px;
+      max-width: 400px;
       margin-top: 30px;
       margin-left: auto;
     }
     p {
       font-family: "Helvetica Thin";
+      max-width: 600px;
       width: 100%;
       z-index: 1;
-      font-size: 44px;
+      font-size: 24px;
       color: rgb(255,255,255);
       line-height: 1.3;
+      margin: 0 auto;
       margin-bottom: 0;
       text-align: center;
       span {
         font-family: BonVivant;
         font-weight: 100;
         color: #5ab3e8;
-        font-size: 56px;
+        font-size: 36px;
         line-height: 0;
       }
     }
@@ -176,7 +178,7 @@ const SliderContainer = styled.div`
       }
     }
     .slick-slider {
-      max-width: 1170px;
+      max-width: 870px;
       width: 100%;
       margin: 0 auto;
       overflow: visible;

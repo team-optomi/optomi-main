@@ -64,15 +64,15 @@ const JoinSectionEight = () => {
 
 const MainSection = styled.section`
     position: relative;
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: 50px;
+    padding: 50px 20px;
+    background-color: #00385c;
 `
 
 const MainContent = styled.div`
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
     .top-content {
         h2 {
             font-family: "Helvetica Thin";

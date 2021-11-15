@@ -213,7 +213,7 @@ const HeroMain = styled.div`
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 44px;
+        font-size: 36px;
         font-weight: 100;
         color: rgb(255, 255, 255);
         line-height: 1.3;
@@ -223,7 +223,7 @@ const HeroMain = styled.div`
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 20px;
+        font-size: 18px;
         color: rgb(255, 255, 255);
         line-height: 1.3;
     }

@@ -271,6 +271,8 @@ const OurCulturePage = () => {
 
                 <SectionFour>
 
+                <div class="bottom-copy" dangerouslySetInnerHTML={{ __html: post.node.acf.cp_committee_purpose_copy}} />
+
                     <h2 dangerouslySetInnerHTML={{ __html: post.node.acf.cp_committee_title}} />
 
                     <div class="icon-row">
@@ -306,8 +308,6 @@ const OurCulturePage = () => {
                         </div>
                         <Img className="committee-arrow" sizes={post.node.acf.cp_committee_arrow.localFile.childImageSharp.sizes} alt={post.node.acf.cp_committee_arrow.title}  />
                     </div>
-
-                    <div class="bottom-copy" dangerouslySetInnerHTML={{ __html: post.node.acf.cp_committee_purpose_copy}} />
 
                     <Img className="bg-image" sizes={post.node.acf.cp_committee_background.localFile.childImageSharp.sizes} alt={post.node.acf.cp_committee_background.title}  />
 
@@ -415,7 +415,7 @@ const HeroTitle = styled.div`
 `
 
 const SectionOne = styled.section`
-    background-color: #211e1e;
+    background-color: #00385c;
     position: relative;
     padding: 100px 20px 65px;
     width: 100%;
@@ -431,16 +431,16 @@ const SectionOne = styled.section`
       position: relative;
       font-family: "Helvetica Thin";
       color: rgb(255, 255, 255);
-      font-size: 32px;
+      font-size: 24px;
       line-height: 1.3;
       text-align: left;
       z-index: 1;
-      max-width: 1400px;
+      max-width: 1000px;
       margin: 0 auto;
-      margin-bottom: 35px;
+      margin-bottom: 20px;
       span {
         font-family: BonVivant;
-        font-size: 60px;
+        font-size: 50px;
       }
     }
 `
@@ -549,9 +549,9 @@ const SectionThree = styled.section`
         position: relative;
         font-family: "Helvetica Thin";
         color: rgb(255,255,255);
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.3;
-        text-align: center;
+        text-align: right;
       }
     }
   }
@@ -585,7 +585,7 @@ const SectionFour = styled.section`
     width: 100%;
     max-width: 1420px;
     margin: 0 auto;
-    margin-bottom: 240px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -634,8 +634,8 @@ const SectionFour = styled.section`
       }
       &:hover {
         .hover-copy {
-          opacity: 1;
-          visibility: visible;
+          opacity: 0;
+          visibility: hidden;
         }
       }
     }
@@ -651,14 +651,15 @@ const SectionFour = styled.section`
     }
     &:hover {
       .committee-arrow {
-        opacity: 1;
-        visibility: visible;
+        opacity: 0;
+        visibility: hidden;
       }
     }
   }
   .bottom-copy {
     max-width: 1400px;
     margin: 0 auto;
+    margin-bottom: 100px;
     h2 {
       font-family: BonVivant;
       font-size: 90px;
@@ -683,7 +684,7 @@ const SectionFour = styled.section`
   .bg-image {
     position: absolute !important;
     width: 120%;
-    top: 160px;
+    top: 440px;
     left: -10%;
     opacity: .3;
     z-index: 1;

@@ -52,10 +52,10 @@ const JoinPage = () => {
                 />
 
                 <JoinSectionOne/>
-                <JoinSectionTwo/>
                 <JoinSectionThree/>
-                <JoinSectionFour/>
                 <JoinPositionsSection/>
+                <JoinSectionTwo/>
+                <JoinSectionFour/>
                 <JoinTestimonialSlider/>
                 <JoinBlogSlider/>
                 <JoinSectionSeven/>

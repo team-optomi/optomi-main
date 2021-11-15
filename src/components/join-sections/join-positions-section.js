@@ -111,7 +111,7 @@ const JoinPositionsSection = () => {
 
 const MainSection = styled.section`
     background-color: #000;
-    padding: 20px;
+    padding: 50px 20px;
     margin-bottom: 0px;
     .section-row {
         max-width: 1500px;
