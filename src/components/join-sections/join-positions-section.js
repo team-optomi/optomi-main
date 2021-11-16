@@ -143,9 +143,13 @@ const MainSection = styled.section`
                 margin-bottom: 0;
             }
             .gatsby-image-wrapper {
-                max-width: 80px;
+                max-width: 100px;
+                height: 100px;
                 margin: 0 auto;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
+                img {
+                    object-fit: contain !important;
+                }
             }
         }
     }
