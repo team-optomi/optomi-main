@@ -158,7 +158,7 @@ const JoinSectionFour = () => {
                     data-sal="fade"
                     data-sal-duration="1000"
                     data-sal-easing="ease"
-                    class="bottom-link"><Link to={post.node.acf.join_four_bottom_link}>{post.node.acf.join_four_bottom_button}</Link></p>
+                    class="bottom-link"><a href={post.node.acf.join_four_bottom_link} target="_blank" rel="noopener noreferrer">{post.node.acf.join_four_bottom_button}</a></p>
                 </MainContent>
                     
             </MainSection>
