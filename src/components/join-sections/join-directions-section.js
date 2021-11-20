@@ -25,7 +25,7 @@ const JoinDirectionsSection = () => {
             <div class="bg-image">
                 <Img sizes={data.wordpressWpMedia.localFile.childImageSharp.sizes} alt={data.wordpressWpMedia.title} />
             </div>
-            <h2>How Close Are <span>We?</span></h2>
+            <h2>HOW CLOSE ARE <span>We?</span></h2>
             <div class="form-section">
                 <form action="https://maps.google.com/maps" method="get" target="iframe_a">
                     <div class="flex-row">
@@ -136,12 +136,12 @@ const MainSection = styled.section`
             input.button {
                 background-color: #69b1e2;
                 color: #fff;
-                padding: 15px 10px;
+                padding: 10px;
                 border: 1px solid #fff;
                 border-radius: 25px;
                 font-family: "Helvetica Thin";
                 text-transform: uppercase;
-                font-size: 24px;
+                font-size: 20px;
                 letter-spacing: 1px;
                 &:hover {
                     cursor: pointer;

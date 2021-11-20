@@ -83,7 +83,7 @@ const JoinSectionOne = () => {
                         >
                             <Img sizes={post.node.acf.join_one_left_column_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_one_left_column_icon.title} />
                             <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_one_left_column_copy }}/>
-                            <Link to={post.node.acf.join_one_left_column_link}>{post.node.acf.join_one_left_column_button}</Link>
+                            <a href={post.node.acf.join_one_left_column_link} target="_blank" rel="noopener noreferrer">{post.node.acf.join_one_left_column_button}</a>
                         </div>
                         <div 
                         class="col-right"
@@ -93,7 +93,7 @@ const JoinSectionOne = () => {
                         >
                             <Img sizes={post.node.acf.join_one_right_column_icon.localFile.childImageSharp.sizes} alt={post.node.acf.join_one_right_column_icon.title} />
                             <div dangerouslySetInnerHTML={{ __html: post.node.acf.join_one_right_column_copy }}/>
-                            <Link to={post.node.acf.join_one_right_column_link}>{post.node.acf.join_one_right_column_button}</Link>
+                            <a href={post.node.acf.join_one_right_column_link} target="_blank" rel="noopener noreferrer">{post.node.acf.join_one_right_column_button}</a>
                         </div>
                     </HeroMain>
                     

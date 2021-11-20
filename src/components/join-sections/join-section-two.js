@@ -195,11 +195,12 @@ const MainContent = styled.div`
         font-family: "Helvetica Thin";
         width: 100%;
         z-index: 1;
-        font-size: 44px;
+        font-size: 40px;
         font-weight: 100;
         color: rgb(255, 255, 255);
         line-height: 1.3;
         margin-bottom: 5px;
+        text-transform: uppercase;
     }
     p {
         font-family: "Helvetica Thin";
@@ -219,10 +220,14 @@ const MainContent = styled.div`
         .fancy-large {
             font-family: BonVivant;
             font-weight: 100;
-            font-size: 44px;
+            font-size: 60px;
             bottom: 3px;
             position: relative;
             margin-left: 50px;
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
         }
     }
     @media(max-width: 1000px) {

@@ -29,7 +29,7 @@ const JoinDirectionsSectionV2 = () => {
             data-sal="fade"
             data-sal-duration="1000"
             data-sal-easing="ease"
-            >How Close Are <span>We?</span></h2>
+            >HOW CLOSE ARE <span>We?</span></h2>
             <div 
             data-sal="fade"
             data-sal-duration="1000"
@@ -147,12 +147,12 @@ const MainSection = styled.section`
             input.button {
                 background-color: #69b1e2;
                 color: #fff;
-                padding: 15px 10px;
+                padding: 10px;
                 border: 1px solid #fff;
                 border-radius: 25px;
                 font-family: "Helvetica Thin";
                 text-transform: uppercase;
-                font-size: 24px;
+                font-size: 18px;
                 letter-spacing: 1px;
                 &:hover {
                     cursor: pointer;

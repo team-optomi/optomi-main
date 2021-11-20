@@ -122,12 +122,35 @@ const MainSection = styled.section`
         align-items: flex-start;
         .position-col {
             width: 25%;
-            min-height: 340px;
+            min-height: 370px;
             text-align: center;
             padding: 10px 50px;
             border-right: 2px solid #fff;
+            &:first-child {
+                .gatsby-image-wrapper {
+                    width: 140px;
+                    margin-top: -13px;
+                    margin-bottom: 7px;
+                }
+            }
+            &:nth-child(2) {
+                .gatsby-image-wrapper {
+                    max-width: 100px;
+                    height: 100px;
+                    margin-bottom: 20px;
+                }
+            }
+            &:nth-child(3) {
+                .gatsby-image-wrapper {
+                    height: 106px;
+                    margin-bottom: 14px;
+                }
+            }
             &:last-child {
                 border-right: none;
+                .gatsby-image-wrapper {
+                    height: 120px;
+                }
             }
             h3 {
                 font-family: "Helvetica Thin";
@@ -143,10 +166,7 @@ const MainSection = styled.section`
                 margin-bottom: 0;
             }
             .gatsby-image-wrapper {
-                max-width: 100px;
-                height: 100px;
                 margin: 0 auto;
-                margin-bottom: 20px;
                 img {
                     object-fit: contain !important;
                 }
