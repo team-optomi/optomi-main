@@ -60,7 +60,7 @@ const JoinDirectionsSectionV2 = () => {
             data-sal-duration="1000"
             data-sal-easing="ease"
             class="bottom-button">
-                <a href="https://www.linkedin.com/jobs/search/?f_C=2684081&geoId=92000000" target="_blank">Job Opportunities</a>
+                <a href="https://opportunities.optomi.com/job-opening/" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Opportunities</a>
             </div>
         </MainSection>
     )
