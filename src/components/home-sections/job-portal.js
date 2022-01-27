@@ -242,27 +242,33 @@ const FlexRow = styled.div`
             display: inline-block;
         }
     }
-    @media(max-width:1200px) {
-        max-width: 1140px;
+    @media(max-width:1150px) {
+        padding-left: 0px;
+        padding-right: 0px;
+        > div {
+            width: 33.33%;
+            padding: 0 20px;
+            h3 {
+                font-size: 14px;
+            }
+            p {
+                font-size: 12px;
+            }
+            a {
+                font-size: 12px;
+                padding: 15px;
+            }
+        }
+    }
+    @media(max-width:767px) {
         flex-wrap: wrap;
         justify-content: center;
-        > div {
-            width: 50%;
-            padding: 0 20px;
-            margin-bottom: 35px;
-        }
-    }
-    @media(max-width:1150px) {
-        max-width: 940px;
-    }
-    @media(max-width:980px) {
-        > div {
-            width: 100%;
-        }
-    }
-    @media(max-width:768px) {
         padding-left: 20px;
         padding-right: 20px;
+        > div {
+            width: 100%;
+            margin-bottom: 35px;
+        }
     }
 `
 

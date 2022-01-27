@@ -62,7 +62,7 @@ class FoundersSlider extends Component {
                                         <hr/>
                                         <MemberCopy dangerouslySetInnerHTML={{ __html: post.node.content }}/>
                                         <hr/>
-                                        <a href={post.node.acf.linkedin_link} target="_blank" rel="noopener noreferrer"><FaLinkedin/>LinkedIn</a>
+                                        <a class="linkedin" href={post.node.acf.linkedin_link} target="_blank" rel="noopener noreferrer"><FaLinkedin/>LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -379,9 +379,13 @@ const LeadershipSlide = styled.div`
                     font-family: "Helvetica Thin";
                     color: #fff;
                     margin-bottom: 0;
+                    a {
+                        color: #5ab3e8;
+                        text-decoration: none !important;
+                    }
                 }
             }
-            a {
+            a.linkedin {
                 font-family: "Helvetica Thin";
                 color: #5ab3e8;
                 text-decoration: none !important;
@@ -439,7 +443,7 @@ const LeadershipSlide = styled.div`
                 transition-delay: .3s;
                 hr,
                 br,
-                a {
+                a.linkedin {
                     display: none;
                 }
             }

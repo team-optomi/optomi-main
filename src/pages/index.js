@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 import HomeHero from "../components/home-sections/home-hero"
 import MissionStatement from "../components/home-sections/mission-statement-v2"
-import HomeDifs from "../components/home-sections/home-difs-v2"
+//import HomeDifs from "../components/home-sections/home-difs-v2"
 import OurValues from "../components/home-sections/home-our-values"
 import Explore from "../components/home-sections/explore"
 import JobPortal from "../components/home-sections/job-portal"
@@ -49,9 +49,9 @@ const IndexPage = () => {
         />
         <HomeHero/>
         <MissionStatement/>
-        <HomeDifs/>
-        <OurValues/>
         <JobPortal/>
+        {/* <HomeDifs/> */}
+        <OurValues/>
         <Explore/>
         {/* <Acadomi/> */}
         <CaseStudies/>
