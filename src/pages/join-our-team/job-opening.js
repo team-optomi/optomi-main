@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 import BlogLayout from "../../components/blog-layout"
@@ -22,13 +22,13 @@ const JobOpeningPage = ({ data }) => (
         <div class="flex-grid">
           {data.allWordpressWpJobOpening.edges.map(job => (
             <div class="job-square">
-                <a href={job.node.acf.job_opening_link} target="_blank" rel="noopener noreferrer" aria-label="Link">
+                <Link to={`/join-our-team${job.node.acf.job_opening_link}`}>
                   <div class="job-content">
                     <p class="job-number">{job.node.acf.number_of_listings}</p>
                     <h2>{job.node.title}</h2>
                     <p class="sub-description">{job.node.acf.jobs_sub_description}</p>
                   </div>
-                </a>
+                </Link>
             </div>
           ))}
         </div>

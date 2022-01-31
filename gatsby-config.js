@@ -60,6 +60,7 @@ module.exports = {
           "**/join_benefit", // <== Custom post slug
           "**/space_image", // <== Custom post slug
           "**/job_opening", // <== Custom post slug
+          "**/single_job", // <== Custom post slug
           "**/media",
           "**/tags",
           "**/taxonomies",

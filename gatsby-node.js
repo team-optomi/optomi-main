@@ -50,6 +50,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const PressMonthArchive = path.resolve("./src/templates/press-month-archive.js")
   const PressReleaseTemplate = path.resolve("./src/templates/press-post.js")
   const JoinPostTemplate = path.resolve("./src/templates/join-post.js")
+  const JobLocationTemplate = path.resolve("./src/templates/job-location.js")
+  const SingleJobTemplate = path.resolve("./src/templates/single-job.js")
   const result = await graphql(`
     {
       allWordpressPost {
@@ -128,6 +130,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       allWordpressWpJoinPost {
+        edges {
+          node {
+            slug
+            wordpress_id
+          }
+        }
+      }
+      allWordpressWpJobOpening {
+        edges {
+          node {
+            slug
+            wordpress_id
+            categories {
+              wordpress_id
+            }
+          }
+        }
+      }
+      allWordpressWpSingleJob {
         edges {
           node {
             slug
@@ -321,6 +342,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               component: JoinPostTemplate,
               context: {
               id: joinPost.node.wordpress_id,
+              },
+          })
+      })
+
+    const JobLocations = result.data.allWordpressWpJobOpening.edges
+      JobLocations.forEach(location => {
+          createPage({
+              path: `/join-our-team/job-opening/${location.node.slug}`,
+              component: JobLocationTemplate,
+              context: {
+              id: location.node.wordpress_id,
+              cat: location.node.categories[0].wordpress_id,
+              },
+          })
+      })
+
+    const SingleJobs = result.data.allWordpressWpSingleJob.edges
+      SingleJobs.forEach(singleJob => {
+          createPage({
+              path: `/join-our-team/job-opening/${singleJob.node.slug}`,
+              component: SingleJobTemplate,
+              context: {
+              id: singleJob.node.wordpress_id,
               },
           })
       })
