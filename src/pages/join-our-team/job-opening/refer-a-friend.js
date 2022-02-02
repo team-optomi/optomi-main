@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import BlogLayout from "../../../components/blog-layout"
 import SEO from "../../../components/seo"
 
-const JobFormPage = () => {
+const ReferFormPage = () => {
 
     const queryParams = new URLSearchParams(window.location.search);
     const loc = queryParams.get('Location');
@@ -14,41 +14,32 @@ const JobFormPage = () => {
     return(
         <BlogLayout>
             <SEO 
-            title={"Apply Now"} 
+            title={"Refer a Friend"} 
             description={"Need Description"}
             />
             <TopBanner>   
                 <div class="top-content">
-                    <h1>Apply Now</h1>
+                    <h1>Refer a Friend</h1>
                     <hr/>
                 </div>
             </TopBanner>
             <JobForm>
-                <form id="apply_form" name="Application Form" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
-                    <input type="hidden" name="form-name" value="Application Form" aria-label="Input" />
+                <form id="refer_form" name="Referral Form" method="POST" netlify-honeypot="bot-field" action="/thank-you/" data-netlify="true">
+                    <input type="hidden" name="form-name" value="Referral Form" aria-label="Input" />
                     <p class="hidden">
                         <label>Don’t fill this out if you're human: <input name="bot-field" aria-label="Input" /></label>
                     </p>
                     <p>
-                        <input type="text" name="name" placeholder="Enter your name" aria-label="Input" required/> 
+                        <input type="email" name="Friend's Email" placeholder="Enter your friend's email" aria-label="Input" required/> 
                     </p>
                     <p>
-                        <input type="text" name="phone" placeholder="Enter your phone number" aria-label="Input" required/>   
-                    </p>
-                    <p>
-                        <input type="email" name="email" placeholder="Enter your email" aria-label="Input" required/>
+                        <input type="email" name="Your Email" placeholder="Enter your email" aria-label="Input" required/>   
                     </p>
                     <p class="hidden">
                         <label htmlFor="Location">Location* <input value={loc} type="text" name="Location" aria-label="Input" required/></label>
                     </p>
                     <p class="hidden">
                         <label htmlFor="Position">Position* <input value={pos} type="text" name="Position" aria-label="Input" required/></label>
-                    </p>
-                    <p class={"full"}>
-                        <textarea name="message" placeholder="Add a message" aria-label="Input"></textarea>
-                    </p>
-                    <p>
-                        <label htmlFor="resume">Upload Resume <input type="file" name="resume" size="40" accept=".pdf,.doc,.docx" aria-label="Input" /></label>   
                     </p>
                     <p class={"button"}>
                         <button type="submit" name="submit" class={"submit"}  aria-label="Send">Send</button>
@@ -148,4 +139,4 @@ const JobForm = styled.section`
     }
 `
 
-export default JobFormPage
+export default ReferFormPage

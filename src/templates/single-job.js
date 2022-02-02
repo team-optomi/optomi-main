@@ -22,8 +22,8 @@ const SingleJobTemplate = ({ data }) => (
         <JobDescription>
             <div class="content" dangerouslySetInnerHTML={{ __html: data.wordpressWpSingleJob.content }} />
             <div class="buttons">
-                <Link to={`/join-our-team/job-opening/apply-now/?Location=${data.wordpressWpSingleJob.categories[0].slug}&Position=${data.wordpressWpSingleJob.title}`}>Apply Now</Link>
-                <Link to={`/join-our-team/job-opening/refer-a-friend/`}>Refer a Friend</Link>
+                <Link to={`/join-our-team/job-opening/apply-now/?Location=${data.wordpressWpSingleJob.categories[0].name}&Position=${data.wordpressWpSingleJob.title}`}>Apply Now</Link>
+                <Link to={`/join-our-team/job-opening/refer-a-friend/?Location=${data.wordpressWpSingleJob.categories[0].name}&Position=${data.wordpressWpSingleJob.title}`}>Refer a Friend</Link>
             </div>
         </JobDescription>
     </BlogLayout>
@@ -113,6 +113,7 @@ export const query = graphql`
                 }
             }
             categories {
+                name
                 slug
             }
             acf {
