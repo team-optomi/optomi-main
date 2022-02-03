@@ -4,9 +4,11 @@ import styled from 'styled-components'
 import BlogLayout from "../../../components/blog-layout"
 import SEO from "../../../components/seo"
 
-const ReferFormPage = () => {
+const ReferFormPage = ({ location }) => {
 
-    const queryParams = new URLSearchParams(window.location.search);
+    console.log(location); // inspect location for yourself
+
+    const queryParams = new URLSearchParams(location.search);
     const loc = queryParams.get('Location');
     const pos = queryParams.get('Position');
     console.log(loc, pos); // 55 test null
