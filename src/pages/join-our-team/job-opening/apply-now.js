@@ -6,12 +6,9 @@ import SEO from "../../../components/seo"
 
 const JobFormPage = ({ location }) => {
 
-    console.log(location); // inspect location for yourself
-
     const queryParams = new URLSearchParams(location.search);
     const loc = queryParams.get('Location');
     const pos = queryParams.get('Position');
-    console.log(loc, pos); // 55 test null
 
     return(
         <BlogLayout>
@@ -40,14 +37,17 @@ const JobFormPage = ({ location }) => {
                     <p>
                         <input type="email" name="email" placeholder="Enter your email" aria-label="Input" required/>
                     </p>
-                    <p class="hidden">
-                        <label htmlFor="Location">Location* <input value={loc} type="text" name="Location" aria-label="Input" required/></label>
+                    <p>
+                        <input type="url" name="linkedin" placeholder="Enter your LinkedIn Profile url" aria-label="Input" required/>
                     </p>
                     <p class="hidden">
-                        <label htmlFor="Position">Position* <input value={pos} type="text" name="Position" aria-label="Input" required/></label>
+                        <label htmlFor="Location">Location <input value={loc} type="text" name="Location" aria-label="Input" required/></label>
+                    </p>
+                    <p class="hidden">
+                        <label htmlFor="Position">Position <input value={pos} type="text" name="Position" aria-label="Input" required/></label>
                     </p>
                     <p class={"full"}>
-                        <textarea name="message" placeholder="Add a message" aria-label="Input"></textarea>
+                        <textarea name="message" placeholder="Add a message" aria-label="Input" required></textarea>
                     </p>
                     <p>
                         <label htmlFor="resume">Upload Resume <input type="file" name="resume" size="40" accept=".pdf,.doc,.docx" aria-label="Input" /></label>   

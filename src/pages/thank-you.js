@@ -11,7 +11,7 @@ const ThankYouPage = () => (
       <SEO title="Thank You" />
       <MainContent>
         <h1>Thank you for your submission!</h1>
-        <p>A representative has received your submission and will response shortly.</p>
+        <p>A representative has received your submission and will respond shortly.</p>
         <Button to="/">Back to Homepage</Button>
       </MainContent>
     </BlogLayout>

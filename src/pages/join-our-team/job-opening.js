@@ -148,7 +148,7 @@ const JobOpeningPage = ({ data }) => (
   
   export const query = graphql`
     query {
-      allWordpressWpJobOpening {
+      allWordpressWpJobOpening(sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
