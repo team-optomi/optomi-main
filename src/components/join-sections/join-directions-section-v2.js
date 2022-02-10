@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
@@ -60,7 +60,7 @@ const JoinDirectionsSectionV2 = () => {
             data-sal-duration="1000"
             data-sal-easing="ease"
             class="bottom-button">
-                <a href="https://opportunities.optomi.com/job-opening/" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Opportunities</a>
+                <Link to={"/join-our-team/job-opening/"}>Job Opportunities</Link>
             </div>
         </MainSection>
     )

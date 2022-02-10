@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from 'gatsby'
+import Img from "gatsby-image"
 import styled from 'styled-components'
 
 import BlogLayout from "../../components/blog-layout"
@@ -15,6 +16,11 @@ const JobOpeningPage = ({ data }) => (
       />
       ))}
       <JobGrid>
+        {data.allWordpressWpCustomPage.edges.map(imgsrc => (
+        <div class="page-bg">
+          <Img fluid={imgsrc.node.featured_media.localFile.childImageSharp.fluid} alt={`Job Openings`}/>
+        </div>
+        ))}
         <div class="top-content">
             <h1>Job Openings</h1>
             <hr/>
@@ -40,6 +46,17 @@ const JobOpeningPage = ({ data }) => (
     background-color: #000;
     padding-top: 40px;
     padding-bottom: 80px;
+    .page-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.3;
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+    }
     .top-content {
       h1 {
         font-family: "Helvetica Thin";
@@ -166,9 +183,12 @@ const JobOpeningPage = ({ data }) => (
             featured_media {
               localFile {
                   childImageSharp {
-                      sizes(maxWidth: 2000) {
+                      sizes(maxWidth: 1920) {
                           ...GatsbyImageSharpSizes
                       }
+                      fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
                   }
               }
             }
