@@ -29,16 +29,16 @@ const JobFormPage = ({ location }) => {
                         <label>Don’t fill this out if you're human: <input name="bot-field" aria-label="Input" /></label>
                     </p>
                     <p>
-                        <input type="text" name="name" placeholder="Enter your name" aria-label="Input" required/> 
+                        <input type="text" name="name" placeholder="Enter your name*" aria-label="Input" required/> 
                     </p>
                     <p>
-                        <input type="text" name="phone" placeholder="Enter your phone number" aria-label="Input" required/>   
+                        <input type="text" name="phone" placeholder="Enter your phone number*" aria-label="Input" required/>   
                     </p>
                     <p>
-                        <input type="email" name="email" placeholder="Enter your email" aria-label="Input" required/>
+                        <input type="email" name="email" placeholder="Enter your email*" aria-label="Input" required/>
                     </p>
                     <p>
-                        <input type="url" name="linkedin" placeholder="Enter your LinkedIn Profile url" aria-label="Input" required/>
+                        <input type="text" name="linkedin" placeholder="Enter your LinkedIn Profile url*" aria-label="Input" required/>
                     </p>
                     <p class="hidden">
                         <label htmlFor="Location">Location <input value={loc} type="text" name="Location" aria-label="Input" required/></label>
@@ -47,7 +47,7 @@ const JobFormPage = ({ location }) => {
                         <label htmlFor="Position">Position <input value={pos} type="text" name="Position" aria-label="Input" required/></label>
                     </p>
                     <p class={"full"}>
-                        <textarea name="message" placeholder="Add a message" aria-label="Input" required></textarea>
+                        <textarea name="message" placeholder="Add a message*" aria-label="Input" required></textarea>
                     </p>
                     <p>
                         <label htmlFor="resume">Upload Resume <input type="file" name="resume" size="40" accept=".pdf,.doc,.docx" aria-label="Input" /></label>   
