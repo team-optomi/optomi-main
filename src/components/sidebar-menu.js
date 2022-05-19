@@ -105,6 +105,9 @@ const SideMainMenu = () => (
             Contact
             </Link>
         </MenuItem>
+        <MenuItem>
+            <a href="https://thetgbfoundation.org/" target="_blank" rel="noopener noreferrer" aria-label="Link">TGB Foundation</a>
+        </MenuItem>
     </MainMenu>
   )
 
