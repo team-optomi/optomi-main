@@ -206,6 +206,7 @@ const MainContent = styled.div`
         padding: 50px 0;
         max-width: 1120px;
         margin: 0 auto;
+        text-align: center;
     }
     h2 {
         font-family: "Helvetica Thin";
@@ -271,6 +272,7 @@ const MainContent = styled.div`
         max-width: 1120px;
         width: 100%;
         height: 600px;
+        margin: 0 auto;
         .gatsby-image-wrapper {
             position: absolute !important;
         }
@@ -340,7 +342,7 @@ const MainContent = styled.div`
             text-decoration: none;
         }
     }
-    @media(max-width:1800px) {
+    @media(max-width:1280px) {
         .values-box {
             max-width: 700px;
             height: 400px;

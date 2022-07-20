@@ -74,6 +74,16 @@ const OurWorkSlide = styled.div`
     padding: 0px;
     position: relative;
     outline: 0;
+    max-height: 80vh;
+    height: 100%;
+    .work-image-bg {
+        max-height: 80vh;
+        height: 100%;
+        .gatsby-image-wrapper {
+            max-height: 80vh;
+            height: 100%;
+        }
+    }
 `
 
 const SliderContainer = styled.div`

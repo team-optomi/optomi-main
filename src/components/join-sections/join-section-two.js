@@ -227,6 +227,10 @@ const MainContent = styled.div`
             a {
                 color: #fff;
                 text-decoration: none;
+                transition-duration: .3s;
+                &:hover {
+                    color: #66b0e2;
+                }
             }
         }
     }
