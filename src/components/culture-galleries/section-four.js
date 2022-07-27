@@ -3,6 +3,9 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
+import StartQuote from '../../images/quote-start.png'
+import EndQuote from '../../images/quote-end.png'
+
 class SectionFour extends Component {
 
     constructor(props) {
@@ -95,10 +98,41 @@ const SectionFourMain = styled.section`
             p {
                 color: #fff;
                 font-family: "Helvetica Thin";
-                font-size: 20px;
+                font-size: 24px;
                 line-height: 1.3;
+                max-width: 580px;
                 width: 100%;
+                margin-left: auto;
+                margin-right: auto;
                 text-align: center;
+                position: relative;
+                span.fancy {
+                    font-family: BonVivant;
+                    color: rgb(41, 143, 194);
+                    font-weight: 100;
+                    font-size: 32px;
+                    line-height: 0;
+                    position: relative;
+                    bottom: 2px;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 18px;
+                    height: 13px;
+                    top: 0;
+                    left: -15px;
+                    background-image: url(${StartQuote});
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 18px;
+                    height: 13px;
+                    top: 0;
+                    right: -15px;
+                    background-image: url(${EndQuote});
+                }
             }
         }
         .main-lightbox {
