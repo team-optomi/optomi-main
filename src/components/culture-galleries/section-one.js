@@ -83,6 +83,9 @@ const SectionOneMain = styled.section`
             .gatsby-image-wrapper {
                 max-width: 500px;
                 width: 100%;
+                img {
+                    object-fit: contain !important;
+                }
             }
             > div:last-child {
                 width: 50%;
@@ -164,10 +167,32 @@ const SectionOneMain = styled.section`
             }
         }
     }
+    @media(max-width:1100px) {
+        > div.section-grid {
+            grid-template-rows: 1fr 1fr 1fr;
+            .section-content {
+                grid-area: 3 / 1 / 4 / 6;
+            }
+        }
+    }
+    @media(max-width:850px) {
+        padding-top: 0px;
+    }
     @media(max-width:767px) {
         > div {
             .main-lightbox {
-                padding: 100px 20px;
+                padding: 100px 20px !important;
+            }
+        }
+        > div.section-grid {
+            display: flex;
+            flex-wrap: wrap;
+            .section-content {
+                display: flex;
+                flex-wrap: wrap;
+                > div:last-child {
+                    width: 100%;
+                }
             }
         }
     }
@@ -200,11 +225,40 @@ const GalleryImage = styled.div`
         cursor: pointer;
         filter: grayscale(0);
     }
-    @media(max-width:767px) {
-        width: 50%;
+    @media(max-width:1100px) {
+        &#GalleryImage_0 {
+            grid-area: 1 / 1 / 2 / 3;
+        }
+        &#GalleryImage_1 {
+            grid-area: 1 / 3 / 2 / 5;
+        }
+        &#GalleryImage_2 {
+            grid-area: 2 / 1 / 3 / 4;
+        }
+        &#GalleryImage_3 {
+            grid-area: 1 / 5 / 2 / 6;
+        }
+        &#GalleryImage_4 {
+            grid-area: 2 / 4 / 3 / 6;
+        }
     }
-    @media(max-width:500px) {
-        width: 100%;
+    @media(max-width:767px) {
+        height: 200px;
+        &#GalleryImage_0 {
+            width: 50%;
+        }
+        &#GalleryImage_1 {
+            width: 50%;
+        }
+        &#GalleryImage_2 {
+            width: 50%;
+        }
+        &#GalleryImage_3 {
+            width: 50%;
+        }
+        &#GalleryImage_4 {
+            width: 100%;
+        }
     }
 `
 

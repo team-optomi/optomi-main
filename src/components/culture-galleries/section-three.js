@@ -47,8 +47,9 @@ class SectionThree extends Component {
                     })}
                     <div class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCustomPage.acf.cv2_s3_testimonial }} />
+                        <Img fluid={data.reviewLogo.childImageSharp.fixed} />
                     </div>
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail" onClick={() => this.handleClick(99)}>
                         <Img sizes={data.wordpressWpCustomPage.acf.cv2_s3_video_thumb.localFile.childImageSharp.sizes} alt={data.wordpressWpCustomPage.acf.cv2_s3_video_thumb.title} />
                     </div>
                     <div class="main-lightbox">
@@ -60,6 +61,9 @@ class SectionThree extends Component {
                             </LightboxImage>
                             )
                         })}
+                        <VideoLightbox className= {99 === this.state.activeImage ? "active-image" : "inactive-image"}>
+                            <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCustomPage.acf.cv2_s3_video }} />
+                        </VideoLightbox>
                     </div>
                 </div>
             </SectionThreeMain>
@@ -78,26 +82,42 @@ const SectionThreeMain = styled.section`
         transition-duration: .3s;
         .section-content {
             grid-area: 2 / 5 / 3 / 8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 30px;
+            padding-bottom: 130px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .gatsby-image-wrapper {
-                max-width: 500px;
+                max-width: 400px;
                 width: 100%;
-            }
-            > div:last-child {
-                width: 50%;
+                height: 47px;
+                margin: 0 auto;
+                img {
+                    object-fit: contain !important;
+                }
             }
             p {
                 color: #fff;
                 font-family: "Helvetica Thin";
-                font-size: 14px;
+                font-size: 20px;
                 line-height: 1.3;
+                width: 100%;
+                text-align: center;
             }
         }
         .video-thumbnail {
             grid-area: 1 / 1 / 3 / 3;
+            filter: grayscale(1);
+            transition-duration: .3s;
+            .gatsby-image-wrapper {
+                height: 100%;
+            }
+            &:hover {
+                filter: grayscale(0);
+                cursor: pointer;
+            }
         }
         .main-lightbox {
             position: fixed;
@@ -172,7 +192,20 @@ const SectionThreeMain = styled.section`
     @media(max-width:767px) {
         > div {
             .main-lightbox {
-                padding: 100px 20px;
+                padding: 100px 20px !important;
+            }
+        }
+        > div.section-grid {
+            display: flex;
+            flex-wrap: wrap;
+            .section-content {
+                width: 100%;
+                order: 5;
+            }
+            .video-thumbnail {
+                width: 50%;
+                height: 200px;
+                order: 4;
             }
         }
     }
@@ -200,10 +233,19 @@ const GalleryImage = styled.div`
         filter: grayscale(0);
     }
     @media(max-width:767px) {
-        width: 50%;
-    }
-    @media(max-width:500px) {
-        width: 100%;
+        height: 200px;
+        &#GalleryS3Image_0 {
+            width: 50%;
+            order: 1;
+        }
+        &#GalleryS3Image_1 {
+            width: 50%;
+            order: 2;
+        }
+        &#GalleryS3Image_2 {
+            width: 50%;
+            order: 3;
+        }
     }
 `
 
@@ -225,11 +267,47 @@ const LightboxImage = styled.div`
     }
 `
 
+const VideoLightbox = styled.div`
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    transition-duration: .3s;
+    .wp-video {
+        max-width: 1000px;
+        width: 100% !important;
+        background-color: #000;
+        video {
+            width: 100%;
+            height: 420px;
+        }
+    }
+    &.active-image {
+        display: block;
+        height: 100vh;
+        width: 1000px;
+        z-index: 1010;
+        visibility: visible;
+        opacity: 1;
+    }
+    @media(max-width:767px) {
+
+    }
+`
 
 export default props => (
     <StaticQuery
       query={graphql`
         query {
+            reviewLogo: file(relativePath: { eq: "optomi-review.png" }) {
+                childImageSharp {
+                  fixed(width: 600, height: 70) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
             wordpressWpCustomPage(wordpress_id: {eq: 2088}) {
                 acf {
                   cv2_s3_gallery {

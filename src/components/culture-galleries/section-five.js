@@ -47,8 +47,9 @@ class SectionFive extends Component {
                     })}
                     <div class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCustomPage.acf.cv2_s5_testimonial }} />
+                        <Img fluid={data.reviewLogo.childImageSharp.fixed} />
                     </div>
-                    <div class="section-video">
+                    <div class="section-video" onClick={() => this.handleClick(99)}>
                         <Img sizes={data.wordpressWpCustomPage.acf.cv2_s5_video_thumb.localFile.childImageSharp.sizes} alt={data.wordpressWpCustomPage.acf.cv2_s5_video_thumb.title} />
                     </div>
                     <div class="main-lightbox">
@@ -60,6 +61,9 @@ class SectionFive extends Component {
                             </LightboxImage>
                             )
                         })}
+                        <VideoLightbox className= {99 === this.state.activeImage ? "active-image" : "inactive-image"}>
+                            <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCustomPage.acf.cv2_s5_video }} />
+                        </VideoLightbox>
                     </div>
                 </div>
             </SectionFiveMain>
@@ -78,23 +82,38 @@ const SectionFiveMain = styled.section`
         transition-duration: .3s;
         .section-content {
             grid-area: 6 / 4 / 9 / 5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .gatsby-image-wrapper {
-                max-width: 500px;
+                max-width: 400px;
                 width: 100%;
+                height: 47px;
+                margin: 0 auto;
+                img {
+                    object-fit: contain !important;
+                }
             }
             p {
                 color: #fff;
                 font-family: "Helvetica Thin";
-                font-size: 14px;
+                font-size: 20px;
                 line-height: 1.3;
+                width: 100%;
+                text-align: center;
             }
         }
         .section-video {
             grid-area: 1 / 4 / 6 / 5;
+            filter: grayscale(1);
+            transition-duration: .3s;
+            &:hover {
+                filter: grayscale(0);
+                cursor: pointer;
+            }
             .gatsby-image-wrapper {
                 height: 100%;
             }
@@ -169,10 +188,34 @@ const SectionFiveMain = styled.section`
             }
         }
     }
+    @media(max-width:900px) {
+        > div.section-grid {
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            .section-content {
+                grid-area: 5 / 1 / 7 / 3
+            }
+            .section-video {
+                grid-area: 1 / 4 / 3 / 5;
+            }
+        }
+    }
     @media(max-width:767px) {
         > div {
             .main-lightbox {
-                padding: 100px 20px;
+                padding: 100px 20px !important;
+            }
+        }
+        > div.section-grid {
+            display: flex;
+            flex-wrap: wrap;
+            .section-content {
+                width: 100%;
+                order: 9;
+            }
+            .section-video {
+                height: 250px;
+                width: 50%;
+                order: 2;
             }
         }
     }
@@ -211,11 +254,59 @@ const GalleryImage = styled.div`
         cursor: pointer;
         filter: grayscale(0);
     }
-    @media(max-width:767px) {
-        width: 50%;
+    @media(max-width:900px) {
+        &#GalleryS5Image_0 {
+            grid-area: 1 / 1 / 3 / 3;
+        }
+        &#GalleryS5Image_1 {
+            grid-area: 1 / 3 / 4 / 4;
+        }
+        &#GalleryS5Image_2 {
+            grid-area: 3 / 1 / 5 / 3;
+        }
+        &#GalleryS5Image_3 {
+            grid-area: 4 / 3 / 6 / 4;
+        }
+        &#GalleryS5Image_4 {
+            grid-area: 5 / 4 / 7 / 5;
+        }
+        &#GalleryS5Image_5 {
+            grid-area: 3 / 4 / 5 / 5;
+        }
+        &#GalleryS5Image_6 {
+            grid-area: 6 / 3 / 7 / 4;
+        }
     }
-    @media(max-width:500px) {
-        width: 100%;
+    @media(max-width:767px) {
+        height: 250px;
+        &#GalleryS5Image_0 {
+            width: 50%;
+            order: 1;
+        }
+        &#GalleryS5Image_1 {
+            width: 50%;
+            order: 3;
+        }
+        &#GalleryS5Image_2 {
+            width: 50%;
+            order: 4;
+        }
+        &#GalleryS5Image_3 {
+            width: 50%;
+            order: 5;
+        }
+        &#GalleryS5Image_4 {
+            width: 50%;
+            order: 6;
+        }
+        &#GalleryS5Image_5 {
+            width: 50%;
+            order: 7;
+        }
+        &#GalleryS5Image_6 {
+            width: 50%;
+            order: 8;
+        }
     }
 `
 
@@ -237,11 +328,44 @@ const LightboxImage = styled.div`
     }
 `
 
+const VideoLightbox = styled.div`
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    transition-duration: .3s;
+    .wp-video {
+        max-width: 1000px;
+        width: 100% !important;
+        background-color: #000;
+        video {
+            width: 100%;
+            height: 420px;
+        }
+    }
+    &.active-image {
+        display: block;
+        height: 100vh;
+        width: 1000px;
+        z-index: 1010;
+        visibility: visible;
+        opacity: 1;
+    }
+`
 
 export default props => (
     <StaticQuery
       query={graphql`
         query {
+            reviewLogo: file(relativePath: { eq: "optomi-review.png" }) {
+                childImageSharp {
+                  fixed(width: 600, height: 70) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
             wordpressWpCustomPage(wordpress_id: {eq: 2088}) {
                 acf {
                   cv2_s5_gallery {

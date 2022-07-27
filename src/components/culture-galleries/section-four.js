@@ -47,6 +47,7 @@ class SectionFour extends Component {
                     })}
                     <div class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCustomPage.acf.cv2_s4_testimonial }} />
+                        <Img fluid={data.reviewLogo.childImageSharp.fixed} />
                     </div>
                     <div class="main-lightbox">
                         <button class="close-lightbox" onClick={this.closeLightbox}/>
@@ -76,22 +77,28 @@ const SectionFourMain = styled.section`
         transition-duration: .3s;
         .section-content {
             grid-area: 3 / 1 / 4 / 5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .gatsby-image-wrapper {
-                max-width: 500px;
+                max-width: 400px;
                 width: 100%;
-            }
-            > div:last-child {
-                width: 50%;
+                height: 47px;
+                margin: 0 auto;
+                img {
+                    object-fit: contain !important;
+                }
             }
             p {
                 color: #fff;
                 font-family: "Helvetica Thin";
-                font-size: 14px;
+                font-size: 20px;
                 line-height: 1.3;
+                width: 100%;
+                text-align: center;
             }
         }
         .main-lightbox {
@@ -167,7 +174,14 @@ const SectionFourMain = styled.section`
     @media(max-width:767px) {
         > div {
             .main-lightbox {
-                padding: 100px 20px;
+                padding: 100px 20px !important;
+            }
+        }
+        > div.section-grid {
+            display: flex;
+            flex-wrap: wrap;
+            .section-content {
+                width: 100%;
             }
         }
     }
@@ -200,10 +214,21 @@ const GalleryImage = styled.div`
         filter: grayscale(0);
     }
     @media(max-width:767px) {
-        width: 50%;
-    }
-    @media(max-width:500px) {
-        width: 100%;
+        height: 200px;
+        &#GalleryS4Image_0 {
+            width: 50%;
+        }
+        &#GalleryS4Image_1 {
+            width: 50%;
+            padding-top: 0px;
+        }
+        &#GalleryS4Image_2 {
+            width: 50%;
+            padding-top: 0px;
+        }
+        &#GalleryS4Image_3 {
+            width: 50%;
+        }
     }
 `
 
@@ -230,6 +255,13 @@ export default props => (
     <StaticQuery
       query={graphql`
         query {
+            reviewLogo: file(relativePath: { eq: "optomi-review.png" }) {
+                childImageSharp {
+                  fixed(width: 600, height: 70) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
             wordpressWpCustomPage(wordpress_id: {eq: 2088}) {
                 acf {
                   cv2_s4_gallery {

@@ -12,6 +12,7 @@ import SectionThree from "../../components/culture-galleries/section-three"
 import SectionFour from "../../components/culture-galleries/section-four"
 import SectionFive from "../../components/culture-galleries/section-five"
 import SectionSix from "../../components/culture-galleries/section-six"
+import SectionSeven from "../../components/culture-galleries/section-seven"
 
 const OurCulturePageV2 = () => {
 
@@ -81,6 +82,7 @@ const OurCulturePageV2 = () => {
                 <SectionFour />
                 <SectionFive />
                 <SectionSix />
+                <SectionSeven />
 
             </Layout>
             
@@ -94,6 +96,10 @@ const PageBackground = styled.div`
     top: 0;
     left: 0;
     width: 100%;
+    height: calc(100% - 493px);
+    .gatsby-image-wrapper {
+        height: 100%;
+    }
 `
 
 const PageTitle = styled.header`

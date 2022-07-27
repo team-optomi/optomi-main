@@ -47,6 +47,7 @@ class SectionSix extends Component {
                     })}
                     <div class="section-content">
                         <div dangerouslySetInnerHTML={{ __html: data.wordpressWpCustomPage.acf.cv2_s6_testimonial }} />
+                        <Img fluid={data.reviewLogo.childImageSharp.fixed} />
                     </div>
                     <div class="main-lightbox">
                         <button class="close-lightbox" onClick={this.closeLightbox}/>
@@ -75,19 +76,28 @@ const SectionSixMain = styled.section`
         transition-duration: .3s;
         .section-content {
             grid-area: 1 / 1 / 3 / 4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .gatsby-image-wrapper {
-                max-width: 500px;
+                max-width: 400px;
                 width: 100%;
+                height: 47px;
+                margin: 0 auto;
+                img {
+                    object-fit: contain !important;
+                }
             }
             p {
                 color: #fff;
                 font-family: "Helvetica Thin";
-                font-size: 14px;
+                font-size: 20px;
                 line-height: 1.3;
+                width: 100%;
+                text-align: center;
             }
         }
         .main-lightbox {
@@ -160,10 +170,26 @@ const SectionSixMain = styled.section`
             }
         }
     }
+    @media(max-width:900px) {
+        > div.section-grid {
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            .section-content {
+                grid-area: 2 / 4 / 3 / 8;
+            }
+        }
+    }
     @media(max-width:767px) {
         > div {
             .main-lightbox {
-                padding: 100px 20px;
+                padding: 100px 20px !important;
+            }
+        }
+        > div.section-grid {
+            display: flex;
+            flex-wrap: wrap;
+            .section-content {
+                width: 100%;
+                order: 7;
             }
         }
     }
@@ -214,11 +240,87 @@ const GalleryImage = styled.div`
         cursor: pointer;
         filter: grayscale(0);
     }
-    @media(max-width:767px) {
-        width: 50%;
+    @media(max-width:900px) {
+        &#GalleryS6Image_0 {
+            grid-area: 1 / 1 / 2 / 4;
+        }
+        &#GalleryS6Image_1 {
+            grid-area: 1 / 6 / 2 / 8;
+        }
+        &#GalleryS6Image_2 {
+            grid-area: 2 / 1 / 3 / 4;
+        }
+        &#GalleryS6Image_3 {
+            grid-area: 1 / 4 / 2 / 6;
+        }
+        &#GalleryS6Image_4 {
+            grid-area: 3 / 1 / 4 / 5;
+        }
+        &#GalleryS6Image_5 {
+            grid-area: 3 / 5 / 4 / 8;
+        }
+        &#GalleryS6Image_6 {
+            grid-area: 4 / 1 / 5 / 3;
+        }
+        &#GalleryS6Image_7 {
+            grid-area: 4 / 6 / 5 / 8;
+        }
+        &#GalleryS6Image_8 {
+            grid-area: 4 / 3 / 5 / 6;
+        }
+        &#GalleryS6Image_9 {
+            grid-area: 5 / 1 / 6 / 4;
+        }
+        &#GalleryS6Image_10 {
+            grid-area: 5 / 4 / 6 / 8;
+        }
     }
-    @media(max-width:500px) {
-        width: 100%;
+    @media(max-width:767px) {
+        height: 200px;
+        &#GalleryS6Image_0 {
+            width: 50%;
+            order: 1;
+        }
+        &#GalleryS6Image_1 {
+            width: 50%;
+            order: 2;
+        }
+        &#GalleryS6Image_2 {
+            width: 50%;
+            order: 3;
+        }
+        &#GalleryS6Image_3 {
+            width: 50%;
+            order: 4;
+        }
+        &#GalleryS6Image_4 {
+            width: 50%;
+            order: 5;
+        }
+        &#GalleryS6Image_5 {
+            width: 50%;
+            order: 6;
+        }
+        &#GalleryS6Image_6 {
+            width: 50%;
+            order: 8;
+        }
+        &#GalleryS6Image_7 {
+            width: 50%;
+            order: 9;
+        }
+        &#GalleryS6Image_8 {
+            width: 50%;
+            order: 10;
+        }
+        &#GalleryS6Image_9 {
+            width: 50%;
+            order: 11;
+        }
+        &#GalleryS6Image_10 {
+            width: 100%;
+            order: 12;
+        }
     }
 `
 
@@ -245,6 +347,13 @@ export default props => (
     <StaticQuery
       query={graphql`
         query {
+            reviewLogo: file(relativePath: { eq: "optomi-review.png" }) {
+                childImageSharp {
+                  fixed(width: 600, height: 70) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
             wordpressWpCustomPage(wordpress_id: {eq: 2088}) {
                 acf {
                   cv2_s6_gallery {
