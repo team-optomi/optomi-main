@@ -90,8 +90,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `optomi`,
-        short_name: `optomi`,
+        name: `Optomi`,
+        short_name: `Optomi`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#61b1e8`,
