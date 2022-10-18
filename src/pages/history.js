@@ -43,6 +43,7 @@ const HistoryPage = () => {
             description={data.pageData.acf.meta_description}
             image={data.pageData.featured_media.localFile.childImageSharp.sizes}
             />
+            <div style={{backgroundColor: '#fff'}}>
             <TimelineHero/>
             <Section2012/>
             <Section2014/>
@@ -54,6 +55,7 @@ const HistoryPage = () => {
             <Section2020/>
             <Section2021/>
             <Section2022/>
+            </div>
         </Layout>
     )
 }

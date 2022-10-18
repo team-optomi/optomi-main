@@ -63,7 +63,7 @@ const Section2017 = () => {
                         title
                         localFile {
                             childImageSharp {
-                                sizes(maxWidth: 71) {
+                                sizes(maxWidth: 800) {
                                     ...GatsbyImageSharpSizes_noBase64
                                 }
                             }
@@ -133,7 +133,7 @@ const Section2017 = () => {
                     data-sal-delay="300"
                     data-sal-easing="ease"
                     class="bottom-content-main">
-                        <p style={{textAlign: 'center'}}>Need Logo</p>
+                            <Img sizes={data.sectionData.acf.timeline_2017_bottom_logo.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2017_bottom_logo.title}/>
                         <div class="event">
                             <h3>{data.sectionData.acf.timeline_2017_bottom_event}</h3>
                         </div>
@@ -156,6 +156,9 @@ const Section2017 = () => {
 const MainSection = styled.section`
     background-color: #fff;
     padding-top: 80px;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     .top-row-title {
         h2 {
             font-family: "Helvetica Thin";
@@ -228,6 +231,12 @@ const MainSection = styled.section`
             align-items: center;
             .bottom-content-main {
                 width: 50%;
+                .gatsby-image-wrapper {
+                    max-width: 500px;
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
             }
             .event {
                 background-color: #00385c;

@@ -128,6 +128,9 @@ const Section2020 = () => {
 
 const MainSection = styled.section`
     background-color: #fff;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     .row-one {
         display: flex;
         align-items: flex-start;

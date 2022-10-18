@@ -279,6 +279,9 @@ const Section2021 = () => {
 
 const MainSection = styled.section`
     background-color: #fff;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     .top-row {
         h2 {
             font-family: "Helvetica Thin";

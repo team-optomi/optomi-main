@@ -247,6 +247,9 @@ const Section2022 = () => {
 
 const MainSection = styled.section`
     background-color: #fff;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     .row-one {
         position: relative;
         z-index: 2;

@@ -90,6 +90,9 @@ const Section2016 = () => {
 const MainSection = styled.section`
     background-color: #fff;
     padding-top: 80px;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     .top-row {
         h2 {
             font-family: "Helvetica Thin";

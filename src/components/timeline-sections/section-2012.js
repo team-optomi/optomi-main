@@ -137,6 +137,9 @@ const Section2012 = () => {
 
 const MainSection = styled.section`
     background-color: #fff;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     .row-one {
         position: relative;
         .row-bg {
