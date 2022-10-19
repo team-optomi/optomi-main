@@ -9,6 +9,38 @@ const Section2017 = () => {
         query {
             sectionData: wordpressWpCustomPage(wordpress_id: {eq: 2221}) {
                 acf {
+                    timeline_2018_top_event_left
+                    timeline_2018_top_event_right
+                    timeline_2018_top_logo {
+                        title
+                        localFile {
+                            childImageSharp {
+                                sizes(maxWidth: 604) {
+                                    ...GatsbyImageSharpSizes_noBase64
+                                }
+                            }
+                        }
+                    }
+                    timeline_2018_top_state {
+                        title
+                        localFile {
+                            childImageSharp {
+                                sizes(maxWidth: 371) {
+                                    ...GatsbyImageSharpSizes_noBase64
+                                }
+                            }
+                        }
+                    }
+                    timeline_2018_top_background {
+                        title
+                        localFile {
+                            childImageSharp {
+                                sizes(maxWidth: 1920) {
+                                    ...GatsbyImageSharpSizes_noBase64
+                                }
+                            }
+                        }
+                    }
                     timeline_2017_top_background {
                         title
                         localFile {
@@ -124,18 +156,31 @@ const Section2017 = () => {
                 data-sal-delay="300"
                 data-sal-easing="ease"
                 class="row-bg">
-                    <Img sizes={data.sectionData.acf.timeline_2017_bottom_background.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2017_bottom_background.title}/>
+                    <Img sizes={data.sectionData.acf.timeline_2018_top_background.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2018_top_background.title}/>
                 </div>
-                <div class="bottom-content">
+                <div class="top-content">
+                    <div class="left-content">
+                        <div 
+                        data-sal="slide-right"
+                        data-sal-duration="1000"
+                        data-sal-delay="600"
+                        data-sal-easing="ease"
+                        class="left-content-main">
+                            <Img sizes={data.sectionData.acf.timeline_2018_top_logo.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2018_top_logo.title}/>
+                            <div class="event">
+                                <h3>{data.sectionData.acf.timeline_2018_top_event_left}</h3>
+                            </div>
+                        </div>
+                    </div>
                     <div 
-                    data-sal="slide-right"
+                    data-sal="slide-left"
                     data-sal-duration="1000"
-                    data-sal-delay="300"
+                    data-sal-delay="900"
                     data-sal-easing="ease"
-                    class="bottom-content-main">
-                            <Img sizes={data.sectionData.acf.timeline_2017_bottom_logo.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2017_bottom_logo.title}/>
+                    class="right-content">
+                        <Img sizes={data.sectionData.acf.timeline_2018_top_state.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2018_top_state.title}/>
                         <div class="event">
-                            <h3>{data.sectionData.acf.timeline_2017_bottom_event}</h3>
+                            <h3>{data.sectionData.acf.timeline_2018_top_event_right}</h3>
                         </div>
                     </div>
                 </div>
@@ -216,11 +261,20 @@ const MainSection = styled.section`
     }
     .bottom-row {
         position: relative;
+        margin-top: -100px;
+        h2 {
+            font-family: "Helvetica Thin";
+            color: #00385c;
+            font-size: 180px;
+            text-align: right;
+            font-weight: 100;
+            text-shadow: 15px 15px 12px rgba(0,0,0,.15);
+        }
         .row-bg {
             position: relative;
             z-index: 1;
         }
-        .bottom-content {
+        .top-content {
             position: absolute;
             top: 0;
             left: 0;
@@ -228,31 +282,58 @@ const MainSection = styled.section`
             height: 100%;
             z-index: 2;
             display: flex;
-            align-items: center;
-            .bottom-content-main {
+            .left-content {
                 width: 50%;
+                margin-top: 150px;
                 .gatsby-image-wrapper {
-                    max-width: 500px;
+                    max-width: 400px;
                     width: 100%;
-                    margin: 0 auto;
-                    margin-bottom: 20px;
+                    margin-left: auto;
+                    margin-right: 80px;
+                }
+                .event {
+                    background-color: #c01e2e;
+                    padding: 10px 20px;
+                    padding-right: 60px;
+                    box-shadow: 20px 20px 20px rgba(0,0,0,.5);
+                    width: 100%;
+                    margin-right: auto;
+                    h3 {
+                        font-family: "Helvetica Thin";
+                        font-weight: 100;
+                        letter-spacing: 2px;
+                        color: #fff ;
+                        line-height: 1.3;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        text-align: right;
+                    }
                 }
             }
-            .event {
-                background-color: #00385c;
-                padding: 10px 20px;
-                box-shadow: 20px 20px 20px rgba(0,0,0,.5);
-                width: 85%;
-                margin-right: auto;
-                h3 {
-                    font-family: "Helvetica Thin";
-                    font-weight: 100;
-                    letter-spacing: 2px;
-                    color: #fff ;
-                    line-height: 1.3;
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    text-align: right;
+            .right-content {
+                width: 50%;
+                padding-left: 10%;
+                .gatsby-image-wrapper {
+                    max-width: 250px;
+                    margin-top: -50px;
+                }
+                .event {
+                    background-color: #c01e2e;
+                    padding: 10px 50px;
+                    box-shadow: 20px 20px 20px rgba(0,0,0,.5);
+                    width: 85%;
+                    margin-left: auto;
+                    margin-top: 100px;
+                    h3 {
+                        font-family: "Helvetica Thin";
+                        font-weight: 100;
+                        letter-spacing: 2px;
+                        color: #fff ;
+                        line-height: 1.3;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        text-align: center;
+                    }
                 }
             }
         }

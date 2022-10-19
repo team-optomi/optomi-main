@@ -14,6 +14,7 @@ import Section2019 from "../components/timeline-sections/section-2019"
 import Section2020 from "../components/timeline-sections/section-2020"
 import Section2021 from "../components/timeline-sections/section-2021"
 import Section2022 from "../components/timeline-sections/section-2022"
+import Section2023 from "../components/timeline-sections/section-2023"
 
 const HistoryPage = () => {
 
@@ -55,6 +56,7 @@ const HistoryPage = () => {
             <Section2020/>
             <Section2021/>
             <Section2022/>
+            <Section2023/>
             </div>
         </Layout>
     )

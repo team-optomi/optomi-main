@@ -20,6 +20,16 @@ const Section2022 = () => {
                             }
                         }
                     }
+                    timeline_2022_row_one_state {
+                        title
+                        localFile {
+                            childImageSharp {
+                                sizes(maxWidth: 411) {
+                                    ...GatsbyImageSharpSizes_noBase64
+                                }
+                            }
+                        }
+                    }
                     timeline_2022_row_one_award_set {
                         title
                         localFile {
@@ -137,6 +147,7 @@ const Section2022 = () => {
                         data-sal-easing="ease"
                         >
                             <Img sizes={data.sectionData.acf.timeline_2022_row_one_award.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2022_row_one_award.title}/>
+                            <Img sizes={data.sectionData.acf.timeline_2022_row_one_state.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2022_row_one_state.title}/>
                             <div class="event">
                                 <h3>{data.sectionData.acf.timeline_2022_row_one_event}</h3>
                             </div>
@@ -232,14 +243,6 @@ const Section2022 = () => {
                     </div>
                 </div>
             </div>
-            <div 
-            data-sal="fade"
-            data-sal-duration="1000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
-            class="border-bottom">
-                <Img sizes={data.sectionData.acf.timeline_2022_border_bottom.localFile.childImageSharp.sizes} alt={data.sectionData.acf.timeline_2022_border_bottom.title}/>
-            </div>
         </MainSection>
     )
 
@@ -267,23 +270,32 @@ const MainSection = styled.section`
                     font-weight: 100;
                     text-shadow: 15px 15px 12px rgba(0,0,0,.15);
                     width: 100%;
-                    padding-right: 15%;
+                    padding-right: 20%;
                 }
-                .gatsby-image-wrapper {
+                .gatsby-image-wrapper:nth-child(1) {
                     max-width: 200px;
                     width: 100%;
                     margin-left: auto;
                     margin-right: -60px;
+                    margin-top: -300px;
+                }
+                .gatsby-image-wrapper:nth-child(2) {
+                    position: absolute !important;
+                    max-width: 300px;
+                    width: 100%;
+                    right: 0;
+                    margin-top: 120px;
                 }
                 .event {
                     background-color: #00385c;
                     padding: 10px 50px;
                     box-shadow: 20px 20px 20px rgba(0,0,0,.5);
-                    width: 90%;
+                    width: 75%;
                     margin-right: auto;
+                    margin-top: 280px;
                     position: relative;
                     text-align: center;
-                    padding-left: 200px;
+                    padding-left: 100px;
                     padding-right: 80px;
                     h3 {
                         font-family: "Helvetica Thin";
