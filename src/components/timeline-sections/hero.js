@@ -65,6 +65,9 @@ const TimelineHero = () => {
 const HeroSection = styled.section`
     background-color: #fff;
     padding: 50px 20px;
+    @media(max-width:767px) {
+        padding-top: 120px;
+    }
     .flex-row {
         max-width: 1200px;
         width: 100%;

@@ -115,14 +115,28 @@ const MainSection = styled.section`
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    @media(max-width:767px) {
+        padding-top: 0;
+    }
     .row-one {
         display: flex;
         align-items: center;
+        @media(max-width:767px) {
+            flex-wrap: wrap;
+        }
         .left-content {
             width: 40%;
             position: relative;
             padding-right: 50px;
             z-index: 2;
+            @media(max-width:1000px) {
+                width: 50%;
+            }
+            @media(max-width:767px) {
+                width: 100%;
+                padding-right: 0;
+                padding: 20px;
+            }
             .left-year {
                 h2 {
                     font-family: "Helvetica Thin";
@@ -131,6 +145,16 @@ const MainSection = styled.section`
                     text-align: right;
                     font-weight: 100;
                     text-shadow: 15px 15px 12px rgba(0,0,0,.15);
+                    @media(max-width:1200px) {
+                        font-size: 150px;
+                    }
+                    @media(max-width:1000px) {
+                        font-size: 120px;
+                    }
+                    @media(max-width:767px) {
+                        font-size: 72px;
+                        text-align: center;
+                    }
                 }
             }
             .left-award {
@@ -147,6 +171,13 @@ const MainSection = styled.section`
             width: 60%;
             position: relative;
             z-index: 1;
+            @media(max-width:1000px) {
+                margin-left: -10%;
+            }
+            @media(max-width:767px) {
+                width: 100%;
+                margin-left: 0;
+            }
             .right-bg {
                 position: relative;
                 z-index: 2;
@@ -163,9 +194,20 @@ const MainSection = styled.section`
                 justify-content: space-between;
                 align-items: flex-start;
                 .right-award {
-                    width: 254px;
+                    max-width: 254px;
+                    width: 100%;
                     margin-top: -40px;
                     margin-left: 10%;
+                    @media(max-width:1000px) {
+                        margin-top: auto;
+                        margin-left: auto;
+                        margin-right: 10%;
+                        margin-bottom: -120px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 120px;
+                        margin-bottom: -40px;
+                    }
                 }
             }
         }

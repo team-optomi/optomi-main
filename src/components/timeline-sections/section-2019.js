@@ -147,15 +147,33 @@ const MainSection = styled.section`
             font-weight: 100;
             text-shadow: 15px 15px 12px rgba(0,0,0,.15);
             padding-left: 10%;
+            @media(max-width:1200px) {
+                font-size: 150px;
+            }
+            @media(max-width:1000px) {
+                font-size: 120px;
+            }
+            @media(max-width:767px) {
+                font-size: 72px;
+                padding-left: 0;
+            }
         }
     }
     .row-one {
         display: flex;
         align-items: flex-start;
+        @media(max-width:767px) {
+            flex-wrap: wrap;
+        }
         .left-content {
             width: 65%;
             position: relative;
             padding-top: 100px;
+            @media(max-width:767px) {
+                width: 100%;
+                order: 2;
+                padding-top: 0px;
+            }
             .left-bg {
                 position: relative;
                 z-index: 1;
@@ -170,12 +188,20 @@ const MainSection = styled.section`
                     max-width: 200px;
                     width: 100%;
                 }
+                @media(max-width:767px) {
+                    top: auto;
+                    bottom: -20px;
+                }
             }
         }
         .right-content {
             width: 35%;
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                width: 100%;
+                order: 1;
+            }
             .right-bg {
                 position: relative;
                 z-index: 2;
@@ -192,9 +218,13 @@ const MainSection = styled.section`
                 justify-content: space-between;
                 align-items: flex-start;
                 .right-state {
-                    width: 360px;
+                    max-width: 360px;
+                    width: 100%;
                     margin-left: auto;
                     margin-top: 100px;
+                    @media(max-width:1000px) {
+                        max-width: 200px;
+                    }
                 }
                 .event {
                     background-color: #c01e2e;
@@ -204,6 +234,14 @@ const MainSection = styled.section`
                     margin-left: auto;
                     margin-top: -140px;
                     position: relative;
+                    @media(max-width:1000px) {
+                        width: 100%;
+                        padding: 10px 20px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 400px;
+                        margin: 0 auto;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -213,6 +251,9 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: center;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
                     }
                 }
             }

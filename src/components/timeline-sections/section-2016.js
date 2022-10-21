@@ -93,6 +93,9 @@ const MainSection = styled.section`
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    @media(max-width:1000px) {
+        padding-top: 0;
+    }
     .top-row {
         h2 {
             font-family: "Helvetica Thin";
@@ -102,6 +105,15 @@ const MainSection = styled.section`
             font-weight: 100;
             text-shadow: 15px 15px 12px rgba(0,0,0,.15);
             padding-right: 15%;
+            @media(max-width:1200px) {
+                font-size: 150px;
+            }
+            @media(max-width:1000px) {
+                font-size: 120px;
+            }
+            @media(max-width:767px) {
+                font-size: 72px;
+            }
         }
     }
     .row-one {
@@ -123,11 +135,22 @@ const MainSection = styled.section`
                 width: 100%;
                 margin-top: -200px;
                 margin-left: 10%;
+                @media(max-width:1000px) {
+                    max-width: 200px;
+                    margin-top: -60px;
+                }
+                @media(max-width:767px) {
+                    max-width: 100px;
+                    margin-top: -20px;
+                }
             }
         }
     }
     .border-bottom {
         padding-top: 80px;
+        @media(max-width:767px) {
+            padding-top: 40px;
+        }
     }
 `
 

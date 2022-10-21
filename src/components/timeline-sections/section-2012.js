@@ -145,6 +145,16 @@ const MainSection = styled.section`
         .row-bg {
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
         }
         .row-content {
             position: absolute;
@@ -156,13 +166,30 @@ const MainSection = styled.section`
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            @media(max-width:767px) {
+                position: relative;
+                flex-direction: column;
+            }
             .left-content {
                 width: 50%;
+                @media(max-width:767px) {
+                    width: 100%;
+                    padding: 20px;
+                    order: 2;
+                }
                 .event {
                     background-color: #00385c;
                     padding: 10px 20px;
                     box-shadow: 20px 20px 20px rgba(0,0,0,.5);
                     width: 80%;
+                    @media(max-width:1000px) {
+                        width: 95%;
+                    }
+                    @media(max-width:767px) {
+                        width: 100%;
+                        max-width: 400px;
+                        margin: 0 auto;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -173,15 +200,31 @@ const MainSection = styled.section`
                         margin-bottom: 0;
                         margin-right: 100px;
                         text-align: right;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
+                        @media(max-width:767px) {
+                            text-align: center;
+                            margin-right: 0;
+                            font-size: 18px;
+                        }
                     }
                 }
             }
             .right-content {
                 width: 50%;
+                @media(max-width:767px) {
+                    width: 100%;
+                    padding: 20px;
+                    order: 1;
+                }
                 .gatsby-image-wrapper {
                     max-width: 376px;
                     margin-left: auto;
                     margin-right: auto;
+                    @media(max-width:1000px) {
+                        max-width: 200px;
+                    }
                 }
                 h2 {
                     font-family: "Helvetica Thin";
@@ -190,6 +233,15 @@ const MainSection = styled.section`
                     text-align: center;
                     font-weight: 100;
                     text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+                    @media(max-width:1200px) {
+                        font-size: 150px;
+                    }
+                    @media(max-width:1000px) {
+                        font-size: 120px;
+                    }
+                    @media(max-width:767px) {
+                        font-size: 72px;
+                    }
                 }
             }
         }
@@ -199,6 +251,16 @@ const MainSection = styled.section`
         .row-bg {
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
         }
         .row-content {
             position: absolute;
@@ -210,8 +272,16 @@ const MainSection = styled.section`
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            @media(max-width:767px) {
+                position: relative;
+                flex-direction: column;
+            }
             .right-content {
                 width: 50%;
+                @media(max-width:767px) {
+                    width: 100%;
+                    padding: 20px;
+                }
                 .gatsby-image-wrapper {
                     max-width: 504px;
                     margin-left: auto;
@@ -224,6 +294,14 @@ const MainSection = styled.section`
                     box-shadow: 20px 20px 20px rgba(0,0,0,.5);
                     width: 75%;
                     margin-left: auto;
+                    @media(max-width:1000px) {
+                        width: 95%;
+                    }
+                    @media(max-width:767px) {
+                        width: 100%;
+                        max-width: 400px;
+                        margin: 0 auto;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -234,6 +312,14 @@ const MainSection = styled.section`
                         margin-bottom: 0;
                         margin-left: 20px;
                         text-align: left;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
+                        @media(max-width:767px) {
+                            font-size: 18px;
+                            text-align: center;
+                            margin-left: 0;
+                        }
                     }
                 }
             }

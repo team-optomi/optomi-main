@@ -204,6 +204,9 @@ const MainSection = styled.section`
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    @media(max-width:1000px) {
+        padding-top: 0;
+    }
     .top-row-title {
         h2 {
             font-family: "Helvetica Thin";
@@ -213,6 +216,19 @@ const MainSection = styled.section`
             font-weight: 100;
             text-shadow: 15px 15px 12px rgba(0,0,0,.15);
             padding-right: 15%;
+            @media(max-width:1200px) {
+                font-size: 150px;
+                margin-bottom: 80px;
+            }
+            @media(max-width:1000px) {
+                font-size: 120px;
+                text-align: center;
+                padding-right: 0;
+            }
+            @media(max-width:767px) {
+                font-size: 72px;
+                margin-bottom: 0;
+            }
         }
     }
     .top-row {
@@ -220,6 +236,16 @@ const MainSection = styled.section`
         .row-bg {
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
         }
         .top-content {
             position: absolute;
@@ -228,16 +254,39 @@ const MainSection = styled.section`
             width: 100%;
             height: 100%;
             z-index: 2;
+            @media(max-width:1000px) {
+                top: -35px;
+            }
+            @media(max-width:767px) {
+                position: relative;
+                top: 0;
+                padding: 20px;
+            }
             .left-awards {
                 padding-left: 80px;
                 display: flex;
                 align-items: flex-start;
+                @media(max-width:1000px) {
+                    width: 100%;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    justify-content: center;
+                }
+                @media(max-width:767px) {
+                    padding-left: 0;
+                    padding-right: 0;
+                    flex-wrap: wrap;
+                    align-items: center;
+                }
                 .gatsby-image-wrapper:nth-child(1) {
                     max-width: 180px;
                     width: 100%;
                     margin: 0 25px;
                     img {
                         object-fit: contain !important;
+                    }
+                    @media(max-width:1000px) {
+                        max-width: 100px;
                     }
                 }
                 .gatsby-image-wrapper:nth-child(2) {
@@ -247,6 +296,9 @@ const MainSection = styled.section`
                     img {
                         object-fit: contain !important;
                     }
+                    @media(max-width:1000px) {
+                        max-width: 100px;
+                    }
                 }
                 .gatsby-image-wrapper:nth-child(3) {
                     max-width: 200px;
@@ -255,6 +307,9 @@ const MainSection = styled.section`
                     img {
                         object-fit: contain !important;
                     }
+                    @media(max-width:1000px) {
+                        max-width: 100px;
+                    }
                 }
             }
         }
@@ -262,6 +317,9 @@ const MainSection = styled.section`
     .bottom-row {
         position: relative;
         margin-top: -100px;
+        @media(max-width:767px) {
+            margin-top: 0;
+        }
         h2 {
             font-family: "Helvetica Thin";
             color: #00385c;
@@ -269,10 +327,23 @@ const MainSection = styled.section`
             text-align: right;
             font-weight: 100;
             text-shadow: 15px 15px 12px rgba(0,0,0,.15);
+            @media(max-width:1200px) {
+                font-size: 150px;
+            }
         }
         .row-bg {
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
         }
         .top-content {
             position: absolute;
@@ -282,14 +353,30 @@ const MainSection = styled.section`
             height: 100%;
             z-index: 2;
             display: flex;
+            @media(max-width:767px) {
+                position: relative;
+                padding: 20px;
+                flex-wrap: wrap;
+            }
             .left-content {
                 width: 50%;
                 margin-top: 150px;
+                @media(max-width:767px) {
+                    width: 100%;
+                    margin-top: 0;
+                }
                 .gatsby-image-wrapper {
                     max-width: 400px;
                     width: 100%;
                     margin-left: auto;
                     margin-right: 80px;
+                    @media(max-width:1000px) {
+                        max-width: 250px;
+                    }
+                    @media(max-width:767px) {
+                        margin: 0 auto;
+                        margin-bottom: 20px;
+                    }
                 }
                 .event {
                     background-color: #c01e2e;
@@ -298,6 +385,10 @@ const MainSection = styled.section`
                     box-shadow: 20px 20px 20px rgba(0,0,0,.5);
                     width: 100%;
                     margin-right: auto;
+                    @media(max-width:767px) {
+                        max-width: 400px;
+                        margin-left: auto;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -307,15 +398,34 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: right;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
+                        @media(max-width:767px) {
+                            font-size: 18px;
+                        }
                     }
                 }
             }
             .right-content {
                 width: 50%;
                 padding-left: 10%;
+                @media(max-width:767px) {
+                    width: 100%;
+                    padding-left: 0;
+                }
                 .gatsby-image-wrapper {
                     max-width: 250px;
                     margin-top: -50px;
+                    @media(max-width:1000px) {
+                        max-width: 160px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 120px;
+                        margin-top: 20px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
                 }
                 .event {
                     background-color: #c01e2e;
@@ -324,6 +434,13 @@ const MainSection = styled.section`
                     width: 85%;
                     margin-left: auto;
                     margin-top: 100px;
+                    @media(max-width:767px) {
+                        max-width: 400px;
+                        width: 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 20px;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -333,6 +450,9 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: center;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
                     }
                 }
             }

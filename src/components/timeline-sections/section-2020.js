@@ -134,12 +134,20 @@ const MainSection = styled.section`
     .row-one {
         display: flex;
         align-items: flex-start;
+        @media(max-width:767px) {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
         .left-content {
             width: 50%;
             position: relative;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            @media(max-width:767px) {
+                width: 100%;
+            }
             h2 {
                 font-family: "Helvetica Thin";
                 color: #00385c;
@@ -148,16 +156,33 @@ const MainSection = styled.section`
                 font-weight: 100;
                 text-shadow: 15px 15px 12px rgba(0,0,0,.15);
                 width: 100%;
+                @media(max-width:1200px) {
+                    font-size: 150px;
+                }
+                @media(max-width:1000px) {
+                    font-size: 120px;
+                }
+                @media(max-width:767px) {
+                    font-size: 72px;
+                }
             }
             .left-awards {
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 margin-bottom: 60px;
+                @media(max-width:767px) {
+                    margin-bottom: 20px;
+                    flex-wrap: wrap;
+                }
                 .gatsby-image-wrapper:nth-child(1) {
                     max-width: 130px;
                     width: 100%;
                     margin: 0 25px;
+                    @media(max-width:767px) {
+                        max-width: 100px;
+                        margin: 20px;
+                    }
                 }
                 .gatsby-image-wrapper:nth-child(2) {
                     max-width: 180px;
@@ -166,6 +191,10 @@ const MainSection = styled.section`
                     img {
                         object-fit: contain !important;
                     }
+                    @media(max-width:767px) {
+                        max-width: 130px;
+                        margin: 20px;
+                    }
                 }
             }
         }
@@ -173,6 +202,9 @@ const MainSection = styled.section`
             width: 50%;
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                width: 100%;
+            }
             .right-content-main {
                 position: absolute;
                 top: 0;
@@ -190,6 +222,16 @@ const MainSection = styled.section`
                     margin: 0 auto;
                     margin-top: -100px;
                     margin-bottom: 60px;
+                    @media(max-width:1000px) {
+                        max-width: 250px;
+                        margin-top: 40px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 180px;
+                        margin-top: 0;
+                        margin-left: 0;
+                        margin-bottom: 0;
+                    }
                 }
                 .event {
                     background-color: #00385c;
@@ -198,6 +240,16 @@ const MainSection = styled.section`
                     width: 80%;
                     margin-left: auto;
                     position: relative;
+                    @media(max-width:1000px) {
+                        width: 100%;
+                        padding: 10px 20px;
+                        margin-top: -20px;
+                    }
+                    @media(max-width: 767px) {
+                        max-width: 400px;
+                        margin-top: 0;
+                        margin-right: auto;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -207,9 +259,20 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: center;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
+                        @media(max-width:767px) {
+                            font-size: 18px;
+                        }
                     }
                 }
             }
+        }
+    }
+    .bottom-row {
+        .bottom-bg {
+            
         }
     }
     .border-bottom {

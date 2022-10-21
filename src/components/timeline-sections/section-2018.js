@@ -202,8 +202,14 @@ const MainSection = styled.section`
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    @media(max-width:1000px) {
+        padding-top: 0px;
+    }
     .top-year {
         margin-bottom: -100px;
+        @media(max-width:1000px) {
+            margin-bottom: 0px;
+        }
         h2 {
             font-family: "Helvetica Thin";
             color: #00385c;
@@ -212,6 +218,20 @@ const MainSection = styled.section`
             padding-left: 10%;
             font-weight: 100;
             text-shadow: 15px 15px 12px rgba(0,0,0,.15);
+            @media(max-width:1200px) {
+                font-size: 150px;
+            }
+            @media(max-width:1000px) {
+                font-size: 120px;
+                text-align: right;
+                padding-left: 0;
+                padding-right: 10%;
+            }
+            @media(max-width:767px) {
+                font-size: 72px;
+                text-align: center;
+                padding-right: 0;
+            }
         }
     }
     .top-row {
@@ -219,6 +239,16 @@ const MainSection = styled.section`
         .row-bg {
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
         }
         .bottom-content {
             position: absolute;
@@ -229,13 +259,30 @@ const MainSection = styled.section`
             z-index: 2;
             display: flex;
             align-items: center;
+            @media(max-width:767px) {
+                position: relative;
+                flex-wrap: wrap;
+                padding: 20px;
+            }
             .bottom-content-main {
                 width: 50%;
+                @media(max-width:767px) {
+                    width: 100%;
+                }
                 .gatsby-image-wrapper {
                     max-width: 500px;
                     width: 100%;
                     margin: 0 auto;
                     margin-bottom: 20px;
+                    @media(max-width:1100px) {
+                        max-width: 350px;
+                    }
+                    @media(max-width:1000px) {
+                        max-width: 250px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 200px;
+                    }
                 }
             }
             .event {
@@ -244,6 +291,13 @@ const MainSection = styled.section`
                 box-shadow: 20px 20px 20px rgba(0,0,0,.5);
                 width: 85%;
                 margin-right: auto;
+                @media(max-width:1000px) {
+                    width: 100%;
+                }
+                @media(max-width:767px) {
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
                 h3 {
                     font-family: "Helvetica Thin";
                     font-weight: 100;
@@ -253,6 +307,13 @@ const MainSection = styled.section`
                     margin-top: 0;
                     margin-bottom: 0;
                     text-align: right;
+                    @media(max-width:1000px) {
+                        font-size: 20px;
+                    }
+                    @media(max-width:767px) {
+                        font-size: 18px;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -262,6 +323,16 @@ const MainSection = styled.section`
         .row-bg {
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                .gatsby-image-wrapper {
+                    height: 100%;
+                }
+            }
         }
         .bottom-content {
             position: absolute;
@@ -271,6 +342,11 @@ const MainSection = styled.section`
             height: 100%;
             z-index: 2;
             display: flex;
+            @media(max-width:767px) {
+                position: relative;
+                flex-wrap: wrap;
+                padding: 20px;
+            }
             .content-left {
                 width: 65%;
                 height: 100%;
@@ -278,25 +354,63 @@ const MainSection = styled.section`
                 justify-content: flex-end;
                 align-items: flex-end;
                 flex-direction: column;
+                @media(max-width:1000px) {
+                    align-items: center;
+                }
+                @media(max-width:767px) {
+                    width: 100%;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: center;
+                }
                 .gatsby-image-wrapper:nth-child(1) {
                     max-width: 200px;
                     width: 100%;
                     margin-bottom: 80px;
                     margin-right: 120px;
+                    @media(max-width:1000px) {
+                        max-width: 150px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 100px;
+                        margin: 20px;
+                        margin-bottom: 20px;
+                        margin-right: 20px;
+                    }
                 }
                 .gatsby-image-wrapper:nth-child(2) {
                     max-width: 600px;
                     width: 100%;
                     margin-bottom: -35px;
+                    @media(max-width:1100px) {
+                        max-width: 400px;
+                    }
+                    @media(max-width:1000px) {
+                        max-width: 250px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 200px;
+                        margin: 20px;
+                        margin-bottom: 20px;
+                    }
                 }
             }
             .content-right {
                 width: 35%;
+                @media(max-width:767px) {
+                    width: 100%;
+                }
                 .gatsby-image-wrapper {
                     max-width: 450px;
                     margin-left: auto;
                     margin-right: auto;
                     margin-top: -150px;
+                    @media(max-width:767px) {
+                        max-width: 250px;
+                        margin-top: 0;
+                        margin-left: 0;
+                    }
                 }
                 .event {
                     background-color: #c01e2e;
@@ -305,6 +419,16 @@ const MainSection = styled.section`
                     width: 85%;
                     margin-left: auto;
                     margin-top: 50px;
+                    @media(max-width:1000px) {
+                        width: 100%;
+                        padding: 10px 20px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 400px;
+                        padding: 10px 20px;
+                        margin: 0 auto;
+                        margin-top: 20px;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -314,6 +438,12 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: center;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
+                        @media(max-width:767px) {
+                            font-size: 18px;
+                        }
                     }
                 }
             }

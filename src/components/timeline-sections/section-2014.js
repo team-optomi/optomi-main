@@ -145,6 +145,9 @@ const MainSection = styled.section`
     margin: 0 auto;
     .top-row {
         margin-bottom: 100px;
+        @media(max-width:1000px) {
+            margin-bottom: 0px;
+        }
         h2 {
             font-family: "Helvetica Thin";
             color: #00385c;
@@ -153,16 +156,34 @@ const MainSection = styled.section`
             font-weight: 100;
             text-shadow: 15px 15px 12px rgba(0,0,0,.15);
             padding-left: 15%;
+            @media(max-width:1200px) {
+                font-size: 150px;
+            }
+            @media(max-width:1000px) {
+                font-size: 120px;
+            }
+            @media(max-width:767px) {
+                font-size: 72px;
+                padding-left: 0;
+            }
         }
     }
     .row-one {
         display: flex;
         align-items: flex-start;
+        @media(max-width:767px) {
+            flex-wrap: wrap;
+        }
         .left-content {
             width: 55%;
             margin-right: -10%;
             position: relative;
             z-index: 2;
+            @media(max-width:767px) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 50px;
+            }
             .left-bg {
                 padding-left: 80px;
                 position: relative;
@@ -178,11 +199,26 @@ const MainSection = styled.section`
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
+                @media(max-width:767px) {
+                    justify-content: flex-start;
+                }
                 .event-number {
                     position: absolute;
-                    width: 350px;
+                    max-width: 350px;
+                    width: 100%;
                     margin-right: 350px;
                     margin-top: 80px;
+                    @media(max-width:1100px) {
+                        margin-right: 200px;
+                    }
+                    @media(max-width:1000px) {
+                        margin-right: 100px;
+                    }
+                    @media(max-width:767px) {
+                        max-width: 200px;
+                        margin-right: auto;
+                        margin-left: 40px;
+                    }
                 }
                 .event {
                     background-color: #00385c;
@@ -191,6 +227,9 @@ const MainSection = styled.section`
                     width: 85%;
                     margin-top: 200px;
                     margin-right: auto;
+                    @media(max-width:1100px) {
+                        padding-left: 100px;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -200,6 +239,9 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: right;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
                     }
                 }
             }
@@ -208,6 +250,9 @@ const MainSection = styled.section`
             width: 55%;
             position: relative;
             z-index: 1;
+            @media(max-width:767px) {
+                width: 100%;
+            }
             .right-bg {
                 position: relative;
                 z-index: 2;
@@ -223,10 +268,17 @@ const MainSection = styled.section`
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-end;
+                @media(max-width: 1000px) {
+                    justify-content: flex-end;
+                }
                 .right-award {
-                    width: 233px;
+                    max-width: 233px;
+                    width: 100%;
                     margin-top: -40px;
                     margin-right: 20%;
+                    @media(max-width:1000px) {
+                        max-width: 150px;
+                    }
                 }
                 .event {
                     background-color: #00385c;
@@ -235,6 +287,9 @@ const MainSection = styled.section`
                     width: 80%;
                     margin-bottom: 80px;
                     margin-leftt: auto;
+                    @media(max-width:1000px) {
+                        margin-bottom: -30px;
+                    }
                     h3 {
                         font-family: "Helvetica Thin";
                         font-weight: 100;
@@ -244,6 +299,9 @@ const MainSection = styled.section`
                         margin-top: 0;
                         margin-bottom: 0;
                         text-align: left;
+                        @media(max-width:1000px) {
+                            font-size: 20px;
+                        }
                     }
                 }
             }
