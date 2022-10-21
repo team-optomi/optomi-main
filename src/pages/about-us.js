@@ -125,6 +125,11 @@ const AboutPage = () => {
                             >
                             Awards
                             </ButtonLink>
+                            <ButtonLink
+                            to="/history/"
+                            >
+                            History
+                            </ButtonLink>
                         </ButtonSection>
                     </SectionTwoRow>
 
@@ -410,7 +415,9 @@ const SectionContent = styled.div`
 
 const ButtonSection = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     transition-delay: .3s;
     padding-top: 35px;
     padding-bottom: 120px;
@@ -428,6 +435,7 @@ const ButtonSection = styled.div`
         text-transform: uppercase;
         letter-spacing: 5px;
         padding: 0;
+        margin: 10px 30px;
         outline: 0;
         text-decoration: none;
         &:hover {
