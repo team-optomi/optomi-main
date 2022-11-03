@@ -25,12 +25,7 @@ const ServicePage = ({ data }) => (
                 data-sal-easing="ease"
                 dangerouslySetInnerHTML={{ __html: data.wordpressWpService.title }}
                 />
-                <MainCopy 
-                data-sal="fade"
-                data-sal-duration="1000"
-                data-sal-delay="900"
-                data-sal-easing="ease"
-                dangerouslySetInnerHTML={{ __html: data.wordpressWpService.acf.job_titles }}/>
+                <MainCopy dangerouslySetInnerHTML={{ __html: data.wordpressWpService.acf.job_titles }}/>
                 <div
                 data-sal="slide-up"
                 data-sal-duration="1000"
