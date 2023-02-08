@@ -40,7 +40,7 @@ const SideMainMenu = () => (
             </Link>
         </MenuItem>
         <MenuItem>
-            <a href="https://www.linkedin.com/jobs/search/?f_C=2684081&geoId=92000000" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Portal</a>
+            <a href="https://www.linkedin.com/jobs/search/?currentJobId=3431703545&f_C=2684081&geoId=92000000" target="_blank" rel="noopener noreferrer" aria-label="Link">Job Portal</a>
         </MenuItem>
         <MenuItem>
             <Link

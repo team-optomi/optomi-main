@@ -3,7 +3,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 import "./layout.css"
-import PageTransition from 'gatsby-plugin-page-transitions';
+import PageTransition from 'gatsby-plugin-page-transitions'
+import { Helmet } from 'react-helmet'
+
 
 import StickyLogo from "../components/sticky-logo"
 import HeaderLogo from "../components/header-logo"
@@ -11,7 +13,7 @@ import SideMainMenu from "../components/sidebar-menu"
 import Footer from "../components/footer"
 
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 if (typeof window !== `undefined`) {
   gsap.registerPlugin(ScrollTrigger)
@@ -55,6 +57,17 @@ class HomeLayout extends Component {
         }
         return (
             <FullPage>
+              <Helmet>
+                <script type="text/javascript">
+                  {` window.hfAccountId = "3cb2782b-daac-4c20-8250-1a2778647f5e";
+                  window.hfDomain = https://api.herefish.com;
+                  (function() {
+                      var hf = document.createElement('script'); hf.type = 'text/javascript'; hf.async = true;
+                      hf.src = window.hfDomain + '/scripts/hf.js';
+                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hf, s);
+                  })();`}
+                </script>
+              </Helmet>
                 <StickyLogo/>
                 <MainLayout className={headerName}>
 

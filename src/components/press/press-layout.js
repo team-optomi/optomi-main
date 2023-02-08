@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 import PageTransition from 'gatsby-plugin-page-transitions';
+import { Helmet } from 'react-helmet'
 
 import PressLogo from "../../components/press/press-logo"
 import PressSideMainMenu from "../../components/press/press-sidebar-menu"
@@ -27,6 +28,17 @@ class PressLayout extends Component {
         }
         return (
           <FullPage>
+            <Helmet>
+                <script type="text/javascript">
+                  {` window.hfAccountId = "3cb2782b-daac-4c20-8250-1a2778647f5e";
+                  window.hfDomain = https://api.herefish.com;
+                  (function() {
+                      var hf = document.createElement('script'); hf.type = 'text/javascript'; hf.async = true;
+                      hf.src = window.hfDomain + '/scripts/hf.js';
+                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hf, s);
+                  })();`}
+                </script>
+              </Helmet>
             <MainLayout className={headerName}>
 
                 <PageTransition>

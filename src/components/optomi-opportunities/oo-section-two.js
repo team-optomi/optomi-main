@@ -94,6 +94,14 @@ const OOSectionTwo = () => {
                                     }
                                 }
                                 text_eight
+                                cc_bottom_link_file {
+                                    url {
+                                      localFile {
+                                        publicURL
+                                      }
+                                    }
+                                }
+                                cc_bottom_link_text
                             }
                         }
                     }
@@ -181,7 +189,7 @@ const OOSectionTwo = () => {
                         </IconText>
                     </IconFull>
                 </IconRow>
-                <p class="bottom-link"><a href={DownloadFile} target="_blank" rel="noopener noreferrer">To explore more details about Optomi Benefits, click here</a></p>
+                <p class="bottom-link"><a href={post.node.acf.section_two.cc_bottom_link_file.url.localFile.publicURL} target="_blank" rel="noopener noreferrer">{post.node.acf.section_two.cc_bottom_link_text}</a></p>
             </SectionTwo>
         ))
     )
