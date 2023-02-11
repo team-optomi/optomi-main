@@ -18,8 +18,14 @@ const OOCCResources = () => {
                         acf {
                             optomi_resources_v2 {
                                 resource_name
-                                resource_url
-                              }
+                                resource_url {
+                                    localFile {
+                                      publicURL
+                                    }
+                                  }
+                                  
+                                resource_permalink
+                            }
                         }
                     }
                 }
@@ -33,7 +39,7 @@ const OOCCResources = () => {
                 <OOResourcesCopy>
                     <h2>Resources</h2>
                     {post.node.acf.optomi_resources_v2.map(resource => (
-                        <p><a href={resource.resource_url} target="_blank" rel="noopener noreferrer">{resource.resource_name}</a></p>
+                        <p><a href={resource.resource_url ? resource.resource_url.localFile.publicURL : resource.resource_permalink } target="_blank" rel="noopener noreferrer">{resource.resource_name}</a></p>
                     ))}
                 </OOResourcesCopy>
             </OOResourcesSection>

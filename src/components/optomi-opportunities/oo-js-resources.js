@@ -15,7 +15,15 @@ const OOJSResources = () => {
                 edges {
                     node {
                         acf {
-                            optomi_resources
+                            optomi_resources_v2 {
+                                resource_name
+                                resource_url {
+                                    localFile {
+                                      publicURL
+                                    }
+                                  }
+                                resource_permalink
+                            }
                         }
                     }
                 }
