@@ -16,7 +16,10 @@ const OOCCResources = () => {
                 edges {
                     node {
                         acf {
-                            optomi_resources
+                            optomi_resources_v2 {
+                                resource_link
+                                resource_name
+                              }
                         }
                     }
                 }
@@ -29,15 +32,9 @@ const OOCCResources = () => {
             <OOResourcesSection>
                 <OOResourcesCopy>
                     <h2>Resources</h2>
-                    <p><a href="https://optomi.bbo.bullhornstaffing.com/Login/" target="_blank" rel="noopener noreferrer">Bullhorn Timekeeping Portal Test</a></p>
-                    <p><a href={DownloadFileOne} target="_blank" rel="noopener noreferrer">EmployDrive Self-Serve Instructions</a></p>
-                    <p><a href="https://employdrive.myisolved.com/UserLogin.aspx" target="_blank" rel="noopener noreferrer">Log In to Select Benefits</a></p>
-                    <p><a href="https://employdrive.myisolved.com/UserLogin.aspx" target="_blank" rel="noopener noreferrer">Log In to Set Up Direct Deposit</a></p>
-                    <p><a href="/optomi-opportunities/referral" target="_blank" rel="noopener noreferrer">Referral Sheet</a></p>
-                    <p><a href={DownloadFileThree} target="_blank" rel="noopener noreferrer">Benefits Guide</a></p>
-                    <p><a href="https://www.nationwide.com/401k-retirement-plans.jsp" target="_blank" rel="noopener noreferrer">401K Website</a></p>
-                    <p><a href={DownloadFileFour} target="_blank" rel="noopener noreferrer">401K Details</a></p>
-                    <p><a href={DownloadFileFive} target="_blank" rel="noopener noreferrer">FAQ Sheet</a></p>
+                    {post.node.acf.optomi_resources_v2.map(resource => (
+                        <p><a href={resource.resource_link} target="_blank" rel="noopener noreferrer">{resource.resource_name}</a></p>
+                    ))}
                 </OOResourcesCopy>
             </OOResourcesSection>
         ))
