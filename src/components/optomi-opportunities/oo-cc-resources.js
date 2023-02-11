@@ -17,7 +17,6 @@ const OOCCResources = () => {
                     node {
                         acf {
                             optomi_resources_v2 {
-                                resource_link
                                 resource_name
                                 resource_url
                               }
