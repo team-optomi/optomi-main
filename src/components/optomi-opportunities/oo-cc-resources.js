@@ -19,6 +19,7 @@ const OOCCResources = () => {
                             optomi_resources_v2 {
                                 resource_link
                                 resource_name
+                                resource_url
                               }
                         }
                     }
@@ -33,7 +34,7 @@ const OOCCResources = () => {
                 <OOResourcesCopy>
                     <h2>Resources</h2>
                     {post.node.acf.optomi_resources_v2.map(resource => (
-                        <p><a href={resource.resource_link} target="_blank" rel="noopener noreferrer">{resource.resource_name}</a></p>
+                        <p><a href={resource.resource_url} target="_blank" rel="noopener noreferrer">{resource.resource_name}</a></p>
                     ))}
                 </OOResourcesCopy>
             </OOResourcesSection>
