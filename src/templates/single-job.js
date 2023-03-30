@@ -3,11 +3,31 @@ import { graphql, Link } from "gatsby"
 import styled from 'styled-components'
 
 import BlogLayout from "../components/blog-layout"
+import StructuredJobData from "../components/structured-job-data"
 import SEO from "../components/seo"
 
 const SingleJobTemplate = ({ data }) => (
     
     <BlogLayout>
+        <StructuredJobData 
+         jobTitle={data.wordpressWpSingleJob.acf.job_title ? data.wordpressWpSingleJob.acf.job_title : 'N/A'} 
+         jobDescription={data.wordpressWpSingleJob.acf.job_description ? data.wordpressWpSingleJob.acf.job_description : 'N/A'}
+         jobDatePosted={data.wordpressWpSingleJob.acf.job_date_posted ? data.wordpressWpSingleJob.acf.job_date_posted : 'N/A'} 
+         jobValidThrough={data.wordpressWpSingleJob.acf.job_valid_through ? data.wordpressWpSingleJob.acf.job_valid_through : 'N/A'}
+         jobEmploymentType={data.wordpressWpSingleJob.acf.job_employment_type ? data.wordpressWpSingleJob.acf.job_employment_type : 'N/A'} 
+         jobStreetAddress={data.wordpressWpSingleJob.acf.job_street_address ? data.wordpressWpSingleJob.acf.job_street_address : 'N/A'}
+         jobCity={data.wordpressWpSingleJob.acf.job_city ? data.wordpressWpSingleJob.acf.job_city : 'N/A'}
+         jobState={data.wordpressWpSingleJob.acf.job_state ? data.wordpressWpSingleJob.acf.job_state : 'N/A'}
+         jobZipCode={data.wordpressWpSingleJob.acf.job_zip_code ? data.wordpressWpSingleJob.acf.job_zip_code : 'N/A'}
+         jobSalary={data.wordpressWpSingleJob.acf.job_salary ? data.wordpressWpSingleJob.acf.job_salary : 'N/A'}
+         jobMaxSalary={data.wordpressWpSingleJob.acf.job_max_salary ? data.wordpressWpSingleJob.acf.job_max_salary : 'N/A'}
+         jobSalaryPer={data.wordpressWpSingleJob.acf.job_salary_per ? data.wordpressWpSingleJob.acf.job_salary_per : 'N/A'}
+         jobSkills={data.wordpressWpSingleJob.acf.job_skills ? data.wordpressWpSingleJob.acf.job_skills : 'N/A'}
+         jobQualifications={data.wordpressWpSingleJob.acf.job_qualifications ? data.wordpressWpSingleJob.acf.job_qualifications : 'N/A'}
+         jobResponsibilities={data.wordpressWpSingleJob.acf.job_responsibilities ? data.wordpressWpSingleJob.acf.job_responsibilities : 'N/A'}
+         jobEducationRequirements={data.wordpressWpSingleJob.acf.job_education_requirements ? data.wordpressWpSingleJob.acf.job_education_requirements : 'N/A'}
+         jobExperienceRequirements={data.wordpressWpSingleJob.acf.job_experience_requirements ? data.wordpressWpSingleJob.acf.job_experience_requirements : 'N/A'}
+        />
         <SEO 
         title={data.wordpressWpSingleJob.acf.meta_title} 
         description={data.wordpressWpSingleJob.acf.meta_description}
@@ -117,6 +137,24 @@ export const query = graphql`
                 slug
             }
             acf {
+                job_city
+                job_date_posted
+                job_description
+                job_education_requirements
+                job_employment_type
+                job_experience_requirements
+                job_industry
+                job_max_salary
+                job_qualifications
+                job_responsibilities
+                job_salary
+                job_salary_per
+                job_skills
+                job_state
+                job_street_address
+                job_title
+                job_valid_through
+                job_zip_code
                 meta_title
                 meta_description
             }
