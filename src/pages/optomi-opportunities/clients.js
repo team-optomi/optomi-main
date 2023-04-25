@@ -8,11 +8,11 @@ import SEO from "../../components/seo"
 
 import DownloadFile from "../../downloads/Consultant-Referral-Form-2020.pdf"
 
-const OptomiOpportunitiesReferralPage = () => {
+const OptomiOpportunitiesClientsPage = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allWordpressWpCustomPage(filter: {wordpress_id: {eq: 480}}) {
+            allWordpressWpCustomPage(filter: {wordpress_id: {eq: 2610}}) {
                 edges {
                     node {
                         featured_media {
@@ -244,4 +244,4 @@ const SecondBottomImage = styled(Img)`
     margin: 0 auto;
 `
 
-export default OptomiOpportunitiesReferralPage
+export default OptomiOpportunitiesClientsPage
