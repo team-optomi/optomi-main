@@ -132,7 +132,7 @@ const OptomiOpportunitiesClientsPage = () => {
                     </MainRow>
                     <BottomRow>
                         <SecondBottomImage sizes={post.node.acf.second_bottom_image.localFile.childImageSharp.sizes} alt={"Be part of our consultant referral program"}/>
-                        <a href={DownloadFile} target="_blank" rel="noopener noreferrer">Click Here to Submit the Form</a>
+                        <p><a href="mailto:opportunities@optomi.com">opportunities@optomi.com</a></p>
                     </BottomRow>
                 </ReferralMain>
             </OOLayout>
