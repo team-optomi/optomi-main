@@ -55,34 +55,7 @@ const OptomiOpportunitiesClientsPage = () => {
                                     }
                                 }
                             }
-                            second_referral_image {
-                                localFile {
-                                    childImageSharp {
-                                        sizes(maxWidth: 163) {
-                                            ...GatsbyImageSharpSizes
-                                        }
-                                    }
-                                }
-                            }
-                            third_referral_image {
-                                localFile {
-                                    childImageSharp {
-                                        sizes(maxWidth: 210) {
-                                            ...GatsbyImageSharpSizes
-                                        }
-                                    }
-                                }
-                            }
                             bottom_section
-                            first_bottom_image {
-                                localFile {
-                                    childImageSharp {
-                                        sizes(maxWidth: 962) {
-                                            ...GatsbyImageSharpSizes
-                                        }
-                                    }
-                                }
-                            }
                             second_bottom_image {
                                 localFile {
                                     childImageSharp {
@@ -119,16 +92,7 @@ const OptomiOpportunitiesClientsPage = () => {
                             <FirstReferralImage sizes={post.node.acf.first_referral_image.localFile.childImageSharp.sizes} alt={"$500"}/>
                             <p>– 1st Hired Referral</p>
                         </ReferralRow>
-                        <ReferralRow>
-                            <SecondReferralImage sizes={post.node.acf.second_referral_image.localFile.childImageSharp.sizes} alt={"$750"}/>
-                            <p>– 2nd Hired Referral</p>
-                        </ReferralRow>
-                        <ReferralRow>
-                            <ThirdReferralImage sizes={post.node.acf.third_referral_image.localFile.childImageSharp.sizes} alt={"$1000"}/>
-                            <p>– 3rd Hired Referral</p>
-                        </ReferralRow>
                         <BottomSection dangerouslySetInnerHTML={{ __html: post.node.acf.bottom_section }}/>
-                        <FirstBottomImage sizes={post.node.acf.first_bottom_image.localFile.childImageSharp.sizes} alt={"Placement must be made within 6 months of referral"} />
                     </MainRow>
                     <BottomRow>
                         <SecondBottomImage sizes={post.node.acf.second_bottom_image.localFile.childImageSharp.sizes} alt={"Be part of our consultant referral program"}/>
@@ -205,19 +169,7 @@ const FirstReferralImage = styled(Img)`
     width: 100%;
 `
 
-const SecondReferralImage = styled(Img)`
-    max-width: 76px;
-    width: 100%;
-`
-
-const ThirdReferralImage = styled(Img)`
-    max-width: 98px;
-    width: 100%;
-`
-
 const BottomSection = styled.div``
-
-const FirstBottomImage = styled(Img)``
 
 const BottomRow = styled.div`
     max-width: 600px;
