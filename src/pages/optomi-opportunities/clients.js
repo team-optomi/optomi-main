@@ -65,6 +65,7 @@ const OptomiOpportunitiesClientsPage = () => {
                                     }
                                 }
                             }
+                            bottom_email
                         }
                     }
                 }
@@ -90,13 +91,12 @@ const OptomiOpportunitiesClientsPage = () => {
                         <TopSection dangerouslySetInnerHTML={{ __html: post.node.acf.top_section }}/>
                         <ReferralRow>
                             <FirstReferralImage sizes={post.node.acf.first_referral_image.localFile.childImageSharp.sizes} alt={"$500"}/>
-                            <p>– 1st Hired Referral</p>
                         </ReferralRow>
                         <BottomSection dangerouslySetInnerHTML={{ __html: post.node.acf.bottom_section }}/>
                     </MainRow>
                     <BottomRow>
                         <SecondBottomImage sizes={post.node.acf.second_bottom_image.localFile.childImageSharp.sizes} alt={"Be part of our consultant referral program"}/>
-                        <p><a href="mailto:opportunities@optomi.com">opportunities@optomi.com</a></p>
+                        <p><a href={`mailto:${post.node.acf.bottom_email}`}>{post.node.acf.bottom_email}</a></p>
                     </BottomRow>
                 </ReferralMain>
             </OOLayout>
@@ -165,7 +165,7 @@ const ReferralRow = styled.div`
 `
 
 const FirstReferralImage = styled(Img)`
-    max-width: 76px;
+    max-width: 200px;
     width: 100%;
 `
 
