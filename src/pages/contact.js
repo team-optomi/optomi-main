@@ -343,11 +343,17 @@ const ModalContent = styled.div`
                 input {
                     width: 20px;
                     height: 20px;
-                    margin-top: 3px;
+                    margin-top: 0px;
                     margin-right: 10px;
                     font-size: 20px;
                     line-height: 20px;
                     padding: 0;
+                }
+
+                label {
+                    color: #666;
+                    font-size: 13px;
+                    line-height: 1.3;
                 }
             }
         }
