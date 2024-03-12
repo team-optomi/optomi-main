@@ -82,6 +82,10 @@ const ContactForm = (props) => (
         <p class={"full"}>
             <label htmlFor="message">Message <textarea name="message" placeholder="Enter your message" aria-label="Input"></textarea></label>
         </p>
+        <p class={"full checkbox"}>
+            <input type="checkbox" name="user-agree" aria-label="Checkbox" />
+            <label htmlFor="user-agree">With your submission, you grant us permission to store your personal information and use it in consideration of your inquiry. By checking this box, you acknowledge and agree to receive communications from us via phone, SMS, and email.</label>
+        </p>
         <p class={"button"}>
             <button type="submit" name="submit" class={"submit"}  aria-label="Send">Send</button>
         </p>
